@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMSTRAP Connect | B2G Emergency Communication &amp; Incident Reporting</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#050B14',
+                        brandBlue: '#2C64A1',
+                        emergencyRed: '#C9302C',
+                        warmAmber: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
+
+    <!-- Persistent Navigation Header -->
+    <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a class="flex items-center space-x-3 group" href="index.html">
+                <div class="h-10 flex items-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black font-display tracking-wider text-white">EMSTRAP</span>
+                    <span class="text-[8px] font-bold tracking-widest text-red-400 uppercase">Emergency</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center space-x-4">
+                <a href="index.html#page-services" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-medium text-xs tracking-wide transition-all border border-neutral-800">
+                    <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                    <span>All Products</span>
+                </a>
+                <button onclick="openDemoModal()" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs tracking-wide transition-all shadow-sm font-display">
+                    <span>Request Demo</span>
+                </button>
+                <div class="hidden sm:flex items-center gap-2 pl-2 border-l border-neutral-800">
+                    <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-28 px-6 md:px-12 border-b border-neutral-900 overflow-hidden bg-black">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-800/25 via-transparent to-transparent pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto relative z-10 text-center space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-[11px] font-mono tracking-widest text-neutral-300 uppercase">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emergencyRed animate-pulse"></span>
+                    <span>B2G PUBLIC SAFETY INFRASTRUCTURE</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-white tracking-tight leading-[1.08]">
+                    EMSTRAP CONNECT
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-neutral-300 font-display font-medium max-w-3xl mx-auto">
+                    One Connected Network for Every Emergency
+                </p>
+
+                <p class="text-base sm:text-lg text-neutral-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    EMSTRAP Connect is a B2G emergency communication and incident-reporting platform built for Smart Cities, Police Departments, municipal authorities, and public-safety organizations. It creates a connected channel between citizens, authorities, emergency responders, and control rooms—helping critical information reach the right people faster.
+                </p>
+
+                <div class="pt-4 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-neutral-400">
+                    <span class="px-3.5 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-200">Report</span>
+                    <span>&bull;</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-200">Connect</span>
+                    <span>&bull;</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-200">Coordinate</span>
+                    <span>&bull;</span>
+                    <span class="px-3.5 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-200">Respond</span>
+                </div>
+
+                <div class="pt-6 flex justify-center gap-4">
+                    <button onclick="openDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-lg font-display">
+                        Request a Government Demo
+                    </button>
+                    <a href="index.html#page-contact" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
+                        Partner Inquiries
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
+            <div class="max-w-5xl mx-auto space-y-10">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SYSTEMIC CHALLENGE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">The Problem: Disconnected Emergency Response</h2>
+                    <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mt-3">
+                        When an emergency occurs, information can come from multiple sources—citizens, police officers, control rooms, security teams, or people at the scene. Without a unified system, authorities face critical operational bottlenecks.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">01</div>
+                        <h3 class="text-sm font-bold font-display text-white">Duplicate Incident Chaos</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Multiple reports about the same incident crowd lines and fracture operator attention.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">02</div>
+                        <h3 class="text-sm font-bold font-display text-white">Unclear Scene Context</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Incomplete or vague caller statements delay medical triage and asset preparation.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">03</div>
+                        <h3 class="text-sm font-bold font-display text-white">Sharing Latency</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Manual phone calls between dispatch desks create critical communication gaps.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">04</div>
+                        <h3 class="text-sm font-bold font-display text-white">Vague Location Data</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Difficulty identifying exact GPS coordinates of caller in chaotic environments.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">05</div>
+                        <h3 class="text-sm font-bold font-display text-white">Inter-Agency Gaps</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Siloed systems prevent police, fire, ambulances, and municipalities from co-viewing incidents.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80 space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 text-xs font-mono font-bold">06</div>
+                        <h3 class="text-sm font-bold font-display text-white">Triage Blindspots</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Difficulty prioritizing simultaneous emergencies without automated severity scoring.</p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800 flex items-center gap-4">
+                    <i class="fa-solid fa-circle-nodes text-xl text-neutral-300"></i>
+                    <p class="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                        <b class="text-white font-semibold">EMSTRAP Connect</b> brings these fragmented reports into one connected emergency-response ecosystem.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is EMSTRAP Connect & Deduplication -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-6 space-y-5">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">CORE ARCHITECTURE</span>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">What is EMSTRAP Connect?</h2>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed">
+                            EMSTRAP Connect acts as a digital communication bridge between citizens and government emergency-response systems. A citizen reports an emergency with rich structured telemetry:
+                        </p>
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800 font-mono text-xs text-neutral-300 space-y-1.5">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-neutral-500"></i> <span>Location (Sub-second Lat / Lng)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-align-left text-neutral-500"></i> <span>Description &amp; Acuity</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-camera text-neutral-500"></i> <span>Scene Image &amp; Evidence</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-neutral-500"></i> <span>Time of Occurrence &amp; Details</span></div>
+                        </div>
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed">
+                            When multiple people report the same incident, EMSTRAP identifies reports coming from the same location and associates them with a single incident, reducing unnecessary duplicate cases.
+                        </p>
+                    </div>
+
+                    <!-- Deduplication Architecture Diagram -->
+                    <div class="lg:col-span-6 p-7 rounded-3xl bg-neutral-950 border border-neutral-800/90 shadow-2xl">
+                        <span class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase block mb-4">INCIDENT DEDUPLICATION PIPELINE</span>
+                        <div class="space-y-2.5 font-mono text-xs">
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-neutral-900/90 border border-neutral-800 text-neutral-300">
+                                <span>Citizen 1 [Caller at Scene]</span>
+                                <span class="text-neutral-500">Report #01</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-neutral-900/90 border border-neutral-800 text-neutral-300">
+                                <span>Citizen 2 [Pedestrian]</span>
+                                <span class="text-neutral-500">Report #02</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-neutral-900/90 border border-neutral-800 text-neutral-300">
+                                <span>Citizen 3 [Passing Motorist]</span>
+                                <span class="text-neutral-500">Report #03</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-neutral-900/90 border border-neutral-800 text-neutral-300">
+                                <span>Citizen 4 [Traffic Warden]</span>
+                                <span class="text-neutral-500">Report #04</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg bg-neutral-900/90 border border-neutral-800 text-neutral-300">
+                                <span>Citizen 5 [Local Resident]</span>
+                                <span class="text-neutral-500">Report #05</span>
+                            </div>
+
+                            <div class="py-2 text-center text-neutral-500 text-sm">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-white text-black font-bold text-center shadow-lg">
+                                <div class="text-[10px] uppercase tracking-widest text-neutral-600 mb-1">EMSTRAP CONNECT RESOLUTION</div>
+                                <div class="text-sm font-mono tracking-wider">1 MASTER INCIDENT + 5 REPORTS</div>
+                                <div class="text-[11px] font-normal text-neutral-700 mt-1">More information &bull; Less duplication &bull; Better visibility</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8-Step Lifecycle -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">END-TO-END WORKFLOW</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">How EMSTRAP Connect Works</h2>
+                    <p class="text-sm text-neutral-400 font-light mt-2">The 8-step incident lifecycle from initial citizen trigger to final case resolution.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">01 // REPORT</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Report Emergency</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Emergency type, description, live image, and incident details submitted digitally.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">02 // LOCATE</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Precise Coordinates</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Captures latitude and longitude to pinpoint the exact scene location.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">03 // IDENTIFY</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Duplicate Detection</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Checks if active incident exists nearby and clusters 5 reports into 1 case.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">04 // ANALYZE</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">AI-Assisted Audit</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Extracts severity, trauma indications, and asset needs from unstructured data.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">05 // PRIORITIZE</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Urgency Staging</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Assigns priority: Critical &rarr; High &rarr; Medium &rarr; Low for immediate action.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">06 // CONNECT</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Agency Dispatch</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Connects case to the right authority, department, or medical response unit.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">07 // COORDINATE</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Active Response</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Authorized personnel monitor progress, green lights, and team coordination.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800/80">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-2">08 // RESOLVE</span>
+                        <h3 class="text-base font-bold font-display text-white mb-2">Incident Closure</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Monitors through the lifecycle until safely resolved, closed, and logged.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for Government Sectors -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
+            <div class="max-w-5xl mx-auto space-y-16">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">BUILT FOR GOVERNMENT</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">B2G Emergency Infrastructure</h2>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mt-2">
+                        EMSTRAP Connect is designed for government organizations that need a centralized and scalable way to manage emergency information.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-7 rounded-2xl bg-[#0A0A0A] border border-neutral-800">
+                        <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-5">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Smart Cities</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light mb-4">
+                            Create a connected emergency-reporting layer across the city: receive citizen reports, identify locations, monitor citywide emergencies, and build a centralized operational view.
+                        </p>
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">SMART CITY MISSIONS</span>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-[#0A0A0A] border border-neutral-800">
+                        <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-5">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Police Departments</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light mb-4">
+                            Citizen incident reporting, duplicate detection, incident prioritization, communication with response teams, incident tracking, and digital emergency records.
+                        </p>
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">LAW ENFORCEMENT CAD</span>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-[#0A0A0A] border border-neutral-800">
+                        <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-5">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Municipal Authorities</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light mb-4">
+                            Manage road accidents, public safety incidents, infrastructure emergencies, dangerous situations, crowd events, and civic issues requiring swift government response.
+                        </p>
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-wider block">CIVIL PROTECTION</span>
+                    </div>
+                </div>
+
+                <!-- Multi-Agency Architecture Diagram -->
+                <div class="p-8 rounded-3xl bg-[#080808] border border-neutral-800/90 space-y-6">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">MULTI-AGENCY PUBLIC SAFETY ECOSYSTEM</span>
+                    <div class="font-mono text-xs text-neutral-300 space-y-4">
+                        <div class="p-4 rounded-xl bg-neutral-900 border border-neutral-800 text-center text-white font-bold">
+                            CITIZEN REPORT (Location + Description + Photo + Time)
+                        </div>
+                        <div class="text-center text-neutral-500"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-700 text-center text-white font-bold tracking-wider">
+                            EMSTRAP CONNECT (Geofencing &bull; Deduplication &bull; AI Incident Understanding)
+                        </div>
+                        <div class="text-center text-neutral-500"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-center">
+                            <div class="p-3 rounded-lg bg-neutral-900 border border-neutral-800">
+                                <span class="text-white font-bold block">POLICE</span>
+                                <span class="text-[10px] text-neutral-500">Patrol &bull; Escort</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-neutral-900 border border-neutral-800">
+                                <span class="text-white font-bold block">AMBULANCE</span>
+                                <span class="text-[10px] text-neutral-500">Medical Fleet</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-neutral-900 border border-neutral-800">
+                                <span class="text-white font-bold block">FIRE &amp; RESCUE</span>
+                                <span class="text-[10px] text-neutral-500">Hazmat Sentry</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-neutral-900 border border-neutral-800">
+                                <span class="text-white font-bold block">MUNICIPALITY</span>
+                                <span class="text-[10px] text-neutral-500">Civil Works</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-neutral-900 border border-neutral-800">
+                                <span class="text-white font-bold block">CONTROL ROOM</span>
+                                <span class="text-[10px] text-neutral-500">112 Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Key Benefits -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
+            <div class="max-w-5xl mx-auto space-y-10">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SYSTEM ADVANTAGES</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Key Benefits</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">01</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Faster Information Flow</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Reduce unnecessary communication steps and get critical data to teams faster.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">02</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Better Incident Visibility</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Give authorized personnel a clearer, unified view of active emergencies.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">03</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Reduced Duplicate Reporting</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Multiple reports from the same incident automatically connect to one ticket.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">04</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Location-Based Awareness</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Use spatial coordinates to understand where emergencies cluster across the city.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">05</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Structured Information</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Turn unstructured citizen calls into organized, actionable telemetry.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-neutral-950 border border-neutral-800">
+                        <span class="text-xs font-mono font-bold text-neutral-500 block mb-1">06</span>
+                        <h4 class="text-sm font-bold font-display text-white mb-1">Scalable for Cities</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">Engineered for government and municipal-scale deployment with zero latency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 px-6 md:px-12 bg-black">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">GOVERNMENT BRIEFING</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    Connect Your City to a Smarter Emergency Response
+                </h2>
+                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    Build a more connected emergency-response ecosystem for your city, department or organization.
+                </p>
+                <div class="pt-4 flex flex-wrap justify-center gap-4">
+                    <button onclick="openDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display">
+                        Request a Government Demo
+                    </button>
+                    <a href="index.html#page-contact" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
+                        Contact Advisory Desk
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP CONNECT &bull; B2G EMERGENCY LAYER</span>
+                <span>&copy; 2026 EMSTRAP. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6 text-neutral-400">
+                <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
+                <a href="index.html#page-services" class="hover:text-white transition-colors">Products</a>
+                <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Request Modal -->
+    <div id="demoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-neutral-950 border border-neutral-800 p-8 rounded-3xl max-w-lg w-full space-y-6 text-white shadow-2xl relative">
+            <button onclick="closeDemoModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400">GOVERNMENT BRIEFING</span>
+                <h3 class="text-2xl font-bold font-display text-white mt-1">Request a Government Demo</h3>
+                <p class="text-xs text-neutral-400 font-light mt-1">For Smart City Missions, Police Headquarters, and Municipal Authorities.</p>
+            </div>
+            <form onsubmit="handleDemoSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Official Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="Officer / Director Name" />
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Department / Organization</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="e.g. Police Department / Smart City Mission" />
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Official Email Address</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="official@gov.in" />
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Contact Phone</label>
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="+91 XXXXX XXXXX" />
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display">
+                    Submit Government Briefing Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openDemoModal() {
+            document.getElementById('demoModal').classList.remove('hidden');
+        }
+        function closeDemoModal() {
+            document.getElementById('demoModal').classList.add('hidden');
+        }
+        function handleDemoSubmit(e) {
+            e.preventDefault();
+            alert('Thank you. The EMSTRAP Government Advisory Team has received your briefing request and will reach out within 24 business hours.');
+            closeDemoModal();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMSTRAP Shield | Complete Corporate Safety &amp; Emergency Protection</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#050B14',
+                        brandBlue: '#2C64A1',
+                        emergencyRed: '#C9302C',
+                        warmAmber: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
+
+    <!-- Persistent Navigation Header -->
+    <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a class="flex items-center space-x-3 group" href="index.html">
+                <div class="h-10 flex items-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black font-display tracking-wider text-white">EMSTRAP</span>
+                    <span class="text-[8px] font-bold tracking-widest text-red-400 uppercase">Emergency</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center space-x-4">
+                <a href="index.html#page-services" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-medium text-xs tracking-wide transition-all border border-neutral-800">
+                    <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                    <span>All Products</span>
+                </a>
+                <button onclick="openCorporateDemoModal()" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs tracking-wide transition-all shadow-sm font-display">
+                    <span>Corporate Demo</span>
+                </button>
+                <div class="hidden sm:flex items-center gap-2 pl-2 border-l border-neutral-800">
+                    <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-28 px-6 md:px-12 border-b border-neutral-900 overflow-hidden bg-black">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/15 via-transparent to-transparent pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto relative z-10 text-center space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-[11px] font-mono tracking-widest text-neutral-300 uppercase">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>ENTERPRISE WORKPLACE SAFETY ECOSYSTEM</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-white tracking-tight leading-[1.08]">
+                    EMSTRAP SHIELD
+                </h1>
+
+                <p class="text-xl sm:text-2xl text-neutral-300 font-display font-medium max-w-3xl mx-auto">
+                    Complete Safety &amp; Emergency Protection for Your Organization
+                </p>
+
+                <p class="text-base sm:text-lg text-neutral-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    From employee SOS and ambulance assistance to workplace safety inspections, emergency drills, fire-safety management, first-aid infrastructure, family protection, and centralized reporting—Shield brings everything together through a dedicated Company Safety Dashboard.
+                </p>
+
+                <div class="pt-2 text-xs font-mono text-neutral-300">
+                    One company &bull; One dashboard &bull; One connected safety ecosystem
+                </div>
+
+                <div class="pt-6 flex justify-center gap-4">
+                    <a href="#corporate-plans" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-lg font-display">
+                        Explore Plans
+                    </a>
+                    <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
+                        Request a Corporate Demo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why EMSTRAP Shield Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SAFETY CYCLE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Why EMSTRAP Shield?</h2>
+                    <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mt-3">
+                        Workplace safety doesn't begin when an emergency happens. A truly safe organization prepares before, responds during, and learns after. EMSTRAP Shield connects all three phases.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">01 // PREPARE BEFORE</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Safety inspections, emergency drills, fire-safety inventory, first-aid replenishment, and staff readiness profiles.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">02 // RESPOND DURING</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Instant employee SOS, company notifications, 100% covered ambulance assistance, and hospital emergency pre-alerts.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white">03 // LEARN AFTER</h3>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Incident reports, recurrence patterns, root-cause insights, compliance records, and ongoing safety improvements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Dashboard Modules Grid -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">CENTRALIZED CONTROL CONSOLE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Your Company Safety Dashboard</h2>
+                    <p class="text-sm text-neutral-400 font-light mt-2">Everything your organization needs to manage its safety ecosystem in one unified place.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Employee Management</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Add employees, maintain emergency medical profiles, manage access permissions, and maintain safety records.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Family Management</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Available on Complete Plan: Register up to 4 family members per employee with full covered emergency assistance.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Emergency Alerts &amp; Tracking</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Real-time alerts on active emergencies, live GPS location mapping, response progress, and incident records.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Ambulance Cost Coverage</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">For eligible covered emergencies, EMSTRAP covers ambulance costs. Employee pays ₹0 EMSTRAP service fee.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Hospital Coordination</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Shares relevant context with destination ER. (Medical/treatment expenses remain separate under patient's insurance).</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Safety Inspections &amp; Drills</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Schedule fire drills, facility inspections, audit hazards, and log corrective actions to ensure total compliance.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Fire &amp; First-Aid Infrastructure</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Inventory tracking for fire extinguishers, emergency exits, alarms, and first-aid replenishment status.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Emergency Reports &amp; Insights</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Identify which facilities experience incidents, review historical logs, and measure safety preparedness trends.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
+                        <h3 class="text-base font-bold font-display text-white">Company Emergency Notifications</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Designated admins receive structured alerts: Who &rarr; What &rarr; Where &rarr; Status to coordinate immediate care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate Plans Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]" id="corporate-plans">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">MEMBERSHIP TIERS</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Corporate Safety Plans</h2>
+                    <p class="text-sm text-neutral-400 font-light mt-2">Scalable protection designed for startups, medium enterprises, and large corporate campuses.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- BASIC -->
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4">
+                                ESSENTIAL PROTECTION
+                            </span>
+                            <h3 class="text-2xl font-bold font-display text-white mb-2">Basic Plan</h3>
+                            <p class="text-xs text-neutral-400 font-light mb-6">Essential emergency response for workforce teams.</p>
+                            
+                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
+                                <div class="text-white font-bold">Employee pays: ₹0 fee</div>
+                                <div>&bull; Employee Emergency System &amp; SOS</div>
+                                <div>&bull; Emergency Profile Registry</div>
+                                <div>&bull; Company Emergency Notifications</div>
+                                <div>&bull; Ambulance Coordination Grid</div>
+                                <div>&bull; Eligible Ambulance Cost Covered</div>
+                                <div>&bull; Hospital Coordination Desk</div>
+                                <div>&bull; Company Safety Dashboard</div>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEES ONLY</span>
+                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider border border-neutral-800 transition-all font-display">
+                                Choose Basic
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PROFESSIONAL -->
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-700 flex flex-col justify-between relative shadow-xl">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-black font-bold font-mono text-[10px] uppercase tracking-widest">
+                            MOST POPULAR
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4 mt-2">
+                                WORKPLACE SAFETY
+                            </span>
+                            <h3 class="text-2xl font-bold font-display text-white mb-2">Professional Plan</h3>
+                            <p class="text-xs text-neutral-400 font-light mb-6">Emergency response + complete workplace safety management.</p>
+                            
+                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
+                                <div class="text-white font-bold">Everything in Basic, plus:</div>
+                                <div>&bull; Workplace Safety Inspections</div>
+                                <div>&bull; Emergency &amp; Fire Evacuation Drills</div>
+                                <div>&bull; Fire-Safety Equipment Tracking</div>
+                                <div>&bull; First-Aid Infrastructure Sentry</div>
+                                <div>&bull; Safety Checklists &amp; Audits</div>
+                                <div>&bull; Safety Reports &amp; Pattern Insights</div>
+                                <div>&bull; Employee Safety Records Archive</div>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEES ONLY</span>
+                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display shadow-md">
+                                Choose Professional
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- COMPLETE -->
+                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4">
+                                EMPLOYEE + FAMILY
+                            </span>
+                            <h3 class="text-2xl font-bold font-display text-white mb-2">Complete Plan</h3>
+                            <p class="text-xs text-neutral-400 font-light mb-6">Complete workplace protection with full family coverage.</p>
+                            
+                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
+                                <div class="text-white font-bold">Everything in Professional, plus:</div>
+                                <div>&bull; Up to 4 Registered Family Members</div>
+                                <div>&bull; Family Emergency Access &amp; SOS</div>
+                                <div>&bull; Covered Family Ambulance Services</div>
+                                <div>&bull; Family Hospital Coordination</div>
+                                <div>&bull; Zero fee for covered family access</div>
+                                <div>&bull; Complete Enterprise &amp; Home Grid</div>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEE + 4 FAMILY MEMBERS</span>
+                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider border border-neutral-800 transition-all font-display">
+                                Choose Complete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coverage Breakdown Table -->
+                <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800/80 space-y-6">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">COVERAGE MATRIX</span>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left font-mono text-xs text-neutral-300">
+                            <thead class="border-b border-neutral-800 text-neutral-500 uppercase tracking-wider">
+                                <tr>
+                                    <th class="py-3 px-4">Service</th>
+                                    <th class="py-3 px-4">Coverage Status</th>
+                                    <th class="py-3 px-4">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-900">
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">EMSTRAP Platform Access</td>
+                                    <td class="py-3.5 px-4 text-white">Included</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Under Company Subscription</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Employee SOS &amp; Profiles</td>
+                                    <td class="py-3.5 px-4 text-white">Included</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">All Corporate Plans</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Eligible Ambulance Cost</td>
+                                    <td class="py-3.5 px-4 text-white font-bold">100% Covered by EMSTRAP</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Employee pays ₹0 for covered service</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Hospital Coordination</td>
+                                    <td class="py-3.5 px-4 text-white">Included</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Pre-arrival context &amp; trauma bay alerts</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Hospital Admission &amp; Medical Bills</td>
+                                    <td class="py-3.5 px-4 text-neutral-500">Not Covered</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Handled separately by patient/health insurance</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Workplace Inspections &amp; Drills</td>
+                                    <td class="py-3.5 px-4 text-white">Professional &amp; Complete</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Complete safety management modules</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3.5 px-4 font-bold text-white">Family Coverage</td>
+                                    <td class="py-3.5 px-4 text-white">Complete Plan Only</td>
+                                    <td class="py-3.5 px-4 text-neutral-400">Up to 4 registered family members</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 px-6 md:px-12 bg-black">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">CORPORATE ADVISORY</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    Your People. Your Workplace. One Safety Shield.
+                </h2>
+                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto">
+                    EMSTRAP Shield gives organizations a complete platform for employee emergencies, ambulance assistance, workplace safety, emergency preparedness, and centralized safety management.
+                </p>
+                <div class="pt-4 flex flex-wrap justify-center gap-4">
+                    <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display">
+                        Request a Corporate Demo
+                    </button>
+                    <a href="index.html#page-contact" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
+                        Contact Enterprise Team
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP SHIELD &bull; ENTERPRISE WORKPLACE SAFETY</span>
+                <span>&copy; 2026 EMSTRAP. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6 text-neutral-400">
+                <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
+                <a href="index.html#page-services" class="hover:text-white transition-colors">Products</a>
+                <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Corporate Demo Request Modal -->
+    <div id="corporateDemoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-neutral-950 border border-neutral-800 p-8 rounded-3xl max-w-lg w-full space-y-6 text-white shadow-2xl relative">
+            <button onclick="closeCorporateDemoModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400">ENTERPRISE ONBOARDING</span>
+                <h3 class="text-2xl font-bold font-display text-white mt-1">Request a Corporate Demo</h3>
+                <p class="text-xs text-neutral-400 font-light mt-1">Setup EMSTRAP Shield for your workforce and workplace facilities.</p>
+            </div>
+            <form onsubmit="handleCorporateDemoSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Company Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="e.g. Infosys, Wipro, Bosch, etc." />
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Total Employees</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500">
+                        <option>1 - 50 Employees</option>
+                        <option>51 - 250 Employees</option>
+                        <option>251 - 1,000 Employees</option>
+                        <option>1,000+ Employees</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="name@company.com" />
+                </div>
+                <div>
+                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Contact Phone</label>
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="+91 XXXXX XXXXX" />
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display">
+                    Schedule Enterprise Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openCorporateDemoModal() {
+            document.getElementById('corporateDemoModal').classList.remove('hidden');
+        }
+        function closeCorporateDemoModal() {
+            document.getElementById('corporateDemoModal').classList.add('hidden');
+        }
+        function handleCorporateDemoSubmit(e) {
+            e.preventDefault();
+            alert('Thank you. The EMSTRAP Corporate Safety Advisory Team will contact your HR/Admin team within 24 hours.');
+            closeCorporateDemoModal();
+        }
+    </script>
+</body>
+</html>

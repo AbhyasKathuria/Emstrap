@@ -1,0 +1,474 @@
+/* ===== EMSTRAP base styles ===== */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #1c2942 transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050B14;
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+.font-display {
+    font-family: 'Sora', sans-serif;
+}
+
+/* Remove default outline/border on click or focus globally */
+*:focus, *:active, button:focus, div:focus, a:focus, [role="button"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ===== Glass panel ===== */
+.glass-panel {
+    background: linear-gradient(135deg, rgba(25, 35, 55, 0.85) 0%, rgba(18, 25, 40, 0.9) 100%);
+    backdrop-filter: blur(30px) saturate(130%);
+    -webkit-backdrop-filter: blur(30px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0px rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 16px 50px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Ambient glowing blobs ===== */
+.glowing-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatBlob 25s infinite alternate ease-in-out;
+}
+
+.blob-blue {
+    background: radial-gradient(circle, #2C64A1 0%, transparent 80%);
+    width: 50vw;
+    height: 50vw;
+    top: -10%;
+    left: -10%;
+}
+
+.blob-red {
+    background: radial-gradient(circle, #C9302C 0%, transparent 80%);
+    width: 45vw;
+    height: 45vw;
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+@keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(6vw, -6vh) scale(1.1); }
+    100% { transform: translate(-3vw, 10vh) scale(0.9); }
+}
+
+/* ===== Hero section ===== */
+.hero-viewport {
+    position: relative;
+    width: 100%;
+    min-height: 68vh;
+    overflow: hidden;
+    background: #050B14;
+}
+
+.hero-bg-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-tint {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(5, 11, 20, 0.95) 0%, rgba(5, 11, 20, 0.8) 36%, rgba(5, 11, 20, 0.25) 70%, rgba(5, 11, 20, 0.08) 100%),
+                linear-gradient(0deg, #050B14 0%, transparent 22%, transparent 80%, rgba(5, 11, 20, 0.7) 100%);
+    pointer-events: none;
+}
+
+/* =====================================================================
+   Staggered scroll-reveal cards
+   NOTE: the authoritative timing lives in the <style> block in
+   index.html (it loads after this stylesheet and wins the cascade).
+   Kept in sync here — slowed from 0.85s/1.2s to 1.9s and the overshoot
+   softened so the reveal reads as a gentle rise instead of a "pop".
+   ===================================================================== */
+.wave-card-node {
+    opacity: 0;
+    transform: translateY(70px) rotateX(-10deg);
+    will-change: transform, opacity;
+}
+
+.wave-card-node.wave-animate {
+    animation: cardWaveRipple 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cardWaveRipple {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.94) rotateX(-12deg) rotateY(-3deg);
+    }
+    55% {
+        opacity: 0.85;
+        transform: translateY(-6px) scale(1.008) rotateX(2deg) rotateY(1deg);
+    }
+    78% {
+        transform: translateY(2px) scale(0.998) rotateX(-1deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0) rotateY(0);
+    }
+}
+
+/* ===== Success modal ===== */
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* =====================================================================
+   Anchor offset so headings never sit under the fixed header.
+   Fixed header is ~96-104px tall (logo + padding), so every section
+   including the hero now reserves clearance above it.
+   ===================================================================== */
+#page-landing,
+#page-home,
+#page-about,
+#page-solutions,
+#page-products,
+#page-demo,
+#page-contact {
+    scroll-margin-top: 110px;
+}
+
+/* ===== Nav active underline ===== */
+.nav-link {
+    position: relative;
+    color: #9CA3AF;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2C64A1 !important;
+}
+
+.nav-link.active {
+    color: #2C64A1 !important;
+}
+
+/* ===== Interactive Hero Map Styling ===== */
+.leaflet-container {
+    background: #050B14 !important;
+}
+
+/* Custom glowing effect for the ambulance route polyline */
+.neon-route-glow {
+    filter: drop-shadow(0 0 4px #C9302C) drop-shadow(0 0 8px #C9302C);
+    animation: neonPulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes neonPulse {
+    from {
+        opacity: 0.75;
+        stroke-width: 5;
+    }
+    to {
+        opacity: 1;
+        stroke-width: 7;
+    }
+}
+
+.leaflet-bar {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(10, 20, 38, 0.8) !important;
+}
+
+.leaflet-bar a {
+    background-color: transparent !important;
+    color: #fff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.leaflet-bar a:hover {
+    background-color: rgba(44, 100, 161, 0.2) !important;
+}
+
+/* ===== Light Theme Alternating Sections ===== */
+.light-theme {
+    background-color: #F4F7FB !important;
+    background-image: radial-gradient(circle at 10% 20%, rgba(44, 100, 161, 0.03) 0%, transparent 80%),
+                      radial-gradient(circle at 90% 80%, rgba(201, 48, 44, 0.02) 0%, transparent 80%) !important;
+    color: #1E293B !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme h1, 
+.light-theme h2, 
+.light-theme h3, 
+.light-theme h4,
+.light-theme h5,
+.light-theme h6,
+.light-theme .text-white {
+    color: #0F172A !important;
+}
+
+.light-theme .text-brandBlue {
+    color: #2C64A1 !important;
+}
+.light-theme .text-emergencyRed {
+    color: #C9302C !important;
+}
+
+.light-theme p, 
+.light-theme .text-slate-300, 
+.light-theme .text-slate-400,
+.light-theme .text-slate-200 {
+    color: #475569 !important;
+}
+
+/* Light theme cards styling override */
+.light-theme .glass-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(240, 245, 255, 0.85) 100%) !important;
+    border: 1px solid rgba(44, 100, 161, 0.15) !important;
+    box-shadow: 
+        0 12px 40px rgba(44, 100, 161, 0.06),
+        inset 0 1px 0px rgba(255, 255, 255, 0.9) !important;
+}
+
+.light-theme .glass-panel-hover:hover {
+    border-color: rgba(44, 100, 161, 0.3) !important;
+    box-shadow: 
+        0 16px 50px rgba(44, 100, 161, 0.12),
+        0 0 35px rgba(44, 100, 161, 0.04) !important;
+}
+
+.light-theme .text-slate-900 {
+    color: #0F172A !important;
+}
+.light-theme .text-slate-700 {
+    color: #334155 !important;
+}
+.light-theme .text-slate-800 {
+    color: #1E293B !important;
+}
+
+.light-theme a.border-white\/20,
+.light-theme a.border-white\/10 {
+    border-color: rgba(15, 23, 42, 0.15) !important;
+    color: #0F172A !important;
+}
+.light-theme a.border-white\/20:hover,
+.light-theme a.border-white\/10:hover {
+    background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light-theme .border-white\/5,
+.light-theme .border-white\/10,
+.light-theme .border-white\/15,
+.light-theme .border-white\/20 {
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Protect header components from light theme text color override */
+header .text-white,
+header span.text-white,
+header span.text-xl,
+header a,
+header .nav-link {
+    color: #ffffff !important;
+}
+header .nav-link {
+    color: #9CA3AF !important;
+}
+header .nav-link:hover,
+header .nav-link.active {
+    color: #2C64A1 !important;
+}
+header .text-red-400 {
+    color: #f87171 !important;
+}
+/* ===== SVG Siren Flash Animation ===== */
+@keyframes sirenFlash {
+    0% { fill: #EF4444; filter: drop-shadow(0 0 8px #EF4444); }
+    100% { fill: #3B82F6; filter: drop-shadow(0 0 8px #3B82F6); }
+}
+.siren-flash {
+    animation: sirenFlash 0.3s infinite alternate;
+}
+
+/* ===== How It Works Light Section High-Contrast Typography ===== */
+#page-how-it-works,
+.light-theme #page-how-it-works {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+#page-how-it-works h2,
+.light-theme #page-how-it-works h2 {
+    color: #0A1128 !important;
+}
+
+#page-how-it-works h4,
+.light-theme #page-how-it-works h4 {
+    color: #0F172A !important;
+}
+
+#page-how-it-works p,
+.light-theme #page-how-it-works p {
+    color: #475569 !important;
+}
+
+#page-how-it-works .text-slate-500,
+#page-how-it-works .text-slate-400,
+#page-how-it-works .font-mono {
+    color: #64748B !important;
+}
+
+#page-how-it-works i,
+.light-theme #page-how-it-works i {
+    color: #0F172A !important;
+}
+
+#page-how-it-works .step-badge,
+.light-theme #page-how-it-works .step-badge {
+    background-color: #0A1128 !important;
+    color: #FFFFFF !important;
+}
+
+/* ===== Moving Belt Marquee Ticker ===== */
+@keyframes beltMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.moving-belt-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.moving-belt-track {
+    transform: translate3d(0, 0, 0);
+    display: flex;
+    align-items: flex-start;
+    gap: 3.5rem;
+    width: max-content;
+    animation: beltMarquee 28s linear infinite;
+    will-change: transform;
+}
+
+.moving-belt-track:hover {
+    animation-play-state: paused;
+}
+
+.moving-belt-item {
+    flex-shrink: 0;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ===== Who We Serve Carousel Text Overrides (Keep Text White on Dark Image Cards) ===== */
+.light-theme #whoWeServeTrack h3,
+.light-theme #whoWeServeTrack h4,
+.light-theme #whoWeServeTrack .text-white,
+#whoWeServeTrack h3,
+#whoWeServeTrack h4,
+#whoWeServeTrack .text-white {
+    color: #FFFFFF !important;
+}
+
+.light-theme #whoWeServeTrack p,
+.light-theme #whoWeServeTrack .text-slate-200,
+.light-theme #whoWeServeTrack .text-slate-300,
+#whoWeServeTrack p,
+#whoWeServeTrack .text-slate-200,
+#whoWeServeTrack .text-slate-300 {
+    color: #E2E8F0 !important;
+}
+
+
+/* ===== Smooth 3D Sliding Carousel Card Styles ===== */
+.who-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(720px, calc(100vw - 32px));
+    height: 460px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    will-change: transform, opacity;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    background: #050B14;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 0.5s ease;
+}
+
+@media (max-width: 767px) {
+    .who-card {
+        height: 480px;
+        width: calc(100vw - 32px);
+    }
+}
+
+.who-card * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+/* ===== Elite Monochrome Theme Specifications ===== */
+:root {
+    --bg-obsidian: #000000;
+    --bg-card: #0A0A0A;
+    --border-subtle: #262626;
+    --text-primary: #FFFFFF;
+    --text-muted: #A3A3A3;
+}
+
+.hero-pillar-tab {
+    cursor: pointer;
+    user-select: none;
+}
+
+#heroSliderTrack {
+    will-change: transform;
+}
+
+/* Institutional Monochrome Card Grid */
+#page-who-we-serve .group:hover {
+    box-shadow: 0 16px 40px rgba(255, 255, 255, 0.04);
+}

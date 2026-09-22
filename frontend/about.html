@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMSTRAP - About Us</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#050B14',
+                        brandBlue: '#2C64A1',
+                        brandAccent: '#22C55E',
+                        emergencyRed: '#C9302C',
+                        warmAmber: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        *:focus, *:active, button:focus, div:focus, a:focus, [role="button"]:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        body {
+            background-color: #050B14;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(44, 100, 161, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.04) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* =====================================================================
+           Staggered scroll-reveal cards
+           ===================================================================== */
+        .wave-card-node {
+            opacity: 0;
+            transform: translateY(70px) rotateX(-10deg);
+            will-change: transform, opacity;
+        }
+
+        .wave-card-node.wave-animate {
+            animation: cardWaveRipple 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes cardWaveRipple {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.94) rotateX(-12deg) rotateY(-3deg);
+            }
+            55% {
+                opacity: 0.85;
+                transform: translateY(-6px) scale(1.008) rotateX(2deg) rotateY(1deg);
+            }
+            78% {
+                transform: translateY(2px) scale(0.998) rotateX(-1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0) rotateY(0);
+            }
+        }
+    </style>
+
+    <!-- GSAP core & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between light-theme">
+
+    <!-- Top Glow Line -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-brandBlue via-brandAccent to-brandBlue"></div>
+
+    <!-- Header / Navigation -->
+    <header class="py-6 px-6 md:px-12 border-b border-white/5 bg-brandDark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a class="flex items-center space-x-3 group" href="index.html">
+                <div class="h-10 flex items-center transition-transform duration-300 group-hover:scale-105">
+                    <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold font-display tracking-wider text-white">EMSTRAP</span>
+                    <span class="text-[8px] font-bold tracking-widest text-red-400 uppercase">Emergency</span>
+                </div>
+            </a>
+            
+            <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs tracking-wide transition-all duration-300 border border-white/10">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    
+            <!-- Scroll Progress Ambulance Track -->
+            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-white/10">
+                <div id="headerAmbulance" class="absolute bottom-0 w-8 h-6 transition-all duration-75 ease-out" style="left: 0px; z-index: 50; margin-bottom: 1px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 6px #C9302C);">
+                        <path fill="#C9302C" d="M128 32C92.7 32 64 60.7 64 96V352h48c0 26.5 21.5 48 48 48s48-21.5 48-48H384c0 26.5 21.5 48 48 48s48-21.5 48-48h48c35.3 0 64-28.7 64-64V256h-8V224H520c-13.3 0-24-10.7-24-24V144c0-8.8-7.2-16-16-16H384V96c0-35.3-28.7-64-64-64H128zM192 128H288v48H192V128zm0 96H288v48H192V224zM536 256H592c4.4 0 8 3.6 8 8V352c0 8.8-7.2 16-16 16H536V256zM160 384c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16zm272 0c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16z"/>
+                        <circle cx="320" cy="20" r="28" class="siren-flash" />
+                    </svg>
+                </div>
+                <div id="headerShieldReaction" class="absolute bottom-6 right-8 w-5 h-5 flex items-center justify-center bg-[#2C64A1] rounded-full border border-white/20 p-1 transition-all duration-300 scale-0 opacity-0 translate-y-2 z-55 shadow-[0_0_10px_rgba(44,100,161,0.6)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full">
+                        <path fill="#ffffff" d="M256 0c4.6 0 9.2 1 13.4 2.9L452.9 82.8c22 9.3 35.1 31.7 35.1 55.4l0 102.5c0 141.8-84.4 269-218.1 328.3c-8.9 3.9-19 3.9-27.9 0C108.4 509.8 24 382.5 24 240.7l0-102.5c0-23.7 13.1-46.1 35.1-55.4L242.6 2.9C246.8 1 251.4 0 256 0z"/>
+                    </svg>
+                </div>
+                <div class="absolute bottom-0 right-0 w-6 h-5 flex items-center justify-center" style="z-index: 45; margin-bottom: 1px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 4px #C9302C);">
+                        <path fill="#C9302C" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h74.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V416H96c-17.7 0-32-14.3-32-32V298.7zm426.7-106.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V416H416c-17.7 0-32-14.3-32-32V298.7c0-58.9 47.8-106.7 106.7-106.7z"/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow py-16 px-6 md:px-12 max-w-5xl mx-auto w-full space-y-16">
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mx-auto space-y-4 wave-card-node">
+            <span class="text-xs font-bold uppercase text-brandBlue tracking-wider font-display font-mono">Company Profile</span>
+            <h1 class="text-4xl md:text-5xl font-black font-display text-white mt-1 leading-tight">About EMSTRAP</h1>
+            <p class="text-slate-400 text-base font-light leading-relaxed">
+                Building the Future of Emergency Response
+            </p>
+        </div>
+
+        <!-- Section 1: Main Story and Core Pillars -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start wave-card-node">
+            <!-- Left 2 columns: Mission, Vision, and Details -->
+            <div class="lg:col-span-2 space-y-12">
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold font-display text-white border-b border-white/5 pb-3">Our Identity</h2>
+                    <div class="space-y-6 text-sm text-slate-350 leading-relaxed font-light">
+                        <p>
+                            Emergency situations demand speed, coordination, and accurate decision-making. However, today's emergency response systems often operate in isolation, resulting in delayed communication, slower response times, and missed opportunities to save lives.
+                        </p>
+                        <p>
+                            EMSTRAP was established with a vision to modernise emergency response through technology. By integrating Artificial Intelligence, real-time communication, GPS tracking, and intelligent coordination into a single platform, EMSTRAP enables seamless collaboration between citizens, ambulance services, hospitals, police departments, traffic authorities, and organisations.
+                        </p>
+                        <p>
+                            Our ecosystem is designed not only to respond faster during emergencies but also to improve preparedness, situational awareness, and operational efficiency for all stakeholders. Whether it is a medical emergency, workplace incident, or city-wide emergency coordination, EMSTRAP provides the technology needed to make emergency response smarter, faster, and more reliable.
+                        </p>
+                        <p>
+                            At EMSTRAP, we believe that technology should not just connect systems—it should help save lives.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission & Vision cards side-by-side -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 bg-slate-950/20">
+                        <h3 class="text-base font-bold font-display text-white mb-3 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brandBlue rounded-full"></span> Our Mission
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light">
+                            To build an intelligent emergency response ecosystem that enables faster medical assistance, improves communication between emergency services, and ensures timely care through innovative technology.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 bg-slate-950/20">
+                        <h3 class="text-base font-bold font-display text-white mb-3 flex items-center gap-2">
+                            <span class="w-1.5 h-4 bg-brandAccent rounded-full"></span> Our Vision
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light">
+                            To become India's leading AI-powered emergency response platform, empowering healthcare providers, emergency responders, government agencies, and enterprises with intelligent solutions that make communities safer and emergency care more accessible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Problems, Solutions, and Certifications -->
+            <div class="space-y-8">
+                <!-- Certifications block -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold font-display text-white border-b border-white/5 pb-3">Registration</h2>
+                    <div class="space-y-4 text-xs text-slate-350 font-light leading-relaxed">
+                        <p>
+                            <strong>MSME Registered &amp; Certified:</strong> EMSTRAP is officially registered and certified under the Ministry of Micro, Small &amp; Medium Enterprises, Government of India.
+                        </p>
+                        <div class="text-[10px] text-slate-500 font-mono">
+                            Registration No: <span class="text-brandBlue font-bold">UDYAM-KR-03-0585489</span>
+                        </div>
+                        <!-- Udyam certificate image with NO border -->
+                        <div class="rounded-xl overflow-hidden p-1.5 bg-slate-950/60 max-w-xs mx-auto">
+                            <img src="udyam-certificate.jpg" alt="UDYAM Registration Certificate" class="zoomable-img w-full max-h-56 object-contain rounded cursor-zoom-in transition-transform duration-300 hover:scale-[1.02]" />
+                        </div>
+                        <div class="text-center text-[9px] text-slate-500 font-mono tracking-wider uppercase">
+                            Click Certificate to View Fullscreen
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Target / Highlights -->
+                <div class="space-y-4 pt-4 border-t border-white/5">
+                    <h3 class="text-sm font-bold font-display text-white uppercase tracking-wider">Key Focus Areas</h3>
+                    <ul class="space-y-2 text-xs text-slate-400 font-light">
+                        <li class="flex items-start gap-2">
+                            <span class="text-brandBlue text-xs pt-0.5">•</span>
+                            <span>Urban traffic priority corridors clearing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-brandBlue text-xs pt-0.5">•</span>
+                            <span>Hospital emergency department pre-alerts</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-brandBlue text-xs pt-0.5">•</span>
+                            <span>Intelligent multi-agency coordination models</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Detailed Problems and Solutions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-white/5 wave-card-node">
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold font-display text-white flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-red-500"></i> The Problem We Are Solving
+                </h3>
+                <ul class="space-y-3.5 text-sm text-slate-300 font-light">
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-500 font-bold shrink-0 pt-0.5">•</span>
+                        <span>Delayed ambulance arrival due to heavy urban traffic congestion.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-500 font-bold shrink-0 pt-0.5">•</span>
+                        <span>Limited communication and telemetry sharing between hospital ERs and incoming ambulances.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-500 font-bold shrink-0 pt-0.5">•</span>
+                        <span>Lack of unified, real-time map visibility during city-wide emergencies.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-500 font-bold shrink-0 pt-0.5">•</span>
+                        <span>Manual dispatching and calling leading to cumulative administrative delay.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold font-display text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-green-500"></i> Our Solution
+                </h3>
+                <p class="text-sm text-slate-355 leading-relaxed font-light">
+                    EMSTRAP provides a unified emergency response ecosystem that digitally connects every stakeholder involved in emergency care.
+                    <br/><br/>
+                    Through intelligent automation, AI-powered decision support, real-time GPS tracking, and seamless communication, EMSTRAP enables faster emergency detection, efficient dispatch, improved hospital preparedness, and enhanced collaboration between healthcare providers, emergency responders, government authorities, and organisations.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 md:px-12 border-t border-white/5 bg-brandDark text-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-slate-500 font-light">&copy; 2026 EMSTRAP. All Rights Reserved.</span>
+            <div class="flex items-center space-x-6 text-xs text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span>&bull;</span>
+                <a href="about.html" class="hover:text-white transition-colors text-white font-medium">About Us</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn" aria-label="Official EMSTRAP LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram" aria-label="Official EMSTRAP Instagram">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Full Screen Image Lightbox -->
+    <div id="imageZoomModal" class="fixed inset-0 bg-black/90 z-[999] hidden flex items-center justify-center p-4 transition-all duration-300">
+        <button onclick="closeZoomModal()" class="absolute top-6 right-6 text-white/60 hover:text-white text-3xl font-light transition-colors p-2" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] flex items-center justify-center">
+            <img id="zoomedImage" src="" alt="Full Screen Preview" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95" />
+        </div>
+    </div>
+
+    <script>
+        let globalWaveObserver;
+        let scrollDirection = 'down';
+        let lastScrollY = window.scrollY;
+
+        function refreshWaveObserver() {
+            // Force reset any nodes before animation
+            document.querySelectorAll('.wave-card-node').forEach(node => {
+                node.classList.remove('wave-animate');
+            });
+
+            if (globalWaveObserver) globalWaveObserver.disconnect();
+
+            // Use GSAP ScrollTrigger for true parallax cards
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                // Kill existing ScrollTriggers on wave-card-node to prevent duplicate overlays on resize
+                ScrollTrigger.getAll().forEach(trigger => {
+                    if (trigger.trigger && trigger.trigger.classList && trigger.trigger.classList.contains('wave-card-node')) {
+                        trigger.kill();
+                    }
+                });
+
+                document.querySelectorAll('.wave-card-node').forEach((card, index) => {
+                    // Set initial state
+                    gsap.set(card, { opacity: 0, y: 70, transformPerspective: 1000, rotateX: -10 });
+
+                    // Parallax ScrollTrigger animation
+                    gsap.to(card, {
+                        opacity: 1,
+                        y: 0,
+                        rotateX: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 95%",
+                            end: "bottom 15%",
+                            scrub: 0.8, // ties scroll position to animation progress for true parallax
+                            toggleActions: "play none none none"
+                        }
+                    });
+                });
+                return;
+            }
+
+            // Fallback: standard IntersectionObserver
+            const waveCards = document.querySelectorAll('.wave-card-node');
+            const observerOptions = {
+                root: null,
+                threshold: 0.01,
+                rootMargin: "0px 0px -10px 0px"
+            };
+
+            globalWaveObserver = new IntersectionObserver((entries) => {
+                const entering = entries.filter(e => e.isIntersecting);
+
+                if (entering.length > 0) {
+                    entering.forEach((entry, index) => {
+                        if (!entry.target.classList.contains('wave-animate')) {
+                            entry.target.classList.add('wave-animate');
+                            globalWaveObserver.unobserve(entry.target);
+                        }
+                    });
+                }
+            }, observerOptions);
+
+            waveCards.forEach(card => globalWaveObserver.observe(card));
+        }
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY) {
+                scrollDirection = 'down';
+            } else if (currentScrollY < lastScrollY) {
+                scrollDirection = 'up';
+            }
+            lastScrollY = currentScrollY;
+        });
+
+        function openZoomModal(imgSrc) {
+            const modal = document.getElementById('imageZoomModal');
+            const img = document.getElementById('zoomedImage');
+            img.src = imgSrc;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                img.classList.remove('scale-95');
+                img.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeZoomModal() {
+            const modal = document.getElementById('imageZoomModal');
+            const img = document.getElementById('zoomedImage');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 150);
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.zoomable-img');
+            images.forEach(img => {
+                img.classList.add('cursor-zoom-in');
+                img.addEventListener('click', (e) => {
+                    openZoomModal(e.target.src);
+                });
+            });
+            refreshWaveObserver();
+        });
+    
+        function trackScrollHeaderAmbulance() {
+            const ambulance = document.getElementById('headerAmbulance');
+            const shield = document.getElementById('headerShieldReaction');
+            if (!ambulance) return;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            // Prevent going out of screen boundaries
+            ambulance.style.left = `calc(${scrollPercent}% - ${56 * (scrollPercent / 100)}px)`;
+
+            // Pop shield sign reaction when ambulance reaches the end
+            if (shield) {
+                if (scrollPercent >= 98) {
+                    shield.classList.add('scale-110', 'opacity-100', 'translate-y-0');
+                    shield.classList.remove('scale-0', 'opacity-0', 'translate-y-2');
+                } else {
+                    shield.classList.remove('scale-110', 'opacity-100', 'translate-y-0');
+                    shield.classList.add('scale-0', 'opacity-0', 'translate-y-2');
+                }
+            }
+        }
+        window.addEventListener('scroll', trackScrollHeaderAmbulance);
+        window.addEventListener('resize', trackScrollHeaderAmbulance);
+        // Initial call
+        trackScrollHeaderAmbulance();
+
+        // Sound effects disabled
+        
+        // Click sound listener removed
+</script>
+
+</body>
+</html>
