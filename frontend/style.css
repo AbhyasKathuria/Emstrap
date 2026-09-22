@@ -472,3 +472,76 @@ header .text-red-400 {
 #page-who-we-serve .group:hover {
     box-shadow: 0 16px 40px rgba(255, 255, 255, 0.04);
 }
+
+/* ===== Auto-moving Services Slider ===== */
+.services-slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.services-slider-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: servicesBelt 25s linear infinite;
+    will-change: transform;
+}
+
+.services-slider-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes servicesBelt {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ===== Solutions That Save Lives Content Belt ===== */
+.content-belt-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.content-belt-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: contentBeltScroll 35s linear infinite;
+    will-change: transform;
+}
+
+.content-belt-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes contentBeltScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.content-belt-card {
+    flex-shrink: 0;
+    width: 360px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.content-belt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+    border-color: #CBD5E1;
+}
+

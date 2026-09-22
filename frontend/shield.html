@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
+<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white" style="background-image: linear-gradient(rgba(5, 11, 20, 0.90), rgba(5, 11, 20, 0.95)), url('shield-smartcity.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
 
     <!-- Persistent Navigation Header -->
     <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
@@ -47,7 +47,6 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="text-xl font-black font-display tracking-wider text-white">EMSTRAP</span>
-                    <span class="text-[8px] font-bold tracking-widest text-red-400 uppercase">Emergency</span>
                 </div>
             </a>
             
@@ -365,6 +364,33 @@
             </div>
         </section>
 
+        <!-- Who We Serve - Interactive 3D Sliding Cards Carousel -->
+        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-neutral-950/80 backdrop-blur-md relative overflow-hidden" id="page-who-we-serve">
+            <div class="max-w-5xl mx-auto mb-10 text-center">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SECTOR ADOPTION</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">Who We Serve</h2>
+                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto mt-3">
+                    From enterprise facilities to healthcare networks and public infrastructure, EMSTRAP Shield delivers proactive protection and zero-lag response.
+                </p>
+            </div>
+
+            <!-- Carousel Viewport -->
+            <div class="relative w-full max-w-6xl mx-auto overflow-hidden py-4" id="whoWeServeContainer" style="height: 520px;">
+                <div id="whoWeServeTrack" class="relative w-full h-full"></div>
+
+                <!-- Nav Controls -->
+                <button onclick="whoWeServePrev()" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-white hover:text-black text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-30 transition-all shadow-xl hover:scale-110" aria-label="Previous slide">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="whoWeServeNext()" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-white hover:text-black text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-30 transition-all shadow-xl hover:scale-110" aria-label="Next slide">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Indicator Dots -->
+            <div class="flex items-center justify-center gap-2 mt-6 z-30 relative" id="whoWeServeIndicators"></div>
+        </section>
+
         <!-- CTA Section -->
         <section class="py-24 px-6 md:px-12 bg-black">
             <div class="max-w-4xl mx-auto text-center space-y-6">
@@ -463,6 +489,309 @@
             alert('Thank you. The EMSTRAP Corporate Safety Advisory Team will contact your HR/Admin team within 24 hours.');
             closeCorporateDemoModal();
         }
+
+        // =====================================================================
+        // EMSTRAP Shield: Who We Serve Smooth 3D Belt Carousel Engine
+        // =====================================================================
+        const whoWeServeData = [
+            {
+                title: "Hospitals & Clinics",
+                description: "Pre-arrival trauma ER patient telemetry, automated trauma bed allocation, and direct physician triage preparation before patient arrival.",
+                metric1Val: "40%",
+                metric1Lbl: "faster triage prep",
+                metric2Val: "< 90 Sec",
+                metric2Lbl: "bed reservation",
+                bgGradient: "linear-gradient(135deg, #0A192F 0%, #050B14 100%)",
+                badge: "HEALTHCARE NETWORKS",
+                image: "images/hospital-er-operations.jpg"
+            },
+            {
+                title: "Ambulance Providers",
+                description: "Sub-second fleet GPS tracking, intelligent automated dispatch matching, and real-time hospital route optimization.",
+                metric1Val: "100%",
+                metric1Lbl: "automated dispatch",
+                metric2Val: "Sub-sec",
+                metric2Lbl: "GPS telemetry",
+                bgGradient: "linear-gradient(135deg, #2D1E2F 0%, #050B14 100%)",
+                badge: "EMERGENCY FLEETS",
+                image: "ambulance-providers.png"
+            },
+            {
+                title: "Police Departments",
+                description: "Law enforcement CAD integration, automated emergency transit escort notification, and dynamic geospatial crime & trauma incident mapping.",
+                metric1Val: "< 400ms",
+                metric1Lbl: "CAD sync latency",
+                metric2Val: "100%",
+                metric2Lbl: "geo-mapping coverage",
+                bgGradient: "linear-gradient(135deg, #1A202C 0%, #050B14 100%)",
+                badge: "LAW ENFORCEMENT CAD",
+                image: "police-control.jpg"
+            },
+            {
+                title: "Traffic Management",
+                description: "Automated green corridor traffic signal preemption to clear congested city arteries dynamically for incoming emergency vehicles.",
+                metric1Val: "120+",
+                metric1Lbl: "corridors enabled",
+                metric2Val: "42%",
+                metric2Lbl: "transit time saved",
+                bgGradient: "linear-gradient(135deg, #0F172A 0%, #050B14 100%)",
+                badge: "CIVIL INFRASTRUCTURE",
+                image: "images/traffic-police-consultation.jpg"
+            },
+            {
+                title: "Government Agencies",
+                description: "Multi-agency emergency dispatch synchronizer, inter-departmental crisis incident commander, and unified civic resilience data grids.",
+                metric1Val: "100%",
+                metric1Lbl: "agency synchronization",
+                metric2Val: "< 1 Sec",
+                metric2Lbl: "incident propagation",
+                bgGradient: "linear-gradient(135deg, #1C1917 0%, #050B14 100%)",
+                badge: "PUBLIC SECTOR & DEFENSE",
+                image: "government.jpg"
+            },
+            {
+                title: "Enterprise Campuses",
+                description: "Workplace hazard & casualty monitoring, automated corporate employee SOS escalation, and direct private ambulance fleet dispatch.",
+                metric1Val: "Zero",
+                metric1Lbl: "out-of-pocket employee fee",
+                metric2Val: "100%",
+                metric2Lbl: "workforce protection",
+                bgGradient: "linear-gradient(135deg, #1E1B4B 0%, #050B14 100%)",
+                badge: "CORPORATE SAFETY",
+                image: "shield-corporate.png"
+            },
+            {
+                title: "Industrial & Manufacturing",
+                description: "Plant casualty telemetry, occupational hazard automated containment protocols, and direct hazardous incident EMS dispatching.",
+                metric1Val: "35%",
+                metric1Lbl: "incident escalation cut",
+                metric2Val: "24/7",
+                metric2Lbl: "continuous monitoring",
+                bgGradient: "linear-gradient(135deg, #2A1810 0%, #050B14 100%)",
+                badge: "INDUSTRIAL SAFETY",
+                image: "shield-manufacturing.png"
+            },
+            {
+                title: "Educational Institutions",
+                description: "Campus-wide emergency response infrastructure protecting students, faculty, and administrative staff with rapid medical escalation.",
+                metric1Val: "50+",
+                metric1Lbl: "campuses secured",
+                metric2Val: "< 90 Sec",
+                metric2Lbl: "campus SOS response",
+                bgGradient: "linear-gradient(135deg, #132E35 0%, #050B14 100%)",
+                badge: "CAMPUS DEFENSE GRID",
+                image: "campus.jpg"
+            },
+            {
+                title: "Smart Cities",
+                description: "Centralized urban safety command integration, IoT sensor synchronization, and citywide civil protection monitoring.",
+                metric1Val: "Multi-Hub",
+                metric1Lbl: "smart city sync",
+                metric2Val: "Zero",
+                metric2Lbl: "data latency",
+                bgGradient: "linear-gradient(135deg, #0B1E36 0%, #050B14 100%)",
+                badge: "MUNICIPAL IOT",
+                image: "shield-smartcity.jpg"
+            }
+        ];
+
+        let whoWeServeCurrentIndex = 0;
+        let whoWeServeCardsInitialized = false;
+        let whoWeServePrevDiffs = {};
+        let whoWeServeAutoTimer = null;
+
+        function startWhoWeServeAutoScroll() {
+            stopWhoWeServeAutoScroll();
+            whoWeServeAutoTimer = setInterval(() => {
+                whoWeServeNext();
+            }, 5000);
+        }
+
+        function stopWhoWeServeAutoScroll() {
+            if (whoWeServeAutoTimer) {
+                clearInterval(whoWeServeAutoTimer);
+                whoWeServeAutoTimer = null;
+            }
+        }
+
+        function initWhoWeServeCarousel() {
+            const track = document.getElementById('whoWeServeTrack');
+            if (!track) return;
+
+            track.innerHTML = whoWeServeData.map((item, idx) => `
+                <div id="whoCard_${idx}" class="who-card select-none" data-index="${idx}">
+                    <img src="${item.image}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] contrast-110 pointer-events-none" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/25 pointer-events-none"></div>
+
+                    <!-- Full Active Content (visible when active center card) -->
+                    <div class="card-full-content absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10 transition-opacity duration-300">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-6">
+                            <div class="md:col-span-8">
+                                <span class="text-[10px] font-mono tracking-widest text-emerald-400 font-bold uppercase block mb-2">${item.badge}</span>
+                                <h3 class="text-2xl md:text-4xl font-bold font-display tracking-tight mb-3 drop-shadow-md text-white">
+                                    ${item.title}
+                                </h3>
+                                <p class="text-xs md:text-sm leading-relaxed font-light drop-shadow text-slate-200 max-w-xl">
+                                    ${item.description}
+                                </p>
+                            </div>
+                            <div class="md:col-span-4 flex items-center md:justify-end gap-6 border-t md:border-t-0 md:border-l border-white/20 pt-4 md:pt-0 md:pl-6">
+                                <div>
+                                    <span class="text-2xl md:text-3xl font-black font-display block tracking-tight text-white">${item.metric1Val}</span>
+                                    <span class="text-[10px] uppercase tracking-wider font-mono font-medium text-slate-300">${item.metric1Lbl}</span>
+                                </div>
+                                <div class="h-8 w-[1px] bg-white/20"></div>
+                                <div>
+                                    <span class="text-2xl md:text-3xl font-black font-display block tracking-tight text-white">${item.metric2Val}</span>
+                                    <span class="text-[10px] uppercase tracking-wider font-mono font-medium text-slate-300">${item.metric2Lbl}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center pt-2">
+                            <button onclick="openCorporateDemoModal()" class="px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest shadow-xl inline-flex items-center gap-2 hover:scale-105 transition-all duration-300 bg-white text-black font-display">
+                                <span>Request Deployment</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Peek Content (visible on side peek cards) -->
+                    <div class="card-peek-content absolute inset-0 flex flex-col justify-center items-center p-6 z-10 transition-opacity duration-300 cursor-pointer" onclick="whoWeServeGoTo(${idx})">
+                        <span class="text-[9px] font-mono tracking-widest text-emerald-400 font-bold uppercase mb-1">${item.badge}</span>
+                        <h4 class="text-lg md:text-xl font-bold font-display leading-tight drop-shadow-md text-center px-4 text-white">${item.title}</h4>
+                    </div>
+                </div>
+            `).join('');
+
+            track.addEventListener('mouseenter', stopWhoWeServeAutoScroll);
+            track.addEventListener('mouseleave', startWhoWeServeAutoScroll);
+            track.addEventListener('touchstart', stopWhoWeServeAutoScroll, { passive: true });
+            track.addEventListener('touchend', startWhoWeServeAutoScroll, { passive: true });
+
+            whoWeServeCardsInitialized = true;
+            updateWhoWeServePositions();
+            startWhoWeServeAutoScroll();
+        }
+
+        function updateWhoWeServePositions() {
+            if (!whoWeServeCardsInitialized) return;
+            const n = whoWeServeData.length;
+            const isMobile = window.innerWidth < 768;
+            const indicators = document.getElementById('whoWeServeIndicators');
+
+            for (let i = 0; i < n; i++) {
+                const card = document.getElementById(`whoCard_${i}`);
+                if (!card) continue;
+
+                let diff = (i - whoWeServeCurrentIndex + n) % n;
+                if (diff > n / 2) {
+                    diff -= n;
+                }
+
+                const prevDiff = whoWeServePrevDiffs[i] !== undefined ? whoWeServePrevDiffs[i] : diff;
+                whoWeServePrevDiffs[i] = diff;
+                const jumpedSeam = (prevDiff <= -2 && diff >= 2) || (prevDiff >= 2 && diff <= -2);
+
+                if (jumpedSeam) {
+                    card.style.transition = 'none';
+                } else {
+                    card.style.transition = 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 0.5s ease';
+                }
+
+                const fullContent = card.querySelector('.card-full-content');
+                const peekContent = card.querySelector('.card-peek-content');
+
+                if (diff === 0) {
+                    // Active center card
+                    card.style.transform = 'translate(-50%, -50%) scale(1)';
+                    card.style.opacity = '1';
+                    card.style.zIndex = '25';
+                    card.style.filter = 'brightness(1)';
+                    card.style.pointerEvents = 'auto';
+
+                    if (fullContent) { fullContent.style.opacity = '1'; fullContent.style.pointerEvents = 'auto'; }
+                    if (peekContent) { peekContent.style.opacity = '0'; peekContent.style.pointerEvents = 'none'; }
+                } else if (diff === -1) {
+                    // Left peek card
+                    if (isMobile) {
+                        card.style.transform = 'translate(calc(-50% - 100vw), -50%) scale(0.85)';
+                        card.style.opacity = '0';
+                        card.style.zIndex = '10';
+                        card.style.pointerEvents = 'none';
+                    } else {
+                        card.style.transform = 'translate(calc(-50% - min(560px, 46vw)), -50%) scale(0.86)';
+                        card.style.opacity = '0.65';
+                        card.style.zIndex = '15';
+                        card.style.filter = 'brightness(0.7)';
+                        card.style.pointerEvents = 'auto';
+                    }
+                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
+                    if (peekContent) { peekContent.style.opacity = isMobile ? '0' : '1'; peekContent.style.pointerEvents = isMobile ? 'none' : 'auto'; }
+                } else if (diff === 1) {
+                    // Right peek card
+                    if (isMobile) {
+                        card.style.transform = 'translate(calc(-50% + 100vw), -50%) scale(0.85)';
+                        card.style.opacity = '0';
+                        card.style.zIndex = '10';
+                        card.style.pointerEvents = 'none';
+                    } else {
+                        card.style.transform = 'translate(calc(-50% + min(560px, 46vw)), -50%) scale(0.86)';
+                        card.style.opacity = '0.65';
+                        card.style.zIndex = '15';
+                        card.style.filter = 'brightness(0.7)';
+                        card.style.pointerEvents = 'auto';
+                    }
+                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
+                    if (peekContent) { peekContent.style.opacity = isMobile ? '0' : '1'; peekContent.style.pointerEvents = isMobile ? 'none' : 'auto'; }
+                } else {
+                    // Hidden cards
+                    const side = diff < 0 ? '-100vw' : '100vw';
+                    card.style.transform = `translate(calc(-50% + ${side}), -50%) scale(0.7)`;
+                    card.style.opacity = '0';
+                    card.style.zIndex = '5';
+                    card.style.filter = 'brightness(0.4)';
+                    card.style.pointerEvents = 'none';
+                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
+                    if (peekContent) { peekContent.style.opacity = '0'; peekContent.style.pointerEvents = 'none'; }
+                }
+            }
+
+            // Update Indicator Dots
+            if (indicators) {
+                indicators.innerHTML = whoWeServeData.map((_, idx) => `
+                    <button onclick="whoWeServeGoTo(${idx})" class="h-1.5 rounded-full transition-all duration-300 ${idx === whoWeServeCurrentIndex ? 'w-8 bg-white' : 'w-2 bg-neutral-700 hover:bg-neutral-500'}" aria-label="Go to slide ${idx + 1}"></button>
+                `).join('');
+            }
+        }
+
+        function whoWeServePrev() {
+            whoWeServeCurrentIndex = (whoWeServeCurrentIndex - 1 + whoWeServeData.length) % whoWeServeData.length;
+            updateWhoWeServePositions();
+            startWhoWeServeAutoScroll();
+        }
+
+        function whoWeServeNext() {
+            whoWeServeCurrentIndex = (whoWeServeCurrentIndex + 1) % whoWeServeData.length;
+            updateWhoWeServePositions();
+            startWhoWeServeAutoScroll();
+        }
+
+        function whoWeServeGoTo(idx) {
+            whoWeServeCurrentIndex = idx;
+            updateWhoWeServePositions();
+            startWhoWeServeAutoScroll();
+        }
+
+        window.addEventListener('resize', () => {
+            if (whoWeServeCardsInitialized) {
+                updateWhoWeServePositions();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initWhoWeServeCarousel();
+        });
     </script>
 </body>
 </html>
