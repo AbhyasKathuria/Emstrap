@@ -321,43 +321,48 @@ header .text-red-400 {
     animation: sirenFlash 0.3s infinite alternate;
 }
 
-/* ===== How It Works Light Section High-Contrast Typography ===== */
+/* ===== How It Works Dark Section (Dark Background, Light White Icons) ===== */
 #page-how-it-works,
 .light-theme #page-how-it-works {
-    background-color: #FFFFFF !important;
-    color: #0F172A !important;
+    background-color: #050B14 !important;
+    color: #FFFFFF !important;
 }
 
 #page-how-it-works h2,
 .light-theme #page-how-it-works h2 {
-    color: #0A1128 !important;
+    color: #FFFFFF !important;
 }
 
 #page-how-it-works h4,
 .light-theme #page-how-it-works h4 {
-    color: #0F172A !important;
+    color: #FFFFFF !important;
 }
 
 #page-how-it-works p,
 .light-theme #page-how-it-works p {
-    color: #475569 !important;
+    color: #94A3B8 !important;
 }
 
 #page-how-it-works .text-slate-500,
 #page-how-it-works .text-slate-400,
 #page-how-it-works .font-mono {
-    color: #64748B !important;
+    color: #94A3B8 !important;
 }
 
-#page-how-it-works i,
-.light-theme #page-how-it-works i {
+#page-how-it-works .step-badge {
+    background-color: #FFFFFF !important;
     color: #0F172A !important;
+    border: 2px solid #E2E8F0 !important;
 }
 
-#page-how-it-works .step-badge,
-.light-theme #page-how-it-works .step-badge {
-    background-color: #0A1128 !important;
-    color: #FFFFFF !important;
+#page-how-it-works .step-icon-circle {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+#page-how-it-works .step-icon-circle i {
+    color: #0F172A !important;
 }
 
 /* ===== Moving Belt Marquee Ticker ===== */
