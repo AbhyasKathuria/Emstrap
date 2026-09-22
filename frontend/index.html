@@ -410,10 +410,12 @@
                 
                 <!-- Horizontal Timeline Container -->
                 <div class="relative max-w-6xl mx-auto z-10">
-                    <!-- Base Track Connecting Line -->
-                    <div class="hidden lg:block absolute top-[16px] left-[8.33%] right-[8.33%] h-[2px] bg-neutral-800 z-0"></div>
-                    <!-- Animated Progress Line connecting 01 to 06 on scroll -->
-                    <div id="howItWorksProgressLine" class="hidden lg:block absolute top-[16px] left-[8.33%] h-[2px] bg-gradient-to-r from-red-600 via-brandBlue to-emerald-400 z-0 transition-all duration-75 origin-left" style="width: 0%;"></div>
+                    <!-- Base Track Connecting Line (01 to 06) -->
+                    <div class="hidden lg:block absolute top-[16px] left-[8.33%] right-[8.33%] h-[2px] z-0 overflow-hidden">
+                        <div class="w-full h-full bg-neutral-800 absolute inset-0"></div>
+                        <!-- Animated Progress Line connecting 01 to 06 on scroll -->
+                        <div id="howItWorksProgressLine" class="h-full bg-gradient-to-r from-red-600 via-brandBlue to-emerald-400 absolute left-0 top-0 transition-all duration-75" style="width: 0%;"></div>
+                    </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4 relative z-10">
                         
