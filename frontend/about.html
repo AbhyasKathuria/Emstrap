@@ -97,251 +97,266 @@
     <div class="h-1.5 w-full bg-gradient-to-r from-brandBlue via-brandAccent to-brandBlue"></div>
 
     <!-- Header / Navigation -->
-    <header class="py-6 px-6 md:px-12 border-b border-white/5 bg-brandDark/80 backdrop-blur-md sticky top-0 z-50">
+    <!-- Header / Navigation -->
+    <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a class="flex items-center space-x-3 group" href="index.html">
                 <div class="h-10 flex items-center transition-transform duration-300 group-hover:scale-105">
                     <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xl font-bold font-display tracking-wider text-white">EMSTRAP</span>
+                    <span class="text-xl font-black font-display tracking-wider text-white">EMSTRAP</span>
                 </div>
             </a>
             
-            <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs tracking-wide transition-all duration-300 border border-white/10">
-                <i class="fa-solid fa-arrow-left"></i> Back to Home
-            </a>
-        </div>
-    
-            <!-- Scroll Progress Ambulance Track -->
-            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-white/10">
-                <div id="headerAmbulance" class="absolute bottom-0 w-8 h-6 transition-all duration-75 ease-out" style="left: 0px; z-index: 50; margin-bottom: 1px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 6px #C9302C);">
-                        <path fill="#C9302C" d="M128 32C92.7 32 64 60.7 64 96V352h48c0 26.5 21.5 48 48 48s48-21.5 48-48H384c0 26.5 21.5 48 48 48s48-21.5 48-48h48c35.3 0 64-28.7 64-64V256h-8V224H520c-13.3 0-24-10.7-24-24V144c0-8.8-7.2-16-16-16H384V96c0-35.3-28.7-64-64-64H128zM192 128H288v48H192V128zm0 96H288v48H192V224zM536 256H592c4.4 0 8 3.6 8 8V352c0 8.8-7.2 16-16 16H536V256zM160 384c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16zm272 0c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16z"/>
-                        <circle cx="320" cy="20" r="28" class="siren-flash" />
-                    </svg>
-                </div>
-                <div id="headerShieldReaction" class="absolute bottom-6 right-8 w-5 h-5 flex items-center justify-center bg-[#2C64A1] rounded-full border border-white/20 p-1 transition-all duration-300 scale-0 opacity-0 translate-y-2 z-55 shadow-[0_0_10px_rgba(44,100,161,0.6)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full">
-                        <path fill="#ffffff" d="M256 0c4.6 0 9.2 1 13.4 2.9L452.9 82.8c22 9.3 35.1 31.7 35.1 55.4l0 102.5c0 141.8-84.4 269-218.1 328.3c-8.9 3.9-19 3.9-27.9 0C108.4 509.8 24 382.5 24 240.7l0-102.5c0-23.7 13.1-46.1 35.1-55.4L242.6 2.9C246.8 1 251.4 0 256 0z"/>
-                    </svg>
-                </div>
-                <div class="absolute bottom-0 right-0 w-6 h-5 flex items-center justify-center" style="z-index: 45; margin-bottom: 1px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 4px #C9302C);">
-                        <path fill="#C9302C" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h74.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V416H96c-17.7 0-32-14.3-32-32V298.7zm426.7-106.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V416H416c-17.7 0-32-14.3-32-32V298.7c0-58.9 47.8-106.7 106.7-106.7z"/>
-                    </svg>
+            <div class="flex items-center space-x-6 lg:space-x-8">
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="about.html" class="text-xs lg:text-sm font-semibold text-brandBlue transition-colors">About</a>
+                    <a href="index.html#page-services" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Services</a>
+                    <a href="careers.html" target="_blank" rel="noopener noreferrer" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Careers</a>
+                    <a href="index.html#page-contact" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2 pl-3 border-l border-neutral-800">
+                    <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
     <!-- Main Content Container -->
-    <main class="flex-grow py-16 px-6 md:px-12 max-w-5xl mx-auto w-full space-y-20">
-        <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto space-y-4 wave-card-node">
-            <span class="text-xs font-bold uppercase text-brandBlue tracking-[0.25em] font-display font-mono">ABOUT EMSTRAP</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-white mt-2 leading-[1.1]">Building the Future of Emergency Response</h1>
-            <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                A connected emergency response ecosystem synchronizing ambulances, police, hospitals, and enterprises to eliminate delay and save lives.
-            </p>
-        </div>
-
-        <!-- Section 1: Who We Are & Mission / Vision -->
-        <div class="space-y-12 wave-card-node">
-            <div class="max-w-4xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brandBlue font-mono">WHO WE ARE</span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display text-white">Modernising emergency response through technology</h2>
-                <div class="space-y-4 text-sm sm:text-base text-slate-300 font-light leading-relaxed text-left sm:text-justify max-w-3xl mx-auto pt-2">
-                    <p>
-                        Emergency situations demand speed, coordination, and accurate decision-making. However, today's emergency response systems often operate in isolation, resulting in delayed communication, slower response times, and missed opportunities to save lives during critical golden hours.
-                    </p>
-                    <p>
-                        EMSTRAP was established with a clear vision: to modernise emergency response through advanced technology. By integrating Artificial Intelligence, real-time communication, GPS tracking, and intelligent multi-agency coordination into a single, unified platform, EMSTRAP enables seamless collaboration between citizens, ambulance services, hospital ER networks, police departments, and enterprise facilities.
-                    </p>
-                    <p>
-                        Our mission is to ensure that no life is lost due to preventable administrative, transit, or communication delays. Technology should not just connect systems—it must actively save lives.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Mission & Vision Cards (Plain clean dark background, no pattern boxes, no top-right dots) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/60 shadow-lg relative group transition-all duration-300 hover:border-brandBlue/50">
-                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
-                        <span class="text-xs font-mono font-bold text-brandBlue">01</span>
-                        <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">PURPOSE</span>
+    <main class="flex-grow">
+        <!-- New "ABOUT EMSTRAP" Section (White Background as Requested) -->
+        <section class="py-24 bg-white text-slate-900 border-b border-slate-200" style="background-color: #FFFFFF !important; color: #0F172A !important;">
+            <div class="max-w-5xl mx-auto px-6 md:px-12 space-y-16">
+                <!-- Main Header Block -->
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-brandBlue uppercase tracking-wider">
+                        <span>ABOUT EMSTRAP</span>
                     </div>
-                    <h3 class="text-xl font-bold font-display text-white mb-3">Our Mission</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed font-light">
-                        To build an intelligent emergency response ecosystem that enables faster medical assistance, improves communication between emergency services, and ensures timely care through innovative technology.
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-slate-900 tracking-tight leading-[1.08]">
+                        Building the Future of Emergency Response.
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto pt-2">
+                        Emergency situations demand speed, coordination, and accurate decision-making. EMSTRAP is building a unified emergency response ecosystem designed to connect people, responders, hospitals, and authorities through intelligent technology.
                     </p>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/60 shadow-lg relative group transition-all duration-300 hover:border-brandAccent/50">
-                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
-                        <span class="text-xs font-mono font-bold text-emerald-400">02</span>
-                        <span class="text-[10px] font-mono tracking-widest text-slate-400 uppercase">AMBITION</span>
-                    </div>
-                    <h3 class="text-xl font-bold font-display text-white mb-3">Our Vision</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed font-light">
-                        To become India's leading AI-powered emergency response platform, empowering healthcare providers, emergency responders, government agencies, and enterprises with intelligent solutions that make communities safer and emergency care more accessible.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 2: The Challenges We Solve -->
-        <div class="space-y-10 pt-12 border-t border-white/10 wave-card-node">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-xs font-bold uppercase tracking-[0.25em] text-red-400 font-mono">PROBLEM ARCHITECTURE</span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display text-white">The Challenges We Solve</h2>
-                <p class="text-sm sm:text-base text-slate-400 font-light leading-relaxed">
-                    Modern emergency services are crippled by systemic bottlenecks across every phase of an incident lifecycle.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 01 TRANSPORT -->
-                <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-red-400">01 // TRANSPORT</span>
-                        <i class="fa-solid fa-truck-medical text-slate-500"></i>
-                    </div>
-                    <h4 class="text-base font-bold font-display text-white mb-2">Fleet Dispatch Lag</h4>
-                    <p class="text-xs text-slate-300 font-light leading-relaxed">
-                        Delayed dispatches and lack of real-time coordinate tracking across fragmented fleets leave patients waiting during the critical initial window.
+                <!-- "WHO WE ARE" Subsection -->
+                <div class="p-8 md:p-10 rounded-2xl bg-slate-50 border border-slate-200 text-center max-w-4xl mx-auto space-y-4 shadow-sm">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-brandBlue font-mono block">WHO WE ARE</span>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black font-display text-slate-900">
+                        Modernising emergency response through technology.
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto text-left sm:text-justify pt-2">
+                        By integrating Artificial Intelligence, real-time communication, GPS tracking, and intelligent multi-agency coordination into a single, unified platform, EMSTRAP enables seamless collaboration between citizens, ambulance services, hospital ER networks, police departments, and enterprise facilities. Our mission is to ensure that no life is lost due to preventable administrative, transit, or communication delays.
                     </p>
                 </div>
 
-                <!-- 02 TRAFFIC -->
-                <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-amber-400">02 // TRAFFIC</span>
-                        <i class="fa-solid fa-traffic-light text-slate-500"></i>
-                    </div>
-                    <h4 class="text-base font-bold font-display text-white mb-2">Urban Signal Bottlenecks</h4>
-                    <p class="text-xs text-slate-300 font-light leading-relaxed">
-                        Gridlock and bottleneck intersections without dynamic signal preemption delay emergency vehicles in critical transit.
-                    </p>
-                </div>
-
-                <!-- 03 ADMISSION -->
-                <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-blue-400">03 // ADMISSION</span>
-                        <i class="fa-solid fa-hospital text-slate-500"></i>
-                    </div>
-                    <h4 class="text-base font-bold font-display text-white mb-2">ER Admission Delays</h4>
-                    <p class="text-xs text-slate-300 font-light leading-relaxed">
-                        Golden-hour loss due to manual bed-checks, emergency department misrouting, and complete lack of pre-arrival patient data.
-                    </p>
-                </div>
-
-                <!-- 04 OPERATIONS -->
-                <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-indigo-400">04 // OPERATIONS</span>
-                        <i class="fa-solid fa-network-wired text-slate-500"></i>
-                    </div>
-                    <h4 class="text-base font-bold font-display text-white mb-2">Siloed Communications</h4>
-                    <p class="text-xs text-slate-300 font-light leading-relaxed">
-                        Disconnected agency communications between police, fire, EMS, and municipal traffic authorities resulting in chaotic scene handoffs.
-                    </p>
-                </div>
-
-                <!-- 05 CLINICAL -->
-                <div class="p-6 rounded-2xl border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs font-mono font-bold text-emerald-400">05 // CLINICAL</span>
-                        <i class="fa-solid fa-heart-pulse text-slate-500"></i>
-                    </div>
-                    <h4 class="text-base font-bold font-display text-white mb-2">Zero In-Transit Telemetry</h4>
-                    <p class="text-xs text-slate-300 font-light leading-relaxed">
-                        Zero in-transit telemetry reaches emergency room physicians prior to patient arrival, delaying critical trauma and surgical interventions.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 3: Our Solutions (Moved from index.html) -->
-        <div class="space-y-10 pt-12 border-t border-white/10 wave-card-node">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-xs font-bold uppercase tracking-[0.25em] text-brandBlue font-mono">CONNECTED ARCHITECTURE</span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display text-white">Our Solutions</h2>
-                <p class="text-sm sm:text-base text-slate-400 font-light leading-relaxed">
-                    A synchronized technological stack that bridges the gaps between citizens, first responders, traffic grids, and hospital trauma centers.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Solution 1 -->
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/50 hover:border-brandBlue/50 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brandBlue/10 border border-brandBlue/20 text-brandBlue flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-robot"></i>
+                <!-- Mission & Vision Cards (Plain flat backgrounds, no pattern boxes, no top-right dots) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Our Mission -->
+                    <div class="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-brandBlue/50 hover:shadow-md">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                            <span class="text-xs font-mono font-bold text-brandBlue">01</span>
+                            <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">OUR PURPOSE</span>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-white mb-2">Predictive AI Dispatch</h3>
-                        <p class="text-sm text-slate-300 font-light leading-relaxed mb-6">
-                            Eliminates dispatch lag using machine-learning fleet assignment, GPS proximity telemetry, and dynamic route forecasting to mobilize the nearest capable responder in seconds.
+                        <h3 class="text-xl font-bold font-display text-slate-900 mb-3">Our Mission</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                            To build an intelligent emergency response ecosystem that enables faster medical assistance, improves communication between emergency services, and ensures timely care through innovative technology.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-400 font-mono space-y-2 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Sub-second fleet allocation</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Live GPS telemetry tracking</li>
-                    </ul>
-                </div>
 
-                <!-- Solution 2 -->
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/50 hover:border-brandBlue/50 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-route"></i>
+                    <!-- Our Vision -->
+                    <div class="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-emerald-500/50 hover:shadow-md">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                            <span class="text-xs font-mono font-bold text-emerald-600">02</span>
+                            <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">OUR AMBITION</span>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-white mb-2">Smart Green Corridors</h3>
-                        <p class="text-sm text-slate-300 font-light leading-relaxed mb-6">
-                            Dynamically coordinates with municipal traffic control signals, pre-clearing high-density intersections ahead of ambulances to ensure unhindered right-of-way.
+                        <h3 class="text-xl font-bold font-display text-slate-900 mb-3">Our Vision</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                            To become India's leading AI-powered emergency response platform, empowering healthcare providers, emergency responders, government agencies, and enterprises with intelligent solutions that make communities safer and emergency care more accessible.
                         </p>
                     </div>
-                    <ul class="text-xs text-slate-400 font-mono space-y-2 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Intelligent signal preemption</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Real-time congestion rerouting</li>
-                    </ul>
-                </div>
-
-                <!-- Solution 3 -->
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/50 hover:border-brandBlue/50 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-heart-pulse"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-white mb-2">In-Transit Telemetry</h3>
-                        <p class="text-sm text-slate-300 font-light leading-relaxed mb-6">
-                            Streams live patient vitals, ECG, oxygen levels, and incident context directly from vehicle medical sensors to receiving hospital trauma teams before arrival.
-                        </p>
-                    </div>
-                    <ul class="text-xs text-slate-400 font-mono space-y-2 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated ER bed reservation</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Direct physician triage preparation</li>
-                    </ul>
-                </div>
-
-                <!-- Solution 4 -->
-                <div class="p-8 rounded-2xl border border-white/10 bg-slate-900/50 hover:border-brandBlue/50 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-white mb-2">Multi-Agency Sync</h3>
-                        <p class="text-sm text-slate-300 font-light leading-relaxed mb-6">
-                            Provides a shared operational picture connecting police dispatchers, fire units, hospital networks, and private security onto a common situational coordination map.
-                        </p>
-                    </div>
-                    <ul class="text-xs text-slate-400 font-mono space-y-2 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Unified CAD interoperability</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Zero data friction during mass incidents</li>
-                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- THE CHALLENGES WE SOLVE (5 Cards as Requested) -->
+        <section class="py-24 bg-[#080B12] text-white border-b border-neutral-900">
+            <div class="max-w-5xl mx-auto px-6 md:px-12 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-red-400 font-mono block">THE CHALLENGES WE SOLVE</span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight">
+                        Critical problems in modern emergency response.
+                    </h2>
+                    <p class="text-sm sm:text-base text-neutral-300 font-light leading-relaxed pt-1">
+                        Every minute during an emergency can determine the outcome of a life-threatening situation.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1: Transport -->
+                    <div class="p-7 rounded-2xl border border-neutral-800 bg-[#0E131F] hover:border-red-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-mono font-bold text-red-400">01 // TRANSPORT</span>
+                                <i class="fa-solid fa-truck-medical text-neutral-500"></i>
+                            </div>
+                            <h4 class="text-base font-bold font-display text-white mb-2">Transport — Ambulance Delays</h4>
+                            <p class="text-xs text-neutral-300 font-light leading-relaxed">
+                                Delayed ambulance arrival due to fragmented operators, lack of automated dispatch, and manual routing protocols.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Traffic -->
+                    <div class="p-7 rounded-2xl border border-neutral-800 bg-[#0E131F] hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-mono font-bold text-amber-400">02 // TRAFFIC</span>
+                                <i class="fa-solid fa-traffic-light text-neutral-500"></i>
+                            </div>
+                            <h4 class="text-base font-bold font-display text-white mb-2">Traffic — Traffic Congestion</h4>
+                            <p class="text-xs text-neutral-300 font-light leading-relaxed">
+                                Ambulances stuck in city gridlock without preemptive signaling and green corridor path coordination.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Admission -->
+                    <div class="p-7 rounded-2xl border border-neutral-800 bg-[#0E131F] hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-mono font-bold text-blue-400">03 // ADMISSION</span>
+                                <i class="fa-solid fa-hospital text-neutral-500"></i>
+                            </div>
+                            <h4 class="text-base font-bold font-display text-white mb-2">Admission — Hospital ER Gaps</h4>
+                            <p class="text-xs text-neutral-300 font-light leading-relaxed">
+                                ER teams operating blindly, scrambling to gather vital statistics and patient details upon arrival.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Operations -->
+                    <div class="p-7 rounded-2xl border border-neutral-800 bg-[#0E131F] hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-mono font-bold text-indigo-400">04 // OPERATIONS</span>
+                                <i class="fa-solid fa-network-wired text-neutral-500"></i>
+                            </div>
+                            <h4 class="text-base font-bold font-display text-white mb-2">Operations — Manual Coordination</h4>
+                            <p class="text-xs text-neutral-300 font-light leading-relaxed">
+                                Citizens calling multiple numbers in active panic trying to secure medical response or support.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Clinical -->
+                    <div class="p-7 rounded-2xl border border-neutral-800 bg-[#0E131F] hover:border-emerald-500/50 transition-all duration-300 md:col-span-2 lg:col-span-2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-mono font-bold text-emerald-400">05 // CLINICAL</span>
+                                <i class="fa-solid fa-heart-pulse text-neutral-500"></i>
+                            </div>
+                            <h4 class="text-base font-bold font-display text-white mb-2">Clinical — Delayed Treatment</h4>
+                            <p class="text-xs text-neutral-300 font-light leading-relaxed">
+                                Missing the "Golden Hour" due to response system silos operating independently without integration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR SOLUTIONS Section (Moved into About Page as Requested) -->
+        <section class="py-24 bg-[#050B14] text-white border-b border-neutral-900">
+            <div class="max-w-5xl mx-auto px-6 md:px-12 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-brandBlue font-mono block">OUR SOLUTIONS</span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight">
+                        A Unified Emergency Response Ecosystem
+                    </h2>
+                    <p class="text-sm sm:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
+                        EMSTRAP replaces siloed emergency protocols with an intelligent, connected infrastructure. From the moment an incident occurs, our platform synchronizes bystander alerts, ambulance routing, traffic signals, and hospital emergency rooms into one real-time lifesaving grid.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Feature 1: Predictive AI Dispatch -->
+                    <div class="p-8 rounded-2xl border border-neutral-800 bg-[#0C111C] hover:border-brandBlue/60 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-brandBlue flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-white mb-2">Predictive AI Dispatch</h3>
+                            <p class="text-sm text-neutral-300 font-light leading-relaxed mb-6">
+                                Automated location mapping assigns the nearest suitable emergency vehicle with zero manual call center delays.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-neutral-400 font-mono space-y-2 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated GPS fleet dispatch</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Zero manual operator latency</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2: Smart Green Corridors -->
+                    <div class="p-8 rounded-2xl border border-neutral-800 bg-[#0C111C] hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-white mb-2">Smart Green Corridors</h3>
+                            <p class="text-sm text-neutral-300 font-light leading-relaxed mb-6">
+                                Real-time GPS integration works with traffic authorities to clear signals dynamically along the transport route.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-neutral-400 font-mono space-y-2 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Dynamic signal preemption</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Unhindered emergency right-of-way</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3: In-Transit Telemetry -->
+                    <div class="p-8 rounded-2xl border border-neutral-800 bg-[#0C111C] hover:border-red-500/60 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-white mb-2">In-Transit Telemetry</h3>
+                            <p class="text-sm text-neutral-300 font-light leading-relaxed mb-6">
+                                Patient vitals and emergency scene data are streamed live directly to the receiving hospital trauma bay.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-neutral-400 font-mono space-y-2 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Pre-hospital doctor triage</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Automated ER trauma bed reservation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4: Multi-Agency Sync -->
+                    <div class="p-8 rounded-2xl border border-neutral-800 bg-[#0C111C] hover:border-purple-500/60 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-6">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-white mb-2">Multi-Agency Sync</h3>
+                            <p class="text-sm text-neutral-300 font-light leading-relaxed mb-6">
+                                Police, traffic control, fire departments, and private hospitals view the same shared operational picture.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-neutral-400 font-mono space-y-2 border-t border-neutral-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Shared operational picture</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[10px]"></i> Unified city incident commander</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

@@ -550,3 +550,108 @@ header .text-red-400 {
     border-color: #CBD5E1;
 }
 
+/* ===== Parallax Scrims & High-Tech Product Console Styling ===== */
+.parallax-bg-connect {
+    background-image: linear-gradient(180deg, rgba(5, 11, 20, 0.88) 0%, rgba(5, 11, 20, 0.72) 40%, rgba(5, 11, 20, 0.96) 100%), url('police-control.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-bg-ride {
+    background-image: linear-gradient(180deg, rgba(5, 11, 20, 0.88) 0%, rgba(5, 11, 20, 0.72) 40%, rgba(5, 11, 20, 0.96) 100%), url('ambulance.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-bg-shield {
+    background-image: linear-gradient(180deg, rgba(5, 11, 20, 0.88) 0%, rgba(5, 11, 20, 0.72) 40%, rgba(5, 11, 20, 0.96) 100%), url('campus.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax-bg-command {
+    background-image: linear-gradient(180deg, rgba(5, 11, 20, 0.88) 0%, rgba(5, 11, 20, 0.72) 40%, rgba(5, 11, 20, 0.96) 100%), url('images/hospital-er-operations.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Radar Sweep Keyframe */
+@keyframes radarSweep {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-radar-sweep {
+    animation: radarSweep 6s linear infinite;
+    transform-origin: center center;
+}
+
+/* ECG Heartbeat Wave Keyframe */
+@keyframes ecgLinePulse {
+    0% {
+        stroke-dashoffset: 400;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animate-ecg-wave {
+    stroke-dasharray: 400;
+    animation: ecgLinePulse 2.8s linear infinite;
+}
+
+/* Live Status Signal Pulse */
+@keyframes liveDotPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(1.3);
+    }
+}
+
+.animate-status-dot {
+    animation: liveDotPulse 2s infinite ease-in-out;
+}
+
+/* Floating Telemetry Badge */
+@keyframes floatBadge {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.animate-float-badge {
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+.animate-float-badge-delayed {
+    animation: floatBadge 4.5s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+/* Simulated Route Vehicle Pulse */
+@keyframes routeMoveVehicle {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+
