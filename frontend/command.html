@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMSTRAP Command | Operations Platform for Ambulances &amp; Hospitals</title>
+    <title>EMSTRAP Command | One Command Center for Ambulances &amp; Hospitals</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white" style="background-image: linear-gradient(rgba(5, 11, 20, 0.90), rgba(5, 11, 20, 0.95)), url('images/hospital-er-operations.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+<body class="bg-white text-slate-900 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
 
     <!-- Persistent Navigation Header -->
     <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
@@ -55,6 +55,7 @@
                     <a href="index.html#page-about" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">About</a>
                     <a href="index.html#page-services" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Services</a>
                     <a href="careers.html" target="_blank" rel="noopener noreferrer" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Careers</a>
+                    <!-- Contact text kept plain and not coloured as requested -->
                     <a href="index.html#page-contact" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-2 pl-3 border-l border-neutral-800">
@@ -70,440 +71,948 @@
     </header>
 
     <main class="flex-grow">
-        <!-- Hero Section with Parallax Background & Editorial Structure -->
-        <section class="relative py-20 md:py-28 px-6 md:px-12 border-b border-neutral-800 overflow-hidden parallax-bg-command">
-            <!-- Ambient Gradient Vignette -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#050B14]/85 via-[#050B14]/65 to-[#050B14]/95 pointer-events-none"></div>
+        <!-- 1. Hero Section: Clean White Layout for B2B Command Operations -->
+        <section class="relative py-16 md:py-24 px-6 md:px-12 border-b border-slate-200 bg-gradient-to-b from-slate-50 via-white to-slate-50/40 overflow-hidden">
+            <div class="max-w-6xl mx-auto text-center space-y-8 relative z-10">
+                
+                <!-- Category Tag -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-mono tracking-wider font-bold uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
+                    <span>OPERATIONAL PLATFORM FOR AMBULANCES &amp; HOSPITALS</span>
+                </div>
 
-            <div class="max-w-6xl mx-auto relative z-10 space-y-12">
-                <!-- Editorial Text Header -->
-                <div class="text-center space-y-6 max-w-4xl mx-auto">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-700/80 text-[11px] font-mono tracking-widest text-neutral-200 uppercase shadow-lg backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-brandBlue animate-status-dot"></span>
-                        <span>B2B HEALTHCARE &amp; FLEET OPERATIONS ENGINE</span>
-                    </div>
-
-                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-white tracking-tight leading-[1.06]">
+                <!-- Main Titles & Headlines -->
+                <div class="space-y-4 max-w-4xl mx-auto">
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-slate-900 tracking-tight leading-[1.05]">
                         EMSTRAP COMMAND
                     </h1>
-
-                    <p class="text-xl sm:text-2xl text-neutral-200 font-display font-medium max-w-3xl mx-auto">
+                    <p class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-800 tracking-tight">
+                        One Command Center for Ambulances &amp; Hospitals
+                    </p>
+                    <p class="text-lg sm:text-xl font-semibold text-brandBlue font-display">
                         The Command Center Behind Every Connected Journey
                     </p>
+                </div>
 
-                    <p class="text-sm sm:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-                        Manage ambulances, bookings, patient transportation, and hospital coordination from one centralized platform. Designed for ambulance service providers, hospitals, and regional healthcare networks.
+                <!-- Description & Core Context -->
+                <div class="space-y-4 max-w-3xl mx-auto text-slate-600 font-normal leading-relaxed text-sm sm:text-base">
+                    <p>
+                        EMSTRAP Command is the operational platform for ambulance service providers, hospitals, and healthcare organizations to manage emergency requests, ambulance operations, patient transportation and hospital coordination from one centralized system.
                     </p>
-
-                    <div class="pt-2 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-neutral-300">
-                        <span class="px-3.5 py-1.5 rounded-md bg-neutral-900/80 border border-neutral-800 text-neutral-200">Receive</span>
-                        <span class="text-neutral-500">&bull;</span>
-                        <span class="px-3.5 py-1.5 rounded-md bg-neutral-900/80 border border-neutral-800 text-neutral-200">Coordinate</span>
-                        <span class="text-neutral-500">&bull;</span>
-                        <span class="px-3.5 py-1.5 rounded-md bg-neutral-900/80 border border-neutral-800 text-neutral-200">Dispatch</span>
-                        <span class="text-neutral-500">&bull;</span>
-                        <span class="px-3.5 py-1.5 rounded-md bg-neutral-900/80 border border-neutral-800 text-neutral-200">Track</span>
-                    </div>
-
-                    <div class="pt-4 flex flex-wrap justify-center gap-4">
-                        <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display hover:scale-105 active:scale-95">
-                            Partner With EMSTRAP
-                        </button>
-                        <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-700 font-display hover:scale-105 active:scale-95">
-                            Request a Demo
-                        </button>
-                    </div>
-                </div>
-
-                <!-- High-Tech Metropolitan Hospital ER Trauma & Regional Fleet Console Mockup -->
-                <div class="relative max-w-5xl mx-auto pt-6">
-                    <!-- Floating Telemetry Glass Badges -->
-                    <div class="hidden md:flex absolute -top-4 -left-6 z-20 items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/90 border border-neutral-700 text-xs font-mono text-white shadow-2xl backdrop-blur-md animate-float-badge">
-                        <i class="fa-solid fa-bed-pulse text-blue-400"></i>
-                        <span>Trauma Bed Pre-Allocation: <strong class="text-blue-400">&lt;90 SEC</strong></span>
-                    </div>
-                    <div class="hidden md:flex absolute -top-4 -right-6 z-20 items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/90 border border-neutral-700 text-xs font-mono text-white shadow-2xl backdrop-blur-md animate-float-badge-delayed">
-                        <i class="fa-solid fa-satellite-dish text-cyan-300"></i>
-                        <span>Pre-Hospital Telemetry Sync: <strong class="text-emerald-400">ACTIVE</strong></span>
-                    </div>
-
-                    <!-- Main Terminal Panel -->
-                    <div class="rounded-2xl border border-neutral-800 bg-[#0A0E17]/95 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl overflow-hidden">
-                        <!-- Terminal Bar -->
-                        <div class="flex items-center justify-between px-5 py-3.5 border-b border-neutral-800 bg-neutral-950/80 font-mono text-xs">
-                            <div class="flex items-center gap-3">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                </div>
-                                <span class="text-neutral-400 text-[11px] font-bold">EMSTRAP COMMAND // REGIONAL HEALTHCARE &amp; ER OPERATIONS ENGINE</span>
-                            </div>
-                            <div class="flex items-center gap-4 text-[11px] text-neutral-400">
-                                <span class="flex items-center gap-1.5 text-blue-400">
-                                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                                    COMMAND ENGINE: ONLINE
-                                </span>
-                                <span class="hidden sm:inline text-neutral-500">|</span>
-                                <span class="hidden sm:inline font-mono text-slate-400">HOSPITALS LINKED: 12</span>
-                            </div>
-                        </div>
-
-                        <!-- 3-Column Telemetry Grid -->
-                        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-neutral-800/80 font-mono">
-                            <!-- Col 1: Inbound Trauma Patient Stream (5 cols) -->
-                            <div class="lg:col-span-5 p-5 space-y-3 bg-black/40">
-                                <div class="flex items-center justify-between pb-2 border-b border-neutral-800 text-[11px] uppercase tracking-wider text-neutral-400">
-                                    <span>Inbound Trauma ER Telemetry</span>
-                                    <span class="text-red-400 font-bold">INCOMING (ETA: 2m 45s)</span>
-                                </div>
-
-                                <div class="p-3.5 rounded-xl bg-neutral-950 border border-red-500/30 space-y-2.5">
-                                    <div class="flex items-center justify-between">
-                                        <span class="text-xs font-bold text-white font-sans">Patient #TR-882 &bull; Severe Trauma</span>
-                                        <span class="px-2 py-0.5 rounded bg-red-950/80 text-red-300 border border-red-800 text-[10px]">Priority 1</span>
-                                    </div>
-
-                                    <!-- Live ECG Waveform -->
-                                    <div class="h-12 w-full flex items-center justify-center overflow-hidden bg-red-950/20 rounded border border-red-900/30 px-1">
-                                        <svg viewBox="0 0 300 50" class="w-full h-full stroke-red-400 fill-none" preserveAspectRatio="none">
-                                            <path d="M0,25 L35,25 L45,10 L55,40 L65,25 L85,25 L95,5 L105,45 L115,25 L160,25 L170,12 L180,38 L190,25 L230,25 L240,4 L250,46 L260,25 L300,25" 
-                                                  stroke-width="2" class="animate-ecg-wave"/>
-                                        </svg>
-                                    </div>
-
-                                    <div class="grid grid-cols-3 gap-2 text-[10px] text-neutral-300 pt-1">
-                                        <div><span class="text-neutral-500 block">HR</span><strong class="text-red-400 text-sm">84 BPM</strong></div>
-                                        <div><span class="text-neutral-500 block">SpO2</span><strong class="text-white text-sm">98%</strong></div>
-                                        <div><span class="text-neutral-500 block">BP</span><strong class="text-white text-sm">130/85</strong></div>
-                                    </div>
-
-                                    <div class="text-[10px] text-emerald-400 border-t border-neutral-800/80 pt-2 flex items-center justify-between">
-                                        <span>&check; TRAUMA BAY 03 RESERVED</span>
-                                        <span class="text-neutral-400 font-mono">DR. ANAND P. (ON-DUTY)</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Col 2: Regional Fleet Activity Grid (4 cols) -->
-                            <div class="lg:col-span-4 p-5 flex flex-col justify-between bg-black/20 relative">
-                                <div class="w-full flex items-center justify-between text-[11px] uppercase tracking-wider text-neutral-400 mb-2">
-                                    <span>Regional Fleet Allocation</span>
-                                    <span class="text-blue-400 font-bold">24 UNITS</span>
-                                </div>
-
-                                <div class="space-y-2.5 my-auto text-xs py-2">
-                                    <div class="flex items-center justify-between p-2 rounded-lg bg-neutral-900/60 border border-neutral-800">
-                                        <span class="text-neutral-300">En Route to Incidents:</span>
-                                        <span class="text-amber-400 font-bold">6 Units</span>
-                                    </div>
-                                    <div class="flex items-center justify-between p-2 rounded-lg bg-neutral-900/60 border border-neutral-800">
-                                        <span class="text-neutral-300">At Emergency Scene:</span>
-                                        <span class="text-blue-400 font-bold">4 Units</span>
-                                    </div>
-                                    <div class="flex items-center justify-between p-2 rounded-lg bg-neutral-900/60 border border-neutral-800">
-                                        <span class="text-neutral-300">Available on Grid:</span>
-                                        <span class="text-emerald-400 font-bold">14 Units</span>
-                                    </div>
-                                </div>
-
-                                <div class="w-full pt-2 border-t border-neutral-800 text-[10px] text-neutral-400 flex items-center justify-between font-mono">
-                                    <span>CITYWIDE AVG RESPONSE:</span>
-                                    <span class="text-emerald-400 font-bold">4.2 MINS</span>
-                                </div>
-                            </div>
-
-                            <!-- Col 3: Hospital Resource Readiness (3 cols) -->
-                            <div class="lg:col-span-3 p-5 space-y-4 bg-black/40 flex flex-col justify-between">
-                                <div class="text-[11px] uppercase tracking-wider text-neutral-400 pb-2 border-b border-neutral-800">
-                                    Hospital Capacity
-                                </div>
-
-                                <div class="space-y-3 text-xs">
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">ICU Trauma Beds</span>
-                                            <span class="text-blue-400 font-bold">3 Available</span>
-                                        </div>
-                                        <div class="w-full h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-                                            <div class="w-[75%] h-full bg-blue-500 rounded-full"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">Emergency ORs</span>
-                                            <span class="text-emerald-400 font-bold">OR-2 Ready</span>
-                                        </div>
-                                        <div class="w-full h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-                                            <div class="w-full h-full bg-emerald-400 rounded-full"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">Blood Bank Reserves</span>
-                                            <span class="text-emerald-400 font-bold">O- Units Prepped</span>
-                                        </div>
-                                        <p class="text-[10px] text-neutral-400 pt-1 leading-snug">
-                                            Trauma packet matched for inbound patient #TR-882.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-500 font-mono">
-                                    INTEGRATION: HL7 &amp; FHIR READY
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Command Console Preview (ASCII Terminal Look) -->
-        <section class="py-16 px-6 md:px-12 border-b border-neutral-900 bg-[#060606]">
-            <div class="max-w-5xl mx-auto">
-                <div class="rounded-3xl bg-[#0A0A0A] border border-neutral-800/90 p-6 md:p-10 shadow-2xl font-mono text-xs space-y-6">
-                    <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                            <span class="text-neutral-400 font-bold ml-2">EMSTRAP COMMAND // REGIONAL DISPATCH CONSOLE</span>
-                        </div>
-                        <span class="text-emerald-400 font-bold animate-pulse">● LIVE TELEMETRY ACTIVE</span>
-                    </div>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">ACTIVE REQUESTS</span>
-                            <span class="text-2xl font-bold text-white">12</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">AVAILABLE AMBULANCES</span>
-                            <span class="text-2xl font-bold text-emerald-400">18</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">UNITS ON TRIP</span>
-                            <span class="text-2xl font-bold text-amber-400">9</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">PENDING BOOKINGS</span>
-                            <span class="text-2xl font-bold text-neutral-300">4</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">INCOMING PATIENTS</span>
-                            <span class="text-2xl font-bold text-red-400">6</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">HOSPITAL TRANSFERS</span>
-                            <span class="text-2xl font-bold text-blue-400">3</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800">
-                            <span class="text-[10px] text-neutral-500 uppercase block mb-1">COMPLETED TODAY</span>
-                            <span class="text-2xl font-bold text-white">47</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Command for Ambulance Providers & Availability States -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="max-w-3xl">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">FLEET TELEMETRY</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Command for Ambulance Providers</h2>
-                    <p class="text-sm text-neutral-400 font-light leading-relaxed mt-2">
-                        Turn ambulance operations into a connected workflow: manage fleet availability, receive incoming requests, assign nearest crews, and track dynamic transit logs.
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans">
+                        While EMSTRAP Connect connects emergency reports and EMSTRAP Ride allows the public to book ambulances, EMSTRAP Command is where ambulance and hospital partners manage the response.
                     </p>
                 </div>
 
-                <div class="space-y-4">
-                    <span class="text-xs font-mono font-bold text-neutral-400 uppercase tracking-widest block">VEHICLE DISPATCH STATES</span>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-emerald-400 font-bold block mb-0.5">AVAILABLE</span>
-                            <span class="text-[11px] text-neutral-500">Ready to accept trip</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-blue-400 font-bold block mb-0.5">ASSIGNED</span>
-                            <span class="text-[11px] text-neutral-500">Vehicle matched to call</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-amber-400 font-bold block mb-0.5">ON THE WAY</span>
-                            <span class="text-[11px] text-neutral-500">Travelling to pickup</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-purple-400 font-bold block mb-0.5">ARRIVED</span>
-                            <span class="text-[11px] text-neutral-500">At patient scene</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-rose-400 font-bold block mb-0.5">PATIENT ONBOARD</span>
-                            <span class="text-[11px] text-neutral-500">Care in transit</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-cyan-400 font-bold block mb-0.5">IN TRANSIT</span>
-                            <span class="text-[11px] text-neutral-500">Hospital corridor routing</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-white font-bold block mb-0.5">COMPLETED</span>
-                            <span class="text-[11px] text-neutral-500">Patient handover done</span>
-                        </div>
-                        <div class="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800">
-                            <span class="text-neutral-500 font-bold block mb-0.5">UNAVAILABLE</span>
-                            <span class="text-[11px] text-neutral-500">Maintenance / Offline</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Command for Hospitals -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="max-w-3xl">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">HOSPITAL SYNCHRONIZATION</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Prepare for the Patient Before Arrival</h2>
-                    <p class="text-sm text-neutral-400 font-light leading-relaxed mt-2">
-                        When an ambulance is transporting a patient to an emergency room, the destination hospital receives in-transit vitals and trauma context in advance, allowing trauma teams to reserve critical beds and prepare surgical bays.
+                <!-- Audience & Action Tags -->
+                <div class="space-y-3 pt-2">
+                    <p class="text-xs font-mono font-medium text-slate-500">
+                        For Ambulance Providers &bull; Hospitals &bull; Healthcare Networks
                     </p>
+
+                    <div class="flex flex-wrap justify-center items-center gap-2 font-mono text-xs text-slate-800">
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 font-bold shadow-sm">Receive</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 font-bold shadow-sm">Coordinate</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 font-bold shadow-sm">Dispatch</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 font-bold shadow-sm">Track</span>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Hospital-to-Hospital Transfers -->
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-950/60 border border-blue-800/50 flex items-center justify-center text-blue-400">
-                                <i class="fa-solid fa-hospital"></i>
-                            </div>
-                            <h3 class="text-xl font-bold font-display text-white">Hospital-to-Hospital Transfers</h3>
-                        </div>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">
-                            Coordinate patient transfers between medical facilities without manual phone calls. Facilitates ICU-to-ICU bed transfers, specialty care referrals, and pediatric escorts.
-                        </p>
-                        <div class="p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 text-xs font-mono text-neutral-300">
-                            Hospital A &rarr; Transfer Request &rarr; Command &rarr; Available Unit &rarr; Hospital B
-                        </div>
-                    </div>
-
-                    <!-- Emergency ER Coordination -->
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-red-950/60 border border-red-800/50 flex items-center justify-center text-red-400">
-                                <i class="fa-solid fa-bell"></i>
-                            </div>
-                            <h3 class="text-xl font-bold font-display text-white">Emergency Coordination</h3>
-                        </div>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">
-                            Integrates alerts from Connect, Ride, and Shield into the hospital emergency room console. Notifies on-call trauma teams with accurate ETA and pre-arrival telemetry.
-                        </p>
-                        <div class="p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 text-xs font-mono text-neutral-300">
-                            Emergency Alert &rarr; Command Engine &rarr; ER Notified &rarr; Zero-Delay Bay Handover
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10-Step Complete Command Workflow -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">COMPLETE WORKFLOW</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">From Request to Resolution</h2>
-                    <p class="text-sm text-neutral-400 font-light mt-2">The complete 10-step operations cycle orchestrated through EMSTRAP Command.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 font-mono text-xs">
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 01</span>
-                        <span class="text-white font-bold block">Request Received</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">From Ride, Shield, Connect, or ER</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 02</span>
-                        <span class="text-white font-bold block">Request Reviewed</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Triage context verified</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 03</span>
-                        <span class="text-white font-bold block">Units Identified</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Nearest available fleet checked</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 04</span>
-                        <span class="text-white font-bold block">Unit Assigned</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Appropriate ambulance locked</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 05</span>
-                        <span class="text-white font-bold block">En Route Pickup</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Live GPS navigation stream</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 06</span>
-                        <span class="text-white font-bold block">Patient Onboard</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Crew initiates vital monitoring</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 07</span>
-                        <span class="text-white font-bold block">Hospital Sync</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">ER notified with trauma context</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 08</span>
-                        <span class="text-white font-bold block">Corridor Transit</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Traffic signal preemption sync</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 09</span>
-                        <span class="text-white font-bold block">ER Arrival</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Direct trauma bay intake</span>
-                    </div>
-                    <div class="p-4 rounded-xl bg-neutral-950 border border-neutral-800">
-                        <span class="text-neutral-500 font-bold block mb-1">STEP 10</span>
-                        <span class="text-white font-bold block">Trip Closed</span>
-                        <span class="text-[10px] text-neutral-400 mt-1 block">Compliance audit record logged</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-24 px-6 md:px-12 bg-black">
-            <div class="max-w-4xl mx-auto text-center space-y-6">
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">OPERATIONAL ONBOARDING</span>
-                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
-                    Deploy EMSTRAP Command for Your Fleet or Hospital
-                </h2>
-                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto">
-                    Manage ambulances, bookings, patient transportation, and hospital coordination from one centralized platform.
-                </p>
+                <!-- Action Buttons -->
                 <div class="pt-4 flex flex-wrap justify-center gap-4">
-                    <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display">
+                    <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg font-display hover:scale-105 active:scale-95">
                         Partner With EMSTRAP
                     </button>
-                    <a href="index.html#page-contact" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
-                        Request a Technical Demo
-                    </a>
+                    <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-900 font-bold tracking-wider text-xs uppercase transition-all border border-slate-300 shadow-sm font-display hover:scale-105 active:scale-95">
+                        Request a Demo
+                    </button>
+                </div>
+
+                <!-- Ecosystem Alignment Banner -->
+                <div class="max-w-4xl mx-auto pt-6">
+                    <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-md text-left space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue">THE EMSTRAP ECOSYSTEM</span>
+                            <span class="text-xs font-mono text-slate-500 font-medium">One ecosystem. Every journey connected.</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                                <strong class="text-slate-900 block font-sans">CONNECT</strong>
+                                <p class="text-slate-500 text-[11px] font-normal">Report the emergency</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                                <strong class="text-slate-900 block font-sans">RIDE</strong>
+                                <p class="text-slate-500 text-[11px] font-normal">Book the ambulance</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                                <strong class="text-slate-900 block font-sans">SHIELD</strong>
+                                <p class="text-slate-500 text-[11px] font-normal">Protect employees &amp; families</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 space-y-1">
+                                <strong class="text-brandBlue block font-sans">COMMAND</strong>
+                                <p class="text-blue-700 text-[11px] font-semibold">Manage ambulance &amp; hospital response</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. The Problem Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">OPERATIONAL FRICTION</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        The Problem
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Emergency services cannot depend on disconnected phone calls.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Ambulance operators and hospitals face high operational pressure managing complex variables in rapid succession:
+                    </p>
+                </div>
+
+                <!-- 11 Items Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Multiple incoming calls</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Ambulance availability uncertainty</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Driver / crew coordination delays</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Inaccurate pickup locations</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Patient transportation friction</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Hospital destination misrouting</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Uncoordinated emergency requests</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Delayed booking confirmations</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Zero real-time trip status visibility</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Manual hospital handover coordination</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 sm:col-span-2 lg:col-span-2">
+                        <span class="w-6 h-6 rounded-lg bg-red-50 text-red-600 text-xs font-mono flex items-center justify-center font-bold">✕</span>
+                        <span class="text-xs sm:text-sm text-slate-800 font-medium">Scattered records across calls, messages and spreadsheets</span>
+                    </div>
+                </div>
+
+                <!-- Platform Resolution Callout -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-mono text-slate-400 uppercase block">UNIFIED OPERATIONAL RESOLUTION</span>
+                            <p class="text-sm sm:text-base font-bold text-slate-900 font-display">
+                                EMSTRAP Command brings these scattered operations into one centralized platform.
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="openCommandDemoModal()" class="px-6 py-2.5 rounded-full bg-brandBlue hover:bg-blue-700 text-white font-bold font-mono text-xs uppercase tracking-wider shadow shrink-0">
+                        Connect Operations
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. What is EMSTRAP Command? Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">B2B PLATFORM ARCHITECTURE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        What is EMSTRAP Command?
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        EMSTRAP Command is the B2B operational platform within the EMSTRAP ecosystem. It is designed specifically for:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Ambulance Service Providers -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-slate-900">🚑 Ambulance Providers</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Manage ambulance fleets, receive bookings, coordinate trips and monitor active patient transportation requests digitally.
+                        </p>
+                    </div>
+
+                    <!-- Hospitals -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-slate-900">🏥 Hospitals</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Manage ambulance requests, receive incoming patient information in advance, and coordinate inter-facility patient transfers seamlessly.
+                        </p>
+                    </div>
+
+                    <!-- Healthcare Networks -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-slate-900">🏥 Healthcare Networks</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Organizations managing multiple hospitals or healthcare facilities can use Command to coordinate transportation and emergency-related activity across locations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Command for Ambulance Providers Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">FLEET DISPATCH &amp; LOGISTICS</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🚑 Command for Ambulance Providers
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Turn ambulance operations into a connected workflow.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Ambulance providers can use EMSTRAP Command to digitally manage their ambulance operations and transportation requests without manual coordination bottlenecks.
+                    </p>
+                </div>
+
+                <!-- Operational Modules -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    
+                    <!-- Module 1: Ambulance Dashboard & Availability Statuses -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue block mb-1">REAL-TIME VISIBILITY</span>
+                            <h3 class="text-xl font-bold font-display text-slate-900">Ambulance Dashboard &amp; Availability</h3>
+                            <p class="text-xs text-slate-600 mt-1">Know which ambulance is ready to respond at any given second.</p>
+                        </div>
+
+                        <!-- Availability Status States -->
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-mono font-bold text-slate-500 uppercase block mb-1">Operational Status Lifecycle:</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+                                <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold">
+                                    AVAILABLE
+                                    <span class="block text-[10px] text-emerald-600 font-normal">Ready to accept request</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-brandBlue font-bold">
+                                    ASSIGNED
+                                    <span class="block text-[10px] text-blue-600 font-normal">Assigned to booking</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 font-bold">
+                                    ON THE WAY
+                                    <span class="block text-[10px] text-amber-600 font-normal">Travelling to pickup</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-purple-50 border border-purple-200 text-purple-800 font-bold">
+                                    ARRIVED
+                                    <span class="block text-[10px] text-purple-600 font-normal">Reached pickup scene</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-cyan-50 border border-cyan-200 text-cyan-800 font-bold">
+                                    PATIENT ONBOARD
+                                    <span class="block text-[10px] text-cyan-600 font-normal">Patient secured in unit</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold">
+                                    IN TRANSIT
+                                    <span class="block text-[10px] text-indigo-600 font-normal">En route to destination</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-bold">
+                                    COMPLETED
+                                    <span class="block text-[10px] text-slate-500 font-normal">Trip closed &amp; verified</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 font-bold">
+                                    UNAVAILABLE
+                                    <span class="block text-[10px] text-rose-600 font-normal">Maintenance / offline</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed pt-2 border-t border-slate-200">
+                            Providers maintain complete clarity over available ambulances, busy units, assigned trips, pending requests, active transits, upcoming bookings, and full trip histories.
+                        </p>
+                    </div>
+
+                    <!-- Module 2: Receive Bookings & Intelligent Assignment -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue block mb-1">DIRECT RIDE INTEGRATION</span>
+                            <h3 class="text-xl font-bold font-display text-slate-900">Receive Bookings &amp; Assign Fleets</h3>
+                            <p class="text-xs text-slate-600 mt-1">Structured request payloads directly from EMSTRAP Ride.</p>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <span class="text-[11px] font-mono font-bold text-slate-500 uppercase block">Provider Receives:</span>
+                            <div class="grid grid-cols-2 gap-2 font-mono text-slate-700">
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Booking ID</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Pickup Location</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Destination</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Patient Requirement</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Ambulance Type</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200">&bull; Contact Info</div>
+                            </div>
+                        </div>
+
+                        <!-- Assignment Flow -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 font-mono text-xs text-slate-800">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-1">Ambulance Assignment Engine:</span>
+                            <div class="flex items-center justify-between text-[11px]">
+                                <span>Patient Request</span> &rarr;
+                                <span>EMSTRAP Command</span> &rarr;
+                                <span>Available Fleet</span> &rarr;
+                                <span class="text-emerald-700 font-bold">Assign &amp; Dispatch</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-brandBlue font-mono">
+                            <strong>Location &amp; Trip Info:</strong> Pickup &rarr; Destination &rarr; Trip Information delivered instantly to ambulance crews, reducing repetitive phone communication.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Command for Hospitals Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">CLINICAL PRE-HOSPITAL COORDINATION</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🏥 Command for Hospitals
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Prepare for the patient before arrival.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Hospitals can use EMSTRAP Command to receive and manage relevant patient transportation and emergency information in advance, enabling emergency room teams and trauma bays to prepare before the patient reaches the hospital.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    
+                    <!-- Hospital Dashboard Card -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-5 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-hospital-user"></i>
+                                </div>
+                                <h3 class="text-xl font-bold font-display text-slate-900">Hospital Dashboard</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                                A hospital's Command dashboard provides complete clinical visibility into:
+                            </p>
+                            <div class="space-y-2 text-xs font-mono text-slate-700">
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">&bull; Incoming ambulances &amp; ETA</div>
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">&bull; Expected patient arrivals</div>
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">&bull; Patient transportation requests</div>
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">&bull; Emergency medical context</div>
+                                <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">&bull; Hospital transfer requests &amp; history</div>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-medium">
+                            Enables ED physicians and triage nurses to pre-allocate beds, prepare resuscitation equipment, and eliminate intake bottlenecks.
+                        </div>
+                    </div>
+
+                    <!-- Hospital-to-Hospital Transfers & Emergency Coordination -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-shuffle"></i>
+                                </div>
+                                <h3 class="text-xl font-bold font-display text-slate-900">Transfers &amp; Emergency Sync</h3>
+                            </div>
+
+                            <!-- Transfer Flow Diagram -->
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-mono font-bold text-slate-500 uppercase block mb-1">Hospital-to-Hospital Transfer:</span>
+                                <div class="p-3 rounded-xl bg-white border border-slate-200 font-mono text-xs text-slate-800 space-y-1">
+                                    <div class="flex items-center justify-between text-[11px]">
+                                        <span>Hospital A</span> &rarr;
+                                        <span>Transfer Request</span> &rarr;
+                                        <span>EMSTRAP Command</span> &rarr;
+                                        <span>Available Ambulance</span> &rarr;
+                                        <span>Hospital B</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 pt-1 font-sans">
+                                        Coordinate transfers without relying entirely on manual phone calls.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Coordination Flow -->
+                            <div class="space-y-2">
+                                <span class="text-[11px] font-mono font-bold text-slate-500 uppercase block mb-1">Emergency Hospital Coordination:</span>
+                                <div class="p-3 rounded-xl bg-white border border-slate-200 font-mono text-xs text-slate-800 space-y-1">
+                                    <div class="flex items-center justify-between text-[11px]">
+                                        <span>Report</span> &rarr;
+                                        <span>EMSTRAP</span> &rarr;
+                                        <span>Command</span> &rarr;
+                                        <span>Ambulance</span> &rarr;
+                                        <span>Hospital Notified</span> &rarr;
+                                        <span>Arrival</span>
+                                    </div>
+                                    <p class="text-[10px] text-slate-500 pt-1 font-sans">
+                                        Creates a connected journey from incident to transportation to hospital arrival.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-brandBlue font-mono">
+                            Seamless integration with EMSTRAP Connect, Ride, and Shield incident feeds.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Complete Command Workflow (10 Steps) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">OPERATIONAL LIFECYCLE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🔄 Complete Command Workflow
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal">
+                        From Request to Resolution: A structured 10-step lifecycle.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 01</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Request Received</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Arrives from Ride, Shield, Connect, Hospital, or authorized sources.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 02</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Request Reviewed</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Ambulance provider reviews patient requirement and pickup details.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 03</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Ambulance Identified</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Available ambulances and proximity grid are checked.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 04</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Ambulance Assigned</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Appropriate ambulance vehicle and crew are locked for dispatch.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 05</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Pickup</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Ambulance travels to pickup location with real-time GPS tracking.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 06</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Patient Picked Up</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Medical crew assists patient onboard; trip status updates.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 07</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Hospital Coordination</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Destination hospital receives advance clinical &amp; arrival notices.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 08</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Patient Transport</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Continuous monitoring and safe transit to receiving facility.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-brandBlue block">STEP 09</span>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Hospital Arrival</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">
+                            Patient reaches destination and medical handover begins.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 shadow-sm space-y-2">
+                        <span class="text-xs font-mono font-bold text-emerald-700 block">STEP 10</span>
+                        <h4 class="text-sm font-bold text-emerald-900 font-display">Trip Completed</h4>
+                        <p class="text-xs text-emerald-700 font-normal leading-relaxed">
+                            Trip is closed and permanent digital audit log is maintained.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Command Control Center (Operational Overview Board) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">REAL-TIME DASHBOARD</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        📊 Command Control Center
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-800 font-bold">
+                        Everything your operations team needs at a glance.
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                        The Command dashboard provides a real-time operational overview, giving dispatchers and medical administrators immediate situational awareness:
+                    </p>
+                </div>
+
+                <!-- Structured Metric Board -->
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 md:p-8 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-200 font-mono text-xs">
+                        <span class="font-bold text-slate-900 uppercase">EMSTRAP COMMAND // REGIONAL DISPATCH OVERVIEW</span>
+                        <span class="text-emerald-600 font-bold flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> SYSTEM SYNCHRONIZED
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center font-mono">
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Active Requests</span>
+                            <span class="text-2xl font-black text-slate-900 font-display">12</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Available Fleet</span>
+                            <span class="text-2xl font-black text-emerald-600 font-display">18</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Units on Trip</span>
+                            <span class="text-2xl font-black text-amber-600 font-display">9</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Pending Bookings</span>
+                            <span class="text-2xl font-black text-blue-600 font-display">4</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Incoming Patients</span>
+                            <span class="text-2xl font-black text-purple-600 font-display">6</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                            <span class="text-[10px] text-slate-500 uppercase block mb-1">Hospital Transfers</span>
+                            <span class="text-2xl font-black text-brandBlue font-display">3</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 shadow-sm col-span-2 sm:col-span-1">
+                            <span class="text-[10px] text-emerald-800 uppercase block mb-1 font-bold">Completed Today</span>
+                            <span class="text-2xl font-black text-emerald-700 font-display">47</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Operational Deep Dives Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">OPERATIONAL DEPTH</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Comprehensive Operational Modules
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Built for high-volume emergency management, fleet optimization, and multi-hospital healthcare networks.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Fleet Management -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-base">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">🚑 Fleet Management</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Registration, ambulance type (BLS/ALS/ICU), availability, assigned trips, service history, and operational GPS telemetry.
+                        </p>
+                    </div>
+
+                    <!-- Driver & Crew Management -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">👨‍⚕️ Driver &amp; Crew Management</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Maintain operational details about paramedic staff, drivers, assigned vehicle, active shifts, and historical trip logs.
+                        </p>
+                    </div>
+
+                    <!-- Location-Based Operations -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">📍 Location-Based Operations</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Answers the three critical questions in emergency transit: Where is the ambulance? Where is the patient? Where is the patient going?
+                        </p>
+                    </div>
+
+                    <!-- Booking Management Lifecycle -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">📋 Booking Lifecycle</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Pending &rarr; Accepted &rarr; Assigned &rarr; En Route &rarr; Arrived &rarr; Patient Onboard &rarr; In Transit &rarr; Completed.
+                        </p>
+                    </div>
+
+                    <!-- Trip Records -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">📑 Structured Trip Records</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Every completed trip maintains Booking ID, Pickup, Destination, Ambulance, Crew, Duration, and Handover timestamps.
+                        </p>
+                    </div>
+
+                    <!-- Reports & Analytics -->
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-base font-bold font-display text-slate-900">📊 Reports &amp; Analytics</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                            Understand ambulance utilization rates, average response intervals, cancellation metrics, and inter-facility transfer volumes.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Collaborative Dialogue Card -->
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue">🤝 CONNECTING AMBULANCE PROVIDERS &amp; HOSPITALS</span>
+                        <span class="text-xs font-mono text-slate-500 font-medium">Synchronized Coordination</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 font-mono text-xs text-slate-800">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <span class="font-bold text-brandBlue block font-sans">Ambulance Provider</span>
+                            <p class="text-[11px] text-slate-600">&ldquo;I have an available ambulance.&rdquo;</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 space-y-1">
+                            <span class="font-bold text-slate-900 block font-sans">EMSTRAP Command</span>
+                            <p class="text-[11px] text-brandBlue font-semibold">&ldquo;There is a transportation request.&rdquo;</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1">
+                            <span class="font-bold text-emerald-800 block font-sans">Hospital</span>
+                            <p class="text-[11px] text-emerald-700">&ldquo;We are expecting the patient.&rdquo;</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 text-white space-y-1">
+                            <span class="font-bold block font-sans">Completed Transit</span>
+                            <p class="text-[11px] text-slate-300">Patient transported safely to ER bay.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inter-Service Synergy Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <h4 class="text-sm font-bold font-display text-slate-900">EMSTRAP COMMAND + EMSTRAP RIDE</h4>
+                        <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                            Public user requests ambulance via Ride &rarr; Command routes request to available provider &rarr; Provider accepts, picks up, and transports &rarr; Hospital receives patient.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <h4 class="text-sm font-bold font-display text-slate-900">EMSTRAP COMMAND + EMSTRAP CONNECT</h4>
+                        <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                            Emergency incident reported via Connect &rarr; Coordinates with police &amp; CAD mesh &rarr; Command dispatches nearest medical unit &rarr; Hospital trauma bay prepares in advance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Who is EMSTRAP Command For? Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">STAKEHOLDER ONBOARDING</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Who is EMSTRAP Command For?
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Command is purpose-built for institutions and operations teams across the healthcare logistics spectrum:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-base">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Ambulance Companies</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">Manage fleets, bookings, drivers, trips and availability.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Hospitals</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">Manage incoming patient transportation and hospital transfers.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Hospital Networks</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">Coordinate ambulance and patient movement across multiple facilities.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Emergency Operators</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">Manage multi-tier emergency transportation workflows.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-600 flex items-center justify-center text-base">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-900 font-display">Healthcare Organizations</h4>
+                        <p class="text-xs text-slate-500 font-normal leading-relaxed">Centralize ambulance and patient transportation operations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Key Benefits Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">SYSTEM VALUE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Key Benefits
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-sans">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Centralized Operations</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Manage ambulance and hospital-related activities from one platform.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Better Visibility</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Know the status of requests, ambulances and active trips in real time.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Faster Coordination</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Reduce unnecessary back-and-forth phone calls between different parties.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Fleet Visibility</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Know which ambulances are available, assigned, en route, or on a trip.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Transfer Management</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Support structured transportation between hospitals and medical clinics.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Hospital Readiness</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Provide relevant incoming-patient information in advance when applicable.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Digital Records</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Maintain structured booking and trip history for compliance and auditing.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Enterprise Scalable</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Designed to support individual operators as well as large hospital networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. EMSTRAP Command — The Big Picture & In One Sentence -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">SYSTEM ARCHITECTURE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        EMSTRAP Command &mdash; The Big Picture
+                    </h2>
+                </div>
+
+                <!-- Architectural Flow Diagram -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm font-mono text-xs sm:text-sm space-y-6">
+                    <div class="flex justify-center">
+                        <div class="px-8 py-3 rounded-2xl bg-slate-900 text-white font-bold font-display tracking-wider text-center shadow">
+                            EMSTRAP ECOSYSTEM
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+                        <div class="p-3 rounded-xl bg-white border border-slate-200 font-bold text-slate-900">
+                            CONNECT<br><span class="text-[11px] font-normal text-slate-500">Emergency Reports</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white border border-slate-200 font-bold text-slate-900">
+                            RIDE<br><span class="text-[11px] font-normal text-slate-500">Ambulance Booking</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white border border-slate-200 font-bold text-slate-900">
+                            SHIELD<br><span class="text-[11px] font-normal text-slate-500">Corporate Safety</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="flex justify-center">
+                        <div class="px-8 py-3.5 rounded-2xl bg-brandBlue text-white font-bold font-display tracking-wider text-center shadow-md">
+                            EMSTRAP COMMAND
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+                            <strong class="text-slate-900 block font-sans">AMBULANCE PROVIDERS</strong>
+                            <p class="text-[11px] text-slate-600 font-normal">Fleet Management &bull; Booking Management &bull; Trip Management &bull; Driver/Crew</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-1">
+                            <strong class="text-slate-900 block font-sans">HOSPITALS</strong>
+                            <p class="text-[11px] text-slate-600 font-normal">Patient Coordination &bull; Hospital Transfers &bull; Incoming Patients &bull; Emergency Sync</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="max-w-md mx-auto p-3 rounded-xl bg-emerald-600 text-white text-center font-bold font-sans shadow-sm">
+                        PATIENT JOURNEY &rarr; PICKUP &rarr; TRANSPORT &rarr; HOSPITAL ARRIVAL
+                    </div>
+                </div>
+
+                <!-- EMSTRAP Command in One Sentence -->
+                <div class="p-8 rounded-3xl bg-gradient-to-r from-blue-50 via-slate-50 to-emerald-50 border border-slate-200 shadow-sm text-center space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">EMSTRAP COMMAND IN ONE SENTENCE</span>
+                    <blockquote class="text-base sm:text-lg font-bold font-display text-slate-900 max-w-3xl mx-auto leading-relaxed">
+                        &ldquo;EMSTRAP Command is the operational platform that connects ambulance providers and hospitals, helping them manage ambulance availability, bookings, patient transportation, hospital transfers, emergency coordination, trip tracking and operational records from one centralized system.&rdquo;
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Final Website Hero / CTA Section -->
+        <section class="py-20 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">JOIN THE NETWORK</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    The Command Center Behind Every Connected Journey
+                </h2>
+                <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                    Manage ambulances, bookings, patient transportation and hospital coordination from one centralized platform.
+                </p>
+                <div class="text-xs font-mono text-slate-400">
+                    For Ambulance Providers &bull; Hospitals &bull; Healthcare Networks
+                </div>
+                <div class="pt-2 flex flex-wrap justify-center items-center gap-2 font-mono text-xs text-slate-300">
+                    <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700">Receive</span>
+                    <span class="text-slate-500">&bull;</span>
+                    <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700">Coordinate</span>
+                    <span class="text-slate-500">&bull;</span>
+                    <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700">Dispatch</span>
+                    <span class="text-slate-500">&bull;</span>
+                    <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700">Track</span>
+                </div>
+                <div class="pt-4 flex flex-wrap justify-center gap-4">
+                    <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display hover:scale-105 active:scale-95">
+                        Partner With EMSTRAP
+                    </button>
+                    <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold tracking-wider text-xs uppercase transition-all border border-slate-700 font-display hover:scale-105 active:scale-95">
+                        Request a Demo
+                    </button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer: Plain uncoloured text style for links as requested -->
     <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP COMMAND &bull; B2B OPERATIONS ENGINE</span>
-                <span>&copy; 2026 EMSTRAP. All rights reserved.</span>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP COMMAND &bull; HEALTHCARE &amp; FLEET OPERATIONS</span>
+                <span>&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved.</span>
             </div>
             <div class="flex items-center space-x-6 text-neutral-400">
                 <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
-                <a href="index.html#page-services" class="hover:text-white transition-colors">Products</a>
+                <a href="index.html#page-services" class="hover:text-white transition-colors">Services</a>
                 <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <!-- Contact text kept plain and not coloured -->
                 <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-3">
@@ -517,25 +1026,25 @@
         </div>
     </footer>
 
-    <!-- Command Demo Request Modal -->
+    <!-- Command Demo Request Modal: Plain formal styling, uncoloured text -->
     <div id="commandDemoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="bg-neutral-950 border border-neutral-800 p-8 rounded-3xl max-w-lg w-full space-y-6 text-white shadow-2xl relative">
-            <button onclick="closeCommandDemoModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl">
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-6 text-slate-900 shadow-2xl relative">
+            <button onclick="closeCommandDemoModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div>
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400">OPERATIONS PLATFORM</span>
-                <h3 class="text-2xl font-bold font-display text-white mt-1">Deploy EMSTRAP Command</h3>
-                <p class="text-xs text-neutral-400 font-light mt-1">For Ambulance Operators, Hospitals, and Healthcare Networks.</p>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500">B2B HEALTHCARE ONBOARDING</span>
+                <h3 class="text-2xl font-bold font-display text-slate-900 mt-1">Deploy EMSTRAP Command</h3>
+                <p class="text-xs text-slate-500 font-normal mt-1">For Ambulance Operators, Hospitals, and Healthcare Networks.</p>
             </div>
             <form onsubmit="handleCommandDemoSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Organization Name</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="e.g. Apollo Hospital / LifeLine Ambulance" />
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Organization Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Apollo Hospital / LifeLine Ambulance" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Organization Type</label>
-                    <select class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500">
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Organization Type</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue">
                         <option>Hospital / Emergency Department</option>
                         <option>Ambulance Service Provider (Fleet)</option>
                         <option>Healthcare Network (Multi-Facility)</option>
@@ -543,14 +1052,15 @@
                     </select>
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Official Work Email</label>
-                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="operations@organization.com" />
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Official Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="operations@organization.com" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Contact Phone</label>
-                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="+91 XXXXX XXXXX" />
+                    <!-- Contact phone label plain and not coloured -->
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Contact Phone</label>
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="+91 XXXXX XXXXX" />
                 </div>
-                <button type="submit" class="w-full py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display">
+                <button type="submit" class="w-full py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg">
                     Schedule Command Center Demo
                 </button>
             </form>
@@ -569,6 +1079,12 @@
             alert('Thank you. The EMSTRAP Healthcare Operations Desk has received your request and will schedule a live demonstration.');
             closeCommandDemoModal();
         }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCommandDemoModal();
+            }
+        });
     </script>
 </body>
 </html>

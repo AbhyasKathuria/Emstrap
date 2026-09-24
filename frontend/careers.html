@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers at EMSTRAP - Simply Premium</title>
+    <title>Careers at EMSTRAP | Build Technology That Saves Lives</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,13 +14,12 @@
                     colors: {
                         brandDark: '#050B14',
                         brandBlue: '#2C64A1',
-                        brandAccent: '#22C55E',
                         emergencyRed: '#C9302C',
                         warmAmber: '#F59E0B'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace']
                     }
                 }
@@ -31,51 +30,35 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     
     <style>
         body {
-            background-color: #F8FAFC;
+            background-color: #ffffff;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(44, 100, 161, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(201, 48, 44, 0.03) 0%, transparent 40%);
-            background-attachment: fixed;
             color: #0F172A;
         }
 
-        .font-display { font-family: 'Outfit', sans-serif; }
+        .font-display { font-family: 'Sora', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
 
         .hover-lift {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .hover-lift:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
-
-        @keyframes sirenFlash {
-            0% { fill: #EF4444; filter: drop-shadow(0 0 8px #EF4444); }
-            100% { fill: #3B82F6; filter: drop-shadow(0 0 8px #3B82F6); }
-        }
-        .siren-flash { animation: sirenFlash 0.3s infinite alternate; }
     </style>
-
-    <!-- GSAP for Smooth Parallax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body class="text-slate-900 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
-
-    <!-- Top Glow Line -->
-    <div class="h-1 w-full bg-gradient-to-r from-brandBlue via-emergencyRed to-brandBlue"></div>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col justify-between selection:bg-slate-900 selection:text-white">
 
     <!-- Solid Dark Belt Header -->
-    <header class="py-5 px-6 md:px-12 border-b border-white/10 bg-[#050B14]/95 backdrop-blur-md sticky top-0 z-50">
+    <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <a class="flex items-center space-x-3 group" href="index.html">
                 <div class="h-9 flex items-center transition-transform duration-300 group-hover:scale-105">
@@ -86,35 +69,40 @@
                 </div>
             </a>
             
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-6 lg:space-x-8">
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="about.html" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">About</a>
+                    <a href="index.html#page-about" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">About</a>
                     <a href="index.html#page-services" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Services</a>
-                    <a href="careers.html" class="text-xs lg:text-sm font-semibold text-brandBlue transition-colors">Careers</a>
+                    <a href="careers.html" class="text-xs lg:text-sm font-semibold text-white transition-colors">Careers</a>
+                    <!-- Contact text kept plain and not coloured -->
                     <a href="index.html#page-contact" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Contact</a>
                 </nav>
-                <a href="#apply" class="px-5 py-2 rounded-full bg-emergencyRed hover:bg-red-600 text-white font-bold text-xs tracking-wide shadow-md hover:scale-105 transition-all duration-300">
-                    Join The Team
-                </a>
+                <div class="flex items-center gap-3">
+                    <button onclick="openRoleModal('senior-backend')" class="px-5 py-2 rounded-full bg-white hover:bg-neutral-100 text-slate-900 font-bold text-xs tracking-wider uppercase transition-all duration-200 shadow-sm font-display">
+                        Join The Team
+                    </button>
+                    <div class="hidden sm:flex items-center gap-2 pl-3 border-l border-neutral-800">
+                        <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    
-        <!-- Scroll Progress Ambulance Track (Restored Previous SVG Icon) -->
-        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-white/10">
-            <div id="headerAmbulance" class="absolute bottom-0 w-8 h-6 transition-all duration-75 ease-out" style="left: 0px; z-index: 50; margin-bottom: 1px;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 6px #C9302C);">
-                    <path fill="#C9302C" d="M128 32C92.7 32 64 60.7 64 96V352h48c0 26.5 21.5 48 48 48s48-21.5 48-48H384c0 26.5 21.5 48 48 48s48-21.5 48-48h48c35.3 0 64-28.7 64-64V256h-8V224H520c-13.3 0-24-10.7-24-24V144c0-8.8-7.2-16-16-16H384V96c0-35.3-28.7-64-64-64H128zM192 128H288v48H192V128zm0 96H288v48H192V224zM536 256H592c4.4 0 8 3.6 8 8V352c0 8.8-7.2 16-16 16H536V256zM160 384c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16zm272 0c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16z"/>
-                    <circle cx="320" cy="20" r="28" class="siren-flash" />
+
+        <!-- Scroll Progress Indicator (Clean Neutral Track) -->
+        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-neutral-800">
+            <div id="headerAmbulance" class="absolute bottom-0 w-7 h-5 transition-all duration-75 ease-out opacity-75" style="left: 0px; z-index: 50; margin-bottom: 1px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full">
+                    <path fill="#ffffff" d="M128 32C92.7 32 64 60.7 64 96V352h48c0 26.5 21.5 48 48 48s48-21.5 48-48H384c0 26.5 21.5 48 48 48s48-21.5 48-48h48c35.3 0 64-28.7 64-64V256h-8V224H520c-13.3 0-24-10.7-24-24V144c0-8.8-7.2-16-16-16H384V96c0-35.3-28.7-64-64-64H128zM192 128H288v48H192V128zm0 96H288v48H192V224zM536 256H592c4.4 0 8 3.6 8 8V352c0 8.8-7.2 16-16 16H536V256zM160 384c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16zm272 0c8.8 0 16 7.2 16 16s-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16z"/>
                 </svg>
             </div>
-            <div id="headerShieldReaction" class="absolute bottom-6 right-8 w-5 h-5 flex items-center justify-center bg-[#2C64A1] rounded-full border border-white/20 p-1 transition-all duration-300 scale-0 opacity-0 translate-y-2 z-55 shadow-[0_0_10px_rgba(44,100,161,0.6)]">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full">
-                    <path fill="#ffffff" d="M256 0c4.6 0 9.2 1 13.4 2.9L452.9 82.8c22 9.3 35.1 31.7 35.1 55.4l0 102.5c0 141.8-84.4 269-218.1 328.3c-8.9 3.9-19 3.9-27.9 0C108.4 509.8 24 382.5 24 240.7l0-102.5c0-23.7 13.1-46.1 35.1-55.4L242.6 2.9C246.8 1 251.4 0 256 0z"/>
-                </svg>
-            </div>
-            <div class="absolute bottom-0 right-0 w-6 h-5 flex items-center justify-center" style="z-index: 45; margin-bottom: 1px;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full" style="filter: drop-shadow(0 0 4px #C9302C);">
-                    <path fill="#C9302C" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h74.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V416H96c-17.7 0-32-14.3-32-32V298.7zm426.7-106.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V416H416c-17.7 0-32-14.3-32-32V298.7c0-58.9 47.8-106.7 106.7-106.7z"/>
+            <div class="absolute bottom-0 right-0 w-5 h-4 flex items-center justify-center opacity-60" style="z-index: 45; margin-bottom: 1px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-full h-full">
+                    <path fill="#94A3B8" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h74.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V416H96c-17.7 0-32-14.3-32-32V298.7zm426.7-106.7c58.9 0 106.7 47.8 106.7 106.7V384c0 17.7-14.3 32-32 32h-32v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V416H416c-17.7 0-32-14.3-32-32V298.7c0-58.9 47.8-106.7 106.7-106.7z"/>
                 </svg>
             </div>
         </div>
@@ -123,22 +111,24 @@
     <!-- Main Content Container -->
     <main class="flex-grow space-y-20 py-16 px-6 md:px-12 max-w-6xl mx-auto w-full">
         
-        <!-- Hero Section (Crisp Dark Text on Light BG) -->
+        <!-- Hero Section: Clean Monochrome Dark Text on White Canvas -->
         <section class="text-center max-w-3xl mx-auto space-y-6 pt-6">
-            <span class="text-xs font-bold uppercase text-brandBlue tracking-widest font-mono">CAREERS AT EMSTRAP</span>
-            <h1 class="text-4xl md:text-6xl font-black font-display text-slate-900 tracking-tight leading-tight">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-mono font-bold uppercase tracking-widest">
+                CAREERS AT EMSTRAP
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-slate-900 tracking-tight leading-tight">
                 Build Technology That <br />
-                <span class="text-emergencyRed">Saves Lives.</span>
+                Saves Lives.
             </h1>
             <p class="text-slate-600 text-sm md:text-base font-normal leading-relaxed max-w-2xl mx-auto">
                 Join India's next-generation emergency response intelligence grid. Work on distributed systems, real-time spatial routing, and hospital telemetry where milliseconds count.
             </p>
         </section>
 
-        <!-- SECTION 1: Culture & Impact (White Card Container Removed) -->
+        <!-- SECTION 1: Culture & Impact (Plain, Formal, No Small Coloured Buttons) -->
         <section class="space-y-8">
             <div class="max-w-3xl">
-                <span class="text-xs font-bold font-mono tracking-widest text-brandBlue uppercase mb-2 block">CULTURE &amp; IMPACT</span>
+                <span class="text-xs font-bold font-mono tracking-widest text-slate-500 uppercase mb-2 block">CULTURE &amp; IMPACT</span>
                 <h2 class="text-2xl md:text-4xl font-black font-display text-slate-900 mb-4">
                     Where Your Code Has a Heartbeat.
                 </h2>
@@ -147,31 +137,31 @@
                 </p>
             </div>
 
-            <!-- 3 Culture Pillars as Clean Cards -->
+            <!-- 3 Culture Pillars as Clean Cards with Plain Styling -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover-lift">
-                    <span class="w-8 h-8 rounded-full bg-brandBlue/15 text-brandBlue flex items-center justify-center text-xs font-bold font-mono mb-3">01</span>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover-lift">
+                    <span class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold font-mono mb-3">01</span>
                     <h4 class="font-bold text-sm text-slate-900 font-display mb-1">True Real-World Impact</h4>
                     <p class="text-xs text-slate-600 font-normal leading-relaxed">Direct contribution to public safety and emergency health response across smart cities.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover-lift">
-                    <span class="w-8 h-8 rounded-full bg-emergencyRed/15 text-emergencyRed flex items-center justify-center text-xs font-bold font-mono mb-3">02</span>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover-lift">
+                    <span class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold font-mono mb-3">02</span>
                     <h4 class="font-bold text-sm text-slate-900 font-display mb-1">Hard Engineering Problems</h4>
                     <p class="text-xs text-slate-600 font-normal leading-relaxed">Low-latency Go microservices, sub-second WebSockets, and spatial A* routing models.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover-lift">
-                    <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold font-mono mb-3">03</span>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover-lift">
+                    <span class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center text-xs font-bold font-mono mb-3">03</span>
                     <h4 class="font-bold text-sm text-slate-900 font-display mb-1">Comprehensive Care</h4>
                     <p class="text-xs text-slate-600 font-normal leading-relaxed">Premium healthcare coverage for you and your family, mental wellness, and flexible hybrid working.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: Open Roles (Clean Light Theme Cards) -->
-        <section class="space-y-8">
+        <!-- SECTION 2: Open Roles (Clean Monochrome, No Small Coloured Buttons, Pop-Up Box Enabled) -->
+        <section class="space-y-8" id="open-roles">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
-                    <span class="text-xs font-bold uppercase text-emergencyRed tracking-widest font-mono">OPPORTUNITIES</span>
+                    <span class="text-xs font-bold uppercase text-slate-500 tracking-widest font-mono">OPPORTUNITIES</span>
                     <h2 class="text-2xl md:text-3xl font-black font-display text-slate-900 mt-1">Open Positions</h2>
                 </div>
                 <span class="text-xs text-slate-500 font-mono">5 Active Roles in Bengaluru &amp; Remote</span>
@@ -179,123 +169,149 @@
 
             <div class="space-y-4">
                 
-                <!-- Role 1 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brandBlue/40">
+                <!-- Role 1: Senior Backend & Distributed Systems Engineer -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-400">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[10px] font-mono font-bold uppercase text-brandBlue px-2.5 py-0.5 rounded-full bg-brandBlue/10 border border-brandBlue/20">Backend</span>
-                            <span class="text-xs text-slate-500 font-mono">Senior (4–7 Yrs) • Bengaluru / Hybrid</span>
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+                            <span class="font-semibold text-slate-800">Backend Engineering</span>
+                            <span>&bull;</span>
+                            <span>Senior (4–7 Yrs)</span>
+                            <span>&bull;</span>
+                            <span>Bengaluru / Hybrid</span>
                         </div>
-                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Senior Backend &amp; Distributed Systems Engineer</h3>
+                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-800 transition-colors">Senior Backend &amp; Distributed Systems Engineer</h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Scale our high-throughput WebSocket gateway, live ambulance GPS ingestion pipelines, and multi-agency dispatch queues. High-concurrency Go and Node.js expertise required.
                         </p>
                     </div>
-                    <button onclick="selectRole('Senior Backend & Distributed Systems Engineer')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-brandBlue text-white font-semibold text-xs transition-all duration-300 shrink-0 shadow-sm">
-                        Apply Role
-                    </button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button onclick="openRoleModal('senior-backend')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all duration-200 shadow-sm font-display">
+                            View Role &amp; Apply
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Role 2 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emergencyRed/40">
+                <!-- Role 2: AI & Spatial Routing Algorithm Researcher -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-400">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[10px] font-mono font-bold uppercase text-emergencyRed px-2.5 py-0.5 rounded-full bg-emergencyRed/10 border border-emergencyRed/20">AI &amp; Algorithms</span>
-                            <span class="text-xs text-slate-500 font-mono">Mid–Senior (3–6 Yrs) • Bengaluru</span>
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+                            <span class="font-semibold text-slate-800">AI &amp; Spatial Algorithms</span>
+                            <span>&bull;</span>
+                            <span>Mid–Senior (3–6 Yrs)</span>
+                            <span>&bull;</span>
+                            <span>Bengaluru (HQ)</span>
                         </div>
-                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-emergencyRed transition-colors">AI &amp; Spatial Routing Algorithm Researcher</h3>
+                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-800 transition-colors">AI &amp; Spatial Routing Algorithm Researcher</h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Design dynamic green corridor traffic signal preemption algorithms and automated patient-to-hospital triage models using graph theory, Dijkstra/A*, and geospatial neural networks.
                         </p>
                     </div>
-                    <button onclick="selectRole('AI & Spatial Routing Algorithm Researcher')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-emergencyRed text-white font-semibold text-xs transition-all duration-300 shrink-0 shadow-sm">
-                        Apply Role
-                    </button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button onclick="openRoleModal('ai-routing')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all duration-200 shadow-sm font-display">
+                            View Role &amp; Apply
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Role 3 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brandAccent/40">
+                <!-- Role 3: Lead Mobile Engineer -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-400">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">Mobile</span>
-                            <span class="text-xs text-slate-500 font-mono">Lead (5+ Yrs) • Bengaluru / Remote</span>
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+                            <span class="font-semibold text-slate-800">Mobile Engineering</span>
+                            <span>&bull;</span>
+                            <span>Lead (5+ Yrs)</span>
+                            <span>&bull;</span>
+                            <span>Bengaluru / Remote</span>
                         </div>
-                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-emerald-600 transition-colors">Lead Mobile Engineer (Emergency SOS &amp; Telemetry)</h3>
+                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-800 transition-colors">Lead Mobile Engineer (Emergency SOS &amp; Telemetry)</h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Lead the architecture of our mission-critical citizen SOS and paramedic mobile applications. Must deliver offline-first sync, background telemetry, and sub-second push notifications.
                         </p>
                     </div>
-                    <button onclick="selectRole('Lead Mobile Engineer (Emergency SOS & Telemetry)')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-emerald-600 text-white font-semibold text-xs transition-all duration-300 shrink-0 shadow-sm">
-                        Apply Role
-                    </button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button onclick="openRoleModal('lead-mobile')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all duration-200 shadow-sm font-display">
+                            View Role &amp; Apply
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Role 4 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200/80 shadow-sm hover:shadow-md hover:border-warmAmber/40">
+                <!-- Role 4: Emergency Operations & Hospital Network Lead -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-400">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[10px] font-mono font-bold uppercase text-amber-600 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200">Operations</span>
-                            <span class="text-xs text-slate-500 font-mono">Lead (4–8 Yrs) • Bengaluru On-Site</span>
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+                            <span class="font-semibold text-slate-800">Healthcare Operations</span>
+                            <span>&bull;</span>
+                            <span>Lead (4–8 Yrs)</span>
+                            <span>&bull;</span>
+                            <span>Bengaluru (On-Site)</span>
                         </div>
-                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-amber-600 transition-colors">Emergency Operations &amp; Hospital Network Lead</h3>
+                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-800 transition-colors">Emergency Operations &amp; Hospital Network Lead</h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Build and expand relationships with major hospital networks, trauma centers, and municipal 112 emergency services. Oversee deployment training and operational SLAs.
                         </p>
                     </div>
-                    <button onclick="selectRole('Emergency Operations & Hospital Network Lead')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-amber-600 text-white font-semibold text-xs transition-all duration-300 shrink-0 shadow-sm">
-                        Apply Role
-                    </button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button onclick="openRoleModal('ops-lead')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all duration-200 shadow-sm font-display">
+                            View Role &amp; Apply
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Role 5 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-400">
+                <!-- Role 5: Product Management Intern -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 hover-lift flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-400">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[10px] font-mono font-bold uppercase text-blue-600 px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200">Product</span>
-                            <span class="text-xs text-slate-500 font-mono">6 Months Internship • Bengaluru (HQ)</span>
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 font-mono">
+                            <span class="font-semibold text-slate-800">Product Management</span>
+                            <span>&bull;</span>
+                            <span>6 Months Internship</span>
+                            <span>&bull;</span>
+                            <span>Bengaluru (HQ)</span>
                         </div>
-                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-blue-600 transition-colors">Product Management Intern (Emergency Logistics)</h3>
+                        <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-800 transition-colors">Product Management Intern (Emergency Logistics)</h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Work alongside our founding team to analyze field dispatch metrics, interview paramedics and ER directors, and define requirements for next-gen dispatch modules.
                         </p>
                     </div>
-                    <button onclick="selectRole('Product Management Intern (Emergency Logistics)')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-semibold text-xs transition-all duration-300 shrink-0 shadow-sm">
-                        Apply Role
-                    </button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button onclick="openRoleModal('pm-intern')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all duration-200 shadow-sm font-display">
+                            View Role &amp; Apply
+                        </button>
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- SECTION 3: 1-Click Application Portal (Crisp Light Theme Form) -->
+        <!-- SECTION 3: Direct Application Portal (Plain Formal Monochrome Form) -->
         <section class="pt-4" id="apply">
-            <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-md relative overflow-hidden">
+            <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm relative overflow-hidden">
                 <div class="text-center max-w-md mx-auto mb-8">
-                    <span class="text-xs font-bold uppercase text-brandBlue tracking-widest font-mono">DIRECT INTAKE</span>
+                    <span class="text-xs font-bold uppercase text-slate-500 tracking-widest font-mono">DIRECT INTAKE</span>
                     <h2 class="text-2xl md:text-3xl font-black font-display text-slate-900 mt-1">Submit Your Application</h2>
-                    <p class="text-xs text-slate-500 font-light mt-1">Direct review by our core engineering and operations leads.</p>
+                    <p class="text-xs text-slate-500 font-normal mt-1">Direct review by our core engineering and operations leads.</p>
                 </div>
 
                 <form id="minimalApplyForm" onsubmit="handleMinimalSubmit(event)" class="max-w-xl mx-auto space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Name *</label>
-                            <input type="text" id="candName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue focus:bg-white transition-all" placeholder="Your Name" />
+                            <input type="text" id="candName" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="Your Name" />
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Email *</label>
-                            <input type="email" id="candEmail" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue focus:bg-white transition-all" placeholder="your.email@domain.com" />
+                            <input type="email" id="candEmail" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="your.email@domain.com" />
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
+                            <!-- Plain contact phone label -->
                             <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Phone *</label>
-                            <input type="tel" id="candPhone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue focus:bg-white transition-all" placeholder="+91 ..." />
+                            <input type="tel" id="candPhone" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="+91 ..." />
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Role *</label>
-                            <select id="candRole" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-brandBlue focus:bg-white transition-all">
+                            <select id="candRole" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-800 focus:bg-white transition-all">
                                 <option value="" disabled selected>Select Role</option>
                                 <option value="Senior Backend & Distributed Systems Engineer">Senior Backend Engineer</option>
                                 <option value="AI & Spatial Routing Algorithm Researcher">AI Routing Researcher</option>
@@ -309,15 +325,15 @@
 
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Resume / Portfolio Link *</label>
-                        <input type="url" id="candResume" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue focus:bg-white transition-all" placeholder="https://drive.google.com/..." />
+                        <input type="url" id="candResume" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="https://drive.google.com/..." />
                     </div>
 
                     <div>
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Brief Note</label>
-                        <textarea id="candNote" rows="3" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue focus:bg-white transition-all resize-none" placeholder="What lifesaving challenge excites you most?"></textarea>
+                        <textarea id="candNote" rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all resize-none" placeholder="What lifesaving challenge excites you most?"></textarea>
                     </div>
 
-                    <button type="submit" id="submitBtn" class="w-full py-3.5 mt-2 rounded-xl bg-gradient-to-r from-emergencyRed to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-xs tracking-wider uppercase shadow-md transition-all duration-300 flex items-center justify-center gap-2">
+                    <button type="submit" id="submitBtn" class="w-full py-3.5 mt-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs tracking-wider uppercase shadow-md transition-all duration-300 flex items-center justify-center gap-2 font-display">
                         <span>Send Application</span>
                         <i class="fa-solid fa-paper-plane text-[10px]"></i>
                     </button>
@@ -327,39 +343,411 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#03070d] border-t border-white/5 py-8 px-6 md:px-12 text-center text-xs text-gray-500">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <span>© 2026 EMSTRAP. All rights reserved.</span>
-            <div class="flex items-center space-x-6">
-                <a href="index.html#page-about" class="hover:text-brandBlue transition-colors">About</a>
-                <a href="index.html#page-services" class="hover:text-brandBlue transition-colors">Services</a>
-<a href="index.html#page-services" class="hover:text-brandBlue transition-colors">Services</a>
-                <a href="careers.html" class="text-white hover:text-brandBlue transition-colors">Careers</a>
-                <a href="index.html#page-contact" class="hover:text-brandBlue transition-colors">Contact</a>
+    <!-- Footer: Plain uncoloured text style for links as requested -->
+    <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP CAREERS &bull; LIFESAVING TECHNOLOGY</span>
+                <span>&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6 text-neutral-400">
+                <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
+                <a href="index.html#page-services" class="hover:text-white transition-colors">Services</a>
+                <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <!-- Contact text kept plain and not coloured -->
+                <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn" aria-label="Official EMSTRAP LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-sm"></i>
-                    </a>
-                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-600 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram" aria-label="Official EMSTRAP Instagram">
-                        <i class="fa-brands fa-instagram text-sm"></i>
-                    </a>
+                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- Role Selection & Form Handler Script -->
+    <!-- ROLE DETAILS & APPLICATION POP-UP BOX (MODAL) -->
+    <div id="roleDetailsModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-3xl w-full my-auto shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden">
+            
+            <!-- Sticky Header inside Modal -->
+            <div class="px-6 sm:px-8 py-5 border-b border-slate-200 bg-slate-50 flex items-start justify-between">
+                <div class="space-y-1">
+                    <div id="modalMetaBadge" class="text-[11px] font-mono font-medium text-slate-500 uppercase tracking-wider">
+                        Backend Engineering &bull; Senior (4–7 Yrs)
+                    </div>
+                    <h3 id="modalRoleTitle" class="text-xl sm:text-2xl font-bold font-display text-slate-900 leading-tight">
+                        Role Title
+                    </h3>
+                </div>
+                <button onclick="closeRoleModal()" class="w-9 h-9 rounded-full bg-slate-200/80 hover:bg-slate-300 text-slate-700 hover:text-slate-900 flex items-center justify-center transition-all ml-4 shrink-0" title="Close">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Segmented Tabs Navigation -->
+            <div class="px-6 sm:px-8 border-b border-slate-200 flex gap-8 bg-white text-xs font-semibold">
+                <button id="tabBtnDetails" onclick="switchModalTab('details')" class="py-3.5 border-b-2 border-slate-900 text-slate-900 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-file-lines text-xs"></i>
+                    <span>Role Information</span>
+                </button>
+                <button id="tabBtnApply" onclick="switchModalTab('apply')" class="py-3.5 border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Apply for this Position</span>
+                </button>
+            </div>
+
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 sm:p-8 overflow-y-auto flex-grow space-y-6">
+                
+                <!-- VIEW 1: Full Role Information -->
+                <div id="modalDetailsView" class="space-y-6 text-slate-700 text-xs sm:text-sm leading-relaxed">
+                    
+                    <!-- Overview Summary -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-slate-900 uppercase font-mono text-xs tracking-wider">About the Role</h4>
+                        <p id="modalRoleSummary" class="text-slate-600 leading-relaxed font-normal">
+                            ...
+                        </p>
+                    </div>
+
+                    <!-- Key Responsibilities -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 uppercase font-mono text-xs tracking-wider">Key Responsibilities</h4>
+                        <ul id="modalResponsibilities" class="space-y-2 text-slate-600">
+                            <!-- Populated dynamically via JavaScript -->
+                        </ul>
+                    </div>
+
+                    <!-- Requirements & Qualifications -->
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-slate-900 uppercase font-mono text-xs tracking-wider">What We Look For</h4>
+                        <ul id="modalRequirements" class="space-y-2 text-slate-600">
+                            <!-- Populated dynamically via JavaScript -->
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack / Core Tools -->
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-slate-900 uppercase font-mono text-xs tracking-wider">Core Tools &amp; Technologies</h4>
+                        <div id="modalTechStack" class="flex flex-wrap gap-2 pt-1">
+                            <!-- Populated dynamically via JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- What We Offer -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 uppercase font-mono text-xs tracking-wider">What We Offer</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2">&bull; Top-tier comprehensive health insurance</div>
+                            <div class="flex items-center gap-2">&bull; Modern hardware &amp; equipment budget</div>
+                            <div class="flex items-center gap-2">&bull; Competitive compensation &amp; equity</div>
+                            <div class="flex items-center gap-2">&bull; High-agency mission with lifesaving impact</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: Application Submission Form -->
+                <div id="modalApplyView" class="hidden space-y-6">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block">SUBMITTING APPLICATION FOR</span>
+                            <span id="modalFormRoleBanner" class="font-bold text-slate-900 text-sm">Role Title</span>
+                        </div>
+                        <button onclick="switchModalTab('details')" class="text-xs font-semibold text-slate-600 hover:text-slate-900 underline font-mono">
+                            Review Details
+                        </button>
+                    </div>
+
+                    <form id="modalApplicationForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                        <input type="hidden" id="modalFormRoleKey" value="" />
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Full Name *</label>
+                                <input type="text" id="modalCandName" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="e.g. Rahul Sharma" />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Email Address *</label>
+                                <input type="email" id="modalCandEmail" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="rahul@domain.com" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <!-- Plain contact phone label -->
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Contact Phone *</label>
+                                <input type="tel" id="modalCandPhone" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="+91 XXXXX XXXXX" />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Years of Relevant Experience *</label>
+                                <input type="text" id="modalCandExp" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="e.g. 5 Years" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Resume / LinkedIn / GitHub Portfolio Link *</label>
+                            <input type="url" id="modalCandResume" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all" placeholder="https://linkedin.com/in/... or Google Drive link" />
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1 font-mono">Brief Introduction / Note</label>
+                            <textarea id="modalCandNote" rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-800 focus:bg-white transition-all resize-none" placeholder="Tell us briefly why you want to build lifesaving emergency software with EMSTRAP."></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" id="modalSubmitBtn" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 font-display shadow-md">
+                                <span>Submit Application</span>
+                                <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Modal Action Footer -->
+            <div class="px-6 sm:px-8 py-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+                <button onclick="closeRoleModal()" class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs transition-all font-display">
+                    Close
+                </button>
+                <button id="modalProceedBtn" onclick="switchModalTab('apply')" class="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-sm flex items-center gap-2">
+                    <span>Apply for this Role</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Data and Modal Script -->
     <script>
-        function selectRole(roleName) {
-            const roleSelect = document.getElementById('candRole');
-            if (roleSelect) {
-                roleSelect.value = roleName;
+        // Complete Role Database
+        const ROLES_DATA = {
+            'senior-backend': {
+                title: 'Senior Backend & Distributed Systems Engineer',
+                department: 'Backend Engineering',
+                experience: 'Senior (4–7 Yrs)',
+                location: 'Bengaluru / Hybrid',
+                type: 'Full-Time',
+                summary: 'Scale our high-throughput WebSocket gateway, live ambulance GPS ingestion pipelines, and multi-agency dispatch queues supporting nationwide emergency response. You will architect the distributed telemetry backbone where milliseconds count.',
+                responsibilities: [
+                    'Architect high-throughput, low-latency Go microservices capable of ingesting 100,000+ simultaneous real-time location pings.',
+                    'Design fault-tolerant WebSocket clusters and pub/sub message brokers (Kafka / Redis) for sub-second emergency telemetry delivery.',
+                    'Build robust APIs integrated with emergency dispatch CAD mesh, hospital HL7/FHIR systems, and municipal 112 backbones.',
+                    'Optimize spatial indexing, query latency, and transaction integrity across PostgreSQL, PostGIS, and time-series databases.',
+                    'Enforce 99.999% uptime, automated multi-zone failovers, and rigorous disaster recovery protocols for mission-critical life safety workloads.'
+                ],
+                requirements: [
+                    '4+ years experience designing and operating high-concurrency distributed systems in Go, Node.js, or Rust.',
+                    'Deep understanding of real-time communication protocols (WebSockets, gRPC, HTTP/2) and distributed event streaming (Kafka, Redis Streams).',
+                    'Hands-on expertise with geospatial databases (PostGIS), spatial indexing (R-tree, H3, S2), and high-load caching layers.',
+                    'Proficiency with container orchestration (Kubernetes, Docker), cloud infrastructure (AWS/GCP), and infrastructure-as-code.',
+                    'A relentless engineering discipline regarding observability (Prometheus, Grafana, OpenTelemetry) and system resilience under crisis.'
+                ],
+                techStack: ['Go', 'Node.js', 'PostgreSQL', 'PostGIS', 'Redis', 'Apache Kafka', 'WebSockets', 'gRPC', 'Docker', 'Kubernetes', 'AWS']
+            },
+            'ai-routing': {
+                title: 'AI & Spatial Routing Algorithm Researcher',
+                department: 'AI & Geospatial Algorithms',
+                experience: 'Mid–Senior (3–6 Yrs)',
+                location: 'Bengaluru (HQ)',
+                type: 'Full-Time',
+                summary: 'Design dynamic green corridor traffic signal preemption algorithms and automated emergency triage routing models using graph theory, spatial A*, and geospatial neural networks.',
+                responsibilities: [
+                    'Research, design, and benchmark adaptive dynamic routing algorithms that compute multi-factor optimal emergency paths bypassing live congestion.',
+                    'Develop predictive arrival time (ETA) engines fusing historical corridor speed profiles, weather disruptions, and live sensor streams.',
+                    'Build automated hospital matching algorithms balancing patient clinical acuity against ER bed occupancy, specialty readiness, and travel latency.',
+                    'Work with urban traffic command authorities to deploy and validate automated signal preemption ("Green Wave") corridors.',
+                    'Publish research papers, benchmark findings, and patent innovative algorithms for smart city emergency mobility.'
+                ],
+                requirements: [
+                    '3+ years hands-on experience in graph algorithms (A*, Dijkstra, contraction hierarchies), spatial optimization, or geospatial AI.',
+                    'Strong proficiency in Python and C++, with expertise in scientific libraries (NumPy, SciPy, PyTorch, NetworkX, OSMnx, GDAL).',
+                    'Rigorous mathematical background in operations research, discrete optimization, graph theory, or spatial statistics.',
+                    'Experience working with OpenStreetMap (OSM) road networks, GIS datasets, and high-frequency vehicle GPS trajectories.',
+                    'Master\'s or Ph.D. in Computer Science, Applied Mathematics, Robotics, Transportation Systems, or equivalent experience.'
+                ],
+                techStack: ['Python', 'C++', 'PyTorch', 'OSMnx', 'NetworkX', 'PostGIS', 'GDAL', 'Docker', 'Linux HPC']
+            },
+            'lead-mobile': {
+                title: 'Lead Mobile Engineer (Emergency SOS & Telemetry)',
+                department: 'Mobile Engineering',
+                experience: 'Lead (5+ Yrs)',
+                location: 'Bengaluru / Remote',
+                type: 'Full-Time',
+                summary: 'Lead architecture and engineering of our mission-critical citizen SOS and paramedic in-transit mobile applications, delivering zero-latency emergency triggers, BLE diagnostic sync, and offline resilience.',
+                responsibilities: [
+                    'Lead end-to-end development of EMSTRAP Citizen SOS and Paramedic In-Transit applications across iOS and Android.',
+                    'Architect zero-fail offline-first synchronization, high-frequency background GPS tracking with ultra-low battery consumption.',
+                    'Integrate Bluetooth Low Energy (BLE) medical diagnostic devices (ECG monitors, pulse oximeters) for live in-transit telemetry streaming.',
+                    'Build sub-second push notifications, VoIP emergency dialers, and lock-screen emergency bypass widgets.',
+                    'Mentor mobile developers, enforce clean modular architectures, and maintain automated testing suites.'
+                ],
+                requirements: [
+                    '5+ years of mobile engineering experience with Flutter or Native platforms (Kotlin / Swift) in production environments.',
+                    'Proven experience shipping apps utilizing high-reliability background location services, BLE hardware communication, and WebSocket telemetry.',
+                    'In-depth knowledge of mobile OS lifecycle, memory management, and device fragmentation across Android and iOS.',
+                    'Passion for building accessible, high-contrast, panic-resistant UI/UX that functions flawlessly during high-stress crises.',
+                    'Strong appreciation for automated CI/CD pipelines (Fastlane, GitHub Actions) and app store compliance.'
+                ],
+                techStack: ['Flutter', 'Dart', 'Kotlin', 'Swift', 'WebSockets', 'BLE Devices', 'SQLite', 'Fastlane', 'Push Notifications']
+            },
+            'ops-lead': {
+                title: 'Emergency Operations & Hospital Network Lead',
+                department: 'Healthcare Operations',
+                experience: 'Lead (4–8 Yrs)',
+                location: 'Bengaluru (On-Site)',
+                type: 'Full-Time',
+                summary: 'Build and scale strategic partnerships with premier hospital networks, trauma centers, and municipal emergency authorities, overseeing deployment training and operational SLAs.',
+                responsibilities: [
+                    'Drive institutional partnerships with top hospital chains, trauma centers, independent ambulance fleet operators, and government emergency services.',
+                    'Lead deployment and onboarding of EMSTRAP Command dashboards in emergency departments and centralized dispatch centers.',
+                    'Establish and monitor strict operational SLAs covering dispatch latencies, inbound patient handoffs, and bed readiness confirmations.',
+                    'Design and execute real-world simulation drills with hospital emergency staff, EMS drivers, and municipal dispatchers.',
+                    'Act as primary escalation conduit for operational anomalies, working hand-in-hand with product teams to translate field feedback into features.'
+                ],
+                requirements: [
+                    '4–8 years in healthcare operations, hospital administration, EMS coordination, or fast-paced logistics operations.',
+                    'Established network across hospital leadership, medical superintendents, and private ambulance fleet operators.',
+                    'Exceptional leadership, crisis communication, and stakeholder management skills under high-pressure scenarios.',
+                    'Demonstrated capability to lead on-ground operational teams and conduct hands-on training workshops.',
+                    'Deep passion for transforming emergency healthcare infrastructure and patient survival outcomes.'
+                ],
+                techStack: ['Hospital Onboarding', 'EMS Fleet Integration', 'Emergency SLAs', 'Field Simulations', 'City Operations']
+            },
+            'pm-intern': {
+                title: 'Product Management Intern (Emergency Logistics)',
+                department: 'Product Management',
+                experience: '6 Months Internship',
+                location: 'Bengaluru (HQ)',
+                type: 'Internship (PPO Track)',
+                summary: 'Work directly with our founding team to analyze field dispatch telemetry, interview paramedics and ER directors, and write product specs for next-generation emergency software.',
+                responsibilities: [
+                    'Conduct field research shadowing emergency dispatchers, paramedics, and ER triage teams to identify operational friction.',
+                    'Author detailed PRDs, feature specs, and user stories for EMSTRAP Ride, Shield, and Command platform modules.',
+                    'Analyze spatial dispatch datasets to identify route optimization gaps, dispatch bottlenecks, and fleet allocation patterns.',
+                    'Partner with UI/UX designers and engineers during sprint cycles, participating in design reviews and QA sign-offs.',
+                    'Track core product metrics and build executive dashboards monitoring system reliability and adoption.'
+                ],
+                requirements: [
+                    'Pre-final or final year student in Computer Science, Engineering, Product Design, or Business with a technical focus.',
+                    'Strong analytical instincts with proficiency in SQL, spreadsheet modeling, and basic wireframing tools (Figma).',
+                    'High intellectual curiosity, exceptional written and verbal communication, and intense attention to detail.',
+                    'Demonstrated ability to self-start and solve ambiguous real-world problems in an entrepreneurial setting.',
+                    'Genuine desire to build technology that directly saves human lives.'
+                ],
+                techStack: ['Product Discovery', 'PRD Authoring', 'Field Telemetry Analysis', 'SQL', 'Figma', 'Cross-functional Execution']
             }
-            const applySec = document.getElementById('apply');
-            if (applySec) {
-                applySec.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        let currentActiveRoleKey = 'senior-backend';
+
+        function openRoleModal(roleKey) {
+            const role = ROLES_DATA[roleKey] || ROLES_DATA['senior-backend'];
+            currentActiveRoleKey = roleKey;
+
+            // Populate Modal Header
+            document.getElementById('modalMetaBadge').innerHTML = `${role.department} &bull; ${role.experience} &bull; ${role.location}`;
+            document.getElementById('modalRoleTitle').textContent = role.title;
+            document.getElementById('modalFormRoleBanner').textContent = role.title;
+            document.getElementById('modalFormRoleKey').value = role.title;
+
+            // Populate Overview
+            document.getElementById('modalRoleSummary').textContent = role.summary;
+
+            // Populate Responsibilities
+            const respList = document.getElementById('modalResponsibilities');
+            respList.innerHTML = '';
+            role.responsibilities.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2';
+                li.innerHTML = `<span class="text-slate-400 font-bold shrink-0">&bull;</span><span>${item}</span>`;
+                respList.appendChild(li);
+            });
+
+            // Populate Requirements
+            const reqList = document.getElementById('modalRequirements');
+            reqList.innerHTML = '';
+            role.requirements.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2';
+                li.innerHTML = `<span class="text-slate-400 font-bold shrink-0">&bull;</span><span>${item}</span>`;
+                reqList.appendChild(li);
+            });
+
+            // Populate Tech Stack
+            const techContainer = document.getElementById('modalTechStack');
+            techContainer.innerHTML = '';
+            role.techStack.forEach(tech => {
+                const badge = document.createElement('span');
+                badge.className = 'px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[11px] font-medium';
+                badge.textContent = tech;
+                techContainer.appendChild(badge);
+            });
+
+            // Sync with page direct form as well
+            const candRoleSelect = document.getElementById('candRole');
+            if (candRoleSelect) {
+                candRoleSelect.value = role.title;
             }
+
+            // Always default to details view on open
+            switchModalTab('details');
+
+            // Show modal
+            document.getElementById('roleDetailsModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRoleModal() {
+            document.getElementById('roleDetailsModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchModalTab(tab) {
+            const detailsView = document.getElementById('modalDetailsView');
+            const applyView = document.getElementById('modalApplyView');
+            const tabBtnDetails = document.getElementById('tabBtnDetails');
+            const tabBtnApply = document.getElementById('tabBtnApply');
+            const proceedBtn = document.getElementById('modalProceedBtn');
+
+            if (tab === 'details') {
+                detailsView.classList.remove('hidden');
+                applyView.classList.add('hidden');
+                tabBtnDetails.className = 'py-3.5 border-b-2 border-slate-900 text-slate-900 transition-colors flex items-center gap-2';
+                tabBtnApply.className = 'py-3.5 border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2';
+                proceedBtn.classList.remove('hidden');
+                proceedBtn.onclick = () => switchModalTab('apply');
+                proceedBtn.innerHTML = '<span>Apply for this Role</span><i class="fa-solid fa-arrow-right text-[10px]"></i>';
+            } else {
+                detailsView.classList.add('hidden');
+                applyView.classList.remove('hidden');
+                tabBtnDetails.className = 'py-3.5 border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2';
+                tabBtnApply.className = 'py-3.5 border-b-2 border-slate-900 text-slate-900 transition-colors flex items-center gap-2';
+                proceedBtn.classList.add('hidden');
+                
+                // Focus name input in form
+                setTimeout(() => {
+                    const nameField = document.getElementById('modalCandName');
+                    if (nameField) nameField.focus();
+                }, 100);
+            }
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('modalSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Submitting Application...';
+
+            setTimeout(() => {
+                alert(`Thank you! Your application for "${document.getElementById('modalRoleTitle').textContent}" has been received. Our engineering and talent team will review your profile and respond within 48 hours.`);
+                document.getElementById('modalApplicationForm').reset();
+                btn.disabled = false;
+                btn.innerHTML = '<span>Submit Application</span><i class="fa-solid fa-paper-plane text-[10px]"></i>';
+                closeRoleModal();
+            }, 1000);
         }
 
         function handleMinimalSubmit(e) {
@@ -369,13 +757,27 @@
             btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Submitting...';
 
             setTimeout(() => {
-                btn.classList.remove('from-emergencyRed', 'to-red-600');
-                btn.classList.add('bg-emerald-600');
                 btn.innerHTML = '<i class="fa-solid fa-check"></i> Application Received!';
                 alert('Thank you for your interest in joining EMSTRAP! Our talent engineering team will review your application and respond within 48 hours.');
                 document.getElementById('minimalApplyForm').reset();
-            }, 1200);
+                btn.disabled = false;
+                btn.innerHTML = '<span>Send Application</span><i class="fa-solid fa-paper-plane text-[10px]"></i>';
+            }, 1000);
         }
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeRoleModal();
+            }
+        });
+
+        // Close on clicking backdrop
+        document.getElementById('roleDetailsModal').addEventListener('click', (e) => {
+            if (e.target.id === 'roleDetailsModal') {
+                closeRoleModal();
+            }
+        });
 
         // Scroll track ambulance
         window.addEventListener('scroll', () => {

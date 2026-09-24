@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white" style="background-image: linear-gradient(rgba(5, 11, 20, 0.90), rgba(5, 11, 20, 0.95)), url('shield-smartcity.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+<body class="bg-white text-slate-900 min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white">
 
     <!-- Persistent Navigation Header -->
     <header class="py-5 px-6 md:px-12 border-b border-neutral-800/80 bg-black/95 backdrop-blur-md sticky top-0 z-50" id="mainHeader">
@@ -55,6 +55,7 @@
                     <a href="index.html#page-about" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">About</a>
                     <a href="index.html#page-services" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Services</a>
                     <a href="careers.html" target="_blank" rel="noopener noreferrer" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Careers</a>
+                    <!-- Contact text kept plain and not coloured as requested -->
                     <a href="index.html#page-contact" class="text-xs lg:text-sm font-semibold text-neutral-300 hover:text-white transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-2 pl-3 border-l border-neutral-800">
@@ -70,760 +71,1483 @@
     </header>
 
     <main class="flex-grow">
-        <!-- Hero Section with Parallax Background & Editorial Structure -->
-        <section class="relative py-20 md:py-28 px-6 md:px-12 border-b border-neutral-800 overflow-hidden parallax-bg-shield">
-            <!-- Ambient Gradient Vignette -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#050B14]/85 via-[#050B14]/65 to-[#050B14]/95 pointer-events-none"></div>
+        <!-- 1. Hero Section: Super Formal Executive Layout -->
+        <section class="relative py-20 md:py-28 px-6 md:px-12 border-b border-slate-200 bg-gradient-to-b from-slate-50 via-white to-slate-50/50 overflow-hidden">
+            <div class="max-w-6xl mx-auto text-center space-y-8 relative z-10">
+                
+                <!-- Category Tag -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-mono tracking-wider font-bold uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span>ENTERPRISE WORKPLACE SAFETY ECOSYSTEM</span>
+                </div>
 
-            <div class="max-w-6xl mx-auto relative z-10 space-y-12">
-                <!-- Editorial Text Header -->
-                <div class="text-center space-y-6 max-w-4xl mx-auto">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-700/80 text-[11px] font-mono tracking-widest text-neutral-200 uppercase shadow-lg backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-status-dot"></span>
-                        <span>ENTERPRISE WORKPLACE SAFETY ECOSYSTEM</span>
-                    </div>
-
-                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-white tracking-tight leading-[1.06]">
+                <!-- Main Headlines -->
+                <div class="space-y-4 max-w-4xl mx-auto">
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-display text-slate-900 tracking-tight leading-[1.05]">
                         EMSTRAP SHIELD
                     </h1>
-
-                    <p class="text-xl sm:text-2xl text-neutral-200 font-display font-medium max-w-3xl mx-auto">
+                    <p class="text-2xl sm:text-3xl md:text-4xl font-bold font-display text-slate-800 tracking-tight">
                         Complete Safety &amp; Emergency Protection for Your Organization
                     </p>
-
-                    <p class="text-sm sm:text-base text-neutral-300 font-light leading-relaxed max-w-3xl mx-auto">
-                        From employee SOS and ambulance assistance to workplace safety inspections, emergency drills, fire-safety management, first-aid infrastructure, family protection, and centralized reporting—Shield brings everything together through a dedicated Company Safety Dashboard.
+                    <p class="text-lg sm:text-xl font-semibold text-brandBlue font-display">
+                        Your People. Your Workplace. One Safety Shield.
                     </p>
-
-                    <div class="pt-2 text-xs font-mono text-neutral-400">
-                        One company &bull; One dashboard &bull; One connected safety ecosystem
-                    </div>
-
-                    <div class="pt-4 flex flex-wrap justify-center gap-4">
-                        <a href="#corporate-plans" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display hover:scale-105 active:scale-95">
-                            Explore Plans
-                        </a>
-                        <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-neutral-900/90 hover:bg-neutral-800 text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-700 font-display hover:scale-105 active:scale-95">
-                            Request a Corporate Demo
-                        </button>
-                    </div>
                 </div>
 
-                <!-- High-Tech Enterprise Facility Safety & Campus Shield Hub Mockup -->
-                <div class="relative max-w-5xl mx-auto pt-6">
-                    <!-- Floating Telemetry Glass Badges -->
-                    <div class="hidden md:flex absolute -top-4 -left-6 z-20 items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/90 border border-neutral-700 text-xs font-mono text-white shadow-2xl backdrop-blur-md animate-float-badge">
-                        <i class="fa-solid fa-shield-virus text-emerald-400"></i>
-                        <span>24/7 Geofenced Campus Shield: <strong class="text-emerald-400">ARMED</strong></span>
-                    </div>
-                    <div class="hidden md:flex absolute -top-4 -right-6 z-20 items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/90 border border-neutral-700 text-xs font-mono text-white shadow-2xl backdrop-blur-md animate-float-badge-delayed">
-                        <i class="fa-solid fa-user-shield text-teal-300"></i>
-                        <span>ERT Mobilization Time: <strong class="text-emerald-400">&lt;30 SEC</strong></span>
+                <!-- Core Description -->
+                <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl mx-auto">
+                    EMSTRAP Shield is EMSTRAP's corporate safety platform built to protect employees, strengthen workplace safety, and provide organized emergency assistance when it matters most. From employee SOS and ambulance assistance to safety inspections, emergency drills, fire-safety management, first-aid infrastructure, family protection and centralized reporting, Shield brings everything together through a dedicated Company Safety Dashboard.
+                </p>
+
+                <!-- Value Proposition Taglines -->
+                <div class="space-y-3 pt-2">
+                    <p class="text-sm font-semibold text-slate-700 font-display">
+                        Protect Employees &bull; Prepare Workplaces &bull; Support Families
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-2 font-mono text-xs text-slate-600 max-w-4xl mx-auto">
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Employee Emergency</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">SOS</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Ambulance Coverage</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Workplace Safety</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Emergency Drills</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Safety Dashboard</span>
+                        <span class="text-slate-300 font-bold">&bull;</span>
+                        <span class="px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm font-medium">Family Protection</span>
                     </div>
 
-                    <!-- Main Terminal Panel -->
-                    <div class="rounded-2xl border border-neutral-800 bg-[#0A0E17]/95 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl overflow-hidden">
-                        <!-- Terminal Bar -->
-                        <div class="flex items-center justify-between px-5 py-3.5 border-b border-neutral-800 bg-neutral-950/80 font-mono text-xs">
+                    <p class="text-xs font-mono font-bold tracking-widest text-slate-400 uppercase pt-2">
+                        One company &bull; One dashboard &bull; One connected safety ecosystem
+                    </p>
+                </div>
+
+                <!-- CTAs -->
+                <div class="pt-4 flex flex-wrap justify-center gap-4">
+                    <a href="#corporate-plans" class="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg font-display hover:scale-105 active:scale-95">
+                        Explore Plans
+                    </a>
+                    <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-900 font-bold tracking-wider text-xs uppercase transition-all border border-slate-300 shadow-sm font-display hover:scale-105 active:scale-95">
+                        Request a Corporate Demo
+                    </button>
+                </div>
+
+                <!-- Formal High-Fidelity Executive Dashboard Preview Card -->
+                <div class="relative max-w-5xl mx-auto pt-8">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-75"></div>
+                    <div class="relative rounded-3xl border border-slate-200 bg-white p-4 sm:p-6 shadow-2xl space-y-6 text-left">
+                        
+                        <!-- Top Console Status Bar -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 font-mono text-xs">
                             <div class="flex items-center gap-3">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                </div>
-                                <span class="text-neutral-400 text-[11px] font-bold">EMSTRAP SHIELD // ENTERPRISE SAFETY CONSOLE &amp; GEOFENCE</span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                <span class="font-bold text-slate-900 font-display">EMSTRAP SHIELD // COMPANY SAFETY DASHBOARD</span>
                             </div>
-                            <div class="flex items-center gap-4 text-[11px] text-neutral-400">
-                                <span class="flex items-center gap-1.5 text-emerald-400">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                    CAMPUS GEOFENCE: 100% PROTECTED
-                                </span>
-                                <span class="hidden sm:inline text-neutral-500">|</span>
-                                <span class="hidden sm:inline font-mono text-slate-400">ACTIVE EMPLOYEES: 4,850</span>
+                            <div class="flex items-center gap-4 text-slate-500 text-[11px]">
+                                <span>CAMPUS GEOFENCE: <strong class="text-emerald-600">ACTIVE</strong></span>
+                                <span>&bull;</span>
+                                <span>TOTAL EMPLOYEES: <strong class="text-slate-900">4,850</strong></span>
                             </div>
                         </div>
 
-                        <!-- 3-Column Telemetry Grid -->
-                        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-neutral-800/80 font-mono">
-                            <!-- Col 1: Multi-Facility Zone Status (5 cols) -->
-                            <div class="lg:col-span-5 p-5 space-y-3 bg-black/40">
-                                <div class="flex items-center justify-between pb-2 border-b border-neutral-800 text-[11px] uppercase tracking-wider text-neutral-400">
-                                    <span>Facility Zone Inspection Status</span>
-                                    <span class="text-emerald-400 font-bold">ALL CLEAR</span>
+                        <!-- 3-Column Executive Metrics Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Col 1: Workplace Facility Zones -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-700">
+                                    <span>FACILITY ZONES</span>
+                                    <span class="text-emerald-600 text-[10px] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">ALL SECURE</span>
                                 </div>
-
-                                <div class="space-y-2.5 text-xs">
-                                    <!-- Zone A -->
-                                    <div class="p-3 rounded-lg bg-neutral-900/70 border border-neutral-800 space-y-1">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-[11px] font-bold text-white font-sans">Zone A: HQ Corporate Tower</span>
-                                            <span class="text-[10px] text-emerald-400 font-mono">&check; SECURE</span>
-                                        </div>
-                                        <p class="text-[11px] text-neutral-400 font-sans">1,420 Active Employees &bull; 8 Floors &bull; 16 First-Aid Posts</p>
-                                        <div class="text-[10px] text-neutral-500">Last Drill: Logged (100% Evacuation in 3m 12s)</div>
+                                <div class="space-y-2 text-xs">
+                                    <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
+                                        <span class="font-medium text-slate-800">Zone A: Corporate HQ</span>
+                                        <span class="text-[11px] font-mono text-emerald-600 font-bold">&check; Passed</span>
                                     </div>
-
-                                    <!-- Zone B -->
-                                    <div class="p-3 rounded-lg bg-neutral-900/70 border border-neutral-800 space-y-1">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-[11px] font-bold text-white font-sans">Zone B: R&amp;D Laboratories &amp; Cleanrooms</span>
-                                            <span class="text-[10px] text-emerald-400 font-mono">&check; MONITORED</span>
-                                        </div>
-                                        <p class="text-[11px] text-neutral-400 font-sans">Air Quality, Chemical &amp; Hazmat Sensors Active</p>
-                                        <div class="text-[10px] text-neutral-500">Automatic Exhaust &amp; Eye-Wash Station Audit: PASS</div>
+                                    <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
+                                        <span class="font-medium text-slate-800">Zone B: R&amp;D Labs</span>
+                                        <span class="text-[11px] font-mono text-emerald-600 font-bold">&check; Inspected</span>
                                     </div>
-
-                                    <!-- Zone C -->
-                                    <div class="p-3 rounded-lg bg-neutral-900/70 border border-neutral-800 space-y-1">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-[11px] font-bold text-white font-sans">Zone C: Logistics Depot &amp; Warehousing</span>
-                                            <span class="text-[10px] text-amber-400 font-mono">&check; INSPECTED</span>
-                                        </div>
-                                        <p class="text-[11px] text-neutral-400 font-sans">AED Defibrillators &bull; Emergency Exits Clear</p>
-                                        <div class="text-[10px] text-neutral-500">Next Scheduled Drill: Tomorrow 11:00 AM</div>
+                                    <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
+                                        <span class="font-medium text-slate-800">Zone C: Logistics Depot</span>
+                                        <span class="text-[11px] font-mono text-brandBlue font-bold">Scheduled</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Col 2: Geofenced SOS Triangulation (4 cols) -->
-                            <div class="lg:col-span-4 p-5 flex flex-col justify-between items-center bg-black/20 text-center relative overflow-hidden">
-                                <div class="w-full flex items-center justify-between text-[11px] uppercase tracking-wider text-neutral-400 mb-2">
-                                    <span>Employee SOS Geofence</span>
-                                    <span class="text-emerald-400 font-bold">READY</span>
+                            <!-- Col 2: Employee Emergency Protection -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-700">
+                                    <span>EMPLOYEE SOS COVERAGE</span>
+                                    <span class="text-brandBlue text-[10px] bg-blue-50 px-2 py-0.5 rounded border border-blue-200">24/7 ACTIVE</span>
                                 </div>
-
-                                <!-- Shield Pulse Graphic -->
-                                <div class="relative w-40 h-40 my-3 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 flex flex-col items-center justify-center p-3">
-                                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-3xl mb-2 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                                <div class="p-4 rounded-xl bg-white border border-slate-200 text-center space-y-2">
+                                    <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto text-base">
                                         <i class="fa-solid fa-shield-halved"></i>
                                     </div>
-                                    <span class="text-[10px] font-mono text-emerald-300 font-bold uppercase tracking-wider">CAMPUS SHIELD</span>
-                                    <span class="text-[9px] text-neutral-400">GEOFENCE LOCKED</span>
+                                    <span class="text-xs font-bold text-slate-900 block font-display">1-Tap Emergency Assistance</span>
+                                    <p class="text-[11px] text-slate-500 font-normal">Direct link to nearest ambulance &amp; hospital triage</p>
                                 </div>
-
-                                <div class="w-full pt-2 border-t border-neutral-800 text-[10px] text-neutral-400 flex items-center justify-between font-mono">
-                                    <span>ON-SITE ERT: 18 TRAINED</span>
-                                    <span class="text-emerald-400">DISPATCH &lt;30s</span>
+                                <div class="text-[11px] font-mono text-slate-500 text-center">
+                                    Covered Ambulance Cost: <strong class="text-emerald-600">₹0 for Employees</strong>
                                 </div>
                             </div>
 
-                            <!-- Col 3: Compliance & Drill Ledger (3 cols) -->
-                            <div class="lg:col-span-3 p-5 space-y-4 bg-black/40 flex flex-col justify-between">
-                                <div class="text-[11px] uppercase tracking-wider text-neutral-400 pb-2 border-b border-neutral-800">
-                                    Safety Metrics
+                            <!-- Col 3: Safety Compliance & Drills -->
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                                <div class="flex items-center justify-between text-xs font-mono font-bold text-slate-700">
+                                    <span>SAFETY COMPLIANCE</span>
+                                    <span class="text-slate-700 text-[10px] bg-white px-2 py-0.5 rounded border border-slate-200">ISO 45001</span>
                                 </div>
-
-                                <div class="space-y-3 text-xs">
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">Workforce Safety Index</span>
-                                            <span class="text-emerald-400 font-bold">99.8%</span>
+                                <div class="space-y-2 text-xs">
+                                    <div class="p-2.5 rounded-xl bg-white border border-slate-200 space-y-1">
+                                        <div class="flex justify-between text-[11px]">
+                                            <span class="text-slate-600 font-mono">Workforce Safety Index</span>
+                                            <span class="font-bold text-slate-900 font-mono">99.8%</span>
                                         </div>
-                                        <div class="w-full h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-                                            <div class="w-[99.8%] h-full bg-emerald-400 rounded-full"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">OSHA &amp; ISO 45001</span>
-                                            <span class="text-white font-bold">100% Compliant</span>
-                                        </div>
-                                        <div class="w-full h-1.5 rounded-full bg-neutral-800 overflow-hidden">
-                                            <div class="w-full h-full bg-blue-500 rounded-full"></div>
+                                        <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                            <div class="w-[99.8%] h-full bg-emerald-500 rounded-full"></div>
                                         </div>
                                     </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-[11px] mb-1">
-                                            <span class="text-neutral-400">Ambulance Cost Coverage</span>
-                                            <span class="text-emerald-400 font-bold">100% Free</span>
-                                        </div>
-                                        <p class="text-[10px] text-neutral-400 pt-1 leading-snug">
-                                            All eligible corporate emergencies covered with zero service fee.
-                                        </p>
+                                    <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
+                                        <span class="font-medium text-slate-800">Next Fire Drill</span>
+                                        <span class="text-[11px] font-mono text-slate-500">In 12 Days</span>
                                     </div>
-                                </div>
-
-                                <div class="pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-500 font-mono">
-                                    RECORDS: REAL-TIME AUDIT LOG
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Why EMSTRAP Shield Section -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="max-w-3xl">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SAFETY CYCLE</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Why EMSTRAP Shield?</h2>
-                    <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mt-3">
-                        Workplace safety doesn't begin when an emergency happens. A truly safe organization prepares before, responds during, and learns after. EMSTRAP Shield connects all three phases.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
-                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
-                            <i class="fa-solid fa-clipboard-check"></i>
-                        </div>
-                        <h3 class="text-lg font-bold font-display text-white">01 // PREPARE BEFORE</h3>
-                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                            Safety inspections, emergency drills, fire-safety inventory, first-aid replenishment, and staff readiness profiles.
-                        </p>
-                    </div>
-
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
-                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
-                            <i class="fa-solid fa-shield-virus"></i>
-                        </div>
-                        <h3 class="text-lg font-bold font-display text-white">02 // RESPOND DURING</h3>
-                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                            Instant employee SOS, company notifications, 100% covered ambulance assistance, and hospital emergency pre-alerts.
-                        </p>
-                    </div>
-
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 space-y-3">
-                        <div class="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white mx-auto text-lg">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3 class="text-lg font-bold font-display text-white">03 // LEARN AFTER</h3>
-                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                            Incident reports, recurrence patterns, root-cause insights, compliance records, and ongoing safety improvements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHO WE SERVE - SLIDING CARD CONTENT BELT (Tailored for Enterprise Facilities) -->
-        <section class="py-24 bg-white text-slate-900 border-b border-slate-200 overflow-hidden" id="page-shield-who-we-serve" style="background-color: #FFFFFF !important; color: #0F172A !important;">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-emerald-700 font-mono block mb-3">WHO WE SERVE</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display tracking-tight text-[#0A1128]">
-                        Enterprise Safety Across <span class="text-emerald-600">Every Industry</span>
+        <!-- 2. Why EMSTRAP Shield? (3-Phase Cycle & 15 Core Pillars) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">SAFETY CONTINUUM</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Why EMSTRAP Shield?
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto mt-3">
-                        Tailored emergency response, geofenced staff protection, and regulatory compliance protocols for diverse workplace environments.
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Workplace safety doesn't begin when an emergency happens.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        A truly safe organization needs to prepare before an emergency, respond during an emergency, and learn after an emergency. EMSTRAP Shield connects all three phases into one unified organizational system.
                     </p>
                 </div>
+
+                <!-- 3-Phase Continuum Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-bold text-brandBlue uppercase tracking-widest">Phase 01</span>
+                            <span class="w-8 h-8 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-sm font-bold">&rarr;</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-slate-900">Prepare Before an Emergency</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Safety inspections, emergency drills, fire-safety inventory, first-aid replenishment, and comprehensive employee readiness records.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-bold text-emergencyRed uppercase tracking-widest">Phase 02</span>
+                            <span class="w-8 h-8 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-sm font-bold">&rarr;</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-slate-900">Respond During an Emergency</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Immediate employee SOS, company emergency notifications, 100% covered ambulance assistance, and hospital pre-triage coordination.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest">Phase 03</span>
+                            <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-bold">&check;</span>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-slate-900">Learn After an Emergency</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Incident reports, recurrence patterns, root-cause insights, compliance documentation, and ongoing preventative improvements.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 15 Core Pillars Managed by Companies -->
+                <div class="pt-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block mb-1">COMPREHENSIVE CAPABILITIES</span>
+                        <h3 class="text-xl font-bold font-display text-slate-900">Companies Can Use Shield to Manage:</h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-xs font-mono">
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-user-shield text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Employee Protection</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-emergencyRed"></i>
+                            <span class="text-slate-800 font-medium">Employee SOS</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-id-card text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Emergency Profiles</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-truck-medical text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Ambulance Assistance</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-hospital text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Hospital Coordination</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-route text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Incident Tracking</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-clipboard-check text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Safety Inspections</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-bell text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Emergency Drills</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-fire-extinguisher text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Fire-Safety Equipment</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-kit-medical text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">First-Aid Infrastructure</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-file-shield text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Employee Safety Records</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-people-roof text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Family Protection</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-chart-line text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Safety Reports</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-gauge-high text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Safety Dashboards</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-clock-rotate-left text-brandBlue"></i>
+                            <span class="text-slate-800 font-medium">Emergency History</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-            <!-- Continuous Moving Content Belt Viewport -->
-            <div class="content-belt-container w-full py-4">
-                <div class="content-belt-track">
-                    <!-- Set 1 -->
-                    <!-- 1. Corporate Offices & Tech Parks -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    TECHNOLOGY &amp; CORPORATE
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-building"></i>
-                                </div>
+        <!-- 3. Your Company Safety Dashboard (The Central Command) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">CENTRALIZED COMMAND</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🏢 Your Company Safety Dashboard
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Everything your organization needs, in one place.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Every organization using EMSTRAP Shield gets a dedicated Company Dashboard. The dashboard acts as the central place where authorized company administrators can manage the organization's complete EMSTRAP safety ecosystem.
+                    </p>
+                </div>
+
+                <!-- 5 Deep Dive Management Modules -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 👥 Employee Management -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-users-gear"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Corporate Campuses</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Instant employee mobile &amp; wearable SOS, automated on-site emergency response team (ERT) deployment, and 100% covered executive ambulance support.
-                            </p>
+                            <h3 class="text-lg font-bold font-display text-slate-900">👥 Employee Management</h3>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">&lt; 30 Sec</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">ERT Alert Relay</span>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Add and manage employees</li>
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Maintain employee emergency profiles</li>
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Manage employee safety information</li>
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Manage employee emergency access</li>
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> View emergency activity</li>
+                            <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Maintain employee safety records</li>
+                        </ul>
+                    </div>
+
+                    <!-- 👨‍👩‍👧‍👦 Family Management -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-people-roof"></i>
                                 </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">100%</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Staff Geofence</span>
-                                </div>
+                                <h3 class="text-lg font-bold font-display text-slate-900">👨‍👩‍👧‍👦 Family Management</h3>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Corporate Plan
-                            </a>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100/70 border border-emerald-200 text-emerald-800 font-bold uppercase">Complete Plan</span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&bull;</span> Register family members</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&bull;</span> Add up to 4 family members per employee</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&bull;</span> Maintain family emergency information</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&bull;</span> Manage family coverage</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">&bull;</span> View eligible emergency activity</li>
+                        </ul>
+                    </div>
+
+                    <!-- 🚨 Emergency Management -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-200 text-emergencyRed flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <h3 class="text-lg font-bold font-display text-slate-900">🚨 Emergency Management</h3>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> Receive emergency alerts</li>
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> View active incidents &amp; location</li>
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> View incident information</li>
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> Monitor emergency status</li>
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> Track response progress</li>
+                            <li class="flex items-start gap-2"><span class="text-emergencyRed font-bold">&bull;</span> Review previous incidents &amp; records</li>
+                        </ul>
+                    </div>
+
+                    <!-- 🚑 Ambulance Management & Cost Policy -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 md:col-span-2 lg:col-span-1 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-truck-medical"></i>
+                                </div>
+                                <h3 class="text-lg font-bold font-display text-slate-900">🚑 Ambulance Management</h3>
+                            </div>
+                            <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 font-normal">
+                                <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Ambulance requests &amp; assignment</li>
+                                <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Pickup info &amp; emergency transport</li>
+                                <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Ambulance response tracking &amp; trip status</li>
+                                <li class="flex items-start gap-2"><span class="text-brandBlue font-bold">&bull;</span> Completed ambulance records</li>
+                            </ul>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-medium">
+                            <strong class="font-bold">Ambulance Cost:</strong> For eligible covered emergencies, EMSTRAP pays the ambulance cost according to the selected corporate plan. The employee does not pay an additional EMSTRAP service fee.
                         </div>
                     </div>
 
-                    <!-- 2. Manufacturing & Industrial Plants -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    INDUSTRIAL &amp; PLANTS
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-industry"></i>
+                    <!-- 🏥 Hospital Coordination & Medical Boundaries -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 md:col-span-2 lg:col-span-2 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-hospital-user"></i>
                                 </div>
+                                <h3 class="text-lg font-bold font-display text-slate-900">🏥 Hospital Coordination</h3>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Manufacturing Facilities</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Heavy machinery injury protocols, hazardous material sensor alerts, automated fire exit inspection logs, and direct trauma ER pre-triage.
+                            <p class="text-xs sm:text-sm text-slate-600 font-normal">
+                                When an employee or covered family member requires medical attention, EMSTRAP supports coordination with the receiving hospital as part of the emergency workflow (sharing emergency details, patient transfer coordination, and status tracking).
                             </p>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">100%</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">OSHA Compliant</span>
-                                </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">24/7</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">On-Site Link</span>
-                                </div>
+                        
+                        <div class="p-4 rounded-xl bg-slate-100 border border-slate-200 space-y-2 text-xs text-slate-700 font-normal">
+                            <div class="font-bold text-slate-900 uppercase font-mono text-[11px] flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info text-brandBlue"></i> Important Boundary Distinction
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Industrial Plan
-                            </a>
+                            <p class="leading-relaxed">
+                                Hospital coordination is not the same as hospital expense coverage. EMSTRAP does not automatically pay for hospital admission, doctor consultations, surgery, treatment, medicines, diagnostic tests, or ICU charges. Those are handled separately by the patient under their own insurance or medical coverage.
+                            </p>
+                            <div class="pt-1 flex flex-wrap gap-4 font-mono font-bold text-[11px] text-slate-800">
+                                <span class="text-emerald-700">&bull; EMSTRAP &rarr; Covers eligible ambulance cost</span>
+                                <span class="text-slate-600">&bull; Hospital &rarr; Medical/treatment expenses are separate</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 3. Universities & Educational Institutes -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    EDUCATION &amp; CAMPUS
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Employee SOS & Employee Emergency Profile -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    
+                    <!-- Employee SOS Card & Step Flow -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-200 text-emergencyRed flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-tower-broadcast"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Universities &amp; Colleges</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Campus-wide security geofence protecting students, faculty, and dormitories with one-tap mass evacuation notifications and hospital coordination.
+                            <h3 class="text-2xl font-bold font-display text-slate-900">🆘 Employee SOS</h3>
+                            <p class="text-base font-semibold text-slate-800">Help when an employee needs it most.</p>
+                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                                Employees can access the EMSTRAP emergency system when they need assistance. An SOS initiates the organization's structured emergency-response workflow instead of leaving the employee to coordinate everything alone.
                             </p>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">Mass SOS</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Broadcast Alert</span>
-                                </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">&lt; 3 Mins</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Campus Escalation</span>
-                                </div>
+
+                        <!-- Sequential Flow -->
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 font-mono text-xs text-slate-800">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Automated Incident Trigger:</div>
+                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-red-100 text-red-600 text-[10px] font-bold flex items-center justify-center">1</span>
+                                <strong>Employee SOS</strong>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Campus Plan
-                            </a>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-100 text-brandBlue text-[10px] font-bold flex items-center justify-center">2</span>
+                                <strong>EMSTRAP Engine</strong>
+                            </div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold flex items-center justify-center">3</span>
+                                <strong>Company Emergency Notification</strong>
+                            </div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-100 text-brandBlue text-[10px] font-bold flex items-center justify-center">4</span>
+                                <strong>Ambulance Coordination</strong>
+                            </div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-700 text-[10px] font-bold flex items-center justify-center">5</span>
+                                <strong>Hospital Coordination</strong>
+                            </div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-emerald-600 text-white font-bold flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-white text-emerald-700 text-[10px] font-bold flex items-center justify-center">&check;</span>
+                                <strong>Incident Tracking &amp; Resolution</strong>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 4. Warehousing & Logistics Hubs -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    LOGISTICS &amp; SUPPLY CHAIN
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-warehouse"></i>
-                                </div>
+                    <!-- Employee Emergency Profile Card -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-address-card"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Warehousing &amp; Depots</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Forklift and high-bay rack safety protocols, automated defibrillator (AED) audits, and shift-worker incident logging dashboards.
+                            <h3 class="text-2xl font-bold font-display text-slate-900">🪪 Employee Emergency Profile</h3>
+                            <p class="text-base font-semibold text-slate-800">Important information when every second matters.</p>
+                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                                Employees can maintain an emergency profile containing relevant information that can assist during an emergency. The organization maintains safety records so that emergency personnel and authorized company administrators have the critical information they need within the organization's approved workflow.
                             </p>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">100%</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Drill Logging</span>
+
+                        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 block">KEY OPERATIONAL BENEFIT:</span>
+                            <div class="space-y-3 text-xs sm:text-sm text-slate-600 font-normal">
+                                <div class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    <span>Eliminates the frantic search for basic emergency info during stressful events.</span>
                                 </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">Zero</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Audit Gap</span>
+                                <div class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    <span>Ensures blood group, emergency contacts, and vital medical conditions are accessible to responders.</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                                    <span>Maintains enterprise compliance with ISO 45001 occupational safety data practices.</span>
                                 </div>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Logistics Plan
-                            </a>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 text-xs text-brandBlue font-mono font-bold text-center">
+                            Zero Delay &bull; Pre-Loaded Emergency Triage Intelligence
                         </div>
                     </div>
 
-                    <!-- 5. Commercial Real Estate & Towers -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    REAL ESTATE &amp; TOWERS
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-city"></i>
-                                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Workplace Safety Management (Prevention & Compliance) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">PROACTIVE PREVENTION</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🛡️ Workplace Safety Management
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Safety isn't only about emergencies.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Professional and Complete plans extend Shield beyond emergency response into everyday workplace safety management, helping organizations prepare and audit facilities continuously.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Safety Inspections -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-clipboard-check"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Commercial Real Estate</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Multi-tenant building safety, automated elevator entrapment response, shared fire evacuation simulations, and unified facility safety records.
-                            </p>
+                            <h3 class="text-xl font-bold font-display text-slate-900">Safety Inspections</h3>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">Multi-Tenant</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Shield Dashboard</span>
-                                </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">ISO 45001</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Ready</span>
-                                </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Regularly inspect workplace environments and identify safety concerns before they escalate.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs font-mono font-bold text-slate-700 uppercase block mb-2">Track &amp; Document:</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-700">
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Inspection date</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Location / Zone</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Safety observations</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Identified issues</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Corrective actions</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Inspection history</div>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Estate Plan
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Duplicate set for seamless continuous marquee loop -->
-                    <!-- 1. Corporate Offices & Tech Parks (Loop) -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    TECHNOLOGY &amp; CORPORATE
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-building"></i>
-                                </div>
+                    <!-- Fire-Safety Management -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-200 text-emergencyRed flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-fire-extinguisher"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Corporate Campuses</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Instant employee mobile &amp; wearable SOS, automated on-site emergency response team (ERT) deployment, and 100% covered executive ambulance support.
-                            </p>
+                            <h3 class="text-xl font-bold font-display text-slate-900">🔥 Fire-Safety Management</h3>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">&lt; 30 Sec</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">ERT Alert Relay</span>
-                                </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">100%</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">Staff Geofence</span>
-                                </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Keep your fire-safety infrastructure organized and fully visible across all company sites.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs font-mono font-bold text-slate-700 uppercase block mb-2">Maintain Records For:</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-700">
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Fire extinguishers</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Fire alarms &amp; sirens</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Emergency exits</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Fire equipment status</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Inspection records</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Maintenance schedules</div>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Corporate Plan
-                            </a>
                         </div>
                     </div>
 
-                    <!-- 2. Manufacturing Facilities (Loop) -->
-                    <div class="content-belt-card">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-[10px] font-mono font-bold text-emerald-700 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 uppercase tracking-wider">
-                                    INDUSTRIAL &amp; PLANTS
-                                </span>
-                                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm">
-                                    <i class="fa-solid fa-industry"></i>
-                                </div>
+                    <!-- First-Aid Infrastructure -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-kit-medical"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Manufacturing Facilities</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mb-6">
-                                Heavy machinery injury protocols, hazardous material sensor alerts, automated fire exit inspection logs, and direct trauma ER pre-triage.
-                            </p>
+                            <h3 class="text-xl font-bold font-display text-slate-900">🩹 First-Aid Infrastructure</h3>
                         </div>
-                        <div>
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mb-4">
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">100%</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">OSHA Compliant</span>
-                                </div>
-                                <div>
-                                    <span class="text-xl font-black font-display text-slate-900 block">24/7</span>
-                                    <span class="text-[9px] uppercase tracking-wider font-mono text-slate-500">On-Site Link</span>
-                                </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            First aid should always be ready. Shield ensures first-aid resources don't simply exist—they remain visible, stocked, and manageable.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs font-mono font-bold text-slate-700 uppercase block mb-2">Maintain Information About:</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-700">
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; First-aid stations</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Station locations</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; First-aid equipment</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Availability status</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Inspection status</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Replenishment needs</div>
                             </div>
-                            <a href="#corporate-plans" class="w-full py-2 rounded-lg text-center text-xs font-bold uppercase tracking-wider block transition-all bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm">
-                                View Industrial Plan
-                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Drills -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-person-running"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-display text-slate-900">🚨 Emergency Drills</h3>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                            Practice before the real emergency. An emergency plan is only useful if people know what to do.
+                        </p>
+                        <div class="pt-2">
+                            <span class="text-xs font-mono font-bold text-slate-700 uppercase block mb-2">Drills &amp; Metrics Tracked:</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-700">
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Fire evacuation drills</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Workplace evacuation</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Response exercises</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Participation rates</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Drill observations</div>
+                                <div class="p-2 rounded bg-white border border-slate-200">&bull; Improvement actions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Safety Checklists Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">STANDARDIZED PROTOCOLS</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        📋 Safety Checklists
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Make workplace safety measurable.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Organizations can use structured safety checklists to make routine safety checks easier and verifiable across all teams. Checklists can be customized based on your organization's exact industry and facility requirements.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Office Safety Checklist -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                            <h3 class="text-lg font-bold font-display text-slate-900">Office Safety Checklist</h3>
+                            <span class="text-xs font-mono text-slate-500 font-bold uppercase">Standard Corporate</span>
+                        </div>
+                        <div class="space-y-3 font-mono text-xs sm:text-sm text-slate-700">
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Emergency exits accessible &amp; unobstructed</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Fire equipment available &amp; inspected</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>First-aid kit available &amp; replenished</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Emergency contacts displayed prominently</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Safety signage &amp; evacuation maps visible</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industrial / Facility Safety Checklist -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-5">
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                            <h3 class="text-lg font-bold font-display text-slate-900">Industrial / Facility Safety</h3>
+                            <span class="text-xs font-mono text-slate-500 font-bold uppercase">Manufacturing &amp; Depot</span>
+                        </div>
+                        <div class="space-y-3 font-mono text-xs sm:text-sm text-slate-700">
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Emergency equipment checked &amp; tested</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Fire-safety equipment inspected &amp; tagged</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Emergency exits accessible across all bays</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>First-aid facilities &amp; showers available</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                                <span class="w-5 h-5 rounded border border-slate-400 bg-white flex items-center justify-center text-emerald-600 font-bold text-xs">&check;</span>
+                                <span>Safety concerns &amp; hazards recorded</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Company Dashboard Modules Grid -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-black">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">CENTRALIZED CONTROL CONSOLE</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Your Company Safety Dashboard</h2>
-                    <p class="text-sm text-neutral-400 font-light mt-2">Everything your organization needs to manage its safety ecosystem in one unified place.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Employee Management</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Add employees, maintain emergency medical profiles, manage access permissions, and maintain safety records.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Family Management</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Available on Complete Plan: Register up to 4 family members per employee with full covered emergency assistance.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Emergency Alerts &amp; Tracking</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Real-time alerts on active emergencies, live GPS location mapping, response progress, and incident records.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Ambulance Cost Coverage</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">For eligible covered emergencies, EMSTRAP covers ambulance costs. Employee pays ₹0 EMSTRAP service fee.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Hospital Coordination</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Shares relevant context with destination ER. (Medical/treatment expenses remain separate under patient's insurance).</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Safety Inspections &amp; Drills</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Schedule fire drills, facility inspections, audit hazards, and log corrective actions to ensure total compliance.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Fire &amp; First-Aid Infrastructure</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Inventory tracking for fire extinguishers, emergency exits, alarms, and first-aid replenishment status.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Emergency Reports &amp; Insights</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Identify which facilities experience incidents, review historical logs, and measure safety preparedness trends.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-[#0A0A0A] border border-neutral-800 space-y-2">
-                        <h3 class="text-base font-bold font-display text-white">Company Emergency Notifications</h3>
-                        <p class="text-xs text-neutral-400 leading-relaxed font-light">Designated admins receive structured alerts: Who &rarr; What &rarr; Where &rarr; Status to coordinate immediate care.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Corporate Plans Section -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-[#080808]" id="corporate-plans">
-            <div class="max-w-5xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">MEMBERSHIP TIERS</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">Corporate Safety Plans</h2>
-                    <p class="text-sm text-neutral-400 font-light mt-2">Scalable protection designed for startups, medium enterprises, and large corporate campuses.</p>
+        <!-- 7. Analytics, Safety Dashboard, Reports & Insights -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">ORGANIZATIONAL AUDIT</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        📊 Safety Dashboard, Reports &amp; Insights
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Instead of searching through disconnected paper files, spreadsheets, and emails, company administrators get a single centralized view of the organization's safety ecosystem.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- BASIC -->
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4">
-                                ESSENTIAL PROTECTION
-                            </span>
-                            <h3 class="text-2xl font-bold font-display text-white mb-2">Basic Plan</h3>
-                            <p class="text-xs text-neutral-400 font-light mb-6">Essential emergency response for workforce teams.</p>
-                            
-                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
-                                <div class="text-white font-bold">Employee pays: ₹0 fee</div>
-                                <div>&bull; Employee Emergency System &amp; SOS</div>
-                                <div>&bull; Emergency Profile Registry</div>
-                                <div>&bull; Company Emergency Notifications</div>
-                                <div>&bull; Ambulance Coordination Grid</div>
-                                <div>&bull; Eligible Ambulance Cost Covered</div>
-                                <div>&bull; Hospital Coordination Desk</div>
-                                <div>&bull; Company Safety Dashboard</div>
-                            </div>
+                    <!-- Safety Dashboard -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-chart-pie"></i>
                         </div>
-                        <div class="pt-6">
-                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEES ONLY</span>
-                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider border border-neutral-800 transition-all font-display">
-                                Choose Basic
-                            </button>
+                        <h3 class="text-lg font-bold font-display text-slate-900">Safety Dashboard</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            See your organization's safety status at a glance.
+                        </p>
+                        <ul class="space-y-1.5 text-xs text-slate-700 font-mono">
+                            <li>&bull; Total employees covered</li>
+                            <li>&bull; Covered family members</li>
+                            <li>&bull; Active emergencies</li>
+                            <li>&bull; Emergency history</li>
+                            <li>&bull; Safety inspections</li>
+                            <li>&bull; Emergency drills status</li>
+                            <li>&bull; Equipment audit records</li>
+                        </ul>
+                    </div>
+
+                    <!-- Emergency Reports -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-slate-900">📑 Emergency Reports</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Understand what happened and improve future readiness.
+                        </p>
+                        <ul class="space-y-1.5 text-xs text-slate-700 font-mono">
+                            <li>&bull; Incident type &amp; timestamp</li>
+                            <li>&bull; Location / GPS coordinates</li>
+                            <li>&bull; Employee/member involved</li>
+                            <li>&bull; Emergency status</li>
+                            <li>&bull; Response activity timeline</li>
+                            <li>&bull; Ambulance dispatch details</li>
+                            <li>&bull; Hospital coordination record</li>
+                        </ul>
+                    </div>
+
+                    <!-- Safety Insights -->
+                    <div class="p-7 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-slate-900">📈 Safety Insights</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Identify recurring patterns to continuously elevate safety.
+                        </p>
+                        <ul class="space-y-1.5 text-xs text-slate-700 font-mono">
+                            <li>&bull; Which locations have more incidents?</li>
+                            <li>&bull; Incident reporting frequency trends</li>
+                            <li>&bull; Recurring safety issue patterns</li>
+                            <li>&bull; Inspection completion compliance</li>
+                            <li>&bull; Emergency drill evaluations</li>
+                            <li>&bull; Corrective action verification</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Company Emergency Notifications Callout -->
+                <div class="p-6 rounded-2xl bg-slate-100 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">🔔 COMPANY EMERGENCY NOTIFICATIONS</span>
+                            <p class="text-xs sm:text-sm text-slate-800 font-medium">
+                                When a covered employee raises an emergency, designated company personnel receive an instant structured alert:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs font-bold bg-white px-4 py-2 rounded-xl border border-slate-200 shrink-0 text-slate-800 shadow-sm">
+                        <span>Who</span> &rarr; <span>What</span> &rarr; <span>Where</span> &rarr; <span class="text-emerald-600">Status</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Family Protection (Complete Plan Spotlight) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 font-mono text-xs font-bold uppercase">
+                        Available with the Complete Plan
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        👨‍👩‍👧‍👦 Family Protection
+                    </h2>
+                    <p class="text-xl sm:text-2xl font-bold font-display text-slate-800 leading-snug">
+                        Because employee safety doesn't stop at the office.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        The Complete Plan extends eligible EMSTRAP emergency-service access to the employee's registered family members:
+                    </p>
+                </div>
+
+                <!-- Up to 4 Family Members Visual Grid -->
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600">FAMILY COVERAGE ARCHITECTURE</span>
+                        <span class="text-xs font-mono font-bold text-slate-800">Up to 4 family members per employee</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                            <span class="font-bold text-slate-900 block font-sans">Employee</span>
+                            <div class="text-[11px] text-slate-500">&rarr; Emergency</div>
+                            <div class="text-[11px] text-slate-500">&rarr; EMSTRAP</div>
+                            <div class="text-[11px] text-emerald-600 font-bold">&rarr; Covered Ambulance</div>
+                            <div class="text-[11px] text-slate-500">&rarr; Hospital</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                            <span class="font-bold text-slate-900 block font-sans">Spouse</span>
+                            <div class="text-[11px] text-slate-500">&rarr; Emergency</div>
+                            <div class="text-[11px] text-slate-500">&rarr; EMSTRAP</div>
+                            <div class="text-[11px] text-emerald-600 font-bold">&rarr; Covered Ambulance</div>
+                            <div class="text-[11px] text-slate-500">&rarr; Hospital</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                            <span class="font-bold text-slate-900 block font-sans">Parent</span>
+                            <div class="text-[11px] text-slate-500">&rarr; Emergency</div>
+                            <div class="text-[11px] text-slate-500">&rarr; EMSTRAP</div>
+                            <div class="text-[11px] text-emerald-600 font-bold">&rarr; Covered Ambulance</div>
+                            <div class="text-[11px] text-slate-500">&rarr; Hospital</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                            <span class="font-bold text-slate-900 block font-sans">Child</span>
+                            <div class="text-[11px] text-slate-500">&rarr; Emergency</div>
+                            <div class="text-[11px] text-slate-500">&rarr; EMSTRAP</div>
+                            <div class="text-[11px] text-emerald-600 font-bold">&rarr; Covered Ambulance</div>
+                            <div class="text-[11px] text-slate-500">&rarr; Hospital</div>
                         </div>
                     </div>
 
-                    <!-- PROFESSIONAL -->
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-700 flex flex-col justify-between relative shadow-xl">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-black font-bold font-mono text-[10px] uppercase tracking-widest">
-                            MOST POPULAR
+                    <!-- Payment Terms Notice -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-200 text-xs">
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <span class="text-slate-500 uppercase font-mono block text-[10px]">Employee Pays</span>
+                            <strong class="text-sm font-bold text-slate-900 font-display">₹0 EMSTRAP service fee</strong>
+                            <p class="text-[11px] text-slate-500 mt-1">For all eligible covered services.</p>
                         </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <span class="text-slate-500 uppercase font-mono block text-[10px]">EMSTRAP Covers</span>
+                            <strong class="text-sm font-bold text-emerald-600 font-display">Eligible Ambulance Costs</strong>
+                            <p class="text-[11px] text-slate-500 mt-1">According to the selected plan terms.</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                            <span class="text-slate-500 uppercase font-mono block text-[10px]">Hospital Expenses</span>
+                            <strong class="text-sm font-bold text-slate-800 font-display">Handled Separately</strong>
+                            <p class="text-[11px] text-slate-500 mt-1">Via patient's medical insurance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Safety Records Section -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-10">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">GOVERNANCE &amp; AUDIT</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🔐 Safety Records
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-700 font-medium">
+                        Keep important safety information organized and compliant.
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                        Authorized administrators can maintain, retrieve, and export vital records to support their organization's ongoing safety operations, audits, and statutory reviews:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 font-mono text-xs">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>Employee Profiles &amp; Medical Triage</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>Emergency Incident Audit Trails</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>Workplace Safety Inspection Logs</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>Emergency Drill Schedules &amp; Results</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>Fire-Safety Equipment Registers</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-brandBlue"></i>
+                        <span>First-Aid Infrastructure Audits</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. The Complete Emergency & Safety Management Workflows -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">END-TO-END PROCESSES</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Complete Workflows
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Shield combines immediate emergency execution with continuous workplace hazard prevention.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Workflow 1: Emergency Response -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
                         <div>
-                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4 mt-2">
-                                WORKPLACE SAFETY
-                            </span>
-                            <h3 class="text-2xl font-bold font-display text-white mb-2">Professional Plan</h3>
-                            <p class="text-xs text-neutral-400 font-light mb-6">Emergency response + complete workplace safety management.</p>
-                            
-                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
-                                <div class="text-white font-bold">Everything in Basic, plus:</div>
-                                <div>&bull; Workplace Safety Inspections</div>
-                                <div>&bull; Emergency &amp; Fire Evacuation Drills</div>
-                                <div>&bull; Fire-Safety Equipment Tracking</div>
-                                <div>&bull; First-Aid Infrastructure Sentry</div>
-                                <div>&bull; Safety Checklists &amp; Audits</div>
-                                <div>&bull; Safety Reports &amp; Pattern Insights</div>
-                                <div>&bull; Employee Safety Records Archive</div>
-                            </div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-emergencyRed block mb-1">REAL-TIME RESPONSE</span>
+                            <h3 class="text-xl font-bold font-display text-slate-900">Complete Emergency Workflow</h3>
+                            <p class="text-xs text-slate-500 mt-1">Here's how Shield works when an employee needs assistance:</p>
                         </div>
-                        <div class="pt-6">
-                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEES ONLY</span>
-                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display shadow-md">
-                                Choose Professional
-                            </button>
+
+                        <div class="space-y-2 font-mono text-xs text-slate-800">
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>EMPLOYEE</strong> &rarr; Triggers SOS</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>EMSTRAP SHIELD</strong> &rarr; Captures location + profile</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>COMPANY NOTIFICATION</strong> &rarr; HR / Admin alerted</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>AMBULANCE COORDINATION</strong> &rarr; Dispatched immediately</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>HOSPITAL</strong> &rarr; Pre-triage and handover</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>INCIDENT TRACKING</strong> &rarr; Real-time status</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-emerald-600 text-white font-bold flex items-center gap-2">&check; RESOLUTION &amp; REPORT &rarr; Archived on Company Dashboard</div>
                         </div>
                     </div>
 
-                    <!-- COMPLETE -->
-                    <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800 flex flex-col justify-between">
+                    <!-- Workflow 2: Safety Management Prevention Cycle -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
                         <div>
-                            <span class="text-[10px] font-mono font-bold text-neutral-400 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 uppercase tracking-wider block w-fit mb-4">
-                                EMPLOYEE + FAMILY
-                            </span>
-                            <h3 class="text-2xl font-bold font-display text-white mb-2">Complete Plan</h3>
-                            <p class="text-xs text-neutral-400 font-light mb-6">Complete workplace protection with full family coverage.</p>
-                            
-                            <div class="text-xs font-mono text-neutral-300 space-y-2.5 pb-6 border-b border-neutral-900">
-                                <div class="text-white font-bold">Everything in Professional, plus:</div>
-                                <div>&bull; Up to 4 Registered Family Members</div>
-                                <div>&bull; Family Emergency Access &amp; SOS</div>
-                                <div>&bull; Covered Family Ambulance Services</div>
-                                <div>&bull; Family Hospital Coordination</div>
-                                <div>&bull; Zero fee for covered family access</div>
-                                <div>&bull; Complete Enterprise &amp; Home Grid</div>
-                            </div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue block mb-1">PROACTIVE PREVENTION</span>
+                            <h3 class="text-xl font-bold font-display text-slate-900">Complete Safety Management Workflow</h3>
+                            <p class="text-xs text-slate-500 mt-1">Shield handles the prevention and preparation cycle:</p>
                         </div>
-                        <div class="pt-6">
-                            <span class="text-[10px] font-mono text-neutral-500 block mb-3">COVERAGE: EMPLOYEE + 4 FAMILY MEMBERS</span>
-                            <button onclick="openCorporateDemoModal()" class="w-full py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs uppercase tracking-wider border border-neutral-800 transition-all font-display">
-                                Choose Complete
-                            </button>
+
+                        <div class="space-y-2 font-mono text-xs text-slate-800">
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>SAFETY INSPECTION</strong> &rarr; Audit workplace</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>IDENTIFY RISK</strong> &rarr; Log potential hazard</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>CORRECTIVE ACTION</strong> &rarr; Resolve safety gap</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>EMERGENCY DRILL</strong> &rarr; Train staff</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>SAFETY EQUIPMENT</strong> &rarr; Stock &amp; verify</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2"><strong>INCIDENT REPORT &amp; IMPROVEMENT</strong> &rarr; Elevate standards</div>
+                            <div class="text-center text-slate-400 font-bold">&darr;</div>
+                            <div class="p-2.5 rounded-lg bg-brandBlue text-white font-bold flex items-center gap-2">&check; NEXT INSPECTION &rarr; Continuous workplace safety cycle</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coverage Breakdown Table -->
-                <div class="p-8 rounded-3xl bg-neutral-950 border border-neutral-800/80 space-y-6">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">COVERAGE MATRIX</span>
+                <div class="text-center font-display font-bold text-base sm:text-lg text-slate-800 pt-2">
+                    &ldquo;This makes Shield more than an emergency application. It becomes a complete workplace safety cycle.&rdquo;
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Corporate Plans (Pricing & Packaging Matrix) -->
+        <section class="py-24 px-6 md:px-12 border-b border-slate-200 bg-white" id="corporate-plans">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">ORGANIZATIONAL TIERS</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-display text-slate-900 tracking-tight">
+                        💼 Corporate Plans
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal">
+                        Select the plan tailored to your workforce size, risk profile, and safety compliance goals.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    
+                    <!-- 🟢 BASIC — Employee Emergency -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">🟢 BASIC</span>
+                                <h3 class="text-2xl font-black font-display text-slate-900">Employee Emergency</h3>
+                                <p class="text-xs text-slate-600 mt-1 font-medium">Essential emergency protection</p>
+                            </div>
+                            
+                            <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-1 text-xs">
+                                <div class="text-slate-500 font-mono">Company pays: <strong class="text-slate-900">Subscription</strong></div>
+                                <div class="text-slate-500 font-mono">Employee pays: <strong class="text-emerald-600">₹0 for covered services</strong></div>
+                                <div class="text-slate-500 font-mono">Coverage: <strong class="text-slate-900">Employees only</strong></div>
+                            </div>
+
+                            <div class="pt-2 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+                                <span class="text-[11px] font-mono font-bold text-slate-500 uppercase block mb-1">Plan Includes:</span>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Employee Emergency System</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Employee SOS</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Emergency Profile</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Company Emergency Notification</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Ambulance Coordination</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Eligible Ambulance Cost Covered</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Hospital Coordination</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Emergency Incident Tracking</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Basic Safety Equipment</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-xs"></i> Company Safety Dashboard</div>
+                            </div>
+                        </div>
+
+                        <button onclick="openCorporateDemoModal()" class="w-full py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider font-display transition-all shadow">
+                            Select Basic Plan
+                        </button>
+                    </div>
+
+                    <!-- 🔵 PROFESSIONAL — Workplace Safety (Most Popular) -->
+                    <div class="p-8 rounded-3xl bg-blue-50/50 border-2 border-brandBlue/40 shadow-xl flex flex-col justify-between space-y-6 relative hover:shadow-2xl transition-shadow">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brandBlue text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow">
+                            Most Popular for Enterprises
+                        </div>
+
+                        <div class="space-y-4 pt-1">
+                            <div>
+                                <span class="text-xs font-mono font-bold text-brandBlue uppercase tracking-widest block mb-1">🔵 PROFESSIONAL</span>
+                                <h3 class="text-2xl font-black font-display text-slate-900">Workplace Safety</h3>
+                                <p class="text-xs text-slate-600 mt-1 font-medium">Emergency response + complete workplace safety</p>
+                            </div>
+                            
+                            <div class="p-3.5 rounded-xl bg-white border border-blue-200 space-y-1 text-xs shadow-sm">
+                                <div class="text-slate-500 font-mono">Company pays: <strong class="text-slate-900">Higher subscription/package</strong></div>
+                                <div class="text-slate-500 font-mono">Employee pays: <strong class="text-emerald-600">₹0 for covered services</strong></div>
+                                <div class="text-slate-500 font-mono">Coverage: <strong class="text-slate-900">Employees only</strong></div>
+                            </div>
+
+                            <div class="pt-2 space-y-2 text-xs sm:text-sm text-slate-800 font-normal">
+                                <span class="text-[11px] font-mono font-bold text-brandBlue uppercase block mb-1">Everything in Basic, plus:</span>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Advanced Emergency Management</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Safety Inspections</div>
+                                <div class="fa-solid fa-check text-brandBlue text-xs inline mr-2"></div><span class="inline">Emergency Drills</span>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Fire-Safety Equipment Management</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> First-Aid Infrastructure</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Safety Checklists</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Emergency Reports &amp; Analytics</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Safety Dashboard</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Employee Safety Records</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Safety History</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue text-xs"></i> Eligible Ambulance Cost Coverage</div>
+                            </div>
+                        </div>
+
+                        <button onclick="openCorporateDemoModal()" class="w-full py-3.5 rounded-full bg-brandBlue hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider font-display transition-all shadow-md">
+                            Select Professional Plan
+                        </button>
+                    </div>
+
+                    <!-- 🔴 COMPLETE — Employee + Family -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-xs font-mono font-bold text-emergencyRed uppercase tracking-widest block mb-1">🔴 COMPLETE</span>
+                                <h3 class="text-2xl font-black font-display text-slate-900">Employee + Family</h3>
+                                <p class="text-xs text-slate-600 mt-1 font-medium">Complete workplace protection with family coverage</p>
+                            </div>
+                            
+                            <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-1 text-xs">
+                                <div class="text-slate-500 font-mono">Company pays: <strong class="text-slate-900">Premium package</strong></div>
+                                <div class="text-slate-500 font-mono">Employee pays: <strong class="text-emerald-600">₹0 for covered services</strong></div>
+                                <div class="text-slate-500 font-mono">Coverage: <strong class="text-slate-900">Employee + Up to 4 Family Members</strong></div>
+                            </div>
+
+                            <div class="pt-2 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+                                <span class="text-[11px] font-mono font-bold text-emergencyRed uppercase block mb-1">Everything in Professional, plus:</span>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> <strong>Up to 4 Family Members Covered</strong></div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Family Emergency Access &amp; SOS</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Family Ambulance Coordination</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Eligible Ambulance Cost Covered</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Family Hospital Coordination</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Workplace Safety Management</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Safety Inspections &amp; Drills</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Fire-Safety &amp; First-Aid Infrastructure</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emergencyRed text-xs"></i> Comprehensive Company Dashboard</div>
+                            </div>
+                        </div>
+
+                        <button onclick="openCorporateDemoModal()" class="w-full py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider font-display transition-all shadow">
+                            Select Complete Plan
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. What is Covered? (Detailed Corporate Comparison Table) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-6xl mx-auto space-y-10">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">SCOPE &amp; LIMITS</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        💰 What is Covered?
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Full corporate transparency. Clear operational boundaries between covered EMSTRAP services and independent hospital expenses:
+                    </p>
+                </div>
+
+                <!-- Structured Table -->
+                <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left font-mono text-xs text-neutral-300">
-                            <thead class="border-b border-neutral-800 text-neutral-500 uppercase tracking-wider">
-                                <tr>
-                                    <th class="py-3 px-4">Service</th>
-                                    <th class="py-3 px-4">Coverage Status</th>
-                                    <th class="py-3 px-4">Details</th>
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm font-sans">
+                            <thead>
+                                <tr class="bg-slate-100 border-b border-slate-200 text-slate-700 font-mono text-[11px] uppercase tracking-wider">
+                                    <th class="py-4 px-6 font-bold">Service / Capability</th>
+                                    <th class="py-4 px-6 font-bold text-center">Basic</th>
+                                    <th class="py-4 px-6 font-bold text-center">Professional</th>
+                                    <th class="py-4 px-6 font-bold text-center bg-blue-50/50 text-brandBlue">Complete</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-neutral-900">
+                            <tbody class="divide-y divide-slate-200 text-slate-700">
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">EMSTRAP Platform Access</td>
-                                    <td class="py-3.5 px-4 text-white">Included</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Under Company Subscription</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">EMSTRAP platform access</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Company sub</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Company sub</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check; Company sub</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Employee SOS &amp; Profiles</td>
-                                    <td class="py-3.5 px-4 text-white">Included</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">All Corporate Plans</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Employee emergency service</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check;</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Eligible Ambulance Cost</td>
-                                    <td class="py-3.5 px-4 text-white font-bold">100% Covered by EMSTRAP</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Employee pays ₹0 for covered service</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Employee SOS</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check;</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Hospital Coordination</td>
-                                    <td class="py-3.5 px-4 text-white">Included</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Pre-arrival context &amp; trauma bay alerts</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Company emergency notification</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check;</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Hospital Admission &amp; Medical Bills</td>
-                                    <td class="py-3.5 px-4 text-neutral-500">Not Covered</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Handled separately by patient/health insurance</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Emergency coordination</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check;</td>
+                                </tr>
+                                <tr class="bg-emerald-50/40">
+                                    <td class="py-3 px-6 font-bold text-slate-900">Eligible ambulance cost</td>
+                                    <td class="py-3 px-6 text-center font-bold text-emerald-700">&check; Covered by EMSTRAP</td>
+                                    <td class="py-3 px-6 text-center font-bold text-emerald-700">&check; Covered by EMSTRAP</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-bold text-emerald-700">&check; Covered by EMSTRAP</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Workplace Inspections &amp; Drills</td>
-                                    <td class="py-3.5 px-4 text-white">Professional &amp; Complete</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Complete safety management modules</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Hospital coordination</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check;</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check;</td>
+                                </tr>
+                                <tr class="bg-slate-50/80 text-slate-500">
+                                    <td class="py-3 px-6 font-normal">Hospital admission</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-mono text-xs">Not automatically covered</td>
+                                </tr>
+                                <tr class="bg-slate-50/80 text-slate-500">
+                                    <td class="py-3 px-6 font-normal">Doctor consultation</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-mono text-xs">Not automatically covered</td>
+                                </tr>
+                                <tr class="bg-slate-50/80 text-slate-500">
+                                    <td class="py-3 px-6 font-normal">Medical treatment</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-mono text-xs">Not automatically covered</td>
+                                </tr>
+                                <tr class="bg-slate-50/80 text-slate-500">
+                                    <td class="py-3 px-6 font-normal">Medicines &amp; Surgery</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-mono text-xs">Not automatically covered</td>
+                                </tr>
+                                <tr class="bg-slate-50/80 text-slate-500">
+                                    <td class="py-3 px-6 font-normal">Diagnostic tests &amp; ICU charges</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center font-mono text-xs">Not automatically covered</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 font-mono text-xs">Not automatically covered</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3.5 px-4 font-bold text-white">Family Coverage</td>
-                                    <td class="py-3.5 px-4 text-white">Complete Plan Only</td>
-                                    <td class="py-3.5 px-4 text-neutral-400">Up to 4 registered family members</td>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Safety inspections</td>
+                                    <td class="py-3 px-6 text-center text-slate-400">&mdash;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Professional</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check; Complete</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Emergency drills</td>
+                                    <td class="py-3 px-6 text-center text-slate-400">&mdash;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Professional</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check; Complete</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-6 font-medium text-slate-900">Fire-safety management</td>
+                                    <td class="py-3 px-6 text-center text-slate-400">&mdash;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Professional</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check; Complete</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-6 font-medium text-slate-900">First-aid infrastructure</td>
+                                    <td class="py-3 px-6 text-center text-slate-400">&mdash;</td>
+                                    <td class="py-3 px-6 text-center text-emerald-600 font-bold">&check; Professional</td>
+                                    <td class="py-3 px-6 text-center bg-blue-50/30 text-emerald-600 font-bold">&check; Complete</td>
+                                </tr>
+                                <tr class="bg-blue-50/40">
+                                    <td class="py-3.5 px-6 font-bold text-slate-900">Family coverage (Up to 4 / employee)</td>
+                                    <td class="py-3.5 px-6 text-center text-slate-400 font-mono">&mdash;</td>
+                                    <td class="py-3.5 px-6 text-center text-slate-400 font-mono">&mdash;</td>
+                                    <td class="py-3.5 px-6 text-center bg-blue-100/50 font-bold text-brandBlue">&check; Included</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div class="p-4 bg-slate-50 border-t border-slate-200 text-slate-500 font-mono text-xs">
+                        *Coverage and limits may vary according to the corporate package, employee headcount, and applicable terms of service.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. What Does the Company Get? -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">ORGANIZATIONAL VALUE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        👨‍💼 What Does the Company Get?
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        When a company subscribes to EMSTRAP Shield, it gets more than employee access. The company receives a centralized safety management dashboard where authorized administrators can govern the organization's complete safety ecosystem.
+                    </p>
                 </div>
 
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
+                    
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-brandBlue block uppercase text-sm font-sans">Employees</span>
+                        <div class="text-slate-700">&rarr; Profiles</div>
+                        <div class="text-slate-700">&rarr; Safety records</div>
+                        <div class="text-slate-700">&rarr; Emergency access</div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-emerald-600 block uppercase text-sm font-sans">Families</span>
+                        <div class="text-slate-700">&rarr; Registration</div>
+                        <div class="text-slate-700">&rarr; Up to 4 members per employee</div>
+                        <div class="text-slate-700">&rarr; Comprehensive coverage</div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-emergencyRed block uppercase text-sm font-sans">Emergencies</span>
+                        <div class="text-slate-700">&rarr; Alerts &amp; Incidents</div>
+                        <div class="text-slate-700">&rarr; Status monitoring</div>
+                        <div class="text-slate-700">&rarr; Historical logs</div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-blue-700 block uppercase text-sm font-sans">Ambulances</span>
+                        <div class="text-slate-700">&rarr; Requests &amp; Coordination</div>
+                        <div class="text-slate-700">&rarr; Response status tracking</div>
+                        <div class="text-slate-700">&rarr; Cost coverage verification</div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-purple-700 block uppercase text-sm font-sans">Safety Management</span>
+                        <div class="text-slate-700">&rarr; Inspections</div>
+                        <div class="text-slate-700">&rarr; Emergency drills</div>
+                        <div class="text-slate-700">&rarr; Equipment &amp; First Aid</div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-slate-900 block uppercase text-sm font-sans">Dashboard &amp; Reports</span>
+                        <div class="text-slate-700">&rarr; Emergency reports</div>
+                        <div class="text-slate-700">&rarr; Statutory safety records</div>
+                        <div class="text-slate-700">&rarr; One centralized view of everything</div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- Who We Serve - Interactive 3D Sliding Cards Carousel -->
-        <section class="py-20 px-6 md:px-12 border-b border-neutral-900 bg-neutral-950/80 backdrop-blur-md relative overflow-hidden" id="page-who-we-serve">
-            <div class="max-w-5xl mx-auto mb-10 text-center">
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block mb-2">SECTOR ADOPTION</span>
-                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">Who We Serve</h2>
-                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto mt-3">
-                    From enterprise facilities to healthcare networks and public infrastructure, EMSTRAP Shield delivers proactive protection and zero-lag response.
-                </p>
+        <!-- 14. EMSTRAP Shield Ecosystem (Architecture Diagram) -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-slate-50">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="max-w-3xl space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">ARCHITECTURE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        🌐 EMSTRAP Shield Ecosystem
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal">
+                        How company administration connects seamlessly to emergency response and safety operations:
+                    </p>
+                </div>
+
+                <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm font-mono text-xs sm:text-sm space-y-6">
+                    <div class="flex justify-center">
+                        <div class="px-8 py-3 rounded-2xl bg-slate-900 text-white font-bold font-display tracking-wider text-center shadow">
+                            COMPANY
+                        </div>
+                    </div>
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+                    <div class="flex justify-center">
+                        <div class="px-8 py-3 rounded-2xl bg-brandBlue text-white font-bold font-display tracking-wider text-center shadow-md">
+                            EMSTRAP SHIELD &bull; COMPANY DASHBOARD
+                        </div>
+                    </div>
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-slate-900">
+                            EMPLOYEES<br><span class="text-[11px] font-normal text-slate-500">SOS</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-slate-900">
+                            FAMILY<br><span class="text-[11px] font-normal text-slate-500">SOS</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-slate-900">
+                            EMERGENCY<br><span class="text-[11px] font-normal text-slate-500">Response</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-slate-900">
+                            SAFETY<br><span class="text-[11px] font-normal text-slate-500">Inspection</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 font-bold text-slate-900 col-span-2 sm:col-span-1">
+                            REPORTS<br><span class="text-[11px] font-normal text-slate-500">Analytics</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center text-slate-400 font-bold">&darr;</div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-center font-bold text-emerald-800">
+                            AMBULANCE &bull; HOSPITAL<br><span class="text-[11px] font-normal">Active Medical Corridor</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-center font-bold text-brandBlue">
+                            DRILLS &bull; EQUIPMENT<br><span class="text-[11px] font-normal">Ongoing Preparedness</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Carousel Viewport -->
-            <div class="relative w-full max-w-6xl mx-auto overflow-hidden py-4" id="whoWeServeContainer" style="height: 520px;">
-                <div id="whoWeServeTrack" class="relative w-full h-full"></div>
-
-                <!-- Nav Controls -->
-                <button onclick="whoWeServePrev()" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-white hover:text-black text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-30 transition-all shadow-xl hover:scale-110" aria-label="Previous slide">
-                    <i class="fa-solid fa-chevron-left text-xs"></i>
-                </button>
-                <button onclick="whoWeServeNext()" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-white hover:text-black text-white flex items-center justify-center backdrop-blur-md border border-white/20 z-30 transition-all shadow-xl hover:scale-110" aria-label="Next slide">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </button>
-            </div>
-
-            <!-- Indicator Dots -->
-            <div class="flex items-center justify-center gap-2 mt-6 z-30 relative" id="whoWeServeIndicators"></div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="py-24 px-6 md:px-12 bg-black">
-            <div class="max-w-4xl mx-auto text-center space-y-6">
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400 block">CORPORATE ADVISORY</span>
+        <!-- 15. The EMSTRAP Shield Promise -->
+        <section class="py-20 px-6 md:px-12 border-b border-slate-200 bg-white">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">ORGANIZATIONAL COMMITMENT</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        The EMSTRAP Shield Promise
+                    </h2>
+                    <p class="text-lg sm:text-xl font-bold font-display text-slate-800">
+                        Safety doesn't end at the office door.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        From the workplace to the employee's home and, with Complete, their family, EMSTRAP Shield creates a connected safety network around the people who matter most.
+                    </p>
+                </div>
+
+                <!-- Structured Value Props (7 Executive Reasons) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-sans">
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">One Platform</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">No need to manage employee emergency and workplace safety across disconnected tools.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">One Dashboard</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Company administrators get a centralized view of the organization's entire safety ecosystem.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Employee Protection</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Employees get fast, reliable access to EMSTRAP's covered emergency services.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Ambulance Coverage</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">EMSTRAP covers eligible ambulance costs according to the selected corporate plan.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Workplace Preparedness</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Inspections, drills, fire-safety, and first-aid help organizations prepare before emergencies.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Family Protection</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Complete allows extending emergency coverage to up to 4 registered family members per employee.</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 sm:col-span-2">
+                        <strong class="text-sm font-bold text-slate-900 font-display block">Better Visibility &amp; Governance</strong>
+                        <p class="text-slate-600 font-normal leading-relaxed">Companies can track emergencies, safety audits, inspections, drills, and historical compliance records in one place.</p>
+                    </div>
+                </div>
+
+                <!-- Callout Summary Box -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm text-center space-y-3 font-mono text-xs sm:text-sm text-slate-800">
+                    <p class="font-bold text-slate-900 font-display text-base">Simple Operational Framework:</p>
+                    <div class="flex flex-wrap justify-center items-center gap-3 py-2 text-slate-700">
+                        <span>Company subscribes</span> &bull;
+                        <span>Company manages via dashboard</span> &bull;
+                        <span>Employees get covered access at ₹0</span> &bull;
+                        <span class="text-emerald-700 font-bold">Ambulance costs covered by EMSTRAP</span> &bull;
+                        <span>Medical treatment expenses remain separate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16. Website Final Hero / CTA Section -->
+        <section class="py-20 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 block">ENTERPRISE DEPLOYMENT</span>
                 <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
                     Your People. Your Workplace. One Safety Shield.
                 </h2>
-                <p class="text-sm sm:text-base text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto">
-                    EMSTRAP Shield gives organizations a complete platform for employee emergencies, ambulance assistance, workplace safety, emergency preparedness, and centralized safety management.
+                <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                    EMSTRAP Shield gives organizations a complete platform for employee emergencies, ambulance assistance, workplace safety, emergency preparedness and centralized safety management.
                 </p>
+                <div class="text-xs font-mono text-slate-400 max-w-3xl mx-auto">
+                    Employee Emergency &bull; SOS &bull; Ambulance Coverage &bull; Workplace Safety &bull; Emergency Drills &bull; Safety Dashboard &bull; Family Protection
+                </div>
                 <div class="pt-4 flex flex-wrap justify-center gap-4">
-                    <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display">
+                    <a href="#corporate-plans" class="px-8 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display hover:scale-105 active:scale-95">
+                        Explore Plans
+                    </a>
+                    <button onclick="openCorporateDemoModal()" class="px-8 py-3.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold tracking-wider text-xs uppercase transition-all border border-slate-700 font-display hover:scale-105 active:scale-95">
                         Request a Corporate Demo
                     </button>
-                    <a href="index.html#page-contact" class="px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-white font-bold tracking-wider text-xs uppercase transition-all border border-neutral-800 font-display">
-                        Contact Enterprise Team
-                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer: Plain uncoloured text style for links as requested -->
     <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP SHIELD &bull; ENTERPRISE WORKPLACE SAFETY</span>
-                <span>&copy; 2026 EMSTRAP. All rights reserved.</span>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP SHIELD &bull; CORPORATE WORKPLACE SAFETY</span>
+                <span>&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved.</span>
             </div>
             <div class="flex items-center space-x-6 text-neutral-400">
                 <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
-                <a href="index.html#page-services" class="hover:text-white transition-colors">Products</a>
+                <a href="index.html#page-services" class="hover:text-white transition-colors">Services</a>
                 <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <!-- Contact text kept plain and not coloured -->
                 <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-3">
@@ -837,25 +1561,25 @@
         </div>
     </footer>
 
-    <!-- Corporate Demo Request Modal -->
+    <!-- Corporate Demo Modal: Plain formal styling, uncoloured text -->
     <div id="corporateDemoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="bg-neutral-950 border border-neutral-800 p-8 rounded-3xl max-w-lg w-full space-y-6 text-white shadow-2xl relative">
-            <button onclick="closeCorporateDemoModal()" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-xl">
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-6 text-slate-900 shadow-2xl relative">
+            <button onclick="closeCorporateDemoModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div>
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-neutral-400">ENTERPRISE ONBOARDING</span>
-                <h3 class="text-2xl font-bold font-display text-white mt-1">Request a Corporate Demo</h3>
-                <p class="text-xs text-neutral-400 font-light mt-1">Setup EMSTRAP Shield for your workforce and workplace facilities.</p>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500">ENTERPRISE CONSULTATION</span>
+                <h3 class="text-2xl font-bold font-display text-slate-900 mt-1">Request a Corporate Demo</h3>
+                <p class="text-xs text-slate-500 font-normal mt-1">Tailored corporate safety &amp; emergency protection solutions.</p>
             </div>
             <form onsubmit="handleCorporateDemoSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Company Name</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="e.g. Infosys, Wipro, Bosch, etc." />
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Company Name</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Infosys, Wipro, Bosch, etc." />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Total Employees</label>
-                    <select class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500">
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Total Employees</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue">
                         <option>1 - 50 Employees</option>
                         <option>51 - 250 Employees</option>
                         <option>251 - 1,000 Employees</option>
@@ -863,14 +1587,23 @@
                     </select>
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Work Email</label>
-                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="name@company.com" />
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Work Email</label>
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="name@company.com" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider block mb-1">Contact Phone</label>
-                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-sm text-white focus:outline-none focus:border-neutral-500" placeholder="+91 XXXXX XXXXX" />
+                    <!-- Contact phone label plain and not coloured -->
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Contact Phone</label>
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="+91 XXXXX XXXXX" />
                 </div>
-                <button type="submit" class="w-full py-3.5 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-xs uppercase tracking-wider transition-all font-display">
+                <div>
+                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Plan of Interest</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue">
+                        <option>Complete (Employee + Up to 4 Family Members)</option>
+                        <option>Professional (Workplace Safety + Emergency)</option>
+                        <option>Basic (Employee Emergency Only)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg">
                     Schedule Enterprise Consultation
                 </button>
             </form>
@@ -890,307 +1623,10 @@
             closeCorporateDemoModal();
         }
 
-        // =====================================================================
-        // EMSTRAP Shield: Who We Serve Smooth 3D Belt Carousel Engine
-        // =====================================================================
-        const whoWeServeData = [
-            {
-                title: "Hospitals & Clinics",
-                description: "Pre-arrival trauma ER patient telemetry, automated trauma bed allocation, and direct physician triage preparation before patient arrival.",
-                metric1Val: "40%",
-                metric1Lbl: "faster triage prep",
-                metric2Val: "< 90 Sec",
-                metric2Lbl: "bed reservation",
-                bgGradient: "linear-gradient(135deg, #0A192F 0%, #050B14 100%)",
-                badge: "HEALTHCARE NETWORKS",
-                image: "images/hospital-er-operations.jpg"
-            },
-            {
-                title: "Ambulance Providers",
-                description: "Sub-second fleet GPS tracking, intelligent automated dispatch matching, and real-time hospital route optimization.",
-                metric1Val: "100%",
-                metric1Lbl: "automated dispatch",
-                metric2Val: "Sub-sec",
-                metric2Lbl: "GPS telemetry",
-                bgGradient: "linear-gradient(135deg, #2D1E2F 0%, #050B14 100%)",
-                badge: "EMERGENCY FLEETS",
-                image: "ambulance-providers.png"
-            },
-            {
-                title: "Police Departments",
-                description: "Law enforcement CAD integration, automated emergency transit escort notification, and dynamic geospatial crime & trauma incident mapping.",
-                metric1Val: "< 400ms",
-                metric1Lbl: "CAD sync latency",
-                metric2Val: "100%",
-                metric2Lbl: "geo-mapping coverage",
-                bgGradient: "linear-gradient(135deg, #1A202C 0%, #050B14 100%)",
-                badge: "LAW ENFORCEMENT CAD",
-                image: "police-control.jpg"
-            },
-            {
-                title: "Traffic Management",
-                description: "Automated green corridor traffic signal preemption to clear congested city arteries dynamically for incoming emergency vehicles.",
-                metric1Val: "120+",
-                metric1Lbl: "corridors enabled",
-                metric2Val: "42%",
-                metric2Lbl: "transit time saved",
-                bgGradient: "linear-gradient(135deg, #0F172A 0%, #050B14 100%)",
-                badge: "CIVIL INFRASTRUCTURE",
-                image: "images/traffic-police-consultation.jpg"
-            },
-            {
-                title: "Government Agencies",
-                description: "Multi-agency emergency dispatch synchronizer, inter-departmental crisis incident commander, and unified civic resilience data grids.",
-                metric1Val: "100%",
-                metric1Lbl: "agency synchronization",
-                metric2Val: "< 1 Sec",
-                metric2Lbl: "incident propagation",
-                bgGradient: "linear-gradient(135deg, #1C1917 0%, #050B14 100%)",
-                badge: "PUBLIC SECTOR & DEFENSE",
-                image: "government.jpg"
-            },
-            {
-                title: "Enterprise Campuses",
-                description: "Workplace hazard & casualty monitoring, automated corporate employee SOS escalation, and direct private ambulance fleet dispatch.",
-                metric1Val: "Zero",
-                metric1Lbl: "out-of-pocket employee fee",
-                metric2Val: "100%",
-                metric2Lbl: "workforce protection",
-                bgGradient: "linear-gradient(135deg, #1E1B4B 0%, #050B14 100%)",
-                badge: "CORPORATE SAFETY",
-                image: "shield-corporate.png"
-            },
-            {
-                title: "Industrial & Manufacturing",
-                description: "Plant casualty telemetry, occupational hazard automated containment protocols, and direct hazardous incident EMS dispatching.",
-                metric1Val: "35%",
-                metric1Lbl: "incident escalation cut",
-                metric2Val: "24/7",
-                metric2Lbl: "continuous monitoring",
-                bgGradient: "linear-gradient(135deg, #2A1810 0%, #050B14 100%)",
-                badge: "INDUSTRIAL SAFETY",
-                image: "shield-manufacturing.png"
-            },
-            {
-                title: "Educational Institutions",
-                description: "Campus-wide emergency response infrastructure protecting students, faculty, and administrative staff with rapid medical escalation.",
-                metric1Val: "50+",
-                metric1Lbl: "campuses secured",
-                metric2Val: "< 90 Sec",
-                metric2Lbl: "campus SOS response",
-                bgGradient: "linear-gradient(135deg, #132E35 0%, #050B14 100%)",
-                badge: "CAMPUS DEFENSE GRID",
-                image: "campus.jpg"
-            },
-            {
-                title: "Smart Cities",
-                description: "Centralized urban safety command integration, IoT sensor synchronization, and citywide civil protection monitoring.",
-                metric1Val: "Multi-Hub",
-                metric1Lbl: "smart city sync",
-                metric2Val: "Zero",
-                metric2Lbl: "data latency",
-                bgGradient: "linear-gradient(135deg, #0B1E36 0%, #050B14 100%)",
-                badge: "MUNICIPAL IOT",
-                image: "shield-smartcity.jpg"
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCorporateDemoModal();
             }
-        ];
-
-        let whoWeServeCurrentIndex = 0;
-        let whoWeServeCardsInitialized = false;
-        let whoWeServePrevDiffs = {};
-        let whoWeServeAutoTimer = null;
-
-        function startWhoWeServeAutoScroll() {
-            stopWhoWeServeAutoScroll();
-            whoWeServeAutoTimer = setInterval(() => {
-                whoWeServeNext();
-            }, 5000);
-        }
-
-        function stopWhoWeServeAutoScroll() {
-            if (whoWeServeAutoTimer) {
-                clearInterval(whoWeServeAutoTimer);
-                whoWeServeAutoTimer = null;
-            }
-        }
-
-        function initWhoWeServeCarousel() {
-            const track = document.getElementById('whoWeServeTrack');
-            if (!track) return;
-
-            track.innerHTML = whoWeServeData.map((item, idx) => `
-                <div id="whoCard_${idx}" class="who-card select-none" data-index="${idx}">
-                    <img src="${item.image}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.55] contrast-110 pointer-events-none" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/25 pointer-events-none"></div>
-
-                    <!-- Full Active Content (visible when active center card) -->
-                    <div class="card-full-content absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10 transition-opacity duration-300">
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mb-6">
-                            <div class="md:col-span-8">
-                                <span class="text-[10px] font-mono tracking-widest text-emerald-400 font-bold uppercase block mb-2">${item.badge}</span>
-                                <h3 class="text-2xl md:text-4xl font-bold font-display tracking-tight mb-3 drop-shadow-md text-white">
-                                    ${item.title}
-                                </h3>
-                                <p class="text-xs md:text-sm leading-relaxed font-light drop-shadow text-slate-200 max-w-xl">
-                                    ${item.description}
-                                </p>
-                            </div>
-                            <div class="md:col-span-4 flex items-center md:justify-end gap-6 border-t md:border-t-0 md:border-l border-white/20 pt-4 md:pt-0 md:pl-6">
-                                <div>
-                                    <span class="text-2xl md:text-3xl font-black font-display block tracking-tight text-white">${item.metric1Val}</span>
-                                    <span class="text-[10px] uppercase tracking-wider font-mono font-medium text-slate-300">${item.metric1Lbl}</span>
-                                </div>
-                                <div class="h-8 w-[1px] bg-white/20"></div>
-                                <div>
-                                    <span class="text-2xl md:text-3xl font-black font-display block tracking-tight text-white">${item.metric2Val}</span>
-                                    <span class="text-[10px] uppercase tracking-wider font-mono font-medium text-slate-300">${item.metric2Lbl}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-center pt-2">
-                            <button onclick="openCorporateDemoModal()" class="px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest shadow-xl inline-flex items-center gap-2 hover:scale-105 transition-all duration-300 bg-white text-black font-display">
-                                <span>Request Deployment</span>
-                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Peek Content (visible on side peek cards) -->
-                    <div class="card-peek-content absolute inset-0 flex flex-col justify-center items-center p-6 z-10 transition-opacity duration-300 cursor-pointer" onclick="whoWeServeGoTo(${idx})">
-                        <span class="text-[9px] font-mono tracking-widest text-emerald-400 font-bold uppercase mb-1">${item.badge}</span>
-                        <h4 class="text-lg md:text-xl font-bold font-display leading-tight drop-shadow-md text-center px-4 text-white">${item.title}</h4>
-                    </div>
-                </div>
-            `).join('');
-
-            track.addEventListener('mouseenter', stopWhoWeServeAutoScroll);
-            track.addEventListener('mouseleave', startWhoWeServeAutoScroll);
-            track.addEventListener('touchstart', stopWhoWeServeAutoScroll, { passive: true });
-            track.addEventListener('touchend', startWhoWeServeAutoScroll, { passive: true });
-
-            whoWeServeCardsInitialized = true;
-            updateWhoWeServePositions();
-            startWhoWeServeAutoScroll();
-        }
-
-        function updateWhoWeServePositions() {
-            if (!whoWeServeCardsInitialized) return;
-            const n = whoWeServeData.length;
-            const isMobile = window.innerWidth < 768;
-            const indicators = document.getElementById('whoWeServeIndicators');
-
-            for (let i = 0; i < n; i++) {
-                const card = document.getElementById(`whoCard_${i}`);
-                if (!card) continue;
-
-                let diff = (i - whoWeServeCurrentIndex + n) % n;
-                if (diff > n / 2) {
-                    diff -= n;
-                }
-
-                const prevDiff = whoWeServePrevDiffs[i] !== undefined ? whoWeServePrevDiffs[i] : diff;
-                whoWeServePrevDiffs[i] = diff;
-                const jumpedSeam = (prevDiff <= -2 && diff >= 2) || (prevDiff >= 2 && diff <= -2);
-
-                if (jumpedSeam) {
-                    card.style.transition = 'none';
-                } else {
-                    card.style.transition = 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 0.5s ease';
-                }
-
-                const fullContent = card.querySelector('.card-full-content');
-                const peekContent = card.querySelector('.card-peek-content');
-
-                if (diff === 0) {
-                    // Active center card
-                    card.style.transform = 'translate(-50%, -50%) scale(1)';
-                    card.style.opacity = '1';
-                    card.style.zIndex = '25';
-                    card.style.filter = 'brightness(1)';
-                    card.style.pointerEvents = 'auto';
-
-                    if (fullContent) { fullContent.style.opacity = '1'; fullContent.style.pointerEvents = 'auto'; }
-                    if (peekContent) { peekContent.style.opacity = '0'; peekContent.style.pointerEvents = 'none'; }
-                } else if (diff === -1) {
-                    // Left peek card
-                    if (isMobile) {
-                        card.style.transform = 'translate(calc(-50% - 100vw), -50%) scale(0.85)';
-                        card.style.opacity = '0';
-                        card.style.zIndex = '10';
-                        card.style.pointerEvents = 'none';
-                    } else {
-                        card.style.transform = 'translate(calc(-50% - min(560px, 46vw)), -50%) scale(0.86)';
-                        card.style.opacity = '0.65';
-                        card.style.zIndex = '15';
-                        card.style.filter = 'brightness(0.7)';
-                        card.style.pointerEvents = 'auto';
-                    }
-                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
-                    if (peekContent) { peekContent.style.opacity = isMobile ? '0' : '1'; peekContent.style.pointerEvents = isMobile ? 'none' : 'auto'; }
-                } else if (diff === 1) {
-                    // Right peek card
-                    if (isMobile) {
-                        card.style.transform = 'translate(calc(-50% + 100vw), -50%) scale(0.85)';
-                        card.style.opacity = '0';
-                        card.style.zIndex = '10';
-                        card.style.pointerEvents = 'none';
-                    } else {
-                        card.style.transform = 'translate(calc(-50% + min(560px, 46vw)), -50%) scale(0.86)';
-                        card.style.opacity = '0.65';
-                        card.style.zIndex = '15';
-                        card.style.filter = 'brightness(0.7)';
-                        card.style.pointerEvents = 'auto';
-                    }
-                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
-                    if (peekContent) { peekContent.style.opacity = isMobile ? '0' : '1'; peekContent.style.pointerEvents = isMobile ? 'none' : 'auto'; }
-                } else {
-                    // Hidden cards
-                    const side = diff < 0 ? '-100vw' : '100vw';
-                    card.style.transform = `translate(calc(-50% + ${side}), -50%) scale(0.7)`;
-                    card.style.opacity = '0';
-                    card.style.zIndex = '5';
-                    card.style.filter = 'brightness(0.4)';
-                    card.style.pointerEvents = 'none';
-                    if (fullContent) { fullContent.style.opacity = '0'; fullContent.style.pointerEvents = 'none'; }
-                    if (peekContent) { peekContent.style.opacity = '0'; peekContent.style.pointerEvents = 'none'; }
-                }
-            }
-
-            // Update Indicator Dots
-            if (indicators) {
-                indicators.innerHTML = whoWeServeData.map((_, idx) => `
-                    <button onclick="whoWeServeGoTo(${idx})" class="h-1.5 rounded-full transition-all duration-300 ${idx === whoWeServeCurrentIndex ? 'w-8 bg-white' : 'w-2 bg-neutral-700 hover:bg-neutral-500'}" aria-label="Go to slide ${idx + 1}"></button>
-                `).join('');
-            }
-        }
-
-        function whoWeServePrev() {
-            whoWeServeCurrentIndex = (whoWeServeCurrentIndex - 1 + whoWeServeData.length) % whoWeServeData.length;
-            updateWhoWeServePositions();
-            startWhoWeServeAutoScroll();
-        }
-
-        function whoWeServeNext() {
-            whoWeServeCurrentIndex = (whoWeServeCurrentIndex + 1) % whoWeServeData.length;
-            updateWhoWeServePositions();
-            startWhoWeServeAutoScroll();
-        }
-
-        function whoWeServeGoTo(idx) {
-            whoWeServeCurrentIndex = idx;
-            updateWhoWeServePositions();
-            startWhoWeServeAutoScroll();
-        }
-
-        window.addEventListener('resize', () => {
-            if (whoWeServeCardsInitialized) {
-                updateWhoWeServePositions();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initWhoWeServeCarousel();
         });
     </script>
 </body>
