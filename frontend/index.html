@@ -201,23 +201,6 @@
             -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
         }
 
-        .services-slider-track {
-            display: flex;
-            gap: 1.5rem;
-            width: max-content;
-            animation: servicesBelt 28s linear infinite;
-            will-change: transform;
-        }
-
-        .services-slider-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes servicesBelt {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
         .content-belt-track {
             display: flex;
             gap: 1.5rem;
@@ -235,24 +218,133 @@
             100% { transform: translateX(-50%); }
         }
 
-        .content-belt-card {
-            flex-shrink: 0;
-            width: 340px;
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 1.25rem;
-            padding: 1.75rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        /* Mu Sigma Style Services Coverflow Carousel */
+        .mu-carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 1.5rem 0.5rem;
         }
 
-        .content-belt-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
-            border-color: #CBD5E1;
+        .mu-carousel-stage {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .mu-carousel-stage {
+                height: 520px;
+            }
+        }
+
+        .mu-card {
+            position: absolute;
+            width: 680px;
+            max-width: 90vw;
+            height: 430px;
+            border-radius: 26px;
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease, filter 0.6s ease;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .mu-card {
+                height: 480px;
+            }
+        }
+
+        /* 3D Positions */
+        .mu-card.active {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 20;
+            pointer-events: auto;
+            filter: none;
+        }
+
+        .mu-card.prev {
+            transform: translateX(-56%) scale(0.84);
+            opacity: 0.65;
+            z-index: 10;
+            cursor: pointer;
+            filter: brightness(0.75);
+        }
+
+        .mu-card.next {
+            transform: translateX(56%) scale(0.84);
+            opacity: 0.65;
+            z-index: 10;
+            cursor: pointer;
+            filter: brightness(0.75);
+        }
+
+        .mu-card.hidden-card {
+            transform: scale(0.65);
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 640px) {
+            .mu-card.prev {
+                transform: translateX(-78%) scale(0.8);
+                opacity: 0.25;
+            }
+            .mu-card.next {
+                transform: translateX(78%) scale(0.8);
+                opacity: 0.25;
+            }
+        }
+
+        /* Nav Arrows */
+        .mu-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            color: #0F172A;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .mu-nav-btn:hover {
+            background: #F8FAFC;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+        }
+
+        .mu-nav-btn.prev-btn {
+            left: calc(50% - 370px);
+        }
+
+        .mu-nav-btn.next-btn {
+            right: calc(50% - 370px);
+        }
+
+        @media (max-width: 860px) {
+            .mu-nav-btn.prev-btn {
+                left: 10px;
+            }
+            .mu-nav-btn.next-btn {
+                right: 10px;
+            }
         }
 
         @keyframes sirenFlash {
@@ -334,7 +426,7 @@
 
     <main class="flex-grow">
         <!-- 1.1 HERO SECTION WITH 4-SECOND BACKGROUND IMAGE SLIDER -->
-        <section class="relative bg-black text-white pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden border-b border-neutral-900" id="page-landing">
+        <section class="relative bg-black text-white pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden" id="page-landing">
             <!-- Base Moving Background Video -->
             <video autoplay muted loop playsinline class="hero-bg-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-25">
                 <source src="hero-bg.mp4" type="video/mp4">
@@ -406,7 +498,7 @@
         </section>
 
         <!-- About Section (Who We Are) -->
-        <section class="py-24 bg-white text-slate-900 border-b border-slate-200 scroll-margin-top relative" id="page-about" style="background-color: #FFFFFF !important; color: #0F172A !important;">
+        <section class="py-24 bg-white text-slate-900 scroll-margin-top relative" id="page-about" style="background-color: #FFFFFF !important; color: #0F172A !important;">
             <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                     <!-- Left Column -->
@@ -461,7 +553,7 @@
         </section>
 
         <!-- 1.2 HOW IT WORKS ("From crisis to care", 6 steps) WITH WHITE BACKGROUND & BLACK CONTENT -->
-        <section class="py-24 bg-white text-slate-900 border-b border-slate-200 scroll-margin-top relative" id="page-how-it-works">
+        <section class="py-24 bg-white text-slate-900 scroll-margin-top relative" id="page-how-it-works">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="text-center max-w-3xl mx-auto mb-20 relative z-10 wave-card-node">
                     <span class="text-xs font-bold uppercase tracking-[0.25em] font-mono block mb-3 text-slate-500">HOW IT WORKS</span>
@@ -565,149 +657,203 @@
             </div>
         </section>
 
-        <!-- 1.3 OUR SERVICES WITH RELEVANT IMAGES & SINGLE-SOURCE MARQUEE -->
-        <section class="py-24 bg-white text-slate-900 border-b border-slate-200 scroll-margin-top relative overflow-hidden" id="page-services" style="background-color: #FFFFFF !important; color: #0F172A !important;">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12">
-                <!-- Header -->
+        <!-- 1.3 OUR SERVICES: MU SIGMA STYLE 3D COVERFLOW SHOWCASE (IMG2) -->
+        <section class="py-24 bg-white text-slate-900 scroll-margin-top relative overflow-hidden" id="page-services" style="background-color: #FFFFFF !important; color: #0F172A !important;">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 mb-8">
+                <!-- Header styled like img2 -->
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-3">OUR SERVICES</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">The Connected Emergency Ecosystem</h2>
-                    <p class="text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto mt-3">
-                        Four specialized platforms engineered to connect citizens, emergency fleets, hospitals, government agencies, and corporate workplaces under one synchronized network.
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-black font-display text-slate-900 tracking-tight">
+                        Platforms That <span class="text-[#C9302C]">Save Lives</span>
+                    </h2>
+                    <p class="text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto mt-4">
+                        From data to decision, we engineer outcomes that accelerate emergency performance across public safety, healthcare, and enterprise sectors.
                     </p>
                 </div>
             </div>
 
-            <!-- Auto-Moving Services Slider Container (Source cards defined once in HTML; cloned via JS) -->
-            <div class="services-slider-container w-full py-4">
-                <div class="services-slider-track" id="servicesSliderTrack">
+            <!-- Mu Sigma Style 3D Interactive Carousel Container -->
+            <div class="mu-carousel-container" id="muServicesCarousel">
+                <div class="mu-carousel-stage" id="muServicesStage">
                     
-                    <!-- 1. EMSTRAP CONNECT -->
-                    <div class="service-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
-                        <div>
-                            <!-- Relevant Image: connect-app-mockup.jpg -->
-                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
-                                <img src="images/connect-app-mockup.jpg" alt="EMSTRAP Connect Emergency Ambulance App" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                                <div class="absolute top-3 left-3">
-                                    <span class="text-[10px] font-mono font-bold text-red-700 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-red-200 uppercase tracking-wider shadow-sm">
-                                        B2G PLATFORM
-                                    </span>
+                    <!-- Slide 0: EMSTRAP Connect -->
+                    <div class="mu-card active" data-index="0" onclick="handleMuCardClick(0)">
+                        <img src="images/tmc-control-room.jpg" alt="EMSTRAP Connect Smart City Operations" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                        
+                        <div class="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end text-white">
+                            <div class="mb-2">
+                                <span class="text-[10px] font-mono font-bold text-red-300 px-3 py-1 rounded-full bg-red-950/80 border border-red-700/60 uppercase tracking-widest">
+                                    B2G PLATFORM &bull; PUBLIC SAFETY
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-black font-display text-white mb-2 tracking-tight">
+                                EMSTRAP Connect
+                            </h3>
+                            <p class="text-xs sm:text-sm text-neutral-200 font-light leading-relaxed max-w-xl mb-6">
+                                B2G incident-reporting and digital communication bridge connecting citizens, police control rooms, and municipal authorities with location-based duplicate detection.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-6 sm:gap-10">
+                                    <div>
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">68%</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Reduction in duplicate incident calls</span>
+                                    </div>
+                                    <div class="border-l border-white/25 pl-6 sm:pl-10">
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">&lt; 30s</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Multi-agency CAD synchronization</span>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <a href="connect.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C9302C] hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg hover:scale-105 active:scale-95">
+                                        <span>KNOW MORE</span>
+                                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-red-600 transition-colors">EMSTRAP Connect</h3>
-                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Report. Connect. Coordinate. Respond.</span>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                    B2G incident-reporting and communication bridge for Smart Cities, Police Departments, and municipal authorities with location-based duplicate detection.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
-                            <a href="connect.html" class="text-xs font-bold text-red-600 flex items-center gap-1.5 group-hover:underline">
-                                <span>Explore Connect</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <span class="text-[11px] font-mono text-slate-400">Gov &amp; Police</span>
                         </div>
                     </div>
 
-                    <!-- 2. EMSTRAP RIDE -->
-                    <div class="service-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
-                        <div>
-                            <!-- Relevant Image: ride-app-mockup.jpg -->
-                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
-                                <img src="images/ride-app-mockup.jpg" alt="EMSTRAP Ride Ambulance Booking App" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                                <div class="absolute top-3 left-3">
-                                    <span class="text-[10px] font-mono font-bold text-amber-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-amber-200 uppercase tracking-wider shadow-sm">
-                                        PUBLIC &amp; EMS
-                                    </span>
+                    <!-- Slide 1: EMSTRAP Ride -->
+                    <div class="mu-card next" data-index="1" onclick="handleMuCardClick(1)">
+                        <img src="images/ride-app-mockup.jpg" alt="EMSTRAP Ride Ambulance Booking" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                        
+                        <div class="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end text-white">
+                            <div class="mb-2">
+                                <span class="text-[10px] font-mono font-bold text-amber-300 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-700/60 uppercase tracking-widest">
+                                    PUBLIC &amp; EMS &bull; CITIZEN TRANSIT
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-black font-display text-white mb-2 tracking-tight">
+                                EMSTRAP Ride
+                            </h3>
+                            <p class="text-xs sm:text-sm text-neutral-200 font-light leading-relaxed max-w-xl mb-6">
+                                Reliable emergency and non-emergency ambulance booking platform for patients and families with live GPS telemetry, fixed transparent pricing, and direct ER routing.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-6 sm:gap-10">
+                                    <div>
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">&lt; 8 min</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Average emergency dispatch arrival</span>
+                                    </div>
+                                    <div class="border-l border-white/25 pl-6 sm:pl-10">
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">100%</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Real-time GPS tracking &amp; vitals telemetry</span>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <a href="ride.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C9302C] hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg hover:scale-105 active:scale-95">
+                                        <span>KNOW MORE</span>
+                                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-amber-700 transition-colors">EMSTRAP Ride</h3>
-                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Book. Move. Care.</span>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                    Reliable ambulance booking platform for patients, families, and healthcare facilities covering emergency dispatch and non-emergency medical transfers.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
-                            <a href="ride.html" class="text-xs font-bold text-amber-700 flex items-center gap-1.5 group-hover:underline">
-                                <span>Explore Ride</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <span class="text-[11px] font-mono text-slate-400">Public EMS</span>
                         </div>
                     </div>
 
-                    <!-- 3. EMSTRAP SHIELD -->
-                    <div class="service-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
-                        <div>
-                            <!-- Relevant Image: shield-app-mockup.jpg -->
-                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
-                                <img src="images/shield-app-mockup.jpg" alt="EMSTRAP Shield Corporate Safety App" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                                <div class="absolute top-3 left-3">
-                                    <span class="text-[10px] font-mono font-bold text-emerald-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-emerald-200 uppercase tracking-wider shadow-sm">
-                                        ENTERPRISE B2B
-                                    </span>
+                    <!-- Slide 2: EMSTRAP Shield -->
+                    <div class="mu-card hidden-card" data-index="2" onclick="handleMuCardClick(2)">
+                        <img src="images/shield-app-mockup.jpg" alt="EMSTRAP Shield Corporate Safety" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                        
+                        <div class="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end text-white">
+                            <div class="mb-2">
+                                <span class="text-[10px] font-mono font-bold text-emerald-300 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-700/60 uppercase tracking-widest">
+                                    ENTERPRISE B2B &bull; WORKPLACE SAFETY
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-black font-display text-white mb-2 tracking-tight">
+                                EMSTRAP Shield
+                            </h3>
+                            <p class="text-xs sm:text-sm text-neutral-200 font-light leading-relaxed max-w-xl mb-6">
+                                Complete corporate safety ecosystem with employee SOS, workplace safety inspections, drills, and covered ambulance assistance at ₹0 fee for employees.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-6 sm:gap-10">
+                                    <div>
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">₹0 Fee</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Covered ambulance assistance for employees</span>
+                                    </div>
+                                    <div class="border-l border-white/25 pl-6 sm:pl-10">
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">100%</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Workplace compliance &amp; safety drills</span>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <a href="shield.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C9302C] hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg hover:scale-105 active:scale-95">
+                                        <span>KNOW MORE</span>
+                                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">EMSTRAP Shield</h3>
-                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Protect Employees &amp; Families</span>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                    Complete corporate safety ecosystem with employee SOS, workplace safety inspections, drills, and covered ambulance assistance at ₹0 fee for employees.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
-                            <a href="shield.html" class="text-xs font-bold text-emerald-600 flex items-center gap-1.5 group-hover:underline">
-                                <span>Explore Shield</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <span class="text-[11px] font-mono text-slate-400">Corporate</span>
                         </div>
                     </div>
 
-                    <!-- 4. EMSTRAP COMMAND -->
-                    <div class="service-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
-                        <div>
-                            <!-- Relevant Image: command-app-mockup.jpg -->
-                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
-                                <img src="images/command-app-mockup.jpg" alt="EMSTRAP Command Emergency Management Dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                                <div class="absolute top-3 left-3">
-                                    <span class="text-[10px] font-mono font-bold text-blue-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-blue-200 uppercase tracking-wider shadow-sm">
-                                        OPERATIONS COMMAND
-                                    </span>
+                    <!-- Slide 3: EMSTRAP Command -->
+                    <div class="mu-card prev" data-index="3" onclick="handleMuCardClick(3)">
+                        <img src="images/hospital-er-operations.jpg" alt="EMSTRAP Command ER Operations" class="absolute inset-0 w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                        
+                        <div class="relative z-10 h-full p-6 sm:p-10 flex flex-col justify-end text-white">
+                            <div class="mb-2">
+                                <span class="text-[10px] font-mono font-bold text-blue-300 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-700/60 uppercase tracking-widest">
+                                    OPERATIONS COMMAND &bull; HOSPITALS &amp; FLEETS
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-black font-display text-white mb-2 tracking-tight">
+                                EMSTRAP Command
+                            </h3>
+                            <p class="text-xs sm:text-sm text-neutral-200 font-light leading-relaxed max-w-xl mb-6">
+                                Central operations platform for ambulance operators and hospital emergency rooms to manage fleet availability, trip dispatches, and pre-arrival ER patient vitals.
+                            </p>
+                            <div class="pt-4 border-t border-white/20 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-6 sm:gap-10">
+                                    <div>
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">99.9%</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">CAD fleet dispatch reliability</span>
+                                    </div>
+                                    <div class="border-l border-white/25 pl-6 sm:pl-10">
+                                        <span class="text-2xl sm:text-3xl font-black font-display text-white block">Pre-Arrival</span>
+                                        <span class="text-[11px] sm:text-xs text-neutral-300 font-normal">Direct trauma ER telemetry triage</span>
+                                    </div>
+                                </div>
+                                <div class="shrink-0">
+                                    <a href="command.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C9302C] hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-lg hover:scale-105 active:scale-95">
+                                        <span>KNOW MORE</span>
+                                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">EMSTRAP Command</h3>
-                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Receive. Coordinate. Dispatch. Track.</span>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                    Central operations platform for ambulance operators and hospital emergency rooms to manage fleet availability, trip dispatches, and patient arrivals.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
-                            <a href="command.html" class="text-xs font-bold text-blue-600 flex items-center gap-1.5 group-hover:underline">
-                                <span>Explore Command</span>
-                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <span class="text-[11px] font-mono text-slate-400">Hospitals &amp; Fleets</span>
                         </div>
                     </div>
 
                 </div>
+
+                <!-- Navigation Arrow Buttons Positioned at Card Borders like img2 -->
+                <button onclick="prevMuSlide()" class="mu-nav-btn prev-btn" aria-label="Previous service slide">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="nextMuSlide()" class="mu-nav-btn next-btn" aria-label="Next service slide">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+
+                <!-- Indicator Dots -->
+                <div class="flex items-center justify-center gap-2 mt-6" id="muDotsContainer">
+                    <button onclick="setMuSlide(0)" class="w-8 h-2 rounded-full bg-slate-900 transition-all cursor-pointer" aria-label="Slide 1"></button>
+                    <button onclick="setMuSlide(1)" class="w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer" aria-label="Slide 2"></button>
+                    <button onclick="setMuSlide(2)" class="w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer" aria-label="Slide 3"></button>
+                    <button onclick="setMuSlide(3)" class="w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer" aria-label="Slide 4"></button>
+                </div>
             </div>
         </section>
 
-        <!-- 1.4 WHO WE SERVE: REMOVED ALL DEMO DATA, REMOVED ICONS, FIXED ACCURATE ROUTING -->
-        <section class="py-24 bg-white text-slate-900 border-b border-slate-200 scroll-margin-top relative overflow-hidden" id="page-who-we-serve" style="background-color: #FFFFFF !important; color: #0F172A !important;">
+        <!-- 1.4 WHO WE SERVE: REDESIGNED WITH IMG1 CARD DESIGN (PILL BADGE, PHOTO, SUBTITLE, CATEGORY) -->
+        <section class="py-24 bg-white text-slate-900 scroll-margin-top relative overflow-hidden" id="page-who-we-serve" style="background-color: #FFFFFF !important; color: #0F172A !important;">
             <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12">
                 <div class="text-center max-w-3xl mx-auto">
                     <span class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 font-mono block mb-3">WHO WE SERVE</span>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black font-display tracking-tight text-[#0A1128]">
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-black font-display tracking-tight text-[#0A1128]">
                         Solutions That Save Lives
                     </h2>
                     <p class="text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto mt-4">
@@ -716,167 +862,231 @@
                 </div>
             </div>
 
-            <!-- Continuous Moving Content Belt Viewport (Source cards defined once in HTML; cloned via JS) -->
+            <!-- Continuous Moving Content Belt Viewport with img1 Card Design -->
             <div class="content-belt-container w-full py-4">
                 <div class="content-belt-track" id="whoWeServeBeltTrack">
                     
                     <!-- 1. Hospitals & Clinics -> command.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    HEALTHCARE NETWORKS
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="images/hospital.jpg" alt="Hospitals & Healthcare Facilities" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-slate-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200 uppercase tracking-wider shadow-sm">
+                                        HEALTHCARE NETWORKS
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Hospitals &amp; Clinics</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Pre-arrival trauma ER patient telemetry, automated trauma bed allocation, and direct physician triage preparation before patient arrival.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">Hospitals &amp; Clinics</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Pre-Arrival Telemetry &amp; Bed Prep</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Pre-arrival trauma ER patient telemetry, automated trauma bed allocation, and direct physician triage preparation before patient arrival.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="command.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="command.html" class="text-xs font-bold text-brandBlue flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Command</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Healthcare ER</span>
                         </div>
                     </div>
 
                     <!-- 2. Ambulance Providers -> command.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    EMERGENCY FLEETS
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="shield-ambulance.png" alt="Emergency Medical Fleets" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-amber-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-amber-200 uppercase tracking-wider shadow-sm">
+                                        EMERGENCY FLEETS
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Ambulance Providers</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Fleet GPS tracking, intelligent automated dispatch matching, and real-time hospital route optimization.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-amber-700 transition-colors">Ambulance Providers</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Fleet GPS &amp; Dynamic CAD Dispatch</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Fleet GPS tracking, intelligent automated dispatch matching, real-time hospital route optimization, and live telemetry handoff.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="command.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="command.html" class="text-xs font-bold text-amber-700 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Command</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Emergency Fleets</span>
                         </div>
                     </div>
 
                     <!-- 3. Police Departments -> connect.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    LAW ENFORCEMENT CAD
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="images/police-visit.jpg" alt="Police Command CAD" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-red-700 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-red-200 uppercase tracking-wider shadow-sm">
+                                        LAW ENFORCEMENT CAD
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Police Departments</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Law enforcement CAD integration, automated emergency transit escort notification, and dynamic geospatial crime and trauma incident mapping.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-red-600 transition-colors">Police Departments</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Geospatial Mapping &amp; Transit Escort</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Law enforcement CAD integration, automated emergency transit escort notification, and dynamic geospatial crime and trauma incident mapping.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="connect.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="connect.html" class="text-xs font-bold text-red-600 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Connect</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Law Enforcement</span>
                         </div>
                     </div>
 
                     <!-- 4. Traffic Management -> connect.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    CIVIL INFRASTRUCTURE
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="images/traffic-police-consultation.jpg" alt="Traffic Management Center" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-blue-700 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-blue-200 uppercase tracking-wider shadow-sm">
+                                        CIVIL INFRASTRUCTURE
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Traffic Management</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Automated green corridor traffic signal preemption to clear congested city arteries dynamically for incoming emergency vehicles.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">Traffic Management</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Green Corridors &amp; Signal Preemption</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Automated green corridor traffic signal preemption to clear congested city arteries dynamically for incoming emergency vehicles.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="connect.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="connect.html" class="text-xs font-bold text-blue-600 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Connect</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Traffic &amp; Transit</span>
                         </div>
                     </div>
 
                     <!-- 5. Government Agencies -> connect.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    MUNICIPAL RESILIENCE
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="images/tmc-control-room.jpg" alt="Government Disaster Command Center" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-indigo-700 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-indigo-200 uppercase tracking-wider shadow-sm">
+                                        MUNICIPAL RESILIENCE
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Government Agencies</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Unified municipal disaster response, public safety compliance logging, and regional emergency data infrastructure across civil administration.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Government Agencies</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Disaster Command &amp; City Resilience</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Unified municipal disaster response, public safety compliance logging, and regional emergency data infrastructure across civil administration.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="connect.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="connect.html" class="text-xs font-bold text-indigo-600 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Connect</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Smart Governance</span>
                         </div>
                     </div>
 
                     <!-- 6. Corporate Companies -> shield.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    ENTERPRISE SHIELD
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="shield-app-mockup.jpg" alt="Corporate Workplace Campus Safety" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-emerald-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-emerald-200 uppercase tracking-wider shadow-sm">
+                                        ENTERPRISE SAFETY
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Corporate Companies</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Enterprise workplace safety sentry, employee SOS triggers, automated incident escalation, and multi-facility emergency muster systems.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">Corporate Companies</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Employee SOS &amp; Facility Muster</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Enterprise workplace safety sentry, employee SOS triggers, automated incident escalation, and multi-facility emergency muster systems.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="shield.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="shield.html" class="text-xs font-bold text-emerald-600 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Shield</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Corporate B2B</span>
                         </div>
                     </div>
 
                     <!-- 7. Educational Institutions -> shield.html -->
-                    <div class="who-card-source content-belt-card">
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    CAMPUS DEFENSE GRID
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="shield-campus.jpg" alt="Educational Campus Safety" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-purple-800 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-purple-200 uppercase tracking-wider shadow-sm">
+                                        CAMPUS DEFENSE GRID
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Educational Institutions</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Campus-wide emergency response infrastructure protecting students, faculty, and administrative staff with rapid medical escalation.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-purple-600 transition-colors">Educational Campuses</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Student Safety &amp; Medical Transit</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Campus-wide emergency beacon triggers, student medical transit coordination, and direct synchronized dispatch with nearby trauma hospitals.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="shield.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="shield.html" class="text-xs font-bold text-purple-600 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Shield</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Higher Ed &amp; Schools</span>
                         </div>
                     </div>
 
-                    <!-- 8. Smart Cities -> connect.html -->
-                    <div class="who-card-source content-belt-card">
+                    <!-- 8. Industrial & Manufacturing -> shield.html -->
+                    <div class="who-card-source bg-white rounded-[22px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group w-[320px] md:w-[350px] shrink-0 overflow-hidden">
                         <div>
-                            <div class="mb-4">
-                                <span class="text-[10px] font-mono font-bold text-slate-700 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 uppercase tracking-wider">
-                                    MUNICIPAL IOT
-                                </span>
+                            <div class="w-full h-48 overflow-hidden relative bg-slate-100">
+                                <img src="shield-manufacturing.png" alt="Industrial Manufacturing Safety" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-[10px] font-mono font-bold text-amber-900 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm border border-amber-300 uppercase tracking-wider shadow-sm">
+                                        HIGH-HAZARD SENTRY
+                                    </span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold font-display text-slate-900 mb-2">Smart Cities</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Centralized urban safety command integration, IoT sensor synchronization, and citywide civil protection monitoring.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold font-display text-slate-900 mb-1 group-hover:text-amber-800 transition-colors">Industrial &amp; Manufacturing</h3>
+                                <span class="text-xs font-medium text-slate-500 block mb-3 font-mono">Hazmat &amp; Industrial Trauma Triage</span>
+                                <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                    Factory floor automated trauma escalation, hazmat incident protocol synchronization, and rapid industrial emergency response routing.
+                                </p>
+                            </div>
                         </div>
-                        <div class="pt-6 mt-4 border-t border-slate-100">
-                            <a href="connect.html" class="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block transition-all bg-slate-900 hover:bg-slate-800 text-white shadow-sm font-display">
-                                KNOW MORE
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <a href="shield.html" class="text-xs font-bold text-amber-800 flex items-center gap-1.5 group-hover:underline">
+                                <span>Explore Shield</span>
+                                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
                             </a>
+                            <span class="text-[11px] font-mono text-slate-400">Industrial Plants</span>
                         </div>
                     </div>
 
@@ -885,7 +1095,7 @@
         </section>
 
         <!-- 1.5 CONTACT SECTION (home) & 1.6 CONTACT: PURE WHITE BACKGROUND & PLAIN DARK TEXT -->
-        <section class="py-24 scroll-margin-top bg-white text-slate-900 border-b border-slate-200" id="page-contact" style="background-color: #FFFFFF !important; color: #0F172A !important;">
+        <section class="py-24 scroll-margin-top bg-white text-slate-900" id="page-contact" style="background-color: #FFFFFF !important; color: #0F172A !important;">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-xs font-bold uppercase tracking-wider font-mono text-slate-500 block mb-2">GET IN TOUCH</span>
@@ -1757,23 +1967,96 @@
         window.addEventListener('resize', updateHowItWorksProgress, { passive: true });
 
         // =====================================================================
-        // 1.3 & 1.4 DYNAMIC MARQUEE CLONING (Single-Source in HTML, Seamless CSS Loop)
+        // =====================================================================
+        // MU SIGMA SERVICES 3D COVERFLOW CONTROLLER (IMG2)
+        // =====================================================================
+        let currentMuIndex = 0;
+        const totalMuSlides = 4;
+        let muAutoPlayTimer = null;
+
+        function updateMuSlider() {
+            const cards = document.querySelectorAll('#muServicesStage .mu-card');
+            const dots = document.querySelectorAll('#muDotsContainer button');
+            if (!cards || cards.length === 0) return;
+
+            cards.forEach(card => {
+                const idx = parseInt(card.dataset.index, 10);
+                card.classList.remove('active', 'prev', 'next', 'hidden-card');
+
+                if (idx === currentMuIndex) {
+                    card.classList.add('active');
+                } else if (idx === (currentMuIndex - 1 + totalMuSlides) % totalMuSlides) {
+                    card.classList.add('prev');
+                } else if (idx === (currentMuIndex + 1) % totalMuSlides) {
+                    card.classList.add('next');
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === currentMuIndex) {
+                    dot.className = "w-8 h-2 rounded-full bg-slate-900 transition-all cursor-pointer";
+                } else {
+                    dot.className = "w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all cursor-pointer";
+                }
+            });
+        }
+
+        function setMuSlide(idx) {
+            currentMuIndex = (idx + totalMuSlides) % totalMuSlides;
+            updateMuSlider();
+            restartMuAutoPlay();
+        }
+
+        function nextMuSlide() {
+            setMuSlide(currentMuIndex + 1);
+        }
+
+        function prevMuSlide() {
+            setMuSlide(currentMuIndex - 1);
+        }
+
+        function handleMuCardClick(idx) {
+            if (idx === currentMuIndex) return;
+            setMuSlide(idx);
+        }
+
+        function startMuAutoPlay() {
+            stopMuAutoPlay();
+            muAutoPlayTimer = setInterval(() => {
+                nextMuSlide();
+            }, 6000);
+        }
+
+        function stopMuAutoPlay() {
+            if (muAutoPlayTimer) {
+                clearInterval(muAutoPlayTimer);
+                muAutoPlayTimer = null;
+            }
+        }
+
+        function restartMuAutoPlay() {
+            stopMuAutoPlay();
+            startMuAutoPlay();
+        }
+
+        function initMuSigmaServices() {
+            updateMuSlider();
+            const carousel = document.getElementById('muServicesCarousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopMuAutoPlay);
+                carousel.addEventListener('mouseleave', startMuAutoPlay);
+                carousel.addEventListener('touchstart', stopMuAutoPlay, { passive: true });
+                carousel.addEventListener('touchend', startMuAutoPlay, { passive: true });
+            }
+            startMuAutoPlay();
+        }
+
+        // =====================================================================
+        // 1.4 DYNAMIC MARQUEE CLONING (Who We Serve Belt, Seamless CSS Loop)
         // =====================================================================
         function initMarqueeClones() {
-            // Services Track: Clone the 4 source cards once for continuous loop
-            const servicesTrack = document.getElementById('servicesSliderTrack');
-            if (servicesTrack && !servicesTrack.dataset.cloned) {
-                const sourceCards = servicesTrack.querySelectorAll('.service-card-source');
-                sourceCards.forEach(card => {
-                    const clone = card.cloneNode(true);
-                    clone.setAttribute('aria-hidden', 'true');
-                    clone.classList.remove('service-card-source');
-                    clone.classList.add('service-card-clone');
-                    servicesTrack.appendChild(clone);
-                });
-                servicesTrack.dataset.cloned = "true";
-            }
-
             // Who We Serve Track: Clone the 8 source cards once for continuous loop
             const whoTrack = document.getElementById('whoWeServeBeltTrack');
             if (whoTrack && !whoTrack.dataset.cloned) {
@@ -1820,6 +2103,7 @@
             trackScrollHeaderAmbulance();
             updateHowItWorksProgress();
             initMarqueeClones();
+            initMuSigmaServices();
             setHeroSector(0);
             startHeroSectorAutoCycle();
 
