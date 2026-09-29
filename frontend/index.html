@@ -219,13 +219,38 @@
         }
 
         /* Mu Sigma Style Services Coverflow Carousel */
+        :root {
+            --mu-card-w: 560px;
+            --mu-card-h: 430px;
+            --mu-gap: 36px;
+            --mu-scale: 0.88;
+        }
+
+        @media (max-width: 1200px) {
+            :root {
+                --mu-card-w: 500px;
+                --mu-card-h: 430px;
+                --mu-gap: 28px;
+                --mu-scale: 0.88;
+            }
+        }
+
+        @media (max-width: 860px) {
+            :root {
+                --mu-card-w: 86vw;
+                --mu-card-h: 480px;
+                --mu-gap: 16px;
+                --mu-scale: 0.90;
+            }
+        }
+
         .mu-carousel-container {
             position: relative;
             width: 100%;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             overflow: hidden;
-            padding: 1.5rem 0.5rem;
+            padding: 1.5rem 0;
         }
 
         .mu-carousel-stage {
@@ -235,6 +260,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            perspective: 1200px;
         }
 
         @media (max-width: 768px) {
@@ -245,23 +271,18 @@
 
         .mu-card {
             position: absolute;
-            width: 680px;
+            width: var(--mu-card-w);
             max-width: 90vw;
-            height: 430px;
+            height: var(--mu-card-h);
             border-radius: 26px;
             overflow: hidden;
             transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease, filter 0.6s ease;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
             user-select: none;
+            will-change: transform, opacity;
         }
 
-        @media (max-width: 768px) {
-            .mu-card {
-                height: 480px;
-            }
-        }
-
-        /* 3D Positions */
+        /* 3D Positions with clear distance between all three cards matching Mu Sigma */
         .mu-card.active {
             transform: translateX(0) scale(1);
             opacity: 1;
@@ -271,19 +292,19 @@
         }
 
         .mu-card.prev {
-            transform: translateX(-56%) scale(0.84);
-            opacity: 0.65;
+            transform: translateX(calc(-1 * (var(--mu-card-w) * 0.5 + var(--mu-card-w) * var(--mu-scale) * 0.5 + var(--mu-gap)))) scale(var(--mu-scale));
+            opacity: 0.85;
             z-index: 10;
             cursor: pointer;
-            filter: brightness(0.75);
+            filter: brightness(0.85);
         }
 
         .mu-card.next {
-            transform: translateX(56%) scale(0.84);
-            opacity: 0.65;
+            transform: translateX(calc(var(--mu-card-w) * 0.5 + var(--mu-card-w) * var(--mu-scale) * 0.5 + var(--mu-gap))) scale(var(--mu-scale));
+            opacity: 0.85;
             z-index: 10;
             cursor: pointer;
-            filter: brightness(0.75);
+            filter: brightness(0.85);
         }
 
         .mu-card.hidden-card {
@@ -293,22 +314,10 @@
             pointer-events: none;
         }
 
-        @media (max-width: 640px) {
-            .mu-card.prev {
-                transform: translateX(-78%) scale(0.8);
-                opacity: 0.25;
-            }
-            .mu-card.next {
-                transform: translateX(78%) scale(0.8);
-                opacity: 0.25;
-            }
-        }
-
-        /* Nav Arrows */
+        /* Nav Arrows situated in the gap between center and side cards */
         .mu-nav-btn {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -326,24 +335,40 @@
 
         .mu-nav-btn:hover {
             background: #F8FAFC;
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.24);
         }
 
         .mu-nav-btn.prev-btn {
-            left: calc(50% - 370px);
+            left: calc(50% - (var(--mu-card-w) * 0.5 + var(--mu-gap) * 0.5));
+            transform: translate(-50%, -50%);
+        }
+        .mu-nav-btn.prev-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .mu-nav-btn.next-btn {
-            right: calc(50% - 370px);
+            left: calc(50% + (var(--mu-card-w) * 0.5 + var(--mu-gap) * 0.5));
+            transform: translate(-50%, -50%);
+        }
+        .mu-nav-btn.next-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         @media (max-width: 860px) {
             .mu-nav-btn.prev-btn {
-                left: 10px;
+                left: 12px;
+                transform: translateY(-50%);
+            }
+            .mu-nav-btn.prev-btn:hover {
+                transform: translateY(-50%) scale(1.1);
             }
             .mu-nav-btn.next-btn {
-                right: 10px;
+                left: auto;
+                right: 12px;
+                transform: translateY(-50%);
+            }
+            .mu-nav-btn.next-btn:hover {
+                transform: translateY(-50%) scale(1.1);
             }
         }
 
