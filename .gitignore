@@ -11,6 +11,8 @@ node_modules/
 # Temporary / Backup folders
 BACKUP/
 BACKUP/**
+*.bak
+scratch/
 
 # Logs
 *.log

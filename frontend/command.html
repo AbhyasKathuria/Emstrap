@@ -48,17 +48,25 @@
             100% { transform: scale(2.4); opacity: 0; }
         }
         .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #334155;
             border-radius: 4px;
         }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 font-sans min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white antialiased">
 
-    <!-- Persistent Navigation Header (Matching Attachment 1) -->
+    <!-- ===================================================================== -->
+    <!-- NAVIGATION HEADER -->
+    <!-- ===================================================================== -->
     <header class="py-4 px-6 md:px-12 bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm" id="mainHeader">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a class="flex items-center space-x-3 group" href="index.html">
@@ -77,11 +85,11 @@
                             <span>Products</span>
                             <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
                         </button>
-                        <div class="absolute top-full left-0 w-48 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="connect.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Connect</a>
-                            <a href="ride.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Ride</a>
-                            <a href="shield.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Shield</a>
-                            <a href="command.html" class="block px-4 py-2 text-xs font-semibold text-brandBlue bg-blue-50/50">EMSTRAP Command</a>
+                        <div class="absolute top-full left-0 w-52 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
+                            <a href="connect.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Connect</a>
+                            <a href="ride.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Ride</a>
+                            <a href="shield.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Shield</a>
+                            <a href="command.html" class="block px-4 py-2.5 text-xs font-semibold text-brandBlue bg-blue-50/60">EMSTRAP Command</a>
                         </div>
                     </div>
                     <a href="index.html#page-who-we-serve" class="hover:text-brandBlue transition-colors">Who We Serve</a>
@@ -98,6 +106,7 @@
                     <button onclick="openCommandDemoModal()" class="px-5 py-2 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg font-display">
                         Request Demo
                     </button>
+                    
                     <div class="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-200">
                         <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-all text-xs" title="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
@@ -106,547 +115,517 @@
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2 border-t border-slate-100 mt-3 space-y-2 text-sm font-medium text-slate-700">
+            <a href="connect.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Connect</a>
+            <a href="ride.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Ride</a>
+            <a href="shield.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Shield</a>
+            <a href="command.html" class="block px-3 py-2 rounded-lg bg-blue-50 text-brandBlue font-semibold">EMSTRAP Command</a>
+            <a href="index.html#page-who-we-serve" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Who We Serve</a>
+            <a href="index.html#page-about" class="block px-3 py-2 rounded-lg hover:bg-slate-50">About</a>
+            <a href="careers.html" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Careers</a>
+            <a href="index.html#page-contact" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Contact</a>
         </div>
     </header>
 
     <main class="flex-grow">
         <!-- ===================================================================== -->
-        <!-- 01. HERO SECTION (Attachment 1: 2-Column Command Center Hero) -->
+        <!-- TIER 1: HERO SECTION (Matching Design Board 100%) -->
+        <!-- Cinematic Control Room Photograph + Left Dark Gradient Overlay -->
         <!-- ===================================================================== -->
-        <section class="relative py-14 md:py-20 px-6 md:px-12 bg-gradient-to-b from-slate-50 via-white to-white overflow-hidden border-b border-slate-100">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
-                
-                <!-- Left Column: Hero Content -->
-                <div class="lg:col-span-5 space-y-6 text-left">
-                    <!-- Red Category Pill -->
-                    <div>
-                        <span class="text-xs font-mono font-bold tracking-widest text-emergencyRed uppercase block mb-1">
+        <section class="relative min-h-[580px] lg:min-h-[640px] flex items-center bg-slate-950 text-white overflow-hidden border-b border-slate-800">
+            <!-- Full Width Background Photograph -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/command-hero-controlroom.jpg" alt="EMSTRAP Medical Operations Command Center" class="w-full h-full object-cover object-center lg:object-right filter brightness-90 contrast-105" />
+                <!-- Dark Gradient Overlay (Solid black on left fading to transparent on right) -->
+                <div class="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/90 sm:via-[#050B14]/80 to-transparent z-10"></div>
+                <!-- Subtle Radial Glow -->
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl pointer-events-none z-10"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 sm:py-24 relative z-20 w-full">
+                <div class="max-w-2xl text-left space-y-6">
+                    
+                    <!-- Category Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-600/20 border border-red-500/40 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-emergencyRed animate-pulse"></span>
+                        <span class="text-xs font-mono font-bold tracking-widest text-red-400 uppercase">
                             EMSTRAP COMMAND
                         </span>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-black font-display text-slate-900 tracking-tight leading-[1.12]">
-                            The Command Center Behind Every Connected Journey
-                        </h1>
                     </div>
 
-                    <p class="text-base text-slate-600 font-normal leading-relaxed">
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-black font-display text-white tracking-tight leading-[1.12]">
+                        The Command Center Behind Every Connected Journey
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-xl">
                         Manage ambulances, bookings, patient transportation and hospital coordination from one centralized platform.
                     </p>
 
-                    <div class="text-xs font-mono font-medium text-slate-500">
-                        For Ambulance Providers &bull; Hospitals &bull; Healthcare Networks
+                    <!-- Target Audience Row -->
+                    <div class="text-xs sm:text-sm font-mono text-slate-300 font-medium flex flex-wrap items-center gap-2">
+                        <span>For Ambulance Providers</span>
+                        <span class="text-slate-500">&bull;</span>
+                        <span>Hospitals</span>
+                        <span class="text-slate-500">&bull;</span>
+                        <span>Healthcare Networks</span>
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <button onclick="openCommandDemoModal()" class="px-7 py-3 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg hover:shadow-xl font-display hover:scale-105 active:scale-95">
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold tracking-wider text-xs uppercase transition-all shadow-xl font-display hover:scale-105 active:scale-95">
                             Partner With EMSTRAP
                         </button>
-                        <button onclick="openCommandDemoModal()" class="px-7 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-900 font-bold tracking-wider text-xs uppercase transition-all border border-slate-300 shadow-sm font-display hover:border-slate-400 hover:scale-105 active:scale-95">
+                        <button onclick="openCommandDemoModal()" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold tracking-wider text-xs uppercase transition-all border border-white/25 backdrop-blur-md shadow-sm font-display hover:scale-105 active:scale-95">
                             Request a Demo
                         </button>
                     </div>
 
-                    <!-- Tagline with Dash -->
-                    <div class="pt-4 flex items-center gap-2 text-xs font-mono font-medium text-slate-500">
-                        <span class="text-slate-400 font-bold">&mdash;</span>
-                        <span>Receive. Coordinate. Dispatch. Track.</span>
+                    <!-- Dash Tagline -->
+                    <div class="pt-2 flex items-center gap-2 text-xs font-mono text-slate-400">
+                        <span class="text-red-400 font-bold text-sm">&mdash;</span>
+                        <span class="tracking-wide">Receive. Coordinate. Dispatch. Track.</span>
                     </div>
+
                 </div>
-
-                <!-- Right Column: Command Center Terminal & Interactive Telemetry Screen (Attachment 1 Visual) -->
-                <div class="lg:col-span-7">
-                    <div class="rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl p-5 sm:p-7 text-white relative overflow-hidden">
-                        <!-- Background Ambience & Grid -->
-                        <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-30 pointer-events-none"></div>
-                        <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
-
-                        <!-- Terminal Header Bar -->
-                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800/80 relative z-10">
-                            <div class="flex items-center gap-3">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                </div>
-                                <div class="h-4 w-[1px] bg-slate-800"></div>
-                                <span class="text-sm font-black font-display tracking-wider text-white flex items-center gap-2">
-                                    <span class="text-emergencyRed">EmSTraP</span> COMMAND
-                                </span>
-                            </div>
-                            <div class="flex items-center gap-2 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-full">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span>LIVE GRID CONNECTED</span>
-                            </div>
-                        </div>
-
-                        <!-- 4 Stat Counters (Attachment 1 Exact Metrics) -->
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 relative z-10 font-mono">
-                            <div class="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/90 text-left">
-                                <span class="text-[10px] text-slate-400 block tracking-wider uppercase">Active Requests</span>
-                                <div class="text-2xl font-black font-display text-white mt-1">12</div>
-                            </div>
-                            <div class="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/90 text-left">
-                                <span class="text-[10px] text-slate-400 block tracking-wider uppercase">Available Ambulances</span>
-                                <div class="text-2xl font-black font-display text-emerald-400 mt-1">18</div>
-                            </div>
-                            <div class="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/90 text-left">
-                                <span class="text-[10px] text-slate-400 block tracking-wider uppercase">On Trip</span>
-                                <div class="text-2xl font-black font-display text-amber-400 mt-1">9</div>
-                            </div>
-                            <div class="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/90 text-left">
-                                <span class="text-[10px] text-slate-400 block tracking-wider uppercase">Incoming Patients</span>
-                                <div class="text-2xl font-black font-display text-blue-400 mt-1">6</div>
-                            </div>
-                        </div>
-
-                        <!-- Interactive Map & Live Activity Feed Layout -->
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 relative z-10">
-                            <!-- Map View Area (7 Cols) -->
-                            <div class="md:col-span-7 rounded-2xl bg-slate-900 border border-slate-800 p-3 h-64 sm:h-72 relative overflow-hidden flex flex-col justify-between">
-                                <!-- Map Graphic & Polylines -->
-                                <svg class="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 350 260">
-                                    <!-- City Grid Roads -->
-                                    <line x1="20" y1="60" x2="330" y2="60" stroke="#334155" stroke-width="1.5" />
-                                    <line x1="20" y1="140" x2="330" y2="140" stroke="#334155" stroke-width="2" />
-                                    <line x1="20" y1="200" x2="330" y2="200" stroke="#334155" stroke-width="1.5" />
-                                    
-                                    <line x1="70" y1="20" x2="70" y2="240" stroke="#334155" stroke-width="1.5" />
-                                    <line x1="180" y1="20" x2="180" y2="240" stroke="#334155" stroke-width="2" />
-                                    <line x1="280" y1="20" x2="280" y2="240" stroke="#334155" stroke-width="1.5" />
-                                    
-                                    <!-- Active Route Polyline -->
-                                    <path d="M 70 200 L 180 140 L 280 60" fill="none" stroke="#2563EB" stroke-width="3" stroke-dasharray="6 4" />
-                                    
-                                    <!-- Hospital Hub Beacon -->
-                                    <circle cx="280" cy="60" r="8" fill="#EF4444" opacity="0.2" class="radar-pulse" />
-                                    <circle cx="280" cy="60" r="5" fill="#EF4444" />
-                                    <text x="292" y="64" fill="#F87171" font-size="9" font-family="monospace" font-weight="bold">CITY ER</text>
-                                    
-                                    <!-- Ambulance 021 Position -->
-                                    <circle cx="180" cy="140" r="10" fill="#10B981" opacity="0.25" class="radar-pulse" />
-                                    <circle cx="180" cy="140" r="5" fill="#10B981" />
-                                    <text x="160" y="128" fill="#34D399" font-size="9" font-family="monospace" font-weight="bold">AMB-021</text>
-                                    
-                                    <!-- Ambulance 014 Position -->
-                                    <circle cx="70" cy="200" r="4" fill="#3B82F6" />
-                                    <text x="80" y="204" fill="#93C5FD" font-size="9" font-family="monospace">AMB-014</text>
-                                    
-                                    <!-- Ambulance 007 Position -->
-                                    <circle cx="110" cy="60" r="4" fill="#F59E0B" />
-                                    <text x="118" y="56" fill="#FCD34D" font-size="9" font-family="monospace">AMB-007</text>
-                                </svg>
-
-                                <!-- Map Overlay Badges -->
-                                <div class="relative z-10 flex justify-between items-start">
-                                    <span class="px-2 py-1 rounded bg-slate-950/80 border border-slate-800 text-[10px] font-mono text-slate-300">
-                                        GPS DISPATCH MAP &bull; BLR SECTOR 04
-                                    </span>
-                                    <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[9px] font-mono">
-                                        TRAFFIC: CORRIDOR ACTIVE
-                                    </span>
-                                </div>
-                                <div class="relative z-10 flex justify-between items-end text-[10px] font-mono text-slate-400">
-                                    <span>ZOOM: 14x</span>
-                                    <span class="text-emerald-400">ETA CALCULATION: 8 MIN</span>
-                                </div>
-                            </div>
-
-                            <!-- Recent Activity Feed (5 Cols - Attachment 1 Exact Feed) -->
-                            <div class="md:col-span-5 rounded-2xl bg-slate-900 border border-slate-800 p-3 h-64 sm:h-72 flex flex-col justify-between overflow-hidden">
-                                <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
-                                    <span class="text-[11px] font-mono font-bold uppercase text-slate-400">Recent Activity</span>
-                                    <span class="text-[9px] font-mono text-slate-500">Auto-refreshing</span>
-                                </div>
-                                
-                                <div class="space-y-2 overflow-y-auto custom-scrollbar pr-1 text-left text-xs font-mono">
-                                    <!-- AMB-021 -->
-                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                                            <div>
-                                                <strong class="text-white block text-[11px]">AMB-021</strong>
-                                                <span class="text-[10px] text-blue-400 font-semibold">Assigned</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">2 min ago</span>
-                                    </div>
-
-                                    <!-- AMB-014 -->
-                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                                            <div>
-                                                <strong class="text-white block text-[11px]">AMB-014</strong>
-                                                <span class="text-[10px] text-amber-400 font-semibold">En Route</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">6 min ago</span>
-                                    </div>
-
-                                    <!-- AMB-007 -->
-                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                                            <div>
-                                                <strong class="text-white block text-[11px]">AMB-007</strong>
-                                                <span class="text-[10px] text-cyan-400 font-semibold">Patient Onboard</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">12 min ago</span>
-                                    </div>
-
-                                    <!-- AMB-018 -->
-                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                                            <div>
-                                                <strong class="text-white block text-[11px]">AMB-018</strong>
-                                                <span class="text-[10px] text-emerald-400 font-semibold">Arrived at Hospital</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">18 min ago</span>
-                                    </div>
-
-                                    <!-- AMB-011 -->
-                                    <div class="p-2 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-slate-400"></span>
-                                            <div>
-                                                <strong class="text-white block text-[11px]">AMB-011</strong>
-                                                <span class="text-[10px] text-slate-400 font-semibold">Completed</span>
-                                            </div>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">25 min ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 02. THE EMSTRAP ECOSYSTEM (Attachment 1 Section 2) -->
+        <!-- TIER 2: THE EMSTRAP ECOSYSTEM (4 Horizontal Cards) -->
+        <!-- Matching Attachment Design Board Tier 2 -->
         <!-- ===================================================================== -->
-        <section class="py-14 px-6 md:px-12 bg-white border-b border-slate-100">
-            <div class="max-w-7xl mx-auto space-y-8">
-                <div class="text-left">
-                    <h2 class="text-2xl sm:text-3xl font-black font-display text-slate-900 tracking-tight">
-                        The EMSTRAP Ecosystem
-                    </h2>
-                    <p class="text-sm text-slate-500 font-normal mt-1">
-                        One ecosystem. Every journey connected.
+        <section class="py-12 md:py-16 px-6 md:px-12 bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto space-y-6">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 text-left">
+                    <div>
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">
+                            UNIFIED PLATFORM
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-black font-display text-slate-900 tracking-tight">
+                            The EMSTRAP Ecosystem
+                        </h2>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-500 font-medium">
+                        One connected infrastructure powering every emergency and non-emergency health journey.
                     </p>
                 </div>
 
-                <!-- 4 Horizontal Ecosystem Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- EMSTRAP CONNECT -->
-                    <a href="connect.html" class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all text-left flex flex-col justify-between group">
-                        <div class="flex items-center gap-3.5 mb-3">
+                <!-- 4 Connected Horizontal Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+                    
+                    <!-- 1. EMSTRAP CONNECT -->
+                    <a href="connect.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all text-left flex flex-col justify-between group h-full">
+                        <div class="space-y-3">
                             <div class="w-10 h-10 rounded-xl bg-red-50 text-emergencyRed flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-tower-broadcast"></i>
                             </div>
-                            <div>
-                                <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">EMSTRAP CONNECT</span>
-                                <span class="text-[11px] text-slate-500 font-normal">Report the emergency.</span>
-                            </div>
+                            <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">
+                                EMSTRAP CONNECT
+                            </span>
+                            <p class="text-xs text-slate-500 leading-relaxed font-normal">
+                                Central emergency access connecting people directly to help.
+                            </p>
                         </div>
-                        <div class="text-[11px] font-semibold text-brandBlue flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>Learn more</span>
-                            <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                        <div class="pt-4 flex items-center gap-1.5 text-[11px] font-semibold text-brandBlue group-hover:translate-x-1 transition-transform">
+                            <span>Explore Connect</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
                     </a>
 
-                    <!-- EMSTRAP RIDE -->
-                    <a href="ride.html" class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all text-left flex flex-col justify-between group">
-                        <div class="flex items-center gap-3.5 mb-3">
+                    <!-- 2. EMSTRAP RIDE -->
+                    <a href="ride.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all text-left flex flex-col justify-between group h-full">
+                        <div class="space-y-3">
                             <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-truck-medical"></i>
                             </div>
-                            <div>
-                                <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">EMSTRAP RIDE</span>
-                                <span class="text-[11px] text-slate-500 font-normal">Book the ambulance.</span>
-                            </div>
+                            <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">
+                                EMSTRAP RIDE
+                            </span>
+                            <p class="text-xs text-slate-500 leading-relaxed font-normal">
+                                Scheduled, predictable transportation for medical, mobility, and personal travel.
+                            </p>
                         </div>
-                        <div class="text-[11px] font-semibold text-brandBlue flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>Learn more</span>
-                            <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                        <div class="pt-4 flex items-center gap-1.5 text-[11px] font-semibold text-brandBlue group-hover:translate-x-1 transition-transform">
+                            <span>Explore Ride</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
                     </a>
 
-                    <!-- EMSTRAP SHIELD -->
-                    <a href="shield.html" class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md hover:border-slate-300 transition-all text-left flex flex-col justify-between group">
-                        <div class="flex items-center gap-3.5 mb-3">
+                    <!-- 3. EMSTRAP SHIELD -->
+                    <a href="shield.html" class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all text-left flex flex-col justify-between group h-full">
+                        <div class="space-y-3">
                             <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-shield-heart"></i>
                             </div>
-                            <div>
-                                <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">EMSTRAP SHIELD</span>
-                                <span class="text-[11px] text-slate-500 font-normal">Protect employees and families.</span>
-                            </div>
+                            <span class="text-xs font-black font-display text-slate-900 uppercase tracking-wider block">
+                                EMSTRAP SHIELD
+                            </span>
+                            <p class="text-xs text-slate-500 leading-relaxed font-normal">
+                                Emergency and health support protecting teams, workplaces, and families.
+                            </p>
                         </div>
-                        <div class="text-[11px] font-semibold text-brandBlue flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            <span>Learn more</span>
-                            <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                        <div class="pt-4 flex items-center gap-1.5 text-[11px] font-semibold text-brandBlue group-hover:translate-x-1 transition-transform">
+                            <span>Explore Shield</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
                     </a>
 
-                    <!-- EMSTRAP COMMAND (Active state matching Attachment 1) -->
-                    <div class="p-5 rounded-2xl bg-blue-50/40 border-2 border-brandBlue shadow-md text-left flex flex-col justify-between relative">
-                        <div class="flex items-center gap-3.5 mb-3">
+                    <!-- 4. EMSTRAP COMMAND (Active Module with Blue Highlight) -->
+                    <div class="p-6 rounded-2xl bg-blue-50/50 border-2 border-brandBlue shadow-md text-left flex flex-col justify-between h-full relative">
+                        <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-brandBlue text-white text-[9px] font-mono font-bold tracking-wider uppercase shadow-sm">
+                            Active System
+                        </div>
+                        <div class="space-y-3">
                             <div class="w-10 h-10 rounded-xl bg-brandBlue text-white flex items-center justify-center text-lg shrink-0 shadow">
                                 <i class="fa-solid fa-desktop"></i>
                             </div>
-                            <div>
-                                <span class="text-xs font-black font-display text-brandBlue uppercase tracking-wider block">EMSTRAP COMMAND</span>
-                                <span class="text-[11px] text-slate-600 font-normal">Manage the ambulance and hospital response.</span>
-                            </div>
+                            <span class="text-xs font-black font-display text-brandBlue uppercase tracking-wider block">
+                                EMSTRAP COMMAND
+                            </span>
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                                Dispatch, coordination, and operation platform powering the ecosystem.
+                            </p>
                         </div>
-                        <div class="text-[11px] font-bold text-brandBlue flex items-center gap-1">
-                            <span>Active Platform</span>
-                            <i class="fa-solid fa-circle-check text-[10px]"></i>
+                        <div class="pt-4 flex items-center gap-1.5 text-[11px] font-bold text-brandBlue">
+                            <i class="fa-solid fa-circle-check text-xs"></i>
+                            <span>Operational Core</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 03. WHY EMSTRAP COMMAND? (Attachment 1 Section 3) -->
+        <!-- TIER 3: WHY EMSTRAP COMMAND? (Left Explanatory + Right 10 Thumbnails) -->
+        <!-- Matching Attachment Design Board Tier 3 Exactly -->
         <!-- ===================================================================== -->
-        <section class="py-16 md:py-20 px-6 md:px-12 bg-slate-50/80 border-b border-slate-100">
-            <div class="max-w-7xl mx-auto space-y-10">
-                
-                <!-- Left Title & Lead Copy -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    <div class="lg:col-span-5 space-y-4 text-left">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight leading-snug">
-                            Why EMSTRAP Command?
-                        </h2>
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50/80 border-b border-slate-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                    
+                    <!-- Left Column: Copy & Narrative -->
+                    <div class="lg:col-span-5 space-y-6 text-left">
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">
+                                CENTRALISED COORDINATION
+                            </span>
+                            <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight leading-tight">
+                                Why EMSTRAP Command?
+                            </h2>
+                        </div>
+
                         <p class="text-base font-bold text-slate-800 leading-snug">
                             Emergency services cannot depend on disconnected phone calls.
                         </p>
+
                         <p class="text-sm text-slate-600 font-normal leading-relaxed">
                             Ambulance operators and hospitals often have to manage multiple calls, availability, coordination, bookings, trip status and records. When this information is scattered, managing multiple emergencies becomes difficult.
                         </p>
-                        <p class="text-sm font-semibold text-brandBlue">
+
+                        <p class="text-sm font-semibold text-brandBlue leading-relaxed">
                             EMSTRAP Command brings these operations into one centralized platform.
                         </p>
+
+                        <!-- Key Pillars / Feature Tags -->
+                        <div class="pt-4 border-t border-slate-200/80 space-y-3 text-xs text-slate-700">
+                            <div class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center shrink-0 mt-0.5 text-[11px]">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <strong class="font-semibold text-slate-900 block">Single Pane of Glass</strong>
+                                    <span class="text-slate-500 font-normal">Replaces 5+ scattered communication channels with unified operational software.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 text-[11px]">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <strong class="font-semibold text-slate-900 block">Zero Miscommunication</strong>
+                                    <span class="text-slate-500 font-normal">Automatic GPS tracking, caller location geotags, and instant destination routing.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center shrink-0 mt-0.5 text-[11px]">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <strong class="font-semibold text-slate-900 block">Complete Historical Audit Trail</strong>
+                                    <span class="text-slate-500 font-normal">Every timestamp, dispatch log, driver action, and clinical handover preserved.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button onclick="openCommandDemoModal()" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md font-display">
+                                Explore Command Live
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Right Column: 10 Feature Thumbnail Cards (Attachment 1 Exact 10 Cards) -->
+                    <!-- Right Column: 10 Operations Cards Strip (Using the 10 Cropped Image Assets) -->
                     <div class="lg:col-span-7">
+                        <div class="mb-3 flex items-center justify-between text-left">
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                                10 COORDINATED TOUCHPOINTS
+                            </span>
+                            <span class="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                Real-Time Operations
+                            </span>
+                        </div>
+
+                        <!-- 10-Item Responsive Grid (2 columns on mobile, 5 columns on desktop) -->
                         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                             
                             <!-- 1. Multiple incoming calls -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="research-emri-visit.jpg" alt="Multiple incoming calls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-1.jpg" alt="Multiple incoming calls" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Multiple incoming calls</span>
                             </div>
 
                             <!-- 2. Ambulance availability -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="ambulance.jpg" alt="Ambulance availability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-2.jpg" alt="Ambulance availability" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Ambulance availability</span>
                             </div>
 
                             <!-- 3. Driver/crew coordination -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="research-police-visit.jpg" alt="Driver/crew coordination" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-3.jpg" alt="Driver/crew coordination" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Driver/crew coordination</span>
                             </div>
 
                             <!-- 4. Pickup locations -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="prototype-tracking.png" alt="Pickup locations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-4.jpg" alt="Pickup locations" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Pickup locations</span>
                             </div>
 
                             <!-- 5. Patient transportation -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="hospital.jpg" alt="Patient transportation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-5.jpg" alt="Patient transportation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Patient transportation</span>
                             </div>
 
                             <!-- 6. Hospital destinations -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="campus.jpg" alt="Hospital destinations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-6.jpg" alt="Hospital destinations" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Hospital destinations</span>
                             </div>
 
                             <!-- 7. Booking confirmations -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="command-app-mockup.jpg" alt="Booking confirmations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-7.jpg" alt="Booking confirmations" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Booking confirmations</span>
                             </div>
 
                             <!-- 8. Trip status -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="research-hospital-visit.jpg" alt="Trip status" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-8.jpg" alt="Trip status" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Trip status</span>
                             </div>
 
                             <!-- 9. Hospital coordination -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="images/hospital-er-operations.jpg" alt="Hospital coordination" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-9.jpg" alt="Hospital coordination" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Hospital coordination</span>
                             </div>
 
                             <!-- 10. Records and reports -->
-                            <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-sm flex flex-col items-center text-center group hover:border-slate-300 transition-all">
-                                <div class="w-full h-16 rounded-lg overflow-hidden mb-2 bg-slate-100">
-                                    <img src="prototype-reporting.png" alt="Records and reports" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="bg-white rounded-2xl border border-slate-200/90 p-2.5 shadow-sm hover:shadow-md hover:border-brandBlue transition-all flex flex-col items-center text-center group">
+                                <div class="w-full h-20 rounded-xl overflow-hidden mb-2 bg-slate-100">
+                                    <img src="images/command-thumb-10.jpg" alt="Records and reports" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                                 </div>
                                 <span class="text-[11px] font-semibold text-slate-800 leading-tight">Records and reports</span>
                             </div>
 
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 04. FOR AMBULANCE PROVIDERS & FOR HOSPITALS (Attachment 1 Section 4) -->
+        <!-- TIER 4: FOR PROVIDERS & FOR HOSPITALS (Two Split Cards Side-by-Side) -->
+        <!-- Matching Attachment Design Board Tier 4 Exactly -->
         <!-- ===================================================================== -->
         <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="max-w-7xl mx-auto space-y-12">
                 
-                <!-- CARD 1: FOR AMBULANCE PROVIDERS -->
-                <div class="rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow overflow-hidden bg-white grid grid-cols-1 sm:grid-cols-12">
-                    <!-- Left Photo Column -->
-                    <div class="sm:col-span-5 relative h-56 sm:h-auto min-h-[220px] bg-slate-100">
-                        <img src="ambulance.jpg" alt="Ambulance on City Street" class="absolute inset-0 w-full h-full object-cover" />
-                    </div>
-                    <!-- Right Content Column -->
-                    <div class="sm:col-span-7 p-6 sm:p-8 space-y-4 text-left flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue block">
-                                FOR AMBULANCE PROVIDERS
-                            </span>
-                            <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900 tracking-tight leading-snug">
-                                Turn ambulance operations into a connected workflow.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
-                                Receive bookings, manage ambulances, coordinate trips, monitor availability and track operations from a single platform.
-                            </p>
-                            
-                            <div class="pt-1">
-                                <button onclick="openCommandDemoModal()" class="px-5 py-2.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-sm">
-                                    Learn More
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 5-Item Checklist -->
-                        <div class="pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-700 font-medium">
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-brandBlue"></span>
-                                <span>Receive ambulance bookings</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-brandBlue"></span>
-                                <span>Manage ambulance availability</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-brandBlue"></span>
-                                <span>Track trips in real time</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-brandBlue"></span>
-                                <span>Manage drivers and crew</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-brandBlue"></span>
-                                <span>Maintain trip records and reports</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Section Header -->
+                <div class="max-w-3xl text-left space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block">
+                        PARTNER WORKFLOWS
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                        Built for the Pillars of Emergency Care
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        Whether you operate an ambulance fleet or manage trauma admissions at a multi-specialty hospital, EMSTRAP Command delivers the operational tools to succeed.
+                    </p>
                 </div>
 
-                <!-- CARD 2: FOR HOSPITALS -->
-                <div class="rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow overflow-hidden bg-white grid grid-cols-1 sm:grid-cols-12">
-                    <!-- Left Photo Column -->
-                    <div class="sm:col-span-5 relative h-56 sm:h-auto min-h-[220px] bg-slate-100">
-                        <img src="hospital.jpg" alt="Hospital Emergency Department" class="absolute inset-0 w-full h-full object-cover" />
-                    </div>
-                    <!-- Right Content Column -->
-                    <div class="sm:col-span-7 p-6 sm:p-8 space-y-4 text-left flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-emergencyRed block">
-                                FOR HOSPITALS
+                <!-- 2 Side-by-Side Split Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- CARD 1: FOR AMBULANCE PROVIDERS -->
+                    <div class="rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all overflow-hidden bg-white grid grid-cols-1 sm:grid-cols-12 group">
+                        <!-- Left Photo Column (command-provider-ambulance.jpg) -->
+                        <div class="sm:col-span-5 relative h-56 sm:h-auto min-h-[240px] bg-slate-950 overflow-hidden">
+                            <img src="images/command-provider-ambulance.jpg" alt="Ambulance Fleet in Motion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent sm:hidden"></div>
+                            <span class="absolute bottom-3 left-3 sm:hidden px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-white font-semibold">
+                                FLEET DISPATCH
                             </span>
-                            <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900 tracking-tight leading-snug">
-                                Prepare for the patient before arrival.
-                            </h3>
-                            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
-                                Receive incoming patient information, manage ambulance requests and coordinate patient transfers from one centralized platform.
-                            </p>
-                            
-                            <div class="pt-1">
-                                <button onclick="openCommandDemoModal()" class="px-5 py-2.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-sm">
-                                    Learn More
-                                </button>
-                            </div>
                         </div>
+                        
+                        <!-- Right Content Column -->
+                        <div class="sm:col-span-7 p-6 sm:p-8 space-y-4 text-left flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue block">
+                                    FOR AMBULANCE PROVIDERS
+                                </span>
+                                <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900 tracking-tight leading-snug">
+                                    Turn ambulance operations into a connected workflow.
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                                    Receive bookings, manage ambulances, coordinate trips, monitor availability and track operations from a single platform.
+                                </p>
+                                
+                                <div class="pt-1">
+                                    <button onclick="openCommandDemoModal()" class="px-5 py-2.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-sm hover:shadow-md">
+                                        Learn More
+                                    </button>
+                                </div>
+                            </div>
 
-                        <!-- 5-Item Checklist -->
-                        <div class="pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-700 font-medium">
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-emergencyRed"></span>
-                                <span>View incoming ambulances</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-emergencyRed"></span>
-                                <span>Manage patient transport requests</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-emergencyRed"></span>
-                                <span>Coordinate hospital-to-hospital transfers</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-emergencyRed"></span>
-                                <span>Track expected arrivals</span>
-                            </div>
-                            <div class="flex items-center gap-2.5">
-                                <span class="w-3.5 h-0.5 bg-emergencyRed"></span>
-                                <span>Maintain records and reports</span>
+                            <!-- 5-Item Checklist with Blue Dashes -->
+                            <div class="pt-4 border-t border-slate-100 space-y-2.5 text-xs text-slate-700 font-medium">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-brandBlue shrink-0"></span>
+                                    <span>Receive ambulance bookings</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-brandBlue shrink-0"></span>
+                                    <span>Manage ambulance availability</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-brandBlue shrink-0"></span>
+                                    <span>Track trips in real time</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-brandBlue shrink-0"></span>
+                                    <span>Manage drivers and crew</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-brandBlue shrink-0"></span>
+                                    <span>Maintain trip records and reports</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <!-- CARD 2: FOR HOSPITALS -->
+                    <div class="rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all overflow-hidden bg-white grid grid-cols-1 sm:grid-cols-12 group">
+                        <!-- Left Photo Column (command-hospital-emergency.jpg) -->
+                        <div class="sm:col-span-5 relative h-56 sm:h-auto min-h-[240px] bg-slate-950 overflow-hidden">
+                            <img src="images/command-hospital-emergency.jpg" alt="Hospital Emergency Admissions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent sm:hidden"></div>
+                            <span class="absolute bottom-3 left-3 sm:hidden px-2.5 py-1 rounded bg-black/70 backdrop-blur-md text-[10px] font-mono text-white font-semibold">
+                                EMERGENCY DEPT
+                            </span>
+                        </div>
+                        
+                        <!-- Right Content Column -->
+                        <div class="sm:col-span-7 p-6 sm:p-8 space-y-4 text-left flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-emergencyRed block">
+                                    FOR HOSPITALS
+                                </span>
+                                <h3 class="text-xl sm:text-2xl font-black font-display text-slate-900 tracking-tight leading-snug">
+                                    Prepare for the patient before arrival.
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                                    Receive incoming patient information, manage ambulance requests and coordinate patient transfers from one centralized platform.
+                                </p>
+                                
+                                <div class="pt-1">
+                                    <button onclick="openCommandDemoModal()" class="px-5 py-2.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-sm hover:shadow-md">
+                                        Learn More
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 5-Item Checklist with Red Dashes -->
+                            <div class="pt-4 border-t border-slate-100 space-y-2.5 text-xs text-slate-700 font-medium">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-emergencyRed shrink-0"></span>
+                                    <span>View incoming ambulances</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-emergencyRed shrink-0"></span>
+                                    <span>Manage patient transport requests</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-emergencyRed shrink-0"></span>
+                                    <span>Coordinate hospital-to-hospital transfers</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-emergencyRed shrink-0"></span>
+                                    <span>Track expected arrivals</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-0.5 bg-emergencyRed shrink-0"></span>
+                                    <span>Maintain records and reports</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 05. DETAILED OPERATIONAL CAPABILITIES -->
+        <!-- 05. DETAILED OPERATIONAL CAPABILITIES (Grid of 3 Architectural Features) -->
         <!-- ===================================================================== -->
-        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="max-w-3xl text-left space-y-3">
                     <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">CENTRALIZED CONTROL</span>
@@ -660,18 +639,18 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                     <!-- Feature 1 -->
-                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4">
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4 hover:shadow-md transition-shadow">
                         <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-brandBlue flex items-center justify-center text-xl">
                             <i class="fa-solid fa-satellite-dish"></i>
                         </div>
                         <h3 class="text-lg font-bold font-display text-slate-900">Real-Time Fleet Telemetry</h3>
                         <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                            Monitor GPS coordinates, vehicle speed, oxygen tank pressures, driver duty cycles, and real-time transit status in a single pane of glass.
+                            Monitor GPS coordinates, vehicle speed, oxygen equipment readiness, driver duty cycles, and real-time transit status in a single pane of glass.
                         </p>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4">
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4 hover:shadow-md transition-shadow">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center text-xl">
                             <i class="fa-solid fa-bed-pulse"></i>
                         </div>
@@ -682,7 +661,7 @@
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4">
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-4 hover:shadow-md transition-shadow">
                         <div class="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-xl">
                             <i class="fa-solid fa-file-shield"></i>
                         </div>
@@ -696,9 +675,12 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 06. FINAL CTA BANNER -->
+        <!-- 06. FINAL CTA BANNER (Cinematic Dark Control Center Theme) -->
         <!-- ===================================================================== -->
-        <section class="py-20 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden">
+        <section class="py-20 md:py-24 px-6 md:px-12 bg-slate-950 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-25 pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-blue-600/15 blur-3xl pointer-events-none"></div>
+            
             <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
                 <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">JOIN THE HEALTHCARE NETWORK</span>
                 <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
@@ -722,7 +704,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ===================================================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================================================== -->
     <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -746,7 +730,9 @@
         </div>
     </footer>
 
-    <!-- Demo Request Modal -->
+    <!-- ===================================================================== -->
+    <!-- B2B DEMO REQUEST MODAL -->
+    <!-- ===================================================================== -->
     <div id="commandDemoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
         <div class="bg-white border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-6 text-slate-900 shadow-2xl relative">
             <button onclick="closeCommandDemoModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl">
@@ -786,7 +772,13 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
         function openCommandDemoModal() {
             document.getElementById('commandDemoModal').classList.remove('hidden');
         }

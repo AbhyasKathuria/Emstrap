@@ -12,10 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#0A1128',
+                        brandDark: '#050B14',
                         brandBlue: '#2563EB',
                         brandBlueDark: '#1D4ED8',
                         emergencyRed: '#DC2626',
+                        emergencyRedDark: '#B91C1C',
                         warmAmber: '#F59E0B'
                     },
                     fontFamily: {
@@ -31,14 +32,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Smooth transitions & custom animations */
         .node-pulse {
             box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
             animation: pulseBlue 2s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -46,15 +46,6 @@
         @keyframes pulseBlue {
             to {
                 box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
-            }
-        }
-        .red-pulse {
-            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
-            animation: pulseRed 2s infinite cubic-bezier(0.66, 0, 0, 1);
-        }
-        @keyframes pulseRed {
-            to {
-                box-shadow: 0 0 0 16px rgba(220, 38, 38, 0);
             }
         }
         @keyframes radarSweep {
@@ -65,8 +56,8 @@
             animation: radarSweep 4s linear infinite;
         }
         @keyframes aiWave {
-            0%, 100% { height: 12px; }
-            50% { height: 38px; }
+            0%, 100% { height: 10px; }
+            50% { height: 36px; }
         }
         .wave-bar {
             animation: aiWave 1.4s ease-in-out infinite;
@@ -82,8 +73,10 @@
 </head>
 <body class="bg-white text-slate-900 font-sans selection:bg-brandBlue selection:text-white antialiased">
 
-    <!-- Global Persistent Navigation Header -->
-    <header class="py-4 px-6 md:px-12 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm" id="mainHeader">
+    <!-- ===================================================================== -->
+    <!-- GLOBAL NAVIGATION HEADER -->
+    <!-- ===================================================================== -->
+    <header class="py-4 px-6 md:px-12 bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm" id="mainHeader">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a class="flex items-center space-x-3 group" href="index.html">
                 <div class="h-10 flex items-center transition-transform duration-300 group-hover:scale-105">
@@ -96,16 +89,33 @@
             
             <div class="flex items-center space-x-6 lg:space-x-8">
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-semibold text-slate-600">
-                    <a href="index.html#page-about" class="hover:text-brandBlue transition-colors">About</a>
-                    <a href="index.html#page-services" class="hover:text-brandBlue transition-colors">Services</a>
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
+                            <span>Products</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 w-52 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
+                            <a href="connect.html" class="block px-4 py-2.5 text-xs font-semibold text-brandBlue bg-blue-50/60">EMSTRAP Connect</a>
+                            <a href="ride.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Ride</a>
+                            <a href="shield.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Shield</a>
+                            <a href="command.html" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Command</a>
+                        </div>
+                    </div>
                     <a href="index.html#page-who-we-serve" class="hover:text-brandBlue transition-colors">Who We Serve</a>
+                    <a href="index.html#page-about" class="hover:text-brandBlue transition-colors">About</a>
                     <a href="careers.html" target="_blank" rel="noopener noreferrer" class="hover:text-brandBlue transition-colors">Careers</a>
                     <a href="index.html#page-contact" class="hover:text-brandBlue transition-colors">Contact</a>
                 </nav>
+                
                 <div class="flex items-center gap-3">
+                    <a href="tel:112" class="px-4 py-2 rounded-full bg-red-50 hover:bg-red-100 text-emergencyRed text-xs font-bold uppercase tracking-wider transition-all border border-red-200 flex items-center gap-1.5 font-display shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emergencyRed animate-ping"></span>
+                        <span>Emergency</span>
+                    </a>
                     <button onclick="openDemoModal()" class="px-5 py-2.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg font-display">
                         Request Demo
                     </button>
+                    
                     <div class="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-200">
                         <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-all text-xs" title="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
@@ -114,32 +124,49 @@
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2 border-t border-slate-100 mt-3 space-y-2 text-sm font-medium text-slate-700">
+            <a href="connect.html" class="block px-3 py-2 rounded-lg bg-blue-50 text-brandBlue font-semibold">EMSTRAP Connect</a>
+            <a href="ride.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Ride</a>
+            <a href="shield.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Shield</a>
+            <a href="command.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">EMSTRAP Command</a>
+            <a href="index.html#page-who-we-serve" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Who We Serve</a>
+            <a href="index.html#page-about" class="block px-3 py-2 rounded-lg hover:bg-slate-50">About</a>
+            <a href="careers.html" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Careers</a>
+            <a href="index.html#page-contact" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- ===================================================================== -->
-        <!-- 01. HERO SECTION -->
+        <!-- 01. HERO SECTION (Matching Design Board 01) -->
         <!-- ===================================================================== -->
         <section class="py-16 md:py-24 px-6 md:px-12 bg-gradient-to-b from-slate-50 via-white to-white relative overflow-hidden" id="section-01-hero">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                     
                     <!-- Left Hero Text -->
-                    <div class="lg:col-span-6 space-y-6">
+                    <div class="lg:col-span-6 space-y-6 text-left">
                         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
                             <span class="w-2 h-2 rounded-full bg-brandBlue animate-ping"></span>
                             <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue">EMSTRAP CONNECT</span>
                         </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display text-slate-900 tracking-tight leading-[1.08]">
+                        <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-black font-display text-slate-900 tracking-tight leading-[1.08]">
                             One Connected Network for Every Emergency
                         </h1>
 
-                        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-                            A B2G emergency communication and incident-reporting platform connecting citizens, authorities, emergency responders and control rooms under one synchronized layer.
+                        <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+                            A B2G emergency communication and incident-reporting platform connecting citizens, authorities, emergency responders and control rooms.
                         </p>
 
                         <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -152,77 +179,86 @@
                             </a>
                         </div>
 
-                        <div class="pt-4 flex items-center gap-3 text-xs font-mono font-semibold text-slate-500">
-                            <span class="text-brandBlue font-bold">&#9679;</span>
+                        <div class="pt-2 flex items-center gap-2 text-xs font-mono font-medium text-slate-500">
+                            <span class="text-brandBlue font-bold">&bull;</span>
                             <span>Report. Connect. Coordinate. Respond.</span>
                         </div>
                     </div>
 
-                    <!-- Right Hero Visual: Connected Network Diagram (SVG + Nodes) -->
+                    <!-- Right Hero Visual: Connected Network Diagram Over City Backdrop -->
                     <div class="lg:col-span-6 relative flex items-center justify-center">
-                        <div class="relative w-full max-w-[500px] aspect-square rounded-3xl bg-slate-900 p-6 sm:p-8 text-white shadow-2xl overflow-hidden border border-slate-800">
-                            <!-- Background City Wireframe & Grid -->
-                            <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent pointer-events-none"></div>
+                        <div class="relative w-full max-w-[520px] aspect-square rounded-3xl bg-slate-50 p-6 sm:p-8 text-slate-900 shadow-xl overflow-hidden border border-slate-200/90">
+                            <!-- City Backdrop Image -->
+                            <img src="images/connect-hero-bg.jpg" alt="Connected City Skyline" class="absolute inset-0 w-full h-full object-cover opacity-20 filter grayscale mix-blend-multiply" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none"></div>
 
                             <!-- Central EMSTRAP CONNECT Node -->
                             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
-                                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-blue-600/30 border-2 border-brandBlue flex items-center justify-center p-2 node-pulse shadow-[0_0_30px_rgba(37,99,235,0.6)] backdrop-blur-md">
-                                    <div class="w-full h-full rounded-full bg-brandBlue flex flex-col items-center justify-center text-center p-1.5 shadow-inner">
-                                        <i class="fa-solid fa-tower-broadcast text-xl sm:text-2xl text-white mb-0.5"></i>
-                                        <span class="text-[9px] sm:text-[10px] font-black font-display uppercase tracking-wider text-white leading-tight">EMSTRAP<br/>CONNECT</span>
+                                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-brandBlue/20 border-2 border-brandBlue flex items-center justify-center p-2.5 node-pulse shadow-2xl backdrop-blur-md">
+                                    <div class="w-full h-full rounded-full bg-[#1E3A8A] flex flex-col items-center justify-center text-center p-2 shadow-inner text-white">
+                                        <i class="fa-solid fa-tower-broadcast text-xl sm:text-2xl mb-0.5"></i>
+                                        <span class="text-[10px] sm:text-[11px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- SVG Radial Connecting Lines -->
                             <svg class="absolute inset-0 w-full h-full z-10 pointer-events-none" viewBox="0 0 400 400">
-                                <line x1="200" y1="200" x2="80" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
-                                <line x1="200" y1="200" x2="320" y2="100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
-                                <line x1="200" y1="200" x2="340" y2="240" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
-                                <line x1="200" y1="200" x2="270" y2="330" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
-                                <line x1="200" y1="200" x2="90" y2="310" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+                                <line x1="200" y1="200" x2="200" y2="70" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                                <line x1="200" y1="200" x2="90" y2="120" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                                <line x1="200" y1="200" x2="310" y2="120" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                                <line x1="200" y1="200" x2="95" y2="280" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                                <line x1="200" y1="200" x2="305" y2="280" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                                <line x1="200" y1="200" x2="200" y2="330" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
                             </svg>
 
-                            <!-- Satellite Nodes -->
-                            <!-- 1. Police (Top Left) -->
-                            <div class="absolute top-8 left-8 sm:top-12 sm:left-10 z-20 flex flex-col items-center group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-blue-400/50 flex items-center justify-center text-blue-400 shadow-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                            <!-- Satellite Nodes Matching Design 01 -->
+                            <!-- Citizens (Top) -->
+                            <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-users text-base"></i>
                                 </div>
-                                <span class="text-[11px] font-mono font-bold text-slate-200 mt-1.5 bg-slate-900/80 px-2 py-0.5 rounded">Police</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Citizens</span>
                             </div>
 
-                            <!-- 2. Hospitals (Top Right) -->
-                            <div class="absolute top-8 right-8 sm:top-12 sm:right-10 z-20 flex flex-col items-center group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-emerald-400/50 flex items-center justify-center text-emerald-400 shadow-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-hospital text-lg"></i>
+                            <!-- Police (Top Left) -->
+                            <div class="absolute top-16 left-8 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-[#1E3A8A] text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-shield-halved text-base"></i>
                                 </div>
-                                <span class="text-[11px] font-mono font-bold text-slate-200 mt-1.5 bg-slate-900/80 px-2 py-0.5 rounded">Hospitals</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Police</span>
                             </div>
 
-                            <!-- 3. Government (Middle Right) -->
-                            <div class="absolute top-1/2 -translate-y-8 right-4 sm:right-6 z-20 flex flex-col items-center group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-amber-400/50 flex items-center justify-center text-amber-400 shadow-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-landmark text-lg"></i>
+                            <!-- Hospitals (Top Right) -->
+                            <div class="absolute top-16 right-8 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-hospital text-base"></i>
                                 </div>
-                                <span class="text-[11px] font-mono font-bold text-slate-200 mt-1.5 bg-slate-900/80 px-2 py-0.5 rounded">Government</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Hospitals</span>
                             </div>
 
-                            <!-- 4. Control Room (Bottom Right) -->
-                            <div class="absolute bottom-6 right-12 sm:bottom-8 sm:right-16 z-20 flex flex-col items-center group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-purple-400/50 flex items-center justify-center text-purple-400 shadow-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-desktop text-lg"></i>
+                            <!-- Ambulance (Bottom Left) -->
+                            <div class="absolute bottom-14 left-8 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-red-600 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-truck-medical text-base"></i>
                                 </div>
-                                <span class="text-[11px] font-mono font-bold text-slate-200 mt-1.5 bg-slate-900/80 px-2 py-0.5 rounded">Control Room</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Ambulance</span>
                             </div>
 
-                            <!-- 5. Ambulance (Bottom Left) -->
-                            <div class="absolute bottom-6 left-10 sm:bottom-8 sm:left-14 z-20 flex flex-col items-center group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-red-400/50 flex items-center justify-center text-red-400 shadow-lg group-hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-truck-medical text-lg"></i>
+                            <!-- Government (Bottom Right) -->
+                            <div class="absolute bottom-14 right-8 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-landmark text-base"></i>
                                 </div>
-                                <span class="text-[11px] font-mono font-bold text-slate-200 mt-1.5 bg-slate-900/80 px-2 py-0.5 rounded">Ambulance</span>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Government</span>
+                            </div>
+
+                            <!-- Control Room (Bottom Center) -->
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                                <div class="w-11 h-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-desktop text-base"></i>
+                                </div>
+                                <span class="text-[10px] font-mono font-bold text-slate-800 mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm border border-slate-200">Control Room</span>
                             </div>
                         </div>
                     </div>
@@ -232,193 +268,147 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 02. REPORT. CONNECT. COORDINATE. RESPOND. (ANIMATED SECTION) -->
+        <!-- 02. REPORT. CONNECT. COORDINATE. RESPOND. (Matching Design Board 02) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-02-animated-sequence">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">02 // WORKFLOW SEQUENCE</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+        <section class="py-16 md:py-20 px-6 md:px-12 bg-slate-950 text-white" id="section-02-animated-sequence">
+            <div class="max-w-7xl mx-auto space-y-8">
+                
+                <div class="text-left max-w-3xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-2">02 // SYNCHRONIZED PHASES</span>
+                    <h2 class="text-2xl sm:text-4xl font-black font-display text-white tracking-tight">
                         Report. Connect. Coordinate. Respond.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
-                        Four synchronized operational pillars delivering rapid emergency assistance from the field to hospital triage.
-                    </p>
                 </div>
 
-                <!-- 4 Step Header Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Step 01 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-300 hover:shadow-lg transition-all group">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-mono font-bold text-red-600 px-3 py-1 rounded-full bg-red-100">01</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-slate-400">PHASE 1</span>
+                <!-- 4 Step Image Cards Matching Design Board 02 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    
+                    <!-- 01 REPORT -->
+                    <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-red-500/50 transition-all">
+                        <div class="p-5 space-y-2 text-left">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-red-600 text-white font-mono text-xs font-bold flex items-center justify-center">01</span>
+                                <h3 class="text-lg font-bold font-display tracking-wider text-white">REPORT</h3>
+                            </div>
+                            <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                Citizens report emergencies with real-time information.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900 group-hover:text-red-600 transition-colors mb-2">REPORT</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                            Citizens report emergencies with real-time location, photo evidence, and incident details through verified channels.
-                        </p>
+                        <div class="h-48 w-full bg-slate-950 overflow-hidden relative">
+                            <img src="images/connect-step-01-report.jpg" alt="Report Emergency on Mobile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
                     </div>
 
-                    <!-- Step 02 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-mono font-bold text-blue-600 px-3 py-1 rounded-full bg-blue-100">02</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-slate-400">PHASE 2</span>
+                    <!-- 02 CONNECT -->
+                    <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-blue-500/50 transition-all">
+                        <div class="p-5 space-y-2 text-left">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-mono text-xs font-bold flex items-center justify-center">02</span>
+                                <h3 class="text-lg font-bold font-display tracking-wider text-white">CONNECT</h3>
+                            </div>
+                            <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                Information reaches the right authorities instantly.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900 group-hover:text-blue-600 transition-colors mb-2">CONNECT</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                            Information reaches the right authorities and control rooms instantly with zero telephonic bottleneck delay.
-                        </p>
+                        <div class="h-48 w-full bg-slate-950 overflow-hidden relative">
+                            <img src="images/connect-step-02-connect.jpg" alt="Control Room Connectivity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
                     </div>
 
-                    <!-- Step 03 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all group">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-mono font-bold text-indigo-600 px-3 py-1 rounded-full bg-indigo-100">03</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-slate-400">PHASE 3</span>
+                    <!-- 03 COORDINATE -->
+                    <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-indigo-500/50 transition-all">
+                        <div class="p-5 space-y-2 text-left">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-indigo-600 text-white font-mono text-xs font-bold flex items-center justify-center">03</span>
+                                <h3 class="text-lg font-bold font-display tracking-wider text-white">COORDINATE</h3>
+                            </div>
+                            <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                Departments work together on a unified incident.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900 group-hover:text-indigo-600 transition-colors mb-2">COORDINATE</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                            Police, EMS, and municipal departments collaborate on a unified live incident thread with shared situational data.
-                        </p>
+                        <div class="h-48 w-full bg-slate-950 overflow-hidden relative">
+                            <img src="images/connect-step-03-coordinate.jpg" alt="Multi-Agency Collaboration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
                     </div>
 
-                    <!-- Step 04 -->
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all group">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-mono font-bold text-emerald-600 px-3 py-1 rounded-full bg-emerald-100">04</span>
-                            <span class="text-xs font-mono uppercase tracking-widest text-slate-400">PHASE 4</span>
+                    <!-- 04 RESPOND -->
+                    <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:border-emerald-500/50 transition-all">
+                        <div class="p-5 space-y-2 text-left">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-red-600 text-white font-mono text-xs font-bold flex items-center justify-center">04</span>
+                                <h3 class="text-lg font-bold font-display tracking-wider text-white">RESPOND</h3>
+                            </div>
+                            <p class="text-xs text-slate-300 font-normal leading-relaxed">
+                                Faster, more efficient emergency response.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900 group-hover:text-emerald-600 transition-colors mb-2">RESPOND</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                            Faster, more efficient emergency response with pre-cleared traffic corridors and ER pre-arrival trauma prep.
-                        </p>
+                        <div class="h-48 w-full bg-slate-950 overflow-hidden relative">
+                            <img src="images/connect-step-04-respond.jpg" alt="Ambulance Rapid Response" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
                     </div>
-                </div>
 
-                <!-- 4 Visual Imagery Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
-                    <div class="rounded-2xl overflow-hidden shadow-md h-56 relative group">
-                        <img src="images/connect-app-mockup.jpg" alt="Citizen Report" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white text-xs font-display font-bold">1. Citizen SOS Reporting</div>
-                    </div>
-                    <div class="rounded-2xl overflow-hidden shadow-md h-56 relative group">
-                        <img src="police-control.jpg" alt="Control Room Connect" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white text-xs font-display font-bold">2. Central CAD Connect</div>
-                    </div>
-                    <div class="rounded-2xl overflow-hidden shadow-md h-56 relative group">
-                        <img src="research-tmc-team.jpg" alt="Multi Agency Coordinate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white text-xs font-display font-bold">3. Multi-Agency Command</div>
-                    </div>
-                    <div class="rounded-2xl overflow-hidden shadow-md h-56 relative group">
-                        <img src="shield-ambulance.png" alt="Rapid Response" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white text-xs font-display font-bold">4. Coordinated Fast Response</div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 03. THE PROBLEM (DISCONNECTED) -->
+        <!-- 03. THE PROBLEM (DISCONNECTED) (Matching Design Board 03) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden" id="section-03-the-problem">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden" id="section-03-the-problem">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
-                    <!-- Left: Problem Description & 7 Bullet Points -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-800/60">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-red-400">03 // The Problem</span>
-                        </div>
+                    <!-- Left: Problem Description & 7 Red X Points -->
+                    <div class="lg:col-span-6 space-y-6 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-red-400 block">
+                            The Problem
+                        </span>
 
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white leading-tight">
                             Emergency response is often disconnected.
                         </h2>
 
-                        <p class="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
-                            Information comes from multiple sources, leading to delays, duplicate reports, and severe communication gaps between responding departments.
+                        <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                            Information comes from multiple sources, leading to delays, duplicate reports and communication gaps between departments.
                         </p>
 
-                        <!-- 7 Bullet Points with Red (X) -->
-                        <div class="space-y-3 pt-2">
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                        <!-- 7 Bullet Points with Red (X) Matching Attachment 03 -->
+                        <div class="space-y-2.5 pt-2">
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
                                 <span class="text-xs sm:text-sm text-slate-200">Multiple reports about the same incident</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Incomplete or unclear incident information</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Incomplete or unclear information</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Delays in sharing critical incident details</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Delays in sharing incident details</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Difficulty identifying the exact location</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Difficulty identifying exact location</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Communication gaps between responding departments</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Communication gaps between departments</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Difficulty prioritizing multiple simultaneous emergencies</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Difficulty prioritizing multiple emergencies</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                                <span class="w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
-                                <span class="text-xs sm:text-sm text-slate-200">Limited visibility into ongoing incidents across the city</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-xs shrink-0 font-bold">&#10005;</span>
+                                <span class="text-xs sm:text-sm text-slate-200">Limited visibility into ongoing incidents</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Fragmented Visual Graphic with Warning Triangles -->
+                    <!-- Right: Disconnected Photographic Collage (Matching Design 03) -->
                     <div class="lg:col-span-6 relative flex items-center justify-center">
-                        <div class="w-full max-w-md p-8 rounded-3xl bg-slate-950 border border-red-900/50 shadow-2xl relative">
-                            <div class="text-center mb-8">
-                                <span class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest block mb-1">DISCONNECTED SYSTEM</span>
-                                <span class="text-sm text-slate-400">Fragmented Information Siloes</span>
-                            </div>
-
-                            <div class="relative flex flex-col items-center space-y-8">
-                                <!-- Citizens -->
-                                <div class="w-40 p-3 rounded-xl bg-slate-900 border border-slate-700 text-center shadow-md">
-                                    <i class="fa-solid fa-users text-blue-400 mb-1"></i>
-                                    <div class="text-xs font-bold font-display">Citizens</div>
-                                </div>
-
-                                <!-- Broken connection with Alert Triangle -->
-                                <div class="flex items-center gap-2 text-red-400 text-xs font-mono">
-                                    <span>&#9670;</span>
-                                    <span class="w-8 h-[2px] bg-red-500/50 border-dashed"></span>
-                                    <span class="px-2 py-0.5 rounded bg-red-950 border border-red-700 flex items-center gap-1 font-bold text-[10px]">
-                                        <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> DELAYS
-                                    </span>
-                                    <span class="w-8 h-[2px] bg-red-500/50 border-dashed"></span>
-                                    <span>&#9670;</span>
-                                </div>
-
-                                <!-- Responders Grid -->
-                                <div class="grid grid-cols-3 gap-3 w-full">
-                                    <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-                                        <i class="fa-solid fa-headset text-purple-400 mb-1"></i>
-                                        <div class="text-[10px] font-bold">Control Room</div>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-                                        <i class="fa-solid fa-shield text-blue-400 mb-1"></i>
-                                        <div class="text-[10px] font-bold">Police</div>
-                                    </div>
-                                    <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
-                                        <i class="fa-solid fa-truck-medical text-red-400 mb-1"></i>
-                                        <div class="text-[10px] font-bold">Ambulance</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative bg-slate-950">
+                            <img src="images/connect-problem-collage.jpg" alt="Disconnected Emergency Response Collage" class="w-full h-auto object-cover filter contrast-105" />
                         </div>
                     </div>
 
@@ -427,173 +417,165 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 04. ONE CONNECTED ECOSYSTEM (SOLUTION) -->
+        <!-- 04. ONE CONNECTED ECOSYSTEM (SOLUTION) (Matching Design Board 04) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-04-solution">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">04 // The Solution</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
-                        From fragmented information to one connected incident.
-                    </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal leading-relaxed">
-                        EMSTRAP Connect brings all emergency reports into a unified ecosystem, helping authorities respond faster, eliminate duplicate dispatches, and save crucial minutes.
-                    </p>
-                </div>
-
-                <!-- Hub and Spoke Solution Diagram -->
-                <div class="relative w-full max-w-2xl mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-3xl bg-slate-50 border border-slate-200 p-8 flex items-center justify-center shadow-lg">
-                    <!-- Central Hub: EMSTRAP CONNECT -->
-                    <div class="relative z-20 w-36 h-36 rounded-full bg-brandBlue text-white flex flex-col items-center justify-center p-3 text-center node-pulse shadow-xl">
-                        <i class="fa-solid fa-circle-nodes text-2xl mb-1"></i>
-                        <span class="text-xs font-black font-display uppercase tracking-wider">EMSTRAP<br/>CONNECT</span>
-                    </div>
-
-                    <!-- Surrounding Nodes -->
-                    <!-- Citizens (Top) -->
-                    <div class="absolute top-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-blue-600">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Citizens</span>
-                    </div>
-
-                    <!-- Police (Top Left) -->
-                    <div class="absolute top-16 left-12 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-slate-800">
-                            <i class="fa-solid fa-shield"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Police</span>
-                    </div>
-
-                    <!-- Government (Top Right) -->
-                    <div class="absolute top-16 right-12 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-amber-600">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Government</span>
-                    </div>
-
-                    <!-- Ambulance (Bottom Left) -->
-                    <div class="absolute bottom-8 left-16 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-red-600">
-                            <i class="fa-solid fa-truck-medical"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Ambulance</span>
-                    </div>
-
-                    <!-- Hospitals (Bottom Right) -->
-                    <div class="absolute bottom-8 right-16 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-emerald-600">
-                            <i class="fa-solid fa-hospital"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Hospitals</span>
-                    </div>
-
-                    <!-- Municipal (Bottom Center) -->
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                        <div class="w-11 h-11 rounded-xl bg-white border border-slate-300 shadow flex items-center justify-center text-purple-600">
-                            <i class="fa-solid fa-city"></i>
-                        </div>
-                        <span class="text-[11px] font-mono font-bold text-slate-700 mt-1">Municipal</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 05. WHAT IS EMSTRAP CONNECT? -->
-        <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-50" id="section-05-what-is-connect">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100" id="section-04-solution">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
-                    <!-- Left: Product Overview Content -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue">05 // Product Overview</span>
-                        </div>
-
+                    <!-- Left: Text -->
+                    <div class="lg:col-span-5 space-y-4 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">
+                            The Solution
+                        </span>
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-slate-900 tracking-tight leading-tight">
+                            From fragmented information to one connected incident.
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                            EMSTRAP Connect brings all emergency reports into a unified ecosystem, helping authorities respond faster and more effectively.
+                        </p>
+                    </div>
+
+                    <!-- Right: Circular Ecosystem Solution Diagram Matching Design 04 -->
+                    <div class="lg:col-span-7 flex items-center justify-center">
+                        <div class="relative w-full max-w-[460px] aspect-square rounded-3xl bg-slate-50 border border-slate-200 p-8 flex items-center justify-center shadow-lg">
+                            
+                            <!-- Central Hub -->
+                            <div class="relative z-20 w-32 h-32 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center p-3 text-center node-pulse shadow-xl">
+                                <span class="text-[11px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
+                            </div>
+
+                            <!-- SVG Radial Lines -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
+                                <line x1="200" y1="200" x2="200" y2="60" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="200" y1="200" x2="320" y2="120" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="200" y1="200" x2="320" y2="280" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="200" y1="200" x2="200" y2="340" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="200" y1="200" x2="80" y2="280" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                                <line x1="200" y1="200" x2="80" y2="120" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                            </svg>
+
+                            <!-- 6 Satellite Nodes (Citizens, Government, Hospitals, Municipal, Ambulance, Police) -->
+                            <!-- Citizens (Top) -->
+                            <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-user text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Citizens</span>
+                            </div>
+
+                            <!-- Government (Top Right) -->
+                            <div class="absolute top-16 right-10 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-blue-800 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-landmark text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Government</span>
+                            </div>
+
+                            <!-- Hospitals (Bottom Right) -->
+                            <div class="absolute bottom-16 right-10 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-hospital text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Hospitals</span>
+                            </div>
+
+                            <!-- Municipal (Bottom Center) -->
+                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-building text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Municipal</span>
+                            </div>
+
+                            <!-- Ambulance (Bottom Left) -->
+                            <div class="absolute bottom-16 left-10 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-truck-medical text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Ambulance</span>
+                            </div>
+
+                            <!-- Police (Top Left) -->
+                            <div class="absolute top-16 left-10 z-20 flex flex-col items-center">
+                                <div class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center shadow">
+                                    <i class="fa-solid fa-shield text-sm"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-800 mt-1">Police</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 05. WHAT IS EMSTRAP CONNECT? (Matching Design Board 05) -->
+        <!-- ===================================================================== -->
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100" id="section-05-what-is-connect">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left: Product Overview -->
+                    <div class="lg:col-span-5 space-y-4 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">
+                            Product Overview
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight leading-tight">
                             A digital communication bridge between citizens and government emergency-response systems.
                         </h2>
-
-                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                        <p class="text-sm text-slate-600 font-normal leading-relaxed">
                             A citizen can report an emergency with location, description, image and incident details. EMSTRAP Connect processes the report and connects it with the appropriate emergency-response workflow.
                         </p>
-
-                        <!-- The 5 Report Components list -->
-                        <div class="space-y-3 pt-2">
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                                <span class="w-8 h-8 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-list-check"></i></span>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-900 block">Emergency Type</span>
-                                    <span class="text-[11px] text-slate-500">Categorizes incident (Accident, Medical, Fire, Civic hazard)</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                                <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-align-left"></i></span>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-900 block">Description</span>
-                                    <span class="text-[11px] text-slate-500">Firsthand text context explaining what happened</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                                <span class="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-location-dot"></i></span>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-900 block">Location Coordinates</span>
-                                    <span class="text-[11px] text-slate-500">Automated sub-meter GPS pin &amp; landmark triangulation</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                                <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-camera"></i></span>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-900 block">Scene Image Evidence</span>
-                                    <span class="text-[11px] text-slate-500">Live scene photo to verify severity and road conditions</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-                                <span class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-circle-info"></i></span>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-900 block">Incident Details</span>
-                                    <span class="text-[11px] text-slate-500">Estimated victims, road blockage, and trauma urgency level</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <!-- Right: Smartphone Mockup with 5 Connector Badges -->
-                    <div class="lg:col-span-6 flex items-center justify-center">
-                        <div class="relative w-full max-w-sm rounded-[32px] bg-slate-900 p-3 shadow-2xl border-4 border-slate-800">
-                            <!-- Phone Screen -->
-                            <div class="rounded-[24px] bg-white p-5 space-y-4 text-slate-800">
-                                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                                    <span class="text-xs font-bold font-display text-slate-900">New Emergency</span>
-                                    <span class="text-[10px] font-mono text-red-600 font-bold bg-red-50 px-2 py-0.5 rounded">SOS ACTIVE</span>
+                    <!-- Right: Mobile App Mockup with 5 Callouts Matching Design 05 -->
+                    <div class="lg:col-span-7 flex items-center justify-center">
+                        <div class="relative flex items-center gap-6 sm:gap-8 max-w-lg w-full">
+                            <!-- Phone Mockup Container -->
+                            <div class="w-56 sm:w-64 rounded-3xl bg-slate-900 p-2.5 shadow-2xl border-4 border-slate-800 shrink-0">
+                                <div class="rounded-2xl overflow-hidden bg-white">
+                                    <img src="images/connect-app-phone.jpg" alt="EMSTRAP Connect Citizen App" class="w-full h-auto object-cover" />
                                 </div>
-                                <div class="space-y-3 text-xs">
-                                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                                        <span class="text-[10px] font-mono text-slate-400 uppercase block">Emergency Type</span>
-                                        <span class="font-bold text-slate-900">Road Accident</span>
-                                    </div>
-                                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                                        <span class="text-[10px] font-mono text-slate-400 uppercase block">Description</span>
-                                        <span class="text-slate-600">Multiple vehicles collision, 2 injured individuals.</span>
-                                    </div>
-                                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
-                                        <div>
-                                            <span class="text-[10px] font-mono text-slate-400 uppercase block">Location</span>
-                                            <span class="font-mono text-[11px] font-bold text-slate-800">12.9716° N, 77.5946° E</span>
-                                        </div>
-                                        <i class="fa-solid fa-location-crosshairs text-brandBlue"></i>
-                                    </div>
-                                    <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
-                                        <span class="text-[10px] font-mono text-slate-400 uppercase">Scene Photo</span>
-                                        <span class="text-[11px] font-mono text-emerald-600 font-bold">1 Image Attached</span>
-                                    </div>
-                                    <button class="w-full py-3 rounded-xl bg-emergencyRed text-white font-bold text-xs uppercase tracking-wider shadow-md">
-                                        Send Report
-                                    </button>
+                            </div>
+
+                            <!-- 5 Callout Badges on Right -->
+                            <div class="space-y-3.5 text-left w-full">
+                                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-list-check"></i>
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-800">Emergency Type</span>
+                                </div>
+
+                                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-align-left"></i>
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-800">Description</span>
+                                </div>
+
+                                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-800">Location</span>
+                                </div>
+
+                                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-image"></i>
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-800">Image</span>
+                                </div>
+
+                                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-800">Incident Details</span>
                                 </div>
                             </div>
                         </div>
@@ -604,279 +586,281 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 06. LOCATION + DESCRIPTION + IMAGE + INCIDENT DETAILS -->
+        <!-- 06. LOCATION + DESCRIPTION + IMAGE + INCIDENT DETAILS (Design 06) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-06-report-info">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100" id="section-06-report-info">
+            <div class="max-w-7xl mx-auto space-y-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">06 // Report Information</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Report Information</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight">
                         Every report adds to a clearer picture.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
-                        Citizens can share key information that helps authorities understand and respond to the incident with precision.
+                    <p class="text-sm text-slate-600 mt-2 font-normal">
+                        Citizens can share key information that helps authorities understand and respond to the incident.
                     </p>
                 </div>
 
-                <!-- 4 Radiating Cards around central INCIDENT circle -->
-                <div class="relative w-full max-w-3xl mx-auto p-8 rounded-3xl bg-slate-50 border border-slate-200 flex items-center justify-center min-h-[380px]">
+                <!-- 4 Radiating Cards around central INCIDENT circle Matching Design 06 -->
+                <div class="relative w-full max-w-3xl mx-auto p-8 rounded-3xl bg-slate-50 border border-slate-200 flex items-center justify-center min-h-[360px]">
                     <!-- Central Incident Circle -->
-                    <div class="w-28 h-28 rounded-full bg-slate-900 text-white flex flex-col items-center justify-center text-center p-2 z-20 shadow-xl border-4 border-white">
-                        <i class="fa-solid fa-triangle-exclamation text-amber-400 text-xl mb-1"></i>
+                    <div class="w-28 h-28 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center text-center p-2 z-20 shadow-xl border-4 border-white">
                         <span class="text-xs font-black font-display uppercase tracking-wider">INCIDENT</span>
                     </div>
 
+                    <!-- SVG Lines -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 600 360">
+                        <line x1="300" y1="180" x2="160" y2="70" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="300" y1="180" x2="440" y2="70" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="300" y1="180" x2="160" y2="290" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="300" y1="180" x2="440" y2="290" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                    </svg>
+
                     <!-- Card 1: Location (Top Left) -->
-                    <div class="absolute top-4 left-4 sm:left-12 max-w-[200px] p-4 rounded-xl bg-white border border-slate-200 shadow-md">
+                    <div class="absolute top-4 left-4 sm:left-12 max-w-[210px] p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
                         <div class="text-brandBlue font-bold text-xs flex items-center gap-1.5 mb-1">
                             <i class="fa-solid fa-location-dot"></i>
                             <span>Location</span>
                         </div>
-                        <p class="text-[11px] text-slate-500">Latitude &amp; Longitude with GPS precision</p>
+                        <p class="text-[11px] text-slate-500">Latitude &amp; Longitude</p>
                     </div>
 
                     <!-- Card 2: Description (Top Right) -->
-                    <div class="absolute top-4 right-4 sm:right-12 max-w-[200px] p-4 rounded-xl bg-white border border-slate-200 shadow-md">
-                        <div class="text-emerald-600 font-bold text-xs flex items-center gap-1.5 mb-1">
+                    <div class="absolute top-4 right-4 sm:right-12 max-w-[210px] p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
+                        <div class="text-brandBlue font-bold text-xs flex items-center gap-1.5 mb-1">
                             <i class="fa-solid fa-file-lines"></i>
                             <span>Description</span>
                         </div>
-                        <p class="text-[11px] text-slate-500">Incident details in text by eye-witnesses</p>
+                        <p class="text-[11px] text-slate-500">Incident details in text</p>
                     </div>
 
                     <!-- Card 3: Image (Bottom Left) -->
-                    <div class="absolute bottom-4 left-4 sm:left-12 max-w-[200px] p-4 rounded-xl bg-white border border-slate-200 shadow-md">
-                        <div class="text-amber-600 font-bold text-xs flex items-center gap-1.5 mb-1">
+                    <div class="absolute bottom-4 left-4 sm:left-12 max-w-[210px] p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
+                        <div class="text-brandBlue font-bold text-xs flex items-center gap-1.5 mb-1">
                             <i class="fa-solid fa-image"></i>
                             <span>Image</span>
                         </div>
-                        <p class="text-[11px] text-slate-500">Verified scene photos from the ground</p>
+                        <p class="text-[11px] text-slate-500">Photos from the scene</p>
                     </div>
 
                     <!-- Card 4: Incident Details (Bottom Right) -->
-                    <div class="absolute bottom-4 right-4 sm:right-12 max-w-[200px] p-4 rounded-xl bg-white border border-slate-200 shadow-md">
-                        <div class="text-purple-600 font-bold text-xs flex items-center gap-1.5 mb-1">
-                            <i class="fa-solid fa-clock"></i>
+                    <div class="absolute bottom-4 right-4 sm:right-12 max-w-[210px] p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm text-left">
+                        <div class="text-brandBlue font-bold text-xs flex items-center gap-1.5 mb-1">
+                            <i class="fa-solid fa-list"></i>
                             <span>Incident Details</span>
                         </div>
-                        <p class="text-[11px] text-slate-500">Time, type, severity, and casualty flags</p>
+                        <p class="text-[11px] text-slate-500">Time, type and more</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 07. ONE INCIDENT. MULTIPLE REPORTS. (DUPLICATE DETECTION) -->
+        <!-- 07. ONE INCIDENT, MULTIPLE REPORTS (Matching Design Board 07) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-50" id="section-07-duplicate-detection">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">07 // Duplicate Detection</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
-                        One Incident. Multiple Reports.
-                    </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal leading-relaxed">
-                        When multiple people report the same incident, EMSTRAP Connect identifies reports from the same location and associates them with a single incident thread.
-                    </p>
-                </div>
-
-                <!-- Duplicate Detection Visual: 5 Reports Converging into 1 Incident -->
-                <div class="max-w-3xl mx-auto p-8 rounded-3xl bg-white border border-slate-200 shadow-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                        
-                        <!-- Left: 5 Stacked Citizen Reports -->
-                        <div class="md:col-span-5 space-y-2.5">
-                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                                <span class="font-semibold text-slate-800">Citizen 1 Report</span>
-                                <span class="text-[10px] font-mono text-slate-400">12:04:10</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                                <span class="font-semibold text-slate-800">Citizen 2 Report</span>
-                                <span class="text-[10px] font-mono text-slate-400">12:04:22</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                                <span class="font-semibold text-slate-800">Citizen 3 Report</span>
-                                <span class="text-[10px] font-mono text-slate-400">12:04:45</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                                <span class="font-semibold text-slate-800">Citizen 4 Report</span>
-                                <span class="text-[10px] font-mono text-slate-400">12:05:01</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                                <span class="font-semibold text-slate-800">Citizen 5 Report</span>
-                                <span class="text-[10px] font-mono text-slate-400">12:05:15</span>
-                            </div>
-                        </div>
-
-                        <!-- Center: Convergence Arrow / SVG -->
-                        <div class="md:col-span-2 flex items-center justify-center text-brandBlue text-2xl">
-                            <i class="fa-solid fa-arrow-right-long hidden md:block"></i>
-                            <i class="fa-solid fa-arrow-down-long md:hidden"></i>
-                        </div>
-
-                        <!-- Right: Merged Single Incident Card -->
-                        <div class="md:col-span-5 p-6 rounded-2xl bg-red-50 border border-red-200 text-center space-y-3">
-                            <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto text-xl shadow-md">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-black font-display text-slate-900">ONE INCIDENT</h4>
-                                <span class="text-xs font-mono font-bold text-red-600 block mt-1">1 Incident + 5 Reports Associated</span>
-                            </div>
-                            <p class="text-[11px] text-slate-600 font-normal">
-                                Prevents dispatcher overload and eliminates duplicate ambulance or squad car dispatches.
-                            </p>
-                        </div>
-
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100" id="section-07-duplicate-detection">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left: Duplicate Detection -->
+                    <div class="lg:col-span-5 space-y-4 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">
+                            Duplicate Detection
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight leading-tight">
+                            One Incident.<br/>Multiple Reports.
+                        </h2>
+                        <p class="text-sm text-slate-600 font-normal leading-relaxed">
+                            When multiple people report the same incident, EMSTRAP can identify reports from the same location and associate them with a single incident.
+                        </p>
                     </div>
+
+                    <!-- Right: 5 Reports Converging Into 1 Incident (Design 07) -->
+                    <div class="lg:col-span-7 flex items-center justify-center">
+                        <div class="max-w-xl w-full p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-lg">
+                            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                                
+                                <!-- 5 Stacked Citizen Report Pills -->
+                                <div class="space-y-2 w-full sm:w-44">
+                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-user text-[10px] text-brandBlue"></i>
+                                        <span>Citizen 1 Report</span>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-user text-[10px] text-brandBlue"></i>
+                                        <span>Citizen 2 Report</span>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-user text-[10px] text-brandBlue"></i>
+                                        <span>Citizen 3 Report</span>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-user text-[10px] text-brandBlue"></i>
+                                        <span>Citizen 4 Report</span>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-2">
+                                        <i class="fa-solid fa-user text-[10px] text-brandBlue"></i>
+                                        <span>Citizen 5 Report</span>
+                                    </div>
+                                </div>
+
+                                <!-- Connecting Bracket Graphic -->
+                                <div class="hidden sm:flex flex-col items-center justify-center text-brandBlue px-2">
+                                    <svg width="40" height="150" viewBox="0 0 40 150">
+                                        <path d="M 0 15 Q 20 15 20 75 T 40 75" fill="none" stroke="#2563EB" stroke-width="2" />
+                                        <path d="M 0 45 Q 20 45 20 75 T 40 75" fill="none" stroke="#2563EB" stroke-width="2" />
+                                        <path d="M 0 75 L 40 75" fill="none" stroke="#2563EB" stroke-width="2" />
+                                        <path d="M 0 105 Q 20 105 20 75 T 40 75" fill="none" stroke="#2563EB" stroke-width="2" />
+                                        <path d="M 0 135 Q 20 135 20 75 T 40 75" fill="none" stroke="#2563EB" stroke-width="2" />
+                                    </svg>
+                                </div>
+
+                                <!-- Target Single Incident Card Matching Design 07 -->
+                                <div class="w-full sm:w-56 p-5 rounded-2xl bg-white border-2 border-red-500 shadow-md text-center space-y-2">
+                                    <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto text-sm">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <h4 class="text-sm font-black font-display text-slate-900 tracking-tight">ONE INCIDENT</h4>
+                                    <span class="text-xs font-mono font-bold text-red-600 block">1 Incident + 5 Reports</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 08. 8-STEP EMSTRAP CONNECT ENGINE -->
+        <!-- 08. 8-STEP EMSTRAP CONNECT ENGINE (Matching Design Board 08) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-08-engine">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100" id="section-08-engine">
+            <div class="max-w-7xl mx-auto space-y-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">08 // How It Works</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">How It Works</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight">
                         From report to resolution.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
+                    <p class="text-sm text-slate-600 mt-2 font-normal">
                         A structured 8-step process to ensure faster, smarter and more coordinated emergency response.
                     </p>
                 </div>
 
-                <!-- 8-Step Connected Pipeline -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+                <!-- 8-Step Stepper Bar Matching Design 08 -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 pt-4">
                     <!-- 01 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">01</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-file-lines text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">01</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Report</h4>
-                        <p class="text-[10px] text-slate-500">Citizen alert lodged</p>
                     </div>
                     <!-- 02 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">02</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-location-dot text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">02</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Locate</h4>
-                        <p class="text-[10px] text-slate-500">GPS triangulated</p>
                     </div>
                     <!-- 03 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">03</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-fingerprint text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">03</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Identify</h4>
-                        <p class="text-[10px] text-slate-500">Duplicate detection</p>
                     </div>
                     <!-- 04 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">04</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-chart-simple text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">04</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Analyze</h4>
-                        <p class="text-[10px] text-slate-500">AI triage parsing</p>
                     </div>
                     <!-- 05 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">05</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-arrow-down-wide-short text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">05</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Prioritize</h4>
-                        <p class="text-[10px] text-slate-500">Urgency ranking</p>
                     </div>
                     <!-- 06 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">06</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-link text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">06</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Connect</h4>
-                        <p class="text-[10px] text-slate-500">Route to units</p>
                     </div>
                     <!-- 07 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-blue-100 text-brandBlue font-bold text-xs font-mono flex items-center justify-center mx-auto">07</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-brandBlue text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-arrows-split-up-and-left text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">07</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Coordinate</h4>
-                        <p class="text-[10px] text-slate-500">Multi-agency sync</p>
                     </div>
                     <!-- 08 -->
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
-                        <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs font-mono flex items-center justify-center mx-auto">08</div>
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 hover:border-brandBlue transition-all">
+                        <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center mx-auto">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400 block">08</span>
                         <h4 class="text-xs font-bold font-display text-slate-900">Resolve</h4>
-                        <p class="text-[10px] text-slate-500">ER handoff &amp; close</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 09. LOCATION INTELLIGENCE -->
+        <!-- 09. LOCATION INTELLIGENCE (Matching Design Board 09) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden" id="section-09-location-intelligence">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden" id="section-09-location-intelligence">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- Left: Capabilities & Checkmarks -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950 border border-blue-800">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-blue-400">09 // Location Intelligence</span>
-                        </div>
+                    <div class="lg:col-span-5 space-y-6 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">
+                            Location Intelligence
+                        </span>
 
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white leading-tight">
                             Know where the emergency is happening.
                         </h2>
 
-                        <p class="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
-                            EMSTRAP Connect uses latitude and longitude from emergency reports to identify, organize and visualize incidents geographically in real-time.
+                        <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                            EMSTRAP Connect uses latitude and longitude from emergency reports to identify, organize and visualize incidents geographically.
                         </p>
 
                         <div class="space-y-3 pt-2">
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-blue-500/20 text-brandBlue flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-200 font-medium">Identify incident locations with pin-point accuracy</span>
+                                <span class="text-sm text-slate-200">Identify incident locations</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-blue-500/20 text-brandBlue flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-200 font-medium">Detect nearby active incidents and response assets</span>
+                                <span class="text-sm text-slate-200">Detect nearby active incidents</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-blue-500/20 text-brandBlue flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-200 font-medium">Understand incident patterns across city zones</span>
+                                <span class="text-sm text-slate-200">Understand incident patterns</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-blue-500/20 text-brandBlue flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-200 font-medium">Monitor real-time activity and traffic flow</span>
+                                <span class="text-sm text-slate-200">Monitor real-time activity</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Radar Console Visual with Active Incident Card -->
-                    <div class="lg:col-span-6 flex items-center justify-center">
-                        <div class="w-full max-w-md p-6 rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl relative overflow-hidden">
-                            <!-- Radar sweep canvas simulation -->
-                            <div class="relative w-64 h-64 mx-auto rounded-full border border-blue-500/30 flex items-center justify-center my-4">
-                                <div class="absolute inset-8 rounded-full border border-blue-500/20"></div>
-                                <div class="absolute inset-16 rounded-full border border-blue-500/10"></div>
-                                <div class="absolute inset-0 flex items-center justify-center"><div class="w-full h-[1px] bg-blue-500/20"></div></div>
-                                <div class="absolute inset-0 flex items-center justify-center"><div class="h-full w-[1px] bg-blue-500/20"></div></div>
-                                <div class="absolute inset-0 rounded-full radar-beam pointer-events-none" style="background: conic-gradient(from 0deg, rgba(37, 99, 235, 0.4) 0deg, transparent 60deg, transparent 360deg);"></div>
-                                
-                                <!-- Active Incident Pin inside Radar -->
-                                <div class="relative z-20 flex flex-col items-center">
-                                    <div class="w-4 h-4 rounded-full bg-red-600 animate-ping"></div>
-                                    <div class="w-3 h-3 rounded-full bg-red-500 absolute top-0.5"></div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Active Incident Card -->
-                            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-700/80 shadow-lg space-y-2">
-                                <div class="flex items-center justify-between text-xs">
-                                    <span class="font-bold text-white flex items-center gap-1.5">
-                                        <span class="w-2 h-2 rounded-full bg-red-500"></span> Active Incident
-                                    </span>
-                                    <span class="px-2 py-0.5 rounded bg-red-950 text-red-400 font-mono text-[10px] font-bold">High Priority</span>
-                                </div>
-                                <div class="text-xs text-slate-300 font-mono">
-                                    Type: Road Accident &bull; 12.9716° N, 77.5946° E
-                                </div>
-                                <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono pt-1 border-t border-slate-800">
-                                    <span>5 Reports Associated</span>
-                                    <span class="text-blue-400">Geofenced (250m)</span>
-                                </div>
-                            </div>
+                    <!-- Right: Radar Console Visual with Active Incident Card (Design 09) -->
+                    <div class="lg:col-span-7 flex items-center justify-center">
+                        <div class="w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative bg-slate-950">
+                            <img src="images/connect-location-radar.jpg" alt="Location Intelligence Radar Display" class="w-full h-auto object-cover filter contrast-105" />
                         </div>
                     </div>
 
@@ -885,30 +869,29 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 10. AI-ASSISTED INCIDENT UNDERSTANDING -->
+        <!-- 10. AI-ASSISTED INCIDENT UNDERSTANDING (Matching Design Board 10) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-10-ai-understanding">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">10 // AI Assistance</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-950 text-white" id="section-10-ai-understanding">
+            <div class="max-w-7xl mx-auto space-y-8">
+                <div class="text-left max-w-3xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-1">AI Assistance</span>
+                    <h2 class="text-2xl sm:text-4xl font-black font-display text-white tracking-tight">
                         Turn emergency reports into actionable information.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
-                        AI-assisted analysis helps understand the information provided and identify important incident characteristics in milliseconds.
+                    <p class="text-sm text-slate-400 mt-2 font-normal">
+                        AI-assisted analysis helps understand the information provided and identify important incident characteristics.
                     </p>
                 </div>
 
-                <!-- 3-Part Transformation Pipeline -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center max-w-5xl mx-auto">
+                <!-- 3-Part Terminal Grid Matching Design 10 -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                     
                     <!-- 1. Raw Report Card -->
-                    <div class="md:col-span-4 p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
+                    <div class="md:col-span-4 p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-3 text-left">
                         <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">Raw Report</span>
-                        <div class="p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 italic leading-relaxed">
+                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 italic leading-relaxed">
                             &ldquo;There has been a road accident. Two people appear injured and one person is unconscious.&rdquo;
                         </div>
-                        <span class="text-[10px] font-mono text-slate-400 block">Submitted via citizen mobile SOS</span>
                     </div>
 
                     <!-- 2. AI Waveform Center Graphic -->
@@ -924,24 +907,24 @@
                             <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
                             <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
                         </div>
-                        <span class="text-[11px] font-mono text-slate-400 block animate-pulse">Analyzing text &amp; telemetry...</span>
+                        <span class="text-[11px] font-mono text-slate-400 block animate-pulse">Analyzing...</span>
                     </div>
 
                     <!-- 3. System Understanding Structured Output -->
-                    <div class="md:col-span-4 p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 block">System Understanding</span>
+                    <div class="md:col-span-4 p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg space-y-3 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">System Understanding</span>
                         <div class="space-y-2 text-xs">
-                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex justify-between items-center">
-                                <span class="text-slate-500">Incident:</span>
-                                <span class="font-bold text-slate-900">Road Accident</span>
+                            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                                <span class="text-slate-400">Incident</span>
+                                <span class="font-bold text-white">Road Accident</span>
                             </div>
-                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex justify-between items-center">
-                                <span class="text-slate-500">Severity:</span>
-                                <span class="px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-bold text-[10px]">Critical</span>
+                            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                                <span class="text-slate-400">Severity</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-red-600 text-white font-bold text-[10px]">Critical</span>
                             </div>
-                            <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex justify-between items-center">
-                                <span class="text-slate-500">Assistance:</span>
-                                <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-bold text-[10px]">Medical Response Required</span>
+                            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                                <span class="text-slate-400">Assistance</span>
+                                <span class="font-bold text-slate-200">Medical Response Required</span>
                             </div>
                         </div>
                     </div>
@@ -951,57 +934,49 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 11. FINAL CITY (SMART CITIES) -->
+        <!-- 11. FINAL CITY (SMART CITIES) (Matching Design Board 11) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-50" id="section-11-smart-cities">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100" id="section-11-smart-cities">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- Left: Smart City Capabilities -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue">11 // Smart Cities</span>
-                        </div>
+                    <div class="lg:col-span-5 space-y-6 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">
+                            Smart Cities
+                        </span>
 
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-slate-900 tracking-tight leading-tight">
                             A connected emergency layer for the city.
                         </h2>
 
                         <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-                            EMSTRAP Connect integrates seamlessly into a smart city's broader digital public-safety ecosystem, connecting urban IoT sensors with rapid civilian escalation.
+                            EMSTRAP Connect can become part of a city's broader digital public-safety ecosystem.
                         </p>
 
                         <div class="space-y-3 pt-2">
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-700 font-medium">Receive verified citizen emergency reports</span>
+                                <span class="text-sm text-slate-700">Receive citizen emergency reports</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-700 font-medium">Monitor active incidents across city zones in real time</span>
+                                <span class="text-sm text-slate-700">Monitor incidents across the city</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-700 font-medium">Coordinate directly with police, ambulance, and municipal bodies</span>
+                                <span class="text-sm text-slate-700">Coordinate with departments</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">&#10003;</span>
-                                <span class="text-sm text-slate-700 font-medium">Centralized dashboard view of all civic emergency activity</span>
+                                <span class="text-sm text-slate-700">Centralized view of emergency activity</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Smart City Visual with Connected Nodes -->
-                    <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl relative h-[360px] group">
-                        <img src="shield-smartcity.jpg" alt="Connected Smart City" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white">
-                            <div>
-                                <span class="text-xs font-mono uppercase tracking-widest text-blue-400 block">URBAN RESILIENCE</span>
-                                <h3 class="text-lg font-bold font-display">Synchronized Smart City Mesh</h3>
-                            </div>
-                            <span class="px-3 py-1 rounded-full bg-brandBlue text-white text-[10px] font-mono font-bold">24/7 ACTIVE</span>
-                        </div>
+                    <!-- Right: Smart City Visual with Connected Nodes (Design 11) -->
+                    <div class="lg:col-span-7 rounded-3xl overflow-hidden shadow-2xl relative bg-slate-950">
+                        <img src="images/connect-smartcity-network.jpg" alt="Connected Smart City Layer" class="w-full h-auto object-cover" />
                     </div>
 
                 </div>
@@ -1009,106 +984,91 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 12. POLICE DEPARTMENT -->
+        <!-- 12. POLICE DEPARTMENT (Matching Design Board 12) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-12-police">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100" id="section-12-police">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- Left: Police Department Content -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue">12 // Police Departments</span>
-                        </div>
+                    <div class="lg:col-span-5 space-y-6 text-left">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">
+                            Police Departments
+                        </span>
 
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-slate-900 tracking-tight leading-tight">
                             From citizen report to coordinated response.
                         </h2>
 
                         <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-                            An additional digital channel for receiving and managing emergency reports, empowering CAD dispatchers with live GPS tracking and priority scoring.
+                            An additional digital channel for receiving and managing emergency reports.
                         </p>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
-                                <span>Citizen digital reporting</span>
+                        <div class="space-y-2.5 pt-2">
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
+                                <span>Citizen reporting</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
                                 <span>Location-based incidents</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
                                 <span>Incident prioritization</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
-                                <span>Team dispatch comms</span>
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
+                                <span>Communication with response teams</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
-                                <span>Real-time unit tracking</span>
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
+                                <span>Incident tracking</span>
                             </div>
-                            <div class="flex items-center gap-2.5 text-xs text-slate-700 font-medium">
-                                <i class="fa-solid fa-check text-brandBlue"></i>
-                                <span>Compliance &amp; audit records</span>
+                            <div class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                                <span class="w-4 h-4 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center text-[10px]">&#10003;</span>
+                                <span>Emergency records and reporting</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Active Incidents CAD Telemetry Widget -->
-                    <div class="lg:col-span-6 rounded-3xl bg-slate-900 p-6 text-white shadow-2xl border border-slate-800 space-y-4">
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">ACTIVE INCIDENTS CAD</span>
-                            <span class="text-xs font-mono text-emerald-400 font-bold">12 Total Active</span>
+                    <!-- Right: Split Photo + Live CAD Console (Design 12) -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                        <!-- Photo of Dispatcher -->
+                        <div class="sm:col-span-6 rounded-2xl overflow-hidden shadow-lg h-64 sm:h-72 bg-slate-950">
+                            <img src="images/connect-police-operator.jpg" alt="Police Command Center Dispatcher" class="w-full h-full object-cover" />
                         </div>
 
-                        <!-- Stats Bar -->
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs py-2 bg-slate-950/60 rounded-xl border border-slate-800">
-                            <div>
-                                <span class="text-lg font-black font-display text-red-500 block">3</span>
-                                <span class="text-[10px] text-slate-400 font-mono">Critical</span>
+                        <!-- CAD Telemetry Card -->
+                        <div class="sm:col-span-6 rounded-2xl bg-slate-900 p-4 text-white shadow-xl border border-slate-800 space-y-3 text-left">
+                            <div class="border-b border-slate-800 pb-2">
+                                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Active Incidents</span>
+                                <div class="grid grid-cols-4 gap-1 text-center font-mono mt-1">
+                                    <div class="bg-slate-950/60 p-1 rounded"><span class="text-sm font-bold text-white block">12</span><span class="text-[8px] text-slate-500">Total</span></div>
+                                    <div class="bg-slate-950/60 p-1 rounded"><span class="text-sm font-bold text-red-500 block">3</span><span class="text-[8px] text-slate-500">Critical</span></div>
+                                    <div class="bg-slate-950/60 p-1 rounded"><span class="text-sm font-bold text-amber-500 block">5</span><span class="text-[8px] text-slate-500">High</span></div>
+                                    <div class="bg-slate-950/60 p-1 rounded"><span class="text-sm font-bold text-blue-500 block">4</span><span class="text-[8px] text-slate-500">Medium</span></div>
+                                </div>
                             </div>
-                            <div>
-                                <span class="text-lg font-black font-display text-amber-500 block">5</span>
-                                <span class="text-[10px] text-slate-400 font-mono">High</span>
-                            </div>
-                            <div>
-                                <span class="text-lg font-black font-display text-blue-500 block">4</span>
-                                <span class="text-[10px] text-slate-400 font-mono">Medium</span>
-                            </div>
-                        </div>
 
-                        <!-- Incidents Table -->
-                        <div class="space-y-2 text-xs">
-                            <div class="p-2.5 rounded-lg bg-slate-800/80 flex items-center justify-between border border-slate-700/50">
-                                <div class="flex items-center gap-2 font-mono">
-                                    <span class="text-slate-400">#2041</span>
-                                    <span class="font-sans font-bold text-slate-200">Road Accident</span>
+                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Latest Incidents</span>
+                            <div class="space-y-1.5 text-xs font-mono">
+                                <div class="p-1.5 rounded bg-slate-950/80 flex items-center justify-between border border-slate-800">
+                                    <span class="text-[11px] text-slate-300">#2041 Road Accident</span>
+                                    <span class="px-1.5 py-0.5 rounded bg-red-600 text-white text-[9px] font-bold">Critical</span>
                                 </div>
-                                <span class="px-2 py-0.5 rounded bg-red-950 text-red-400 font-mono font-bold text-[10px]">Critical</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-800/80 flex items-center justify-between border border-slate-700/50">
-                                <div class="flex items-center gap-2 font-mono">
-                                    <span class="text-slate-400">#2035</span>
-                                    <span class="font-sans font-bold text-slate-200">Public Disturbance</span>
+                                <div class="p-1.5 rounded bg-slate-950/80 flex items-center justify-between border border-slate-800">
+                                    <span class="text-[11px] text-slate-300">#2039 Public Disturbance</span>
+                                    <span class="px-1.5 py-0.5 rounded bg-amber-600 text-white text-[9px] font-bold">High</span>
                                 </div>
-                                <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 font-mono font-bold text-[10px]">High</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-800/80 flex items-center justify-between border border-slate-700/50">
-                                <div class="flex items-center gap-2 font-mono">
-                                    <span class="text-slate-400">#2036</span>
-                                    <span class="font-sans font-bold text-slate-200">Theft Alert</span>
+                                <div class="p-1.5 rounded bg-slate-950/80 flex items-center justify-between border border-slate-800">
+                                    <span class="text-[11px] text-slate-300">#2036 Theft</span>
+                                    <span class="px-1.5 py-0.5 rounded bg-yellow-600 text-white text-[9px] font-bold">Medium</span>
                                 </div>
-                                <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-mono font-bold text-[10px]">Medium</span>
-                            </div>
-                            <div class="p-2.5 rounded-lg bg-slate-800/80 flex items-center justify-between border border-slate-700/50">
-                                <div class="flex items-center gap-2 font-mono">
-                                    <span class="text-slate-400">#2031</span>
-                                    <span class="font-sans font-bold text-slate-200">Traffic Obstruction</span>
+                                <div class="p-1.5 rounded bg-slate-950/80 flex items-center justify-between border border-slate-800">
+                                    <span class="text-[11px] text-slate-300">#2031 Traffic Violation</span>
+                                    <span class="px-1.5 py-0.5 rounded bg-blue-600 text-white text-[9px] font-bold">Low</span>
                                 </div>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-slate-300 font-mono font-bold text-[10px]">Low</span>
                             </div>
                         </div>
                     </div>
@@ -1118,123 +1078,132 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 13. MULTI-AGENCY COMMAND -->
+        <!-- 13. MULTI-AGENCY COMMAND (Matching Design Board 13) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-50" id="section-13-multi-agency">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100" id="section-13-multi-agency">
+            <div class="max-w-7xl mx-auto space-y-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">13 // Multiple Government Agencies</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Multiple Government Agencies</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight">
                         One Incident. Every Relevant Agency.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal leading-relaxed">
-                        EMSTRAP Connect enables collaboration between different departments around a shared incident thread, eliminating jurisdictional latency.
+                    <p class="text-sm text-slate-600 mt-2 font-normal">
+                        EMSTRAP Connect enables collaboration between different departments around a shared incident.
                     </p>
                 </div>
 
-                <!-- Multi-Agency Radial Layout -->
-                <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                        <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-truck-medical"></i>
-                        </div>
-                        <h4 class="text-xs font-bold font-display text-slate-900">Ambulance</h4>
-                        <span class="text-[10px] text-slate-500 font-mono block">Medical Care</span>
+                <!-- Multi-Agency Radial Layout Matching Design 13 -->
+                <div class="relative w-full max-w-2xl mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-3xl bg-white border border-slate-200 p-8 flex items-center justify-center shadow-lg">
+                    <!-- Central Hub: Emergency Control Center / EMSTRAP CONNECT -->
+                    <div class="relative z-20 w-36 h-36 rounded-full bg-brandBlue text-white flex flex-col items-center justify-center p-3 text-center node-pulse shadow-xl">
+                        <span class="text-[9px] uppercase tracking-wider text-blue-200 font-mono">Emergency Control Center</span>
+                        <span class="text-[11px] font-black font-display uppercase tracking-wider leading-tight mt-0.5">EMSTRAP<br/>CONNECT</span>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-shield"></i>
+                    <!-- SVG Lines -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 300">
+                        <line x1="250" y1="150" x2="250" y2="40" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="250" y1="150" x2="420" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="250" y1="150" x2="80" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="250" y1="150" x2="130" y2="250" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="250" y1="150" x2="370" y2="250" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                    </svg>
+
+                    <!-- Spokes Matching Design 13 -->
+                    <!-- Ambulance (Top) -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow">
+                            <i class="fa-solid fa-truck-medical text-sm"></i>
                         </div>
-                        <h4 class="text-xs font-bold font-display text-slate-900">Police</h4>
-                        <span class="text-[10px] text-slate-500 font-mono block">Law &amp; Order</span>
+                        <span class="text-[10px] font-bold text-slate-800 mt-1">Ambulance</span>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-fire-extinguisher"></i>
+                    <!-- Police (Left) -->
+                    <div class="absolute top-1/2 -translate-y-1/2 left-6 z-20 flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center shadow">
+                            <i class="fa-solid fa-shield text-sm"></i>
                         </div>
-                        <h4 class="text-xs font-bold font-display text-slate-900">Fire &amp; Rescue</h4>
-                        <span class="text-[10px] text-slate-500 font-mono block">Disaster &amp; Hazmat</span>
+                        <span class="text-[10px] font-bold text-slate-800 mt-1">Police</span>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
-                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-building-flag"></i>
+                    <!-- Fire & Rescue (Right) -->
+                    <div class="absolute top-1/2 -translate-y-1/2 right-6 z-20 flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center shadow">
+                            <i class="fa-solid fa-fire-extinguisher text-sm"></i>
                         </div>
-                        <h4 class="text-xs font-bold font-display text-slate-900">Municipal</h4>
-                        <span class="text-[10px] text-slate-500 font-mono block">Civil Services</span>
+                        <span class="text-[10px] font-bold text-slate-800 mt-1">Fire &amp; Rescue</span>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2 col-span-2 sm:col-span-1">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-network-wired"></i>
+                    <!-- Municipal Authority (Bottom Left) -->
+                    <div class="absolute bottom-4 left-20 z-20 flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-teal-600 text-white flex items-center justify-center shadow">
+                            <i class="fa-solid fa-building text-sm"></i>
                         </div>
-                        <h4 class="text-xs font-bold font-display text-slate-900">Other Agencies</h4>
-                        <span class="text-[10px] text-slate-500 font-mono block">Transit &amp; Utilities</span>
+                        <span class="text-[10px] font-bold text-slate-800 mt-1">Municipal Authority</span>
+                    </div>
+
+                    <!-- Other Agencies (Bottom Right) -->
+                    <div class="absolute bottom-4 right-20 z-20 flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow">
+                            <i class="fa-solid fa-network-wired text-sm"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-800 mt-1">Other Agencies</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 14. KEY BENEFITS -->
+        <!-- 14. KEY BENEFITS (Matching Design Board 14) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-14-key-benefits">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white border-b border-slate-100" id="section-14-key-benefits">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- Left: 7 Numbered Key Benefits -->
-                    <div class="lg:col-span-6 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200">
-                            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brandBlue">14 // Key Benefits</span>
+                    <div class="lg:col-span-6 space-y-6 text-left">
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-1">Key Benefits</span>
+                            <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight leading-tight">
+                                A stronger, more coordinated emergency response.
+                            </h2>
                         </div>
 
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-slate-900 tracking-tight leading-tight">
-                            A stronger, more coordinated emergency response.
-                        </h2>
-
-                        <div class="space-y-3 pt-2">
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">01</span>
-                                <span class="text-sm font-semibold text-slate-800">Faster Information Flow across all dispatch channels</span>
+                        <div class="space-y-2.5 pt-2">
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">01</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Faster Information Flow</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">02</span>
-                                <span class="text-sm font-semibold text-slate-800">Better Incident Visibility with real-time situational feeds</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">02</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Better Incident Visibility</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">03</span>
-                                <span class="text-sm font-semibold text-slate-800">Reduced Duplicate Reporting through geofence clustering</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">03</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Reduced Duplicate Reporting</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">04</span>
-                                <span class="text-sm font-semibold text-slate-800">Location-Based Awareness with sub-second telemetry</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">04</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Location-Based Awareness</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">05</span>
-                                <span class="text-sm font-semibold text-slate-800">Structured Emergency Information parsed by AI triage</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">05</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Structured Emergency Information</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">06</span>
-                                <span class="text-sm font-semibold text-slate-800">Better Multi-Agency Coordination on a single dashboard</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">06</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Better Coordination</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
-                                <span class="font-mono font-bold text-brandBlue text-sm">07</span>
-                                <span class="text-sm font-semibold text-slate-800">Scalable for Cities of any size and population density</span>
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono font-bold text-slate-400 text-xs w-6">07</span>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-800">Scalable for Cities</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Modern Transit / Highway Infrastructure Visual -->
-                    <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl relative h-[420px] group">
-                        <img src="images/traffic-police-consultation.jpg" alt="Emergency Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400">CRITICAL INFRASTRUCTURE</span>
-                            <h3 class="text-xl font-bold font-display">Engineered for Rapid Response</h3>
-                            <p class="text-xs text-slate-300 font-light">Connecting highways, city arteries, and medical networks seamlessly.</p>
-                        </div>
+                    <!-- Right: Sunset City Backdrop Matching Design 14 -->
+                    <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl relative h-[380px] bg-slate-950">
+                        <img src="images/connect-benefits-sunset.jpg" alt="City Aerial at Sunset" class="w-full h-full object-cover" />
                     </div>
 
                 </div>
@@ -1242,163 +1211,142 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 15. WHO CAN USE -->
+        <!-- 15. WHO CAN USE (Matching Design Board 15) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-slate-50" id="section-15-who-can-use">
-            <div class="max-w-7xl mx-auto space-y-12">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-100" id="section-15-who-can-use">
+            <div class="max-w-7xl mx-auto space-y-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">15 // Who Can Use</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Who Can Use EMSTRAP Connect?</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight">
                         Government &amp; Public-Safety Organizations.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
-                        Purpose-built for public safety infrastructure, municipal administrations, and law enforcement agencies.
-                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-3 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-city"></i>
-                        </div>
-                        <h4 class="text-sm font-bold font-display text-slate-900">Smart City Missions</h4>
-                        <p class="text-xs text-slate-500">Centralized urban response integration and civic data networks.</p>
+                <!-- Hub and Spoke for Who Can Use Matching Design 15 -->
+                <div class="relative w-full max-w-xl mx-auto aspect-square rounded-3xl bg-white border border-slate-200 p-8 flex items-center justify-center shadow-lg">
+                    <!-- Center Hub -->
+                    <div class="relative z-20 w-28 h-28 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center p-2 text-center node-pulse shadow-xl">
+                        <span class="text-[10px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-3 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-shield"></i>
-                        </div>
-                        <h4 class="text-sm font-bold font-display text-slate-900">Police Departments</h4>
-                        <p class="text-xs text-slate-500">Modern CAD incident dispatch, transit escort, and patrol mesh.</p>
+                    <!-- SVG Lines -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
+                        <line x1="200" y1="200" x2="200" y2="70" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="200" y1="200" x2="330" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="200" y1="200" x2="290" y2="310" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="200" y1="200" x2="110" y2="310" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                        <line x1="200" y1="200" x2="70" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                    </svg>
+
+                    <!-- 5 Spokes -->
+                    <!-- Smart City Missions (Top) -->
+                    <div class="absolute top-6 left-1/2 -translate-x-1/2 z-20 text-center">
+                        <span class="text-[11px] font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full shadow-sm">Smart City Missions</span>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-3 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <h4 class="text-sm font-bold font-display text-slate-900">Emergency Control Rooms</h4>
-                        <p class="text-xs text-slate-500">Duplicate detection and multi-source emergency report handling.</p>
+                    <!-- Police Departments (Right) -->
+                    <div class="absolute top-1/3 right-4 z-20 text-center">
+                        <span class="text-[11px] font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full shadow-sm">Police Departments</span>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-3 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-building-shield"></i>
-                        </div>
-                        <h4 class="text-sm font-bold font-display text-slate-900">Public-Safety Authorities</h4>
-                        <p class="text-xs text-slate-500">Regional disaster resilience, fire dispatch, and civic alerts.</p>
+                    <!-- Emergency Control Rooms (Bottom Right) -->
+                    <div class="absolute bottom-10 right-10 z-20 text-center">
+                        <span class="text-[11px] font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full shadow-sm">Emergency Control Rooms</span>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-center space-y-3 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-brandBlue flex items-center justify-center mx-auto text-xl">
-                            <i class="fa-solid fa-landmark"></i>
-                        </div>
-                        <h4 class="text-sm font-bold font-display text-slate-900">Government Institutions</h4>
-                        <p class="text-xs text-slate-500">Public policy compliance, emergency auditing, and regional safety.</p>
+                    <!-- Public-Safety Authorities (Bottom Left) -->
+                    <div class="absolute bottom-10 left-10 z-20 text-center">
+                        <span class="text-[11px] font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full shadow-sm">Public-Safety Authorities</span>
+                    </div>
+
+                    <!-- Government Institutions (Left) -->
+                    <div class="absolute top-1/3 left-4 z-20 text-center">
+                        <span class="text-[11px] font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full shadow-sm">Government Institutions</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 16. TRADITIONAL VS EMSTRAP (A SIMPLER, MORE CONNECTED FLOW) -->
+        <!-- 16. TRADITIONAL VS EMSTRAP (Matching Design Board 16) -->
         <!-- ===================================================================== -->
-        <section class="py-20 px-6 md:px-12 bg-white" id="section-16-comparison">
+        <section class="py-16 md:py-24 px-6 md:px-12 bg-white" id="section-16-comparison">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">16 // Architecture Comparison</span>
-                    <h2 class="text-3xl md:text-5xl font-black font-display text-slate-900 tracking-tight">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">A Connected Approach</span>
+                    <h2 class="text-3xl md:text-4xl font-black font-display text-slate-900 tracking-tight">
                         A simpler, more connected flow.
                     </h2>
-                    <p class="text-sm md:text-base text-slate-600 mt-3 font-normal">
-                        Replacing outdated linear phone transfers with an intelligent, synchronized emergency bridge.
-                    </p>
                 </div>
 
-                <!-- 2-Column Comparison Layout -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- 2 Side-by-Side Vertical Flows Matching Design 16 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     
-                    <!-- Column 1: Traditional Response -->
-                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6">
-                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">Legacy Architecture</span>
-                            <span class="px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-700 font-mono text-[10px] font-bold">TRADITIONAL</span>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900">Traditional Response Flow</h3>
+                    <!-- Left: Traditional Response -->
+                    <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-4 text-left">
+                        <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-slate-500">Traditional Response</h3>
                         
                         <div class="space-y-3 font-mono text-xs text-slate-700">
-                            <div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
-                                <span class="font-bold text-slate-400">①</span>
-                                <span>Citizen dials emergency number</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full border-2 border-slate-400"></span>
+                                <span>Citizen</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
-                                <span class="font-bold text-slate-400">②</span>
-                                <span>Phone Call queued during peak hours</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full border-2 border-slate-400"></span>
+                                <span>Phone Call</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
-                                <span class="font-bold text-slate-400">③</span>
-                                <span>Operator takes verbal description</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full border-2 border-slate-400"></span>
+                                <span>Operator</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
-                                <span class="font-bold text-slate-400">④</span>
-                                <span>Department notified via intercom/radio</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full border-2 border-slate-400"></span>
+                                <span>Department</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3">
-                                <span class="font-bold text-slate-400">⑤</span>
-                                <span>Response Team dispatches with delays</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full border-2 border-slate-400"></span>
+                                <span>Response Team</span>
                             </div>
                         </div>
-
-                        <p class="text-[11px] text-slate-500 italic pt-2">
-                            Linear, sequential latency; prone to verbal inaccuracies, missing GPS data, and repeated duplicate calls.
-                        </p>
                     </div>
 
-                    <!-- Column 2: with EMSTRAP Connect -->
-                    <div class="p-8 rounded-3xl bg-blue-50 border border-blue-200 space-y-6 shadow-md">
-                        <div class="flex items-center justify-between border-b border-blue-200 pb-3">
-                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue">EMSTRAP Mesh</span>
-                            <span class="px-2.5 py-0.5 rounded-full bg-brandBlue text-white font-mono text-[10px] font-bold">SYNCHRONIZED</span>
-                        </div>
-                        <h3 class="text-xl font-bold font-display text-slate-900">with EMSTRAP Connect</h3>
+                    <!-- Right: With EMSTRAP Connect -->
+                    <div class="p-8 rounded-3xl bg-blue-50/70 border border-blue-200 space-y-4 text-left">
+                        <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-brandBlue">With EMSTRAP Connect</h3>
                         
-                        <div class="space-y-3 font-mono text-xs text-slate-800">
-                            <div class="p-3 rounded-xl bg-white border border-blue-200 flex items-center gap-3">
-                                <span class="font-bold text-brandBlue">①</span>
-                                <span>Citizen reports with 1-Tap &amp; live GPS</span>
+                        <div class="space-y-3 font-mono text-xs text-slate-900 font-semibold">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brandBlue"></span>
+                                <span>Citizen</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-blue-200 flex items-center gap-3">
-                                <span class="font-bold text-brandBlue">②</span>
-                                <span>EMSTRAP Connect detects duplicates</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brandBlue"></span>
+                                <span>EMSTRAP Connect</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-blue-200 flex items-center gap-3">
-                                <span class="font-bold text-brandBlue">③</span>
-                                <span>Incident prioritized &amp; parsed by AI</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brandBlue"></span>
+                                <span>Incident</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-blue-200 flex items-center gap-3">
-                                <span class="font-bold text-brandBlue">④</span>
-                                <span>Authority &amp; responders instantly alerted</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brandBlue"></span>
+                                <span>Authority</span>
                             </div>
-                            <div class="p-3 rounded-xl bg-white border border-blue-200 flex items-center gap-3">
-                                <span class="font-bold text-brandBlue">⑤</span>
-                                <span>Response coordinated in sub-30 seconds</span>
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-brandBlue"></span>
+                                <span>Response</span>
                             </div>
                         </div>
-
-                        <p class="text-[11px] text-brandBlue font-medium pt-2">
-                            Instant, digital, multi-agency synced with verified location, scene images, and zero telephone queues.
-                        </p>
                     </div>
 
                 </div>
 
                 <!-- Call to Action Banner -->
-                <div class="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl bg-slate-900 text-white text-center space-y-6 shadow-2xl border border-slate-800">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">GOVERNMENT BRIEFING</span>
+                <div class="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl bg-slate-950 text-white text-center space-y-6 shadow-2xl border border-slate-800">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">GOVERNMENT BRIEFING</span>
                     <h3 class="text-2xl sm:text-4xl font-black font-display tracking-tight text-white">
                         Connect Your City to a Smarter Emergency Response
                     </h3>
-                    <p class="text-sm sm:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+                    <p class="text-sm sm:text-base text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
                         Ready to integrate EMSTRAP Connect into your police command, smart city operations, or public safety infrastructure? Schedule an executive briefing.
                     </p>
                     <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -1415,32 +1363,35 @@
         </section>
     </main>
 
-    <!-- Global Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 px-6 md:px-12 text-xs">
+    <!-- ===================================================================== -->
+    <!-- GLOBAL FOOTER -->
+    <!-- ===================================================================== -->
+    <footer class="bg-[#050505] border-t border-neutral-900 py-10 px-6 md:px-12 text-xs text-neutral-500">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="space-y-1 text-center md:text-left">
-                <span class="font-display font-black text-white text-base tracking-wider block">EMSTRAP</span>
-                <p class="text-slate-500 font-mono text-[11px]">&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved. Transforming emergency response.</p>
+            <div>
+                <span class="uppercase font-mono tracking-wider text-neutral-400 block mb-1">EMSTRAP CONNECT &bull; PUBLIC SAFETY INFRASTRUCTURE</span>
+                <span>&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved.</span>
             </div>
-            <div class="flex items-center space-x-6 font-semibold">
+            <div class="flex items-center space-x-6 text-neutral-400">
                 <a href="index.html#page-about" class="hover:text-white transition-colors">About</a>
                 <a href="index.html#page-services" class="hover:text-white transition-colors">Services</a>
-                <a href="index.html#page-who-we-serve" class="hover:text-white transition-colors">Who We Serve</a>
-                <a href="careers.html" class="hover:text-white transition-colors">Careers</a>
+                <a href="careers.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Careers</a>
                 <a href="index.html#page-contact" class="hover:text-white transition-colors">Contact</a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-all text-xs" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
                 </a>
-                <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-all text-xs" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-200" title="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- Demo Request Modal -->
+    <!-- ===================================================================== -->
+    <!-- GOVERNMENT DEMO REQUEST MODAL -->
+    <!-- ===================================================================== -->
     <div id="demoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
         <div class="bg-white border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-6 text-slate-900 shadow-2xl relative">
             <button onclick="closeDemoModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl">
@@ -1454,19 +1405,19 @@
             <form onsubmit="handleDemoSubmit(event)" class="space-y-4">
                 <div>
                     <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Official Name</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="Officer / Director Name" />
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="Officer / Director Name" />
                 </div>
                 <div>
                     <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Department / Organization</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Police Department / Smart City Mission" />
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Police Department / Smart City Mission" />
                 </div>
                 <div>
                     <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Official Email Address</label>
-                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="official@gov.in" />
+                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="official@gov.in" />
                 </div>
                 <div>
                     <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Contact Phone</label>
-                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="+91 XXXXX XXXXX" />
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="+91 XXXXX XXXXX" />
                 </div>
                 <button type="submit" class="w-full py-3.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold text-xs uppercase tracking-wider transition-all font-display shadow-md">
                     Submit Government Briefing Request
@@ -1475,7 +1426,13 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
         function openDemoModal() {
             document.getElementById('demoModal').classList.remove('hidden');
         }
@@ -1487,6 +1444,12 @@
             alert('Thank you. The EMSTRAP Government Advisory Team has received your briefing request and will reach out within 24 business hours.');
             closeDemoModal();
         }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDemoModal();
+            }
+        });
     </script>
 </body>
 </html>
