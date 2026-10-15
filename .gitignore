@@ -7,12 +7,14 @@ node_modules/
 dist/
 dist-ssr/
 .output/
+.vercel/
 .vinxi/
 .tanstack/**
 .nitro/
 .wrangler/
 .dev.vars
 *.local
+Emstrap-sync/
 
 # Environment files and credentials
 .env
