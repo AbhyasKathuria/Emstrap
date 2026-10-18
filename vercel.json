@@ -1,3 +1,6 @@
 {
-  "buildCommand": "vite build"
+  "buildCommand": null,
+  "outputDirectory": "frontend",
+  "cleanUrls": true,
+  "trailingSlash": false
 }
