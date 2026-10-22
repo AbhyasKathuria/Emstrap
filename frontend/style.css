@@ -656,3 +656,33 @@ header .text-red-400 {
 }
 
 
+
+/* ===== Ride Audiences Moving Belt ===== */
+.ride-belt-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 0.75rem 0;
+    mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+.ride-belt-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: rideBeltScroll 28s linear infinite;
+    will-change: transform;
+}
+.ride-belt-track:hover {
+    animation-play-state: paused;
+}
+@keyframes rideBeltScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ride-belt-track {
+        animation: none;
+        overflow-x: auto;
+    }
+}

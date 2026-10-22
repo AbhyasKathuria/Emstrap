@@ -68,6 +68,48 @@
         .pulse-effect {
             animation: pulse-ring 2s infinite ease-in-out;
         }
+        /* Moving Belt Animation for Audience Cards */
+        .ride-belt-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 0.75rem 0;
+            mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+        }
+        .ride-belt-track {
+            display: flex;
+            gap: 1.25rem;
+            width: max-content;
+            animation: rideBeltScroll 28s linear infinite;
+            will-change: transform;
+        }
+        .ride-belt-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes rideBeltScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ride-belt-track {
+                animation: none;
+                overflow-x: auto;
+            }
+        }
+        /* Continuous Connected Thread for 9-Step Process */
+        .stepper-thread-line {
+            background: linear-gradient(90deg, #EF4444 0%, #3B82F6 40%, #2563EB 75%, #10B981 100%);
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.35);
+        }
+        @keyframes threadGlowPulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.7)); }
+            100% { opacity: 0.6; }
+        }
+        .animate-thread-glow {
+            animation: threadGlowPulse 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-[#F8FAFC] text-slate-900 font-sans min-h-screen flex flex-col justify-between selection:bg-brandBlue selection:text-white antialiased">
@@ -83,55 +125,6 @@
                     <span class="text-xl font-black font-display tracking-wider text-slate-900">EMSTRAP</span>
                 </div>
             </a>
-            
-            <div class="flex items-center space-x-6 lg:space-x-8">
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-semibold text-slate-600">
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Products</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-48 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="connect.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Connect</a>
-                            <a href="ride.html" class="block px-4 py-2 text-xs font-semibold text-brandBlue bg-blue-50/50">EMSTRAP Ride</a>
-                            <a href="shield.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Shield</a>
-                            <a href="command.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Command</a>
-                        </div>
-                    </div>
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Solutions</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-56 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="corporate-companies.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Corporate Companies</a>
-                            <a href="smart-cities.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Smart Cities</a>
-                            <a href="government-agencies.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Government Agencies</a>
-                            <a href="ambulance-providers.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Ambulance Providers</a>
-                            <a href="traffic-management.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Traffic Management</a>
-                            <a href="police-departments.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Police Departments</a>
-                        </div>
-                    </div>
-                    <a href="index.html#page-about" class="hover:text-brandBlue transition-colors">Resources</a>
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Company</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-40 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="about.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">About Us</a>
-                            <a href="careers.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Careers</a>
-                            <a href="contact.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Contact</a>
-                        </div>
-                    </div>
-                </nav>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white text-xs font-bold transition-all shadow-md hover:shadow-lg font-display">
-                        Book an Ambulance
-                    </button>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -177,34 +170,8 @@
                 <div class="lg:col-span-6 relative flex items-center justify-center">
                     <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-200/90 bg-slate-100 group">
                         <img src="ambulance.jpg" alt="EMSTRAP Ride Ambulance" class="w-full h-80 sm:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                        
-                        <!-- Live Tracking Overlay Card (Top Right) -->
-                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-slate-200/90 p-3.5 rounded-2xl shadow-xl flex items-center gap-3 max-w-[210px]">
-                            <div class="w-7 h-7 rounded-full bg-red-100 text-emergencyRed flex items-center justify-center text-xs shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="text-left leading-tight">
-                                <div class="text-[11px] font-bold text-slate-900 font-display">Live Tracking</div>
-                                <!-- Mini simulated route -->
-                                <div class="flex items-center gap-1.5 mt-1">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-brandBlue"></div>
-                                    <div class="w-8 h-0.5 bg-brandBlue"></div>
-                                    <div class="w-1.5 h-1.5 rounded-full bg-brandBlue"></div>
-                                    <div class="w-6 h-0.5 bg-brandBlue"></div>
-                                    <div class="w-4 h-4 rounded bg-brandBlue text-white text-[8px] flex items-center justify-center font-bold">H</div>
-                                </div>
                             </div>
                         </div>
-
-                        <!-- Arriving in 8 Min Card (Bottom Right) -->
-                        <div class="absolute bottom-5 right-5 bg-white/95 backdrop-blur-md border border-slate-200/90 py-2.5 px-4 rounded-2xl shadow-xl flex items-center gap-3 text-left">
-                            <div class="w-7 h-7 rounded-full bg-red-100 text-emergencyRed flex items-center justify-center text-xs shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <span class="text-[9px] font-mono uppercase tracking-wider text-slate-500 font-bold block">Arriving in</span>
-                                <div class="text-lg font-black font-display text-slate-900 leading-tight">8 min</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -454,174 +421,448 @@
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 05. WHO CAN USE EMSTRAP RIDE? -->
+        <!-- 05. WHO CAN USE EMSTRAP RIDE? (Moving Animated Format) -->
         <!-- ===================================================================== -->
         <section class="max-w-7xl mx-auto px-6 md:px-12" id="section-05-audiences">
-            <div class="space-y-8 text-left">
-                <div class="space-y-2">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">For the Public</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
-                        Anyone who needs ambulance transportation for a patient can use EMSTRAP Ride.
-                    </h2>
+            <div class="space-y-6 text-left">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">WHO CAN USE</span>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                            EMSTRAP Ride.
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-2 max-w-2xl">
+                            Anyone who needs ambulance transportation for a patient can use EMSTRAP Ride.
+                        </p>
+                    </div>
+                    <div class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-brandBlue text-xs font-mono font-medium shrink-0 self-start md:self-auto">
+                        <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
+                        <span>LIVE ON-DEMAND FLEET</span>
+                    </div>
                 </div>
 
-                <!-- 2x2 Grid + 1 Full Width Bottom Card matching Design 05 -->
-                <div class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Family Members -->
-                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-                            <img src="images/ride-audience-family.jpg" alt="Family Members" class="w-16 h-16 rounded-xl object-cover shrink-0 border border-slate-100" />
+                <!-- Continuous Moving Cards Marquee Viewport with animation -->
+                <div class="ride-belt-container w-full py-2">
+                    <div class="ride-belt-track" id="rideAudiencesBeltTrack">
+                        <!-- Card 1: Family Members -->
+                        <div onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
                             <div>
-                                <h3 class="text-sm font-bold font-display text-slate-900">Family Members</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal mt-0.5">Book an ambulance for a loved one.</p>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-blue-50 text-brandBlue border border-blue-100">
+                                        FAMILY CARE
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-brandBlue/40 group-hover:bg-brandBlue transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-family.jpg" alt="Family Members" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Family Members</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Book an ambulance for a loved one.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Book Ambulance</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Doorstep Pickup</span>
                             </div>
                         </div>
 
-                        <!-- Patients -->
-                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-                            <img src="images/ride-audience-patient.jpg" alt="Patients" class="w-16 h-16 rounded-xl object-cover shrink-0 border border-slate-100" />
+                        <!-- Card 2: Patients -->
+                        <div onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
                             <div>
-                                <h3 class="text-sm font-bold font-display text-slate-900">Patients</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal mt-0.5">Arrange transportation between medical facilities.</p>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 border border-emerald-100">
+                                        DIRECT PATIENTS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400/40 group-hover:bg-emerald-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-patient.jpg" alt="Patients" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Patients</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Arrange transportation between medical facilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Schedule Ride</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Facility Transfer</span>
                             </div>
                         </div>
 
-                        <!-- Caregivers -->
-                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-                            <img src="images/ride-audience-caregiver.jpg" alt="Caregivers" class="w-16 h-16 rounded-xl object-cover shrink-0 border border-slate-100" />
+                        <!-- Card 3: Caregivers -->
+                        <div onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
                             <div>
-                                <h3 class="text-sm font-bold font-display text-slate-900">Caregivers</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal mt-0.5">Organize patient transportation easily.</p>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-50 text-amber-600 border border-amber-100">
+                                        ASSISTED LIVING
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-amber-400/40 group-hover:bg-amber-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-caregiver.jpg" alt="Caregivers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Caregivers</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Organize patient transportation easily.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Request Support</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Assisted Transit</span>
                             </div>
                         </div>
 
-                        <!-- Hospitals -->
-                        <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-                            <img src="images/ride-audience-hospital.jpg" alt="Hospitals" class="w-16 h-16 rounded-xl object-cover shrink-0 border border-slate-100" />
+                        <!-- Card 4: Hospitals -->
+                        <div onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
                             <div>
-                                <h3 class="text-sm font-bold font-display text-slate-900">Hospitals</h3>
-                                <p class="text-xs text-slate-600 leading-relaxed font-normal mt-0.5">Arrange transportation for patients.</p>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-purple-50 text-purple-600 border border-purple-100">
+                                        MEDICAL NETWORKS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-purple-400/40 group-hover:bg-purple-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-hospital.jpg" alt="Hospitals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Hospitals</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Arrange transportation for patients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Hospital Portal</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Inter-Hospital</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Healthcare Facilities -->
+                        <div onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 border border-cyan-100">
+                                        CARE CLINICS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-cyan-400/40 group-hover:bg-cyan-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-facility.jpg" alt="Healthcare Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Healthcare Facilities</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Coordinate patient transfers and transportation requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Coordinate Transfer</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Fleet Dispatch</span>
+                            </div>
+                        </div>
+
+                        <!-- Cloned set for continuous seamless loop -->
+                        <div aria-hidden="true" onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-blue-50 text-brandBlue border border-blue-100">
+                                        FAMILY CARE
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-brandBlue/40 group-hover:bg-brandBlue transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-family.jpg" alt="Family Members" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Family Members</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Book an ambulance for a loved one.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Book Ambulance</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Doorstep Pickup</span>
+                            </div>
+                        </div>
+
+                        <div aria-hidden="true" onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 border border-emerald-100">
+                                        DIRECT PATIENTS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400/40 group-hover:bg-emerald-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-patient.jpg" alt="Patients" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Patients</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Arrange transportation between medical facilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Schedule Ride</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Facility Transfer</span>
+                            </div>
+                        </div>
+
+                        <div aria-hidden="true" onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-50 text-amber-600 border border-amber-100">
+                                        ASSISTED LIVING
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-amber-400/40 group-hover:bg-amber-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-caregiver.jpg" alt="Caregivers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Caregivers</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Organize patient transportation easily.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Request Support</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Assisted Transit</span>
+                            </div>
+                        </div>
+
+                        <div aria-hidden="true" onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-purple-50 text-purple-600 border border-purple-100">
+                                        MEDICAL NETWORKS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-purple-400/40 group-hover:bg-purple-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-hospital.jpg" alt="Hospitals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Hospitals</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Arrange transportation for patients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Hospital Portal</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Inter-Hospital</span>
+                            </div>
+                        </div>
+
+                        <div aria-hidden="true" onclick="openBookingModal()" class="w-[320px] sm:w-[350px] shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 border border-cyan-100">
+                                        CARE CLINICS
+                                    </span>
+                                    <span class="w-2 h-2 rounded-full bg-cyan-400/40 group-hover:bg-cyan-500 transition-colors"></span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-100 shrink-0 border border-slate-100 shadow-sm">
+                                        <img src="images/ride-audience-facility.jpg" alt="Healthcare Facilities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors">Healthcare Facilities</h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed font-normal mt-1">Coordinate patient transfers and transportation requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                                <span class="text-[11px] font-semibold text-brandBlue inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    <span>Coordinate Transfer</span>
+                                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-400">Fleet Dispatch</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Healthcare Facilities (Full Width Card) -->
-                    <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center gap-4 hover:shadow-md transition-shadow">
-                        <img src="images/ride-audience-facility.jpg" alt="Healthcare Facilities" class="w-20 h-16 rounded-xl object-cover shrink-0 border border-slate-100" />
-                        <div>
-                            <h3 class="text-sm font-bold font-display text-slate-900">Healthcare Facilities</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal mt-0.5">Coordinate patient transfers and transportation requirements.</p>
-                        </div>
-                    </div>
+                <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+                    <span class="flex items-center gap-1.5 font-mono text-[11px]">
+                        <i class="fa-solid fa-arrows-left-right text-[10px] text-brandBlue"></i>
+                        <span>Hover over any card to pause</span>
+                    </span>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-slate-400">5 Service Categories</span>
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 06. HOW EMSTRAP RIDE WORKS? (A Simple 9-Step Process) -->
+        <!-- 06. HOW EMSTRAP RIDE WORKS? (A Simple 9-Step Process with Connected Thread) -->
         <!-- ===================================================================== -->
         <section class="max-w-7xl mx-auto px-6 md:px-12" id="section-06-how-it-works">
-            <div class="space-y-12 text-left">
-                <div class="space-y-2">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">A Simple 9-Step Process</span>
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
-                        How EMSTRAP Ride Works?
-                    </h2>
-                </div>
-
-                <!-- Horizontal Stepper Row 1: Steps 01 to 06 -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 relative text-center">
-                    <!-- Step 01 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-red-200 shadow-sm flex items-center justify-center text-emergencyRed text-base relative z-10">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">01</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Enter Pickup Location</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Provide where the patient needs to be picked up.</p>
+            <div class="space-y-10 text-left">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">A Simple 9-Step Process</span>
+                        <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 tracking-tight">
+                            How EMSTRAP Ride Works?
+                        </h2>
                     </div>
-
-                    <!-- Step 02 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10">
-                            <i class="fa-solid fa-flag"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">02</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Enter Destination</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Provide the destination or another facility.</p>
-                    </div>
-
-                    <!-- Step 03 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10">
-                            <i class="fa-solid fa-truck-medical"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">03</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Select Ambulance Requirement</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Choose the appropriate ambulance type based on patient needs.</p>
-                    </div>
-
-                    <!-- Step 04 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">04</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Request an Ambulance</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Submit the booking request.</p>
-                    </div>
-
-                    <!-- Step 05 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">05</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Ambulance Matching</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Find an available ambulance.</p>
-                    </div>
-
-                    <!-- Step 06 -->
-                    <div class="relative space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">06</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Booking Confirmation</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Receive trip and ambulance details.</p>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-brandBlue text-xs font-mono font-bold self-start sm:self-auto">
+                        <i class="fa-solid fa-route text-xs"></i>
+                        <span>CONNECTED JOURNEY THREAD</span>
                     </div>
                 </div>
 
-                <!-- Horizontal Stepper Row 2: Steps 07 to 09 (Centered) -->
-                <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center pt-4 border-t border-slate-100">
-                    <!-- Step 07 -->
-                    <div class="space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base">
-                            <i class="fa-solid fa-truck-ramp-box"></i>
+                <!-- Horizontal Stepper Row 1: Steps 01 to 06 with Continuous Connecting Thread -->
+                <div class="relative">
+                    <!-- Base Continuous Connecting Thread (Row 1) -->
+                    <div class="hidden lg:block absolute top-[24px] left-[8.33%] right-[8.33%] h-[3px] stepper-thread-line rounded-full z-0 animate-thread-glow"></div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 relative text-center z-10">
+                        <!-- Step 01 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-red-500 shadow-sm flex items-center justify-center text-emergencyRed text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-red-500 block">01</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Enter Pickup Location</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Provide where the patient needs to be picked up.</p>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">07</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Pickup</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Ambulance arrives at the pickup location.</p>
-                    </div>
 
-                    <!-- Step 08 -->
-                    <div class="space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base">
-                            <i class="fa-solid fa-route"></i>
+                        <!-- Step 02 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-400 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">02</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Enter Destination</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Provide the destination or another facility.</p>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">08</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Patient Transportation</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Patient is transported to the selected destination.</p>
-                    </div>
 
-                    <!-- Step 09 -->
-                    <div class="space-y-2 flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 shadow-sm flex items-center justify-center text-brandBlue text-base">
-                            <i class="fa-solid fa-flag-checkered"></i>
+                        <!-- Step 03 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-400 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-truck-medical"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">03</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Select Ambulance Requirement</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Choose the appropriate ambulance type based on patient needs.</p>
                         </div>
-                        <span class="text-[10px] font-mono font-bold text-slate-400 block">09</span>
-                        <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Trip Completion</h4>
-                        <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Trip is marked as completed.</p>
+
+                        <!-- Step 04 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-400 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">04</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Request an Ambulance</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Submit the booking request.</p>
+                        </div>
+
+                        <!-- Step 05 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-400 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">05</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Ambulance Matching</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Find an available ambulance.</p>
+                        </div>
+
+                        <!-- Step 06 -->
+                        <div class="relative space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-500 shadow-sm flex items-center justify-center text-brandBlue text-base relative z-10 group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-brandBlue block">06</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Booking Confirmation</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Receive trip and ambulance details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connecting Thread Conduit between Row 1 and Row 2 -->
+                <div class="hidden lg:flex items-center justify-between max-w-5xl mx-auto py-1 px-4 relative">
+                    <div class="h-[2px] bg-slate-200 flex-grow mr-4"></div>
+                    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-50 border border-blue-200 text-brandBlue text-[11px] font-mono font-bold shadow-sm">
+                        <span>Dispatch &amp; Transit Flow</span>
+                        <i class="fa-solid fa-arrow-down text-[10px] animate-bounce"></i>
+                    </div>
+                    <div class="h-[2px] bg-slate-200 flex-grow ml-4"></div>
+                </div>
+
+                <!-- Horizontal Stepper Row 2: Steps 07 to 09 with Continuous Connecting Thread -->
+                <div class="max-w-3xl mx-auto relative pt-2">
+                    <!-- Base Continuous Connecting Thread (Row 2) -->
+                    <div class="hidden sm:block absolute top-[32px] left-[16.66%] right-[16.66%] h-[3px] bg-gradient-to-r from-blue-500 via-teal-500 to-emerald-500 rounded-full z-0 animate-thread-glow"></div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center relative z-10">
+                        <!-- Step 07 -->
+                        <div class="space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-500 shadow-sm flex items-center justify-center text-brandBlue text-base group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">07</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Pickup</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Ambulance arrives at the pickup location.</p>
+                        </div>
+
+                        <!-- Step 08 -->
+                        <div class="space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-teal-500 shadow-sm flex items-center justify-center text-teal-600 text-base group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-slate-400 block">08</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Patient Transportation</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Patient is transported to the selected destination.</p>
+                        </div>
+
+                        <!-- Step 09 -->
+                        <div class="space-y-2 flex flex-col items-center group">
+                            <div class="w-12 h-12 rounded-full bg-white border-2 border-emerald-500 shadow-sm flex items-center justify-center text-emerald-600 text-base group-hover:scale-110 group-hover:shadow-md transition-all">
+                                <i class="fa-solid fa-flag-checkered"></i>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold text-emerald-600 block">09</span>
+                            <h4 class="text-xs font-bold font-display text-slate-900 leading-snug">Trip Completion</h4>
+                            <p class="text-[11px] text-slate-500 font-normal leading-relaxed">Trip is marked as completed.</p>
+                        </div>
                     </div>
                 </div>
             </div>
