@@ -36,12 +36,15 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
 
+  const isHomePage = pathname === '/' || pathname === '';
+
   useEffect(() => {
     setMenuOpen(false);
     setServeOpen(false);
   }, [pathname]);
 
   useEffect(() => {
+    if (!isHomePage) return;
     function handleClickOutside(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setServeOpen(false);
@@ -49,7 +52,17 @@ export default function Navbar() {
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isHomePage]);
+
+  if (!isHomePage) {
+    return (
+      <header className="sticky top-0 z-50 bg-white border-b border-border-default">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 h-[72px] flex items-center">
+          <EmstrapLogo />
+        </div>
+      </header>
+    );
+  }
 
   const isServePage = serveLinks.some(l => l.path === pathname);
 

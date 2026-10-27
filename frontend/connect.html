@@ -401,7 +401,7 @@
 
                     <!-- Right Hero Visual: Connected Network Diagram (Clean Animated Heartbeat & Turn-wise Sync) -->
                     <div class="lg:col-span-6 relative flex items-center justify-center">
-                        <div class="relative w-full max-w-[520px] aspect-square rounded-3xl bg-slate-50 p-6 sm:p-8 text-slate-900 shadow-xl overflow-hidden border border-slate-200/90">
+                        <div class="relative w-full max-w-[520px] aspect-square p-2 sm:p-4 text-slate-900 overflow-hidden flex items-center justify-center">
                             <!-- Clean Technical Grid & Radar Concentric Guides (No Background Photo) -->
                             <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:22px_22px] opacity-60 pointer-events-none"></div>
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -808,10 +808,70 @@
                     <!-- Right: Mobile App Mockup with 5 Callouts Matching Design 05 -->
                     <div class="lg:col-span-7 flex items-center justify-center">
                         <div class="relative flex items-center gap-6 sm:gap-8 max-w-lg w-full">
-                            <!-- Phone Mockup Container -->
-                            <div class="w-56 sm:w-64 rounded-3xl bg-slate-900 p-2.5 shadow-2xl border-4 border-slate-800 shrink-0">
-                                <div class="rounded-2xl overflow-hidden bg-white">
-                                    <img src="images/connect-app-phone.jpg" alt="EMSTRAP Connect Citizen App" class="w-full h-auto object-cover" />
+                            <!-- Full Screen Phone Mockup Container -->
+                            <div class="w-64 sm:w-72 rounded-[38px] bg-slate-950 p-3 shadow-2xl border-4 border-slate-800 shrink-0 text-left">
+                                <div class="bg-white rounded-[28px] p-4 space-y-3.5 text-slate-900 overflow-hidden shadow-inner">
+                                    <!-- Mobile Status Bar -->
+                                    <div class="flex items-center justify-between text-[11px] font-bold text-slate-900 px-1 pt-0.5">
+                                        <span>10:54</span>
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-700">
+                                            <i class="fa-solid fa-signal"></i>
+                                            <i class="fa-solid fa-wifi"></i>
+                                            <i class="fa-solid fa-battery-full"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Screen Header -->
+                                    <div class="flex items-center gap-2 pt-1 border-b border-slate-100 pb-2">
+                                        <i class="fa-solid fa-chevron-left text-xs text-brandBlue"></i>
+                                        <span class="text-sm font-bold font-display text-slate-900">New Emergency</span>
+                                    </div>
+
+                                    <!-- 1. Emergency Type Field -->
+                                    <div>
+                                        <label class="text-[10px] font-mono font-bold text-slate-500 uppercase block mb-1">Emergency Type</label>
+                                        <div class="px-3 py-2 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-emergencyRed flex items-center justify-between">
+                                            <span class="flex items-center gap-2">
+                                                <i class="fa-solid fa-car-burst text-xs"></i>
+                                                <span>Road Accident</span>
+                                            </span>
+                                            <i class="fa-solid fa-chevron-down text-[10px] text-red-400"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. Description Field -->
+                                    <div>
+                                        <label class="text-[10px] font-mono font-bold text-slate-500 uppercase block mb-1">Description</label>
+                                        <div class="px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 font-medium leading-relaxed">
+                                            Multiple people injured, need immediate ambulance...
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. Location Field -->
+                                    <div>
+                                        <label class="text-[10px] font-mono font-bold text-slate-500 uppercase block mb-1">Location</label>
+                                        <div class="px-3 py-2 rounded-xl bg-blue-50/70 border border-blue-200 text-xs text-brandBlue font-mono flex items-center justify-between">
+                                            <span class="truncate">12.9716° N, 77.5946° E</span>
+                                            <i class="fa-solid fa-location-crosshairs text-xs text-brandBlue"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4. Image Field with preview -->
+                                    <div>
+                                        <label class="text-[10px] font-mono font-bold text-slate-500 uppercase block mb-1">Incident Image</label>
+                                        <div class="w-full h-16 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden relative">
+                                            <img src="images/home-police.jpg" alt="Incident preview" class="w-full h-full object-cover" />
+                                            <div class="absolute bottom-1 right-1.5 px-1.5 py-0.5 rounded bg-black/70 text-white font-mono text-[9px]">
+                                                Attached
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Send Report CTA Button -->
+                                    <button class="w-full py-2.5 rounded-xl bg-brandBlue hover:bg-brandBlueDark text-white font-bold text-xs uppercase tracking-wider font-display shadow-md transition-all flex items-center justify-center gap-2">
+                                        <span>Send Report</span>
+                                        <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                                    </button>
                                 </div>
                             </div>
 
@@ -875,7 +935,7 @@
                 </div>
 
                 <!-- 4 Radiating Cards around central INCIDENT circle (Responsive Across Phone, Tablet, Windows) -->
-                <div class="relative w-full max-w-3xl mx-auto p-4 sm:p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-200 flex items-center justify-center min-h-[350px] sm:min-h-[390px] md:min-h-[420px] overflow-hidden">
+                <div class="relative w-full max-w-3xl mx-auto p-2 sm:p-4 md:p-6 flex items-center justify-center min-h-[350px] sm:min-h-[390px] md:min-h-[420px] overflow-hidden">
                     <!-- Technical Grid & Concentric Guide Rings -->
                     <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-50 pointer-events-none"></div>
                     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -1056,18 +1116,38 @@
                                 </svg>
                             </div>
 
-                            <!-- Target Single Incident Output Card -->
-                            <div class="w-full sm:w-60 p-6 rounded-2xl bg-white border-2 border-red-500 shadow-xl text-center space-y-3 relative shrink-0">
-                                <div class="w-11 h-11 rounded-full bg-red-600 text-white flex items-center justify-center mx-auto text-base shadow-lg">
-                                    <i class="fa-solid fa-location-dot"></i>
+                            <!-- Target Single Incident Output Card (Enterprise CAD Design) -->
+                            <div class="w-full sm:w-64 p-5 rounded-2xl bg-white border border-slate-200 shadow-md text-left space-y-3 relative shrink-0 hover:shadow-lg transition-all">
+                                <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emergencyRed animate-pulse"></span>
+                                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">INCIDENT #8492</span>
+                                    </div>
+                                    <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                        VERIFIED
+                                    </span>
                                 </div>
+
                                 <div>
-                                    <h4 class="text-base font-black font-display text-slate-900 tracking-tight">ONE INCIDENT</h4>
-                                    <p class="text-[11px] text-slate-500 mt-0.5">Deduplicated &amp; Geo-Anchored</p>
+                                    <h4 class="text-base font-bold font-display text-slate-900 tracking-tight">Consolidated Incident</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5 font-normal">Geo-anchored &amp; unified response docket</p>
                                 </div>
-                                <span class="text-xs font-mono font-bold text-red-600 block bg-red-50 border border-red-200/80 rounded-full py-1 px-3">
-                                    1 Incident &bull; 5 Reports Merged
-                                </span>
+
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-[11px]">
+                                        <span class="text-slate-500 font-mono">Merged Reports</span>
+                                        <span class="font-bold font-mono text-slate-900">5 Citizen Feeds</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-[11px]">
+                                        <span class="text-slate-500 font-mono">Location Radius</span>
+                                        <span class="font-semibold text-slate-800">45m Accuracy</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-1 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                                    <span>Single Dispatch Feed</span>
+                                    <i class="fa-solid fa-arrow-right text-brandBlue text-[10px]"></i>
+                                </div>
                             </div>
 
                         </div>
@@ -1220,12 +1300,12 @@
         <section class="py-16 md:py-24 px-6 md:px-12 bg-slate-950 text-white" id="section-10-ai-understanding">
             <div class="max-w-7xl mx-auto space-y-8">
                 <div class="text-left max-w-3xl">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-1">AI Assistance</span>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-1">INCIDENT INTELLIGENCE</span>
                     <h2 class="text-2xl sm:text-4xl font-black font-display text-white tracking-tight">
                         Turn emergency reports into actionable information.
                     </h2>
                     <p class="text-sm text-slate-400 mt-2 font-normal">
-                        AI-assisted analysis helps understand the information provided and identify important incident characteristics.
+                        Automated triage and data parsing translates emergency reports into structured operational data for emergency responders.
                     </p>
                 </div>
 
@@ -1246,22 +1326,18 @@
                         </div>
                     </div>
 
-                    <!-- 2. AI Analysis Pipeline (Direct Visual, Stays Permanent) -->
-                    <div class="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-4 py-4 lg:py-0">
-                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">AI INGESTION &amp; PARSING</span>
-                        <div class="flex items-center justify-center gap-2 h-14">
-                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-indigo-500 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-indigo-400 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
-                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
+                    <!-- 2. Automated Processing Pipeline (Clean Data Pipeline, No AI Gimmicks) -->
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-3 py-4 lg:py-0">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-brandBlue flex items-center justify-center text-lg shadow-sm">
+                            <i class="fa-solid fa-bolt-lightning text-blue-400"></i>
                         </div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 font-mono text-[11px] font-semibold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                            <span>INFERENCE CONFIRMED (0.28s)</span>
+                        <div>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-300 block">AUTOMATED TRIAGE</span>
+                            <span class="text-[11px] text-slate-400 font-normal">Real-time incident parsing &amp; structuring</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 font-mono text-[10px] font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>PROCESSED IN 0.28s</span>
                         </div>
                     </div>
 
@@ -1451,7 +1527,7 @@
                 </div>
 
                 <!-- Multi-Agency Radial Layout Matching Design 13 -->
-                <div class="relative w-full max-w-2xl mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-3xl bg-white border border-slate-200 p-8 flex items-center justify-center shadow-lg">
+                <div class="relative w-full max-w-2xl mx-auto aspect-[16/10] sm:aspect-[16/9] p-4 sm:p-8 flex items-center justify-center">
                     <!-- Central Hub: Emergency Control Center / EMSTRAP CONNECT -->
                     <div class="relative z-20 w-36 h-36 rounded-full bg-brandBlue text-white flex flex-col items-center justify-center p-3 text-center node-pulse shadow-xl">
                         <span class="text-[9px] uppercase tracking-wider text-blue-200 font-mono">Emergency Control Center</span>
@@ -1580,20 +1656,40 @@
                     </h2>
                 </div>
 
-                <!-- Hub and Spoke for Who Can Use Matching Design 15 -->
-                <div class="relative w-full max-w-xl mx-auto aspect-square rounded-3xl bg-white border border-slate-200 p-8 flex items-center justify-center shadow-lg">
-                    <!-- Center Hub -->
-                    <div class="relative z-20 w-28 h-28 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center p-2 text-center node-pulse shadow-xl">
-                        <span class="text-[10px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
+                <!-- Hub and Spoke for Who Can Use Matching Design 15 (No Card + Added Animated Effects) -->
+                <div class="relative w-full max-w-xl mx-auto aspect-square p-4 sm:p-8 flex items-center justify-center overflow-hidden">
+                    <!-- Subtle Technical Radar & Concentric Guide Rings -->
+                    <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-40 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="w-[320px] h-[320px] rounded-full border border-slate-200/60"></div>
+                        <div class="w-[200px] h-[200px] rounded-full border border-blue-200/50"></div>
                     </div>
 
-                    <!-- SVG Lines -->
-                    <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 400">
-                        <line x1="200" y1="200" x2="200" y2="70" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
-                        <line x1="200" y1="200" x2="330" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
-                        <line x1="200" y1="200" x2="290" y2="310" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
-                        <line x1="200" y1="200" x2="110" y2="310" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
-                        <line x1="200" y1="200" x2="70" y2="150" stroke="#93c5fd" stroke-width="2" stroke-dasharray="3,3" />
+                    <!-- Center Hub with Heartbeat Pulsing Rings -->
+                    <div class="relative z-20 flex flex-col items-center justify-center">
+                        <div class="absolute inset-0 -m-3 sm:-m-4 rounded-full border-2 border-brandBlue/30 heartbeat-ring-1 pointer-events-none"></div>
+                        <div class="absolute inset-0 -m-6 sm:-m-8 rounded-full border-2 border-brandBlue/15 heartbeat-ring-2 pointer-events-none"></div>
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center p-2 text-center shadow-2xl border-4 border-white heartbeat-center">
+                            <i class="fa-solid fa-tower-broadcast text-blue-300 text-xs sm:text-sm mb-0.5"></i>
+                            <span class="text-[9px] sm:text-[10px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
+                        </div>
+                    </div>
+
+                    <!-- SVG Animated Rays & Flowing Beams -->
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 400 400">
+                        <!-- Static Dashed Trajectories -->
+                        <line x1="200" y1="200" x2="200" y2="70" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+                        <line x1="200" y1="200" x2="330" y2="150" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+                        <line x1="200" y1="200" x2="290" y2="310" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+                        <line x1="200" y1="200" x2="110" y2="310" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+                        <line x1="200" y1="200" x2="70" y2="150" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+
+                        <!-- Dynamic Flowing Beams (Clockwise) -->
+                        <line x1="200" y1="200" x2="200" y2="70" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="25 150" class="beam-4turn-1" />
+                        <line x1="200" y1="200" x2="330" y2="150" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="25 150" class="beam-4turn-2" />
+                        <line x1="200" y1="200" x2="290" y2="310" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="25 150" class="beam-4turn-3" />
+                        <line x1="200" y1="200" x2="110" y2="310" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="25 150" class="beam-4turn-4" />
+                        <line x1="200" y1="200" x2="70" y2="150" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="25 150" class="beam-4turn-1" />
                     </svg>
 
                     <!-- 5 Spokes -->
