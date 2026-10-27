@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Every Emergency Response Team. | EMSTRAP Solutions</title>
+    <title>Police Departments & Emergency Teams | EMSTRAP Solutions</title>
     <meta name="description" content="EMSTRAP helps police departments receive emergency information faster, understand incident locations and coordinate with ambulances, hospitals and other responders.">
 
     <!-- Tailwind CSS -->
@@ -86,8 +86,10 @@
                             <span>Solutions</span>
                             <i class="fa-solid fa-chevron-down text-[10px] text-brandBlue transition-transform group-hover:rotate-180"></i>
                         </button>
-                        <div class="absolute top-full left-0 w-60 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
+                        <div class="absolute top-full left-0 w-64 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
                             <a href="corporate-companies.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Corporate Companies</a>
+                            <a href="hospitals-and-clinics.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Hospitals &amp; Clinics</a>
+                            <a href="educational-campuses.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Educational Institutions</a>
                             <a href="smart-cities.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Smart Cities</a>
                             <a href="government-agencies.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Government Agencies</a>
                             <a href="ambulance-providers.html" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Ambulance Providers</a>
@@ -127,12 +129,12 @@
     <main class="flex-grow">
 
         <!-- ===================================================================== -->
-        <!-- 01. HERO SECTION -->
+        <!-- HERO SECTION (Matching Slide 4) -->
         <!-- ===================================================================== -->
         <section class="relative bg-[#050B14] text-white min-h-[560px] lg:min-h-[620px] flex items-center overflow-hidden">
             <!-- Background Image -->
             <div class="absolute inset-0 z-0">
-                <img src="images/hero-police.jpg" alt="FOR POLICE DEPARTMENTS" class="w-full h-full object-cover object-center" />
+                <img src="home-police.jpg" alt="Police Response Team" class="w-full h-full object-cover object-center" />
                 <div class="absolute inset-0 hero-gradient-overlay"></div>
             </div>
 
@@ -140,18 +142,18 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     
                     <!-- Left Hero Content -->
-                    <div class="lg:col-span-12 space-y-6 max-w-3xl">
-
+                    <div class="lg:col-span-7 space-y-6 max-w-2xl">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block">FOR POLICE DEPARTMENTS</span>
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-[1.08]">
-                            Connect Every<br>Emergency Response Team.
+                            Connect Every<br>Emergency <span class="text-emergencyRed">Response Team.</span>
                         </h1>
 
-                        <p class="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-xl">
+                        <p class="text-base sm:text-lg text-white/80 font-normal leading-relaxed">
                             EMSTRAP helps police departments receive emergency information faster, understand incident locations and coordinate with ambulances, hospitals and other responders.
                         </p>
 
                         <div class="flex flex-wrap items-center gap-4 pt-2">
-                            <a href="#solutions" class="px-8 py-3.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg hover:shadow-xl font-display hover:scale-105 active:scale-95 inline-flex items-center gap-2">
+                            <a href="#solutions" class="px-8 py-3.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg hover:shadow-xl font-display hover:scale-105 active:scale-95 inline-flex items-center gap-2">
                                 <span>Get Started</span>
                                 <i class="fa-solid fa-arrow-down text-[10px]"></i>
                             </a>
@@ -162,50 +164,78 @@
 
                         <!-- Tag Pills -->
                         <div class="pt-4 border-t border-white/15 flex flex-wrap items-center gap-2 text-xs font-medium text-white/60">
-                            
-                                <span>Ambulance Services</span>
-                                <span class="text-white/20">|</span>
-                            
-                                <span>Hospitals</span>
-                                <span class="text-white/20">|</span>
-                            
-                                <span>Traffic Authorities</span>
-                                <span class="text-white/20">|</span>
-                            
-                                <span>Emergency Control Rooms</span>
-                                
-                            
+                            <span>Ambulance Services</span>
+                            <span class="text-white/20">|</span>
+                            <span>Hospitals</span>
+                            <span class="text-white/20">|</span>
+                            <span>Traffic Authorities</span>
+                            <span class="text-white/20">|</span>
+                            <span>Emergency Control Rooms</span>
                         </div>
                     </div>
-                            <p class="text-xs text-white/70 leading-relaxed">
-                                Instant incident alert routing to nearest patrol units and unified multi-responder map sync.
-                            </p>
-                            <div class="pt-2 border-t border-white/10">
-                                <a href="#solutions" class="text-xs font-bold text-white flex items-center gap-2 hover:text-blue-300 transition-colors">
-                                    <span>Police Command</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
+
+                    <!-- Right Hero Visual Card: Matching Slide 4 -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-[#0A1120]/90 backdrop-blur-xl border border-white/15 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl bg-red-500/20 border border-red-400/30 flex items-center justify-center text-red-400">
+                                        <i class="fa-solid fa-bell text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-sm font-bold font-display text-white">New Emergency Alert</h3>
+                                        <span class="text-[11px] font-mono text-red-400 font-bold">● High Priority Incident</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-mono bg-white/10 px-2.5 py-1 rounded-md text-white/80">Active</span>
                             </div>
+
+                            <!-- Map Card Preview -->
+                            <div class="relative rounded-xl overflow-hidden border border-white/10 h-36 bg-slate-800 flex items-center justify-center">
+                                <img src="images/cards/police-gps-patrols.jpg" alt="Incident Map Location" class="w-full h-full object-cover opacity-60" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                                    <div class="w-8 h-8 rounded-full bg-emergencyRed text-white flex items-center justify-center shadow-lg animate-bounce">
+                                        <i class="fa-solid fa-location-dot text-sm"></i>
+                                    </div>
+                                    <span class="text-xs font-bold font-display text-white mt-2">Road Traffic Accident</span>
+                                    <span class="text-[10px] font-mono text-emerald-400">1.2 km away • Patrol Unit #04 Dispatched</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 text-xs">
+                                <div class="flex items-center justify-between p-2.5 bg-white/5 rounded-lg border border-white/10">
+                                    <span class="text-slate-400 font-mono">Coordinated Services</span>
+                                    <span class="text-white font-medium">Police + Ambulance #KA01AB</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2.5 bg-white/5 rounded-lg border border-white/10">
+                                    <span class="text-slate-400 font-mono">Corridor Clearance</span>
+                                    <span class="text-emerald-400 font-bold font-mono">Green Wave Active</span>
+                                </div>
+                            </div>
+
+                            <button onclick="openSolutionModal()" class="w-full py-2.5 rounded-xl bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold text-xs uppercase tracking-wider font-display transition-all">
+                                View Details
+                            </button>
                         </div>
                     </div>
-                    
 
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 02. CHALLENGE SECTION -->
+        <!-- THE CHALLENGE SECTION (Matching Slide 4) -->
         <!-- ===================================================================== -->
         <section class="py-20 md:py-24 bg-slate-50 border-b border-slate-200/80" id="challenges">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-emergencyRed block mb-2">OPERATIONAL CHALLENGES</span>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-emergencyRed block mb-2">THE CHALLENGE</span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight">
                         Police departments face critical operational challenges.
                     </h2>
                     <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4">
-                        Delayed information, fragmented systems and limited coordination tools reduce police effectiveness in emergency response.
+                        Emergency response becomes difficult when information is delayed, scattered or managed manually.
                     </p>
                 </div>
 
@@ -214,15 +244,15 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-dispatch-intake.jpg" alt="Delayed Incident Information" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-dispatch-intake.jpg" alt="Delayed incident information" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Delayed Incident Information
+                                    Delayed incident information
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Officers and dispatch centres receive incident reports through fragmented channels with time-critical information often delayed.
+                                    Emergency response becomes difficult when information is delayed, scattered or managed manually.
                                 </p>
                             </div>
                         </div>
@@ -231,15 +261,15 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-fragmented-screens.jpg" alt="Fragmented Communication" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-fragmented-screens.jpg" alt="Fragmented communication" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Fragmented Communication
+                                    Fragmented communication
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Police, ambulance and hospital communication runs through separate systems with no unified information layer.
+                                    Communication gaps between police patrols, ambulance fleets and city hospital control rooms.
                                 </p>
                             </div>
                         </div>
@@ -248,15 +278,15 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-realtime-visibility.jpg" alt="Limited Real-Time Visibility" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-gps-patrols.jpg" alt="Limited real-time incident visibility" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Limited Real-Time Visibility
+                                    Limited real-time incident visibility
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Without live tracking tools, police command centres cannot monitor officer positions and active incident status simultaneously.
+                                    Dispatchers lack live GPS coordinates of field officers and ongoing on-scene developments.
                                 </p>
                             </div>
                         </div>
@@ -265,15 +295,15 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-multi-responder.jpg" alt="Multi-Responder Coordination" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-manual-paper-logs.jpg" alt="Difficulty coordinating multiple responders" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Multi-Responder Coordination
+                                    Difficulty coordinating multiple responders
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Coordinating police, ambulance and other services at the same incident requires structured tools that radio alone cannot provide.
+                                    Simultaneous coordination with fire brigades, medical paramedics, and traffic police causes delays.
                                 </p>
                             </div>
                         </div>
@@ -282,15 +312,15 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-case-records.jpg" alt="Manual Incident Records" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-response-bottlenecks.jpg" alt="Manual incident records" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Manual Incident Records
+                                    Manual incident records
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Paper-based or disconnected record systems create compliance gaps and make post-incident review time-consuming.
+                                    Manual logging and paper case documents slow down reporting and forensic evidence collation.
                                 </p>
                             </div>
                         </div>
@@ -299,36 +329,36 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-unified-info.jpg" alt="Lack of Unified Emergency Information" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/police-trauma-handoffs.jpg" alt="Lack of unified emergency information" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-emergencyRed w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-emergencyRed transition-colors">
-                                    Lack of Unified Emergency Information
+                                    Lack of unified emergency information
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Officers on the ground and commanders at HQ work from different, incomplete versions of the same incident picture.
+                                    No single operational picture shared across police departments, PCR vans, and municipal services.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 03. HOW EMSTRAP HELPS / SOLUTIONS SECTION -->
+        <!-- HOW EMSTRAP HELPS SECTION (Matching Slide 4) -->
         <!-- ===================================================================== -->
         <section class="py-20 md:py-24 bg-white border-b border-slate-200/80" id="solutions">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">INTEGRATED SOLUTIONS</span>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">HOW EMSTRAP HELPS</span>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight">
                         A connected platform for smarter policing.
                     </h2>
                     <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4">
-                        EMSTRAP gives police departments the real-time information and coordination tools needed to respond faster and work effectively with other emergency services.
+                        EMSTRAP provides the tools and information police departments need to respond faster and more effectively.
                     </p>
                 </div>
 
@@ -337,7 +367,7 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-mobile-alert.jpg" alt="Real-Time Incident Alerts" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/sol-cad-integration.jpg" alt="Real-Time Incident Alerts" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-brandBlue w-full"></div>
                             <div class="p-6">
@@ -345,7 +375,7 @@
                                     Real-Time Incident Alerts
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Instant digital alerts for new emergencies with location data, incident type and status updates in real time.
+                                    Receive emergency notifications with relevant incident information.
                                 </p>
                             </div>
                         </div>
@@ -354,7 +384,7 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-gis-map.jpg" alt="Location Intelligence" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/sol-gis-routing.jpg" alt="Location Intelligence" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-brandBlue w-full"></div>
                             <div class="p-6">
@@ -362,7 +392,7 @@
                                     Location Intelligence
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Live mapping of active incidents, officer positions and other emergency responders on a shared operational map.
+                                    View incident locations through GPS and map-based interfaces.
                                 </p>
                             </div>
                         </div>
@@ -371,7 +401,7 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-responder-coordination.jpg" alt="Responder Coordination" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/sol-traffic-clearing.jpg" alt="Responder Coordination" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-brandBlue w-full"></div>
                             <div class="p-6">
@@ -379,7 +409,7 @@
                                     Responder Coordination
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Coordinate police response with ambulance, hospital and traffic management through one connected platform.
+                                    Coordinate with ambulances, hospitals, traffic authorities and emergency control rooms.
                                 </p>
                             </div>
                         </div>
@@ -388,7 +418,7 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/gov-command-wall.jpg" alt="Incident Monitoring" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/cards/sol-live-telemetry.jpg" alt="Incident Monitoring" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
                             <div class="h-[2px] bg-brandBlue w-full"></div>
                             <div class="p-6">
@@ -396,7 +426,142 @@
                                     Incident Monitoring
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    A live dashboard showing all active incidents, assigned resources and real-time status updates for command personnel.
+                                    Track active emergency cases and response progress.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300 lg:col-span-2">
+                        <div>
+                            <div class="w-full aspect-[24/10] bg-slate-100 overflow-hidden relative">
+                                <img src="images/cards/sol-hospital-handoff.jpg" alt="Digital Incident Records" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                            </div>
+                            <div class="h-[2px] bg-brandBlue w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Digital Incident Records
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Maintain structured emergency records and response information.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- KEY BENEFITS SECTION (Matching Slide 4) -->
+        <!-- ===================================================================== -->
+        <section class="py-20 md:py-24 bg-[#050B14] text-white relative overflow-hidden" id="benefits">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-2">KEY BENEFITS</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-white tracking-tight">
+                        Support safer cities through better coordination.
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mt-4">
+                        EMSTRAP helps police departments improve situational awareness and respond to emergencies more effectively.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Faster awareness of incidents</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Sub-second dispatch from public 112 calls straight to the mobile patrol terminals.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-users-viewfinder text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Better field coordination</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Synchronized tactical assignments between beat officers, traffic units, and emergency medical teams.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-comments text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Improved emergency communication</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Integrated digital channels replace fragmented radio chatter and incomplete telephone relays.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-crosshairs text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Better situational awareness</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Live operational heatmaps, caller GPS location, and camera feeds for informed tactical choices.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-database text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Centralized incident information</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Unified emergency docket accessible across precinct commanders and field officers in real time.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white mb-4">
+                            <i class="fa-solid fa-file-shield text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-display text-white mb-2">Digital response records</h3>
+                        <p class="text-xs text-white/70 leading-relaxed">
+                            Automated timestamps, vehicle telemetry, and resolution notes for courtroom evidence and reporting.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- A CONNECTED EMERGENCY ECOSYSTEM SECTION (Matching Slide 4) -->
+        <!-- ===================================================================== -->
+        <section class="py-20 md:py-24 bg-white border-b border-slate-200/80" id="ecosystem">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500 block mb-2">A CONNECTED EMERGENCY ECOSYSTEM</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight">
+                        From incident to resolution. All responders connected.
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4">
+                        EMSTRAP helps police departments work together with ambulances, hospitals and other emergency teams.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+                        <div>
+                            <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
+                                <img src="images/ecosystem/eco-trigger.jpg" alt="Incident Report" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Incident Report
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Emergency information received
                                 </p>
                             </div>
                         </div>
@@ -405,262 +570,106 @@
                     <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
                             <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
-                                <img src="images/cards/police-digital-records.jpg" alt="Digital Incident Records" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
+                                <img src="images/ecosystem/eco-analytics.jpg" alt="Police Department" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
-                            <div class="h-[2px] bg-brandBlue w-full"></div>
                             <div class="p-6">
                                 <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
-                                    Digital Incident Records
+                                    Police Department
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                                    Complete digital documentation for every incident from first alert through to resolution and post-incident review.
+                                    View and assess incident
                                 </p>
                             </div>
                         </div>
                     </div>
                     
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 04. KEY BENEFITS SECTION -->
-        <!-- ===================================================================== -->
-        <section class="py-20 md:py-24 bg-[#050B14] text-white relative overflow-hidden" id="benefits">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block mb-2">PROVEN OUTCOMES</span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-white tracking-tight">
-                        Support safer cities through better coordination.
-                    </h2>
-                    <p class="text-sm sm:text-base text-white/70 font-normal leading-relaxed mt-4">
-                        EMSTRAP equips police departments with the tools to respond faster, coordinate better and maintain complete operational awareness.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-bolt text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Faster Incident Awareness
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            Real-time digital alerts ensure police receive incident information the moment it is reported.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-users text-sky-500 text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Better Field Coordination
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            Officers and commanders work from the same live incident picture for more effective response.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-comments text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Improved Emergency Communication
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            Structured digital communication replaces fragmented radio contact across all active incidents.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-eye text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Better Situational Awareness
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            Live map views give commanders complete visibility of field operations during active emergencies.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-layer-group text-indigo-500 text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Centralized Incident Information
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            All incident data consolidated in one platform accessible to dispatch, field units and command.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/5 border border-white/10 hover:border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-white">
-                            <i class="fa-solid fa-database text-white text-lg"></i>
-                        </div>
-                        <h3 class="text-base font-bold font-display text-white mb-2 group-hover:text-white transition-colors">
-                            Digital Response Records
-                        </h3>
-                        <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                            Comprehensive digital records support compliance, audit and post-incident improvement reviews.
-                        </p>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================== -->
-        <!-- 05. ECOSYSTEM & END-TO-END WORKFLOW -->
-        <!-- ===================================================================== -->
-        <section class="py-20 md:py-24 bg-white border-b border-slate-200/80" id="ecosystem">
-            <div class="max-w-7xl mx-auto px-6 md:px-12">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue block mb-2">END-TO-END PROCESS</span>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight">
-                        From incident to resolution.
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed mt-4">
-                        All responders connected.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
-                                <img src="images/ecosystem/eco-trigger.jpg" alt="Incident Report" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 01
-                                </div>
+                            <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
+                                <img src="images/ecosystem/eco-traffic.jpg" alt="Ambulance Services" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Incident Report
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Emergency reported and logged.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
-                        <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
-                                <img src="images/ecosystem/eco-police.jpg" alt="Police Department" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 02
-                                </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Ambulance Services
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Coordinate and respond
+                                </p>
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Police Department
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Officers alerted and dispatched.
-                            </p>
                         </div>
                     </div>
                     
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
-                                <img src="images/ecosystem/eco-response.jpg" alt="Ambulance Services" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 03
-                                </div>
+                            <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
+                                <img src="images/ecosystem/eco-response.jpg" alt="Traffic Authorities" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Ambulance Services
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Medical response coordinated.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
-                        <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
-                                <img src="images/ecosystem/eco-traffic.jpg" alt="Traffic Authorities" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 04
-                                </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Traffic Authorities
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Support movement and access
+                                </p>
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Traffic Authorities
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Route support activated.
-                            </p>
                         </div>
                     </div>
                     
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
+                            <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
                                 <img src="images/ecosystem/eco-hospital.jpg" alt="Hospitals" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 05
-                                </div>
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Hospitals
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                Medical teams pre-notified.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Hospitals
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Prepare for arrival
+                                </p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
+                    <div class="card-hover-box bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
                         <div>
-                            <div class="w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 relative">
+                            <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden relative">
                                 <img src="images/ecosystem/eco-resolution.jpg" alt="Incident Resolution" class="w-full h-full object-cover card-zoom-img" loading="lazy" />
-                                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm text-white px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider">
-                                    STEP 06
-                                </div>
                             </div>
-                            <h3 class="text-base font-bold font-display text-slate-900 mb-1 group-hover:text-brandBlue transition-colors">
-                                Incident Resolution
-                            </h3>
-                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
-                                All responders stand down, records filed.
-                            </p>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold font-display text-slate-900 mb-2 group-hover:text-brandBlue transition-colors">
+                                    Incident Resolution
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                                    Track and complete response
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
 
         <!-- ===================================================================== -->
-        <!-- 06. READY TO BUILD BETTER INFRASTRUCTURE CTA -->
+        <!-- READY TO BUILD BETTER INFRASTRUCTURE CTA -->
         <!-- ===================================================================== -->
-        <section class="py-16 md:py-20 bg-slate-900 text-white relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div class="bg-gradient-to-r from-blue-900/60 via-slate-800 to-slate-900 border border-blue-500/20 p-8 sm:p-12 rounded-3xl flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
-                    <div class="space-y-2 text-center lg:text-left max-w-2xl">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-display text-white tracking-tight">
-                            Ready to upgrade your emergency response?
-                        </h2>
-                        <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
-                            Talk to an EMSTRAP specialist about your organisation's specific requirements.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-4 shrink-0">
-                        <button onclick="openSolutionModal()" class="px-8 py-3.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-xl font-display">
-                            Schedule Briefing
-                        </button>
-                        <a href="contact.html" class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all font-display">
-                            Contact Us
-                        </a>
-                    </div>
+        <section class="py-20 md:py-24 bg-[#050B14] text-white text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">LAW ENFORCEMENT READINESS</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight text-white">
+                    Equip Your Patrols With Connected Intelligence.
+                </h2>
+                <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                    Speak with our public safety specialists to evaluate EMSTRAP for your police department or emergency control room.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <button onclick="openSolutionModal()" class="px-8 py-3.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white font-bold tracking-wider text-xs uppercase transition-all shadow-lg hover:shadow-xl font-display hover:scale-105 active:scale-95">
+                        Schedule a Demonstration
+                    </button>
+                    <a href="contact.html" class="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold tracking-wider text-xs uppercase transition-all border border-white/20 backdrop-blur-md font-display hover:scale-105 active:scale-95">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </section>
@@ -670,104 +679,96 @@
     <!-- ===================================================================== -->
     <!-- GLOBAL FOOTER -->
     <!-- ===================================================================== -->
-    <footer class="bg-[#050505] border-t border-neutral-900 py-12 px-6 md:px-12 text-xs text-neutral-500">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-            <!-- Brand Column -->
-            <div class="lg:col-span-2 space-y-4">
-                <a class="flex items-center space-x-3 group" href="index.html">
+    <footer class="bg-[#050B14] text-slate-400 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <div class="lg:col-span-2 space-y-4">
                     <div class="h-9 flex items-center">
                         <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
                     </div>
-                    <span class="text-xl font-black font-display tracking-wider text-white">EMSTRAP</span>
-                </a>
-                <p class="text-xs text-neutral-400 leading-relaxed max-w-sm font-normal">
-                    EMSTRAP is an integrated emergency response and safety management platform connecting organisations, cities and emergency services into a unified operational ecosystem.
-                </p>
-                <div class="flex items-center gap-3 pt-2">
-                    <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white transition-all text-xs" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                    <p class="text-xs leading-relaxed text-slate-400 max-w-sm">
+                        EMSTRAP is an integrated emergency response and safety management platform connecting organisations, cities and emergency services into a unified operational ecosystem.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brandBlue transition-all text-xs" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/emstrap_official?stkn=bjN6eXU2cHc5cHJ4" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brandBlue transition-all text-xs" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider font-mono mb-4">Products</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="connect.html" class="hover:text-white transition-colors">EMSTRAP Connect</a></li>
+                        <li><a href="ride.html" class="hover:text-white transition-colors">EMSTRAP Ride</a></li>
+                        <li><a href="shield.html" class="hover:text-white transition-colors">EMSTRAP Shield</a></li>
+                        <li><a href="command.html" class="hover:text-white transition-colors">EMSTRAP Command</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider font-mono mb-4">Solutions</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="corporate-companies.html" class="hover:text-white transition-colors">Corporate Companies</a></li>
+                        <li><a href="hospitals-and-clinics.html" class="hover:text-white transition-colors">Hospitals &amp; Clinics</a></li>
+                        <li><a href="educational-campuses.html" class="hover:text-white transition-colors">Educational Institutions</a></li>
+                        <li><a href="smart-cities.html" class="hover:text-white transition-colors">Smart Cities</a></li>
+                        <li><a href="government-agencies.html" class="hover:text-white transition-colors">Government Agencies</a></li>
+                        <li><a href="ambulance-providers.html" class="hover:text-white transition-colors">Ambulance Providers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider font-mono mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="pilots.html" class="hover:text-white transition-colors">Pilots &amp; Deployments</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Solutions Links -->
-            <div class="space-y-3">
-                <span class="text-[11px] font-mono uppercase tracking-widest text-neutral-300 block font-bold">Solutions</span>
-                <ul class="space-y-2">
-                    <li><a href="corporate-companies.html" class="hover:text-white transition-colors">Corporate Safety</a></li>
-                    <li><a href="smart-cities.html" class="hover:text-white transition-colors">Smart Cities</a></li>
-                    <li><a href="government-agencies.html" class="hover:text-white transition-colors">Government Agencies</a></li>
-                    <li><a href="ambulance-providers.html" class="hover:text-white transition-colors">Ambulance Providers</a></li>
-                    <li><a href="traffic-management.html" class="hover:text-white transition-colors">Traffic Management</a></li>
-                    <li><a href="police-departments.html" class="hover:text-white transition-colors">Police Departments</a></li>
-                </ul>
-            </div>
-
-            <!-- Products Links -->
-            <div class="space-y-3">
-                <span class="text-[11px] font-mono uppercase tracking-widest text-neutral-300 block font-bold">Products</span>
-                <ul class="space-y-2">
-                    <li><a href="connect.html" class="hover:text-white transition-colors">EMSTRAP Connect</a></li>
-                    <li><a href="ride.html" class="hover:text-white transition-colors">EMSTRAP Ride</a></li>
-                    <li><a href="shield.html" class="hover:text-white transition-colors">EMSTRAP Shield</a></li>
-                    <li><a href="command.html" class="hover:text-white transition-colors">EMSTRAP Command</a></li>
-                </ul>
-            </div>
-
-            <!-- Company Links -->
-            <div class="space-y-3">
-                <span class="text-[11px] font-mono uppercase tracking-widest text-neutral-300 block font-bold">Company</span>
-                <ul class="space-y-2">
-                    <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
-                    <li><a href="pilots.html" class="hover:text-white transition-colors">Pilots</a></li>
-                    <li><a href="patent.html" class="hover:text-white transition-colors">Patents</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500">
-            <span>&copy; 2026 EMSTRAP Pvt. Ltd. All rights reserved.</span>
-            <div class="flex items-center space-x-6">
-                <a href="privacy-policy.pdf" target="_blank" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="terms-and-conditions.pdf" target="_blank" class="hover:text-white transition-colors">Terms of Service</a>
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 EMSTRAP. All rights reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="terms.html" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-slate-400 transition-colors">Support</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Solution Request Modal -->
-    <div id="solutionModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="bg-white border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-6 text-slate-900 shadow-2xl relative">
-            <button onclick="closeSolutionModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl cursor-pointer">
+    <div id="solutionModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-[#0A1120] border border-white/10 rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative">
+            <button onclick="closeSolutionModal()" class="absolute top-4 right-4 text-white/60 hover:text-white text-lg">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div>
-                <span class="text-xs font-mono font-bold uppercase tracking-widest text-brandBlue">FOR POLICE DEPARTMENTS</span>
-                <h3 class="text-2xl font-bold font-display text-slate-900 mt-1">Request a Specialist Briefing</h3>
-                <p class="text-xs text-slate-500 font-normal mt-1">Connect with our engineering and deployment team.</p>
-            </div>
-            <form onsubmit="handleSolutionSubmit(event)" class="space-y-4">
+            <h3 class="text-xl font-bold font-display text-white mb-2">Request Specialist Briefing</h3>
+            <p class="text-xs text-white/70 mb-6">Connect with our deployment engineering team.</p>
+            <form onsubmit="handleSolutionSubmit(event)" class="space-y-4 text-xs">
                 <div>
-                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Your Name</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Rahul Sharma" />
+                    <label class="block text-white/80 font-medium mb-1">Organisation / Agency Name</label>
+                    <input type="text" required placeholder="Name of agency or institution" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-brandBlue" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Organisation / Agency</label>
-                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="e.g. Municipal Corp / Hospital Network" />
+                    <label class="block text-white/80 font-medium mb-1">Official Email</label>
+                    <input type="email" required placeholder="contact@agency.gov / .org" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-brandBlue" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Official Work Email</label>
-                    <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="official@agency.gov / name@company.com" />
+                    <label class="block text-white/80 font-medium mb-1">Contact Phone</label>
+                    <input type="tel" required placeholder="+91 ..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-brandBlue" />
                 </div>
                 <div>
-                    <label class="text-[11px] font-mono text-slate-600 uppercase tracking-wider block mb-1">Phone Number</label>
-                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandBlue" placeholder="+91 98808 82476" />
+                    <label class="block text-white/80 font-medium mb-1">Operational Needs</label>
+                    <textarea rows="3" placeholder="Tell us about your emergency management or fleet requirements..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-brandBlue"></textarea>
                 </div>
-                <button type="submit" class="w-full py-3 bg-brandBlue hover:bg-brandBlueDark text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all font-display">
+                <button type="submit" class="w-full py-3 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold tracking-wider uppercase transition-all shadow-lg font-display">
                     Submit Request
                 </button>
             </form>
@@ -776,14 +777,18 @@
 
     <script>
         function openSolutionModal() {
-            document.getElementById('solutionModal').classList.remove('hidden');
+            const modal = document.getElementById('solutionModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
         }
         function closeSolutionModal() {
-            document.getElementById('solutionModal').classList.add('hidden');
+            const modal = document.getElementById('solutionModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
         }
         function handleSolutionSubmit(e) {
             e.preventDefault();
-            alert('Thank you! Your request has been received. An EMSTRAP specialist will contact you shortly.');
+            alert('Thank you! Our emergency specialist will contact you shortly.');
             closeSolutionModal();
         }
     </script>
