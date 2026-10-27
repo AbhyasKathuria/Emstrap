@@ -104,73 +104,6 @@
 </head>
 <body class="bg-[#F8FAFC] text-slate-900 font-sans min-h-screen flex flex-col justify-between selection:bg-emergencyRed selection:text-white antialiased">
 
-    <!-- Global Persistent Navigation Header -->
-    <header class="py-3.5 px-6 md:px-12 bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm" id="mainHeader">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a class="flex items-center space-x-3 group" href="index.html">
-                <div class="h-9 flex items-center transition-transform duration-300 group-hover:scale-105">
-                    <img src="logo.png" alt="EMSTRAP Logo" class="h-full w-auto object-contain" />
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-black font-display tracking-wider text-slate-900">EMSTRAP</span>
-                </div>
-            </a>
-            
-            <div class="flex items-center space-x-6 lg:space-x-8">
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-semibold text-slate-600">
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Products</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-48 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="connect.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Connect</a>
-                            <a href="ride.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Ride</a>
-                            <a href="shield.html" class="block px-4 py-2 text-xs font-semibold text-emergencyRed bg-red-50/50">EMSTRAP Shield</a>
-                            <a href="command.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">EMSTRAP Command</a>
-                        </div>
-                    </div>
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Solutions</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-56 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="corporate-companies.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Corporate Companies</a>
-                            <a href="smart-cities.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Smart Cities</a>
-                            <a href="government-agencies.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Government Agencies</a>
-                            <a href="ambulance-providers.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Ambulance Providers</a>
-                            <a href="traffic-management.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Traffic Management</a>
-                            <a href="police-departments.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Police Departments</a>
-                        </div>
-                    </div>
-                    <a href="index.html#page-about" class="hover:text-brandBlue transition-colors">Resources</a>
-                    <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-brandBlue transition-colors font-semibold">
-                            <span>Company</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brandBlue transition-transform group-hover:rotate-180"></i>
-                        </button>
-                        <div class="absolute top-full left-0 w-40 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="about.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">About Us</a>
-                            <a href="careers.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Careers</a>
-                            <a href="contact.html" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-brandBlue">Contact</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="hover:text-brandBlue transition-colors">Contact</a>
-                </nav>
-                
-                <div class="flex items-center gap-3">
-                    <button onclick="openShieldDemoModal()" class="px-4 py-2 rounded-full text-emergencyRed border border-red-200 hover:bg-red-50 text-xs font-bold transition-all font-display">
-                        Emergency
-                    </button>
-                    <button onclick="openShieldDemoModal()" class="px-5 py-2.5 rounded-full bg-emergencyRed hover:bg-emergencyRedDark text-white text-xs font-bold transition-all shadow-md hover:shadow-lg font-display">
-                        Login
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <main class="flex-grow space-y-16 md:space-y-20 pb-20">
 
         <!-- ===================================================================== -->
@@ -181,7 +114,7 @@
             <div class="absolute inset-0 w-full h-full z-0 pointer-events-none bg-cover bg-center bg-no-repeat" style="background-image: url('images/shield-hero-campus-clean.jpg');"></div>
             <!-- Translucent Scrim Overlay for Crystal-Clear Text Readability -->
             <!-- Focused Scrim on Text Side Only for Crisp Campus Visibility on Right -->
-            <div class="absolute inset-0 z-0 bg-gradient-to-r from-white via-white/95 via-40% to-transparent to-75% pointer-events-none"></div>
+            <div class="absolute inset-0 z-0 bg-gradient-to-r from-white/85 via-white/50 to-white/20 backdrop-blur-[0.5px] pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 relative z-10">
                 <div class="max-w-xl space-y-6 text-left">
