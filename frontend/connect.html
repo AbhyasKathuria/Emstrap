@@ -314,13 +314,6 @@
                 </nav>
                 
                 <div class="flex items-center gap-3">
-                    <a href="tel:112" class="px-4 py-2 rounded-full bg-red-50 hover:bg-red-100 text-emergencyRed text-xs font-bold uppercase tracking-wider transition-all border border-red-200 flex items-center gap-1.5 font-display shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emergencyRed animate-ping"></span>
-                        <span>Emergency</span>
-                    </a>
-                    <button onclick="openDemoModal()" class="px-5 py-2.5 rounded-full bg-brandBlue hover:bg-brandBlueDark text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg font-display">
-                        Request Demo
-                    </button>
                     
                     <div class="hidden sm:flex items-center gap-2 pl-3 border-l border-slate-200">
                         <a href="https://www.linkedin.com/company/emstrap/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-all text-xs" title="LinkedIn">
@@ -370,10 +363,6 @@
                     
                     <!-- Left Hero Text -->
                     <div class="lg:col-span-6 space-y-6 text-left">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200">
-                            <span class="w-2 h-2 rounded-full bg-brandBlue animate-ping"></span>
-                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-brandBlue">EMSTRAP CONNECT</span>
-                        </div>
 
                         <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-black font-display text-slate-900 tracking-tight leading-[1.08]">
                             One Connected Network for Every Emergency
@@ -1118,14 +1107,8 @@
 
                             <!-- Target Single Incident Output Card (Enterprise CAD Design) -->
                             <div class="w-full sm:w-64 p-5 rounded-2xl bg-white border border-slate-200 shadow-md text-left space-y-3 relative shrink-0 hover:shadow-lg transition-all">
-                                <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-2.5 h-2.5 rounded-full bg-emergencyRed animate-pulse"></span>
-                                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">INCIDENT #8492</span>
-                                    </div>
-                                    <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
-                                        VERIFIED
-                                    </span>
+                                <div class="border-b border-slate-100 pb-2.5">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 block">INCIDENT #8492</span>
                                 </div>
 
                                 <div>
@@ -1326,18 +1309,22 @@
                         </div>
                     </div>
 
-                    <!-- 2. Automated Processing Pipeline (Clean Data Pipeline, No AI Gimmicks) -->
-                    <div class="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-3 py-4 lg:py-0">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-brandBlue flex items-center justify-center text-lg shadow-sm">
-                            <i class="fa-solid fa-bolt-lightning text-blue-400"></i>
+                    <!-- 2. AI Analysis Pipeline (Direct Visual, Stays Permanent) -->
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center text-center space-y-4 py-4 lg:py-0">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-400 block">AI INGESTION &amp; PARSING</span>
+                        <div class="flex items-center justify-center gap-2 h-14">
+                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-indigo-500 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-indigo-400 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-blue-400 rounded-full wave-bar"></span>
+                            <span class="w-1.5 bg-blue-500 rounded-full wave-bar"></span>
                         </div>
-                        <div>
-                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-blue-300 block">AUTOMATED TRIAGE</span>
-                            <span class="text-[11px] text-slate-400 font-normal">Real-time incident parsing &amp; structuring</span>
-                        </div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 font-mono text-[10px] font-semibold">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>PROCESSED IN 0.28s</span>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 font-mono text-[11px] font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            <span>INFERENCE CONFIRMED (0.28s)</span>
                         </div>
                     </div>
 
@@ -1669,9 +1656,9 @@
                     <div class="relative z-20 flex flex-col items-center justify-center">
                         <div class="absolute inset-0 -m-3 sm:-m-4 rounded-full border-2 border-brandBlue/30 heartbeat-ring-1 pointer-events-none"></div>
                         <div class="absolute inset-0 -m-6 sm:-m-8 rounded-full border-2 border-brandBlue/15 heartbeat-ring-2 pointer-events-none"></div>
-                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1E3A8A] text-white flex flex-col items-center justify-center p-2 text-center shadow-2xl border-4 border-white heartbeat-center">
-                            <i class="fa-solid fa-tower-broadcast text-blue-300 text-xs sm:text-sm mb-0.5"></i>
-                            <span class="text-[9px] sm:text-[10px] font-black font-display uppercase tracking-wider leading-tight">EMSTRAP<br/>CONNECT</span>
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white text-slate-900 flex flex-col items-center justify-center p-2 text-center shadow-2xl border-4 border-brandBlue heartbeat-center">
+                            <img src="logo.png" alt="EMSTRAP Logo" class="w-14 sm:w-16 h-auto object-contain" />
+                            <span class="text-[8px] sm:text-[9px] font-black font-display uppercase tracking-wider text-brandBlue mt-0.5 leading-none">CONNECT</span>
                         </div>
                     </div>
 
