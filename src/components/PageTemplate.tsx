@@ -103,21 +103,10 @@ const ICONS: Record<string, React.ReactNode> = {
 // ─── Title renderer (multi-line + highlight) ──────────────────────────────────
 function renderTitle(lines: string[], highlight: string) {
   return lines.map((line, lineIdx) => {
-    if (!highlight || !line.includes(highlight)) {
-      return (
-        <React.Fragment key={lineIdx}>
-          {lineIdx > 0 && <br />}
-          {line}
-        </React.Fragment>
-      );
-    }
-    const parts = line.split(highlight);
     return (
       <React.Fragment key={lineIdx}>
         {lineIdx > 0 && <br />}
-        {parts[0]}
-        <span className="text-brand-red">{highlight}</span>
-        {parts[1]}
+        {line}
       </React.Fragment>
     );
   });
@@ -158,11 +147,8 @@ function Hero({ hero }: { hero: PageData['hero'] }) {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-16 py-16 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column */}
-          <div className="lg:col-span-7 max-w-[640px]">
-            {/* Eyebrow */}
-            <div className="text-[12px] font-semibold tracking-[0.15em] uppercase text-white/60 mb-5 animate-hero-eyebrow">
-              {hero.eyebrow}
-            </div>
+          <div className="lg:col-span-12 max-w-[760px]">
+
 
             {/* Title */}
             <h1 className="text-[40px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-[1.08] tracking-tight mb-6 animate-hero-heading">
