@@ -271,425 +271,423 @@
         <!-- ===================================================================== -->
         <section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16" id="section-03-covered">
             
-            <!-- Section Header -->
-            <div class="text-left space-y-4 mb-10">
-                <span class="text-xs font-mono font-bold tracking-widest text-slate-900 uppercase block">
-                    EMSTRAP SHIELD
-                </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight leading-[1.15]">
-                    Everything Your Organization Is Covered For.
-                </h2>
-                <p class="text-base sm:text-lg text-slate-600 font-normal max-w-3xl leading-relaxed">
-                    A complete safety and emergency ecosystem for your employees, workplace and their families.
-                </p>
+            <!-- Section Header & Top Categories Bar matching Slide -->
+            <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6 mb-10">
+                <div class="space-y-3 max-w-2xl">
+                    <div class="flex items-center gap-2">
+                        <span class="w-6 h-[2px] bg-emergencyRed"></span>
+                        <span class="text-xs font-mono font-bold tracking-widest text-emergencyRed uppercase">
+                            EMSTRAP SHIELD
+                        </span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-display text-slate-900 tracking-tight leading-[1.15]">
+                        Everything Your Organization Is <span class="text-emergencyRed">Covered For.</span>
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                        A complete safety and emergency ecosystem for your employees, workplace and their families.
+                    </p>
+                </div>
+
+                <!-- 8 Categories Quick Icons Pill Bar -->
+                <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 bg-slate-50 border border-slate-200/80 p-2.5 rounded-2xl">
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Ambulance Assistance">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Ambulance<br>Assistance</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Fire Safety">
+                        <div class="w-7 h-7 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-fire-extinguisher"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Fire<br>Safety</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Medical Kits">
+                        <div class="w-7 h-7 rounded-lg bg-red-50 text-rose-500 flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-kit-medical"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Medical<br>Kits</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Training & Drills">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Training<br>&amp; Drills</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Employee SOS">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Employee<br>SOS</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Family Protection">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Family<br>Protection</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Company Dashboard">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Company<br>Dashboard</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white transition-all text-center group cursor-pointer" title="Reports & Insights">
+                        <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs mb-1 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-700 leading-tight">Reports<br>&amp; Insights</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- 8 Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 8 Wide Cards in 2-Column Grid (Matching Slide Layout) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                <!-- 01 Employee SOS -->
-                <div id="covered-01" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-emergencyRed/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-red-50 text-emergencyRed border border-red-200/80">
-                                01
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-red-50 text-emergencyRed flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-bell-concierge"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-employee-sos.jpg" alt="Employee SOS &amp; Emergency Response" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                1-Touch Trigger
-                            </span>
-                        </div>
-
+                <!-- Card 01 Employee SOS & Emergency Response -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
                         <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-emergencyRed transition-colors leading-snug">
-                                Employee SOS &amp; Emergency Response
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Employees can raise an instant SOS alert during medical emergencies, accidents or workplace safety threats.
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">01</span>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Employee SOS &amp; Emergency Response
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Employees can raise an SOS alert during medical emergencies, accidents or safety incidents.
                             </p>
                         </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Instant 1-touch SOS alert trigger</span>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Instant SOS alerts</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Automated company &amp; supervisor alerts</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Company notifications</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Priority ambulance coordination</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Ambulance coordination</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Real-time live incident GPS tracking</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Real-time incident tracking</span>
                             </li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- 02 Ambulance Assistance -->
-                <div id="covered-02" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-brandBlue/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-blue-50 text-brandBlue border border-blue-200/80">
-                                02
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-blue-50 text-brandBlue flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-truck-medical"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/amb-cad-dispatch.jpg" alt="Ambulance Assistance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Rapid Dispatch
-                            </span>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-brandBlue transition-colors leading-snug">
-                                Ambulance Assistance
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Direct integration with regional ambulance networks ensures the closest verified unit is dispatched without delays.
-                            </p>
-                        </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Immediate ambulance dispatch coordination</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Zero-fee covered employee transportation</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Real-time GPS vehicle tracking &amp; live ETA</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Hospital pre-alerting &amp; clinical handoff</span>
-                            </li>
-                        </ul>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c01_sos.jpg" alt="Employee SOS Alert Screen" class="w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
 
-                <!-- 03 Fire Safety & Evacuation -->
-                <div id="covered-03" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200/80">
-                                03
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-fire-extinguisher"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-fire-panel.jpg" alt="Fire Safety &amp; Evacuation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Fire Readiness
-                            </span>
-                        </div>
-
+                <!-- Card 02 Ambulance Assistance -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
                         <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-amber-600 transition-colors leading-snug">
-                                Fire Safety &amp; Evacuation
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Help your organization stay completely prepared for fire emergencies with digital inspections, plans and audits.
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">02</span>
+                                <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-truck-medical"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Ambulance Assistance
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                EMSTRAP coordinates eligible ambulance services for employees as per your selected plan.
                             </p>
                         </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Fire equipment records &amp; extinguisher audits</span>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Eligible ambulance coordination</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Emergency exits &amp; assembly point mapping</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Nearest ambulance assignment</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Regular inspection tracking &amp; checklists</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Real-time tracking and ETA</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Evacuation planning &amp; drill records</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Support with professional ambulance partners</span>
                             </li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- 04 First-Aid & Medical Kits -->
-                <div id="covered-04" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/80">
-                                04
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-kit-medical"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-medical-support.jpg" alt="First-Aid &amp; Medical Kits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Medical Stations
-                            </span>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-emerald-600 transition-colors leading-snug">
-                                First-Aid &amp; Medical Kits
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Equip and track your facility first-aid inventory, location availability, and routine medical supply inspections.
-                            </p>
-                        </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>First-aid stations &amp; kit location mapping</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Real-time kit status &amp; inventory tracking</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Inspection schedules &amp; expiry date alerts</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Automated kit replenishment management</span>
-                            </li>
-                        </ul>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c02_ambulance.jpg" alt="Ambulance Assistance at Office" class="w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
 
-                <!-- 05 Employee Safety Training & Mock Drills -->
-                <div id="covered-05" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-200/80">
-                                05
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-chalkboard-user"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-mock-drill.jpg" alt="Employee Safety Training &amp; Mock Drills" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Hands-On Readiness
-                            </span>
-                        </div>
-
+                <!-- Card 03 Fire Safety & Evacuation -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
                         <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-purple-600 transition-colors leading-snug">
-                                Safety Training &amp; Mock Drills
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Conduct regular drills and practical simulations to build a highly confident and well-prepared workforce.
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">03</span>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-fire-extinguisher"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Fire Safety &amp; Evacuation
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Help your organization stay prepared for fire emergencies with proper equipment, regular inspections and evacuation planning.
                             </p>
                         </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>First-aid and CPR awareness workshops</span>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Fire equipment records</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Fire extinguisher handling practicals</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Emergency exit information</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Campus-wide structured evacuation drills</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Regular inspection tracking</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Training schedules, logs &amp; attendance records</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Evacuation planning and drill records</span>
                             </li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- 06 Company Safety Dashboard -->
-                <div id="covered-06" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-600 border border-cyan-200/80">
-                                06
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-desktop"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-safety-dashboard.jpg" alt="Company Safety Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Central Console
-                            </span>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-cyan-600 transition-colors leading-snug">
-                                Company Safety Dashboard
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Get a centralized live command view of safety readiness, emergency alerts, and facilities across your organization.
-                            </p>
-                        </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Real-time employee safety status overview</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Active emergency incident logging &amp; alerts</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Facility inspections &amp; equipment status</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Drill metrics, SLA tracking &amp; analytics</span>
-                            </li>
-                        </ul>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c03_fire.jpg" alt="Fire Safety Hose and Exit" class="w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
 
-                <!-- 07 Family Protection -->
-                <div id="covered-07" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-rose-50 text-rose-600 border border-rose-200/80">
-                                07
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-people-roof"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/shield-pillar-family.jpg" alt="Family Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Extended Shield
-                            </span>
-                        </div>
-
+                <!-- Card 04 First-Aid & Medical Kits -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
                         <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-rose-600 transition-colors leading-snug">
-                                Family Protection
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Extend enterprise-grade emergency safety and covered ambulance assistance to the families of your employees.
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">04</span>
+                                <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-kit-medical"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    First-Aid &amp; Medical Kits
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Maintain first-aid readiness across your workplaces with proper kit availability, location tracking and inspection management.
                             </p>
                         </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Up to 4 registered family members per employee</span>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>First-aid stations and kit locations</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Spouse, children, and elderly parents coverage</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Kit availability and status</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>24/7 emergency escalation &amp; support</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Inspection and expiry tracking</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Covered ambulance dispatch (as per plan)</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Replenishment management</span>
                             </li>
                         </ul>
                     </div>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c04_medical_kit.jpg" alt="First-Aid & Medical Supplies Cabinet" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
                 </div>
 
-                <!-- 08 Safety Reports & Insights -->
-                <div id="covered-08" class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm hover:shadow-xl hover:border-slate-800/40 transition-all duration-300 flex flex-col justify-between group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200">
-                                08
-                            </span>
-                            <div class="w-9 h-9 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-sm">
-                                <i class="fa-solid fa-file-shield"></i>
-                            </div>
-                        </div>
-
-                        <div class="h-40 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 relative">
-                            <img src="images/cards/corp-incident-documentation.jpg" alt="Safety Reports &amp; Insights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                            <span class="absolute bottom-2.5 left-3 text-[11px] font-mono font-bold text-white uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs">
-                                Audit Trails
-                            </span>
-                        </div>
-
+                <!-- Card 05 Employee Safety Training & Mock Drills -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
                         <div>
-                            <h3 class="text-lg font-bold font-display text-slate-900 group-hover:text-slate-900 transition-colors leading-snug">
-                                Safety Reports &amp; Insights
-                            </h3>
-                            <p class="text-xs text-slate-600 font-normal leading-relaxed mt-2">
-                                Complete compliance documentation, timeline audits, risk trends and post-incident investigation reports.
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">05</span>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Employee Safety Training &amp; Mock Drills
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Conduct regular training and drills to build a safer and more prepared workforce.
                             </p>
                         </div>
-
-                        <ul class="space-y-2 pt-3 border-t border-slate-100 text-xs text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Complete incident history &amp; timeline audit logs</span>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>First-aid and CPR awareness</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Corrective and preventive action (CAPA) tracking</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Fire extinguisher training</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>Workplace safety trend analytics &amp; SLA reports</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Evacuation drills</span>
                             </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-emerald-500 text-[11px] mt-0.5 shrink-0"></i>
-                                <span>One-click export for statutory safety audits</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Training schedules and attendance</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Training records and reports</span>
                             </li>
                         </ul>
+                    </div>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c05_cpr_training.jpg" alt="Employee CPR & Safety Training" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                </div>
+
+                <!-- Card 06 Company Safety Dashboard -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">06</span>
+                                <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Company Safety Dashboard
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Get a centralized view of all safety and emergency activities across your organization.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Employees and safety status</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Emergency incidents</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Ambulance activity</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Inspections and equipment</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Training and drills</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Reports and analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c06_dashboard.jpg" alt="Company Safety Dashboard Display" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                </div>
+
+                <!-- Card 07 Family Protection -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">07</span>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-emergencyRed flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-people-group"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Family Protection
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Because employee safety doesn't stop at the office. The Complete plan extends eligible emergency service access to up to four registered family members per employee.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Spouse, children and parents</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Emergency support</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-emergencyRed text-[11px] shrink-0"></i>
+                                <span>Ambulance coordination (as per plan)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c07_family.jpg" alt="Employee Family Protection" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                </div>
+
+                <!-- Card 08 Safety Reports & Insights -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs hover:shadow-md transition-all flex flex-col sm:flex-row gap-5 justify-between">
+                    <div class="sm:w-[58%] flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-2xl font-black font-display text-slate-300">08</span>
+                                <div class="w-7 h-7 rounded-lg bg-blue-50 text-brandBlue flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <h3 class="text-base font-bold font-display text-slate-900 leading-snug">
+                                    Safety Reports &amp; Insights
+                                </h3>
+                            </div>
+                            <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                                Track incidents, identify trends and take corrective actions with detailed reports and insights.
+                            </p>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Incident history and records</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Corrective actions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Safety trend analysis</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Inspection and drill reports</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-brandBlue text-[11px] shrink-0"></i>
+                                <span>Export and share reports</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-[42%] shrink-0 rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 h-44 sm:h-auto min-h-[160px]">
+                        <img src="images/shield_covered/c08_reports.jpg" alt="Safety Reports and Compliance Analytics" class="w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
 
             </div>
+        </section>
 
-            <!-- Ecosystem Blueprint Graphic Showcase Bar (Simple & Clean) -->
+        <!-- Ecosystem Blueprint Graphic Showcase Bar (Simple & Clean) -->
             <div class="mt-10 p-6 md:p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="space-y-1.5 text-left max-w-xl">
                     <h3 class="text-xl sm:text-2xl font-black font-display tracking-tight text-slate-900">
