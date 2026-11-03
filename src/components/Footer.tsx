@@ -14,6 +14,8 @@ function EmstrapLogoWhite() {
 
 const solutions = [
   { label: 'Corporate Safety', path: '/corporate-companies' },
+  { label: 'Hospitals & Clinics', path: '/hospitals-and-clinics' },
+  { label: 'Educational Campuses', path: '/educational-campuses' },
   { label: 'Smart Cities', path: '/smart-cities' },
   { label: 'Government Agencies', path: '/government-agencies' },
   { label: 'Ambulance Providers', path: '/ambulance-providers' },
